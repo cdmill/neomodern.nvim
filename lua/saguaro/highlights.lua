@@ -43,7 +43,7 @@ hl.common = {
   DiffRemoved = { fg = c.red },
   DiffFile = { fg = c.brown },
   DiffIndexLine = { fg = c.bg4 },
-  Directory = { fg = c.green },
+  Directory = { fg = c.main1 },
   ErrorMsg = { fg = c.red, fmt = "bold" },
   EndOfBuffer = {
     fg = config.show_eob and c.bg3 or c.bg0,
@@ -120,7 +120,7 @@ hl.syntax = {
   StorageClass = { fg = c.fg, fmt = config.code_style.keywords }, -- 'static', 'volatile' etc
   String = { fg = c.main1, fmt = config.code_style.strings }, -- string constants
   Structure = { fg = c.fg }, -- 'struct', 'union', 'enum' etc
-  Tag = { fg = c.green }, -- can use <C-}> on this
+  Tag = { fg = c.main1 }, -- can use <C-}> on this
   Title = { fg = c.main0 },
   Type = { fg = c.blue2 }, -- (preferred) 'int', 'long', 'char' etc
   Typedef = { fg = c.fg }, -- 'typedef'
@@ -206,10 +206,10 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     ["@markup.heading"] = { fg = c.main0, fmt = "bold" }, -- markdown titles
     ["@markup.link.uri"] = { fg = c.blue, fmt = "underline" }, -- urls, links, emails
     ["@markup.link"] = { fg = c.purple }, -- text references, footnotes, citations, etc
-    ["@markup.list"] = { fg = c.green },
+    ["@markup.list"] = { fg = c.main1 },
     ["@markup.list.checked"] = { fg = c.red }, -- todo checked
     ["@markup.list.unchecked"] = { fg = c.red }, -- todo unchecked
-    ["@markup.raw"] = { fg = c.green }, -- inline code in markdown, python doc `"""`
+    ["@markup.raw"] = { fg = c.main1 }, -- inline code in markdown, python doc `"""`
     ["@markup.math"] = { fg = c.blue }, -- math environments, like `$$` in latex
 
     -- diff
@@ -550,7 +550,7 @@ hl.plugins.nvim_tree = {
 hl.plugins.telescope = {
   TelescopeBorder = { fg = c.bg3 },
   TelescopeMatching = { fg = c.orange, fmt = "bold" },
-  TelescopePromptPrefix = { fg = c.green },
+  TelescopePromptPrefix = { fg = c.main1 },
   TelescopeSelection = { fg = c.orange, bg = c.bg0 },
   TelescopeSelectionCaret = { fg = c.orange },
 }
@@ -588,7 +588,7 @@ hl.plugins.ts_rainbow2 = {
   TSRainbowYellow = { fg = c.yellow },
   TSRainbowBlue = { fg = c.blue },
   TSRainbowOrange = { fg = c.orange },
-  TSRainbowGreen = { fg = c.fg },
+  TSRainbowmain1 = { fg = c.fg },
   TSRainbowViolet = { fg = c.purple2 },
   TSRainbowBrown = { fg = c.brown },
 }
@@ -598,7 +598,7 @@ hl.plugins.rainbow_delimiters = {
   RainbowDelimiterYellow = { fg = c.yellow },
   RainbowDelimiterBlue = { fg = c.blue },
   RainbowDelimiterOrange = { fg = c.orange },
-  RainbowDelimiterGreen = { fg = c.fg },
+  RainbowDelimitermain1 = { fg = c.fg },
   RainbowDelimiterViolet = { fg = c.purple2 },
   RainbowDelimiterBrown = { fg = c.brown },
 }
