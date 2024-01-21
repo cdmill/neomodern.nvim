@@ -81,9 +81,9 @@ hl.common = {
   TabLineFill = { fg = c.bg4, bg = c.bg2 },
   TabLineSel = { fg = c.bg0, bg = c.fg },
   Terminal = { fg = c.fg, bg = config.transparent and c.none or c.bg0 },
-  ToolbarButton = { fg = c.bg0, bg = c.bg_blue },
+  ToolbarButton = { fg = c.bg0, bg = c.vis_bg1 },
   ToolbarLine = { fg = c.fg },
-  Visual = { bg = c.darkred },
+  Visual = { bg = c.vis_bg2 },
   VisualNOS = { fg = c.none, bg = c.bg3, fmt = "underline" },
   WarningMsg = { fg = c.orange, fmt = "bold" },
   Whitespace = { fg = c.bg4 },
@@ -674,6 +674,8 @@ hl.plugins.mini = {
 
   MiniTrailspace = { bg = c.red },
 }
+
+-- TODO: todo highglights
 
 local lsp_kind_icons_color = {
   Default = c.purple2,
