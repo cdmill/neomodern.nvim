@@ -114,17 +114,17 @@ hl.syntax = {
   PreProc = { fg = c.purple }, -- (preferred) generic preprocessor
   PreCondit = { fg = c.fg_dim }, -- preprocessor conditionals '#if', '#endif' etc
   Repeat = { fg = c.purple, fmt = config.code_style.keywords }, -- loop keywords: 'for', 'while' etc
-  Special = { fg = c.fg }, -- (preferred) any special symbol
+  Special = { fg = c.yellow }, -- (preferred) any special symbol
   SpecialChar = { fg = c.yellow }, -- special character in a constant
-  SpecialComment = { fg = c.fg, fmt = config.code_style.comments }, -- special things inside comments
+  SpecialComment = { fg = c.yellow, fmt = config.code_style.comments }, -- special things inside comments
   Statement = { fg = c.blue2 }, -- (preferred) any statement
-  StorageClass = { fg = c.fg, fmt = config.code_style.keywords }, -- 'static', 'volatile' etc
+  StorageClass = { fg = c.yellow, fmt = config.code_style.keywords }, -- 'static', 'volatile' etc
   String = { fg = c.main1, fmt = config.code_style.strings }, -- string constants
   Structure = { fg = c.fg }, -- 'struct', 'union', 'enum' etc
   Tag = { fg = c.main1 }, -- can use <C-}> on this
   Title = { fg = c.main0 },
   Type = { fg = c.blue2 }, -- (preferred) 'int', 'long', 'char' etc
-  Typedef = { fg = c.fg }, -- 'typedef'
+  Typedef = { fg = c.blue }, -- 'typedef'
   Todo = { fg = c.fg, fmt = config.code_style.comments }, -- (preferred) 'TODO' keywords in comments
 }
 
@@ -140,15 +140,15 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     ["@constant.builtin"] = hl.syntax["Constant"], -- constants that are defined by the language, like 'nil' in lua
     ["@constant.macro"] = hl.syntax["Macro"], -- constants that are defined by macros like 'NULL' in c
 
-    ["@label"] = { fg = c.fg }, -- labels
-    ["@module"] = { fg = c.fg }, -- modules and namespaces
+    ["@label"] = hl.syntax["Label"], -- labels
+    ["@module"] = hl.syntax["StorageClass"], -- modules and namespaces
 
     -- literals
     ["@string"] = hl.syntax["String"], -- strings
-    ["@string.regexp"] = { fg = c.fg, fmt = config.code_style.strings }, -- regex
-    ["@string.escape"] = { fg = c.fg, fmt = config.code_style.strings }, -- escape characters within string
+    ["@string.regexp"] = hl.syntax["SpecialChar"], -- regex
+    ["@string.escape"] = hl.syntax["SpecialChar"], -- escape characters within string
     ["@string.special.symbol"] = hl.syntax["Special"],
-    ["@string.special.url"] = { fg = c.fg }, -- urls, links, emails
+    ["@string.special.url"] = { fg = c.blue }, -- urls, links, emails
 
     ["@character"] = hl.syntax["Character"], -- character literals
     ["@character.special"] = hl.syntax["SpecialChar"], -- special characters
@@ -163,7 +163,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     ["@type.definition"] = hl.syntax["Typedef"], -- typedefs
     ["@type.qualifier"] = { fg = c.fg }, -- type qualifiers, like 'const'
 
-    ["@attribute"] = { fg = c.fg }, -- attributes, like <decorators> in python
+    ["@attribute"] = { fg = c.pink }, -- attributes, like <decorators> in python
     ["@property"] = { fg = c.main0 }, --same as TSField
 
     -- functions
@@ -175,7 +175,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     ["@function.method"] = { fg = c.blue, fmt = config.code_style.functions }, -- method definitions
     ["@function.method.call"] = { fg = c.fg, fmt = config.code_style.functions }, -- method calls
 
-    ["@constructor"] = { fg = c.fg, fmt = "bold" }, -- constructor calls and definitions, `= { }` in lua
+    ["@constructor"] = { fg = c.main2, fmt = "bold" }, -- constructor calls and definitions, `= { }` in lua
     ["@operator"] = hl.syntax["Operator"], -- operators, like `+`
 
     -- keywords
@@ -212,12 +212,12 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     ["@markup.list.checked"] = { fg = c.red }, -- todo checked
     ["@markup.list.unchecked"] = { fg = c.red }, -- todo unchecked
     ["@markup.raw"] = { fg = c.main1 }, -- inline code in markdown, python doc `"""`
-    ["@markup.math"] = { fg = c.blue }, -- math environments, like `$$` in latex
+    ["@markup.math"] = { fg = c.blue2 }, -- math environments, like `$$` in latex
 
     -- diff
-    ["@diff.plus"] = { fg = c.fg }, -- added text (diff files)
+    ["@diff.plus"] = { fg = c.main0 }, -- added text (diff files)
     ["@diff.minus"] = { fg = c.red }, -- removed text (diff files)
-    ["@diff.delta"] = { fg = c.blue }, -- changed text (diff files)
+    ["@diff.delta"] = { fg = c.blue2 }, -- changed text (diff files)
 
     -- tags
     ["@tag"] = hl.syntax["Tag"], -- tags, like in html
@@ -482,12 +482,12 @@ hl.plugins.diffview = {
 }
 
 hl.plugins.gitsigns = {
-  GitSignsAdd = { fg = c.fg },
-  GitSignsAddLn = { fg = c.fg },
-  GitSignsAddNr = { fg = c.fg },
-  GitSignsChange = { fg = c.blue },
-  GitSignsChangeLn = { fg = c.blue },
-  GitSignsChangeNr = { fg = c.blue },
+  GitSignsAdd = { fg = c.main0 },
+  GitSignsAddLn = { fg = c.main0 },
+  GitSignsAddNr = { fg = c.main0 },
+  GitSignsChange = { fg = c.blue2 },
+  GitSignsChangeLn = { fg = c.blue2 },
+  GitSignsChangeNr = { fg = c.blue2 },
   GitSignsDelete = { fg = c.red },
   GitSignsDeleteLn = { fg = c.red },
   GitSignsDeleteNr = { fg = c.red },
