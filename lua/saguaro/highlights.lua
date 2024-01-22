@@ -106,12 +106,12 @@ hl.syntax = {
   Exception = { fg = c.fg }, -- 'try', 'catch', 'throw'
   Identifier = { fg = c.fg, fmt = config.code_style.variables }, -- (preferred) any variable
   Include = { fg = c.purple, fmt = config.code_style.keywords }, -- preprocessor '#include'
-  Keyword = { fg = c.purple, fmt = config.code_style.keywords }, -- any other keyword
+  Keyword = { fg = c.blue2, fmt = config.code_style.keywords }, -- any other keyword
   Label = { fg = c.yellow }, -- 'case', 'default', etc
   Macro = { fg = c.purple, fmt = config.code_style.constants }, -- macros
   Number = { fg = c.orange }, -- number constant
   Operator = { fg = c.fg }, -- '+', '*', 'sizeof' etc
-  PreProc = { fg = c.pink }, -- (preferred) generic preprocessor
+  PreProc = { fg = c.purple }, -- (preferred) generic preprocessor
   PreCondit = { fg = c.fg_dim }, -- preprocessor conditionals '#if', '#endif' etc
   Repeat = { fg = c.purple, fmt = config.code_style.keywords }, -- loop keywords: 'for', 'while' etc
   Special = { fg = c.fg }, -- (preferred) any special symbol
@@ -180,8 +180,9 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
 
     -- keywords
     ["@keyword"] = hl.syntax["Keyword"], -- keywords that don't fall in previous categories
-    ["@keyword.function"] = { fg = c.fg, fmt = config.code_style.functions }, -- keywords used to define a function
-    ["@keyword.operator"] = { fg = c.fg, fmt = config.code_style.keywords }, -- new keyword operator
+    ["@keyword.function"] = hl.syntax["Function"], -- keywords used to define a function
+    ["@keyword.conditional"] = hl.syntax["Conditional"], -- keywords used to define a function
+    ["@keyword.operator"] = hl.syntax["Operator"], -- new keyword operator
     ["@keyword.import"] = hl.syntax["Include"], -- includes, like '#include' in c, 'require' in lua
     ["@keyword.storage"] = hl.syntax["StorageClass"], -- visibility/life-time 'static'
     ["@keyword.repeat"] = hl.syntax["Repeat"], -- for keywords related to loops
@@ -330,7 +331,7 @@ hl.plugins.lsp = {
 
   DiagnosticError = { fg = c.red },
   DiagnosticHint = { fg = c.purple2 },
-  DiagnosticInfo = { fg = c.brown },
+  DiagnosticInfo = { fg = c.blue2, fmt = "italic" },
   DiagnosticWarn = { fg = c.yellow },
 
   DiagnosticVirtualTextError = {
