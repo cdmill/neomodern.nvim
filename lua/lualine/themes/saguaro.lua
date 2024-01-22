@@ -1,26 +1,24 @@
 local c = require("saguaro.colors")
 local cfg = vim.g.saguaro_config
 local colors = {
-  norm = c.bg4,
+  norm = c.fg_dim,
   ins = c.yellow,
   vis = c.purple,
-  rep = c.blue,
+  rep = c.blue2,
   comm = c.orange,
   fg = c.fg,
+  fg_dim = c.fg_dim,
+  bg = c.bg3,
+  bg2 = c.bg2,
   black = c.bg0,
   grey = c.bg3,
 }
 
 local saguaro = {
-  inactive = {
-    a = { bg = colors.grey, fg = colors.black, gui = "bold" },
-    b = { bg = colors.grey, fg = colors.black },
-    c = { bg = cfg.lualine.transparent and c.none or colors.grey, fg = colors.black },
-  },
   normal = {
     a = { bg = colors.norm, fg = colors.black, gui = "bold" },
     b = { bg = colors.bg, fg = colors.fg },
-    c = { bg = colors.bg, fg = colors.fg },
+    c = { bg = colors.bg2, fg = colors.fg_dim },
   },
   insert = {
     a = { bg = colors.ins, fg = colors.black, gui = "bold" },
