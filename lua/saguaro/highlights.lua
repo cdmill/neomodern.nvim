@@ -56,6 +56,7 @@ hl.common = {
   LineNr = { fg = c.bg3 },
   MatchParen = { fg = c.bg0, bg = c.orange },
   MoreMsg = { fg = c.blue, fmt = "bold" },
+  MsgSeparator = { fg = c.main1, bg = c.bg2, fmt = "bold" },
   NonText = { fg = c.bg4 },
   Normal = { fg = c.fg, bg = config.transparent and c.none or c.bg0 },
   NormalFloat = { fg = c.fg, bg = c.bg1 },
@@ -72,10 +73,10 @@ hl.common = {
   SpellCap = { fg = c.none, fmt = "undercurl", sp = c.yellow },
   SpellLocal = { fg = c.none, fmt = "undercurl", sp = c.pink },
   SpellRare = { fg = c.none, fmt = "undercurl", sp = c.purple2 },
-  -- StatusLine = { fg = c.fg, bg = c.bg3 },
-  -- StatusLineTerm = { fg = c.fg, bg = c.bg2 },
-  -- StatusLineNC = { fg = c.bg4, bg = c.bg2 },
-  -- StatusLineTermNC = { fg = c.bg4, bg = c.bg2 },
+  StatusLine = { fg = c.fg, bg = c.bg3 },
+  StatusLineTerm = { fg = c.fg, bg = c.bg2 },
+  StatusLineNC = { fg = c.bg4, bg = c.bg2 },
+  StatusLineTermNC = { fg = c.bg4, bg = c.bg2 },
   Substitute = { fg = c.bg0, bg = c.fg },
   TabLine = { fg = c.fg, bg = c.bg2 },
   TabLineFill = { fg = c.bg4, bg = c.bg2 },
@@ -110,8 +111,8 @@ hl.syntax = {
   Macro = { fg = c.purple, fmt = config.code_style.constants }, -- macros
   Number = { fg = c.orange }, -- number constant
   Operator = { fg = c.fg }, -- '+', '*', 'sizeof' etc
-  PreProc = { fg = c.fg }, -- (preferred) generic preprocessor
-  PreCondit = { fg = c.fg }, -- preprocessor conditionals '#if', '#endif' etc
+  PreProc = { fg = c.pink }, -- (preferred) generic preprocessor
+  PreCondit = { fg = c.fg_dim }, -- preprocessor conditionals '#if', '#endif' etc
   Repeat = { fg = c.purple, fmt = config.code_style.keywords }, -- loop keywords: 'for', 'while' etc
   Special = { fg = c.fg }, -- (preferred) any special symbol
   SpecialChar = { fg = c.yellow }, -- special character in a constant
