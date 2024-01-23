@@ -45,16 +45,15 @@ hl.common = {
   DiffIndexLine = { fg = c.bg4 },
   Directory = { fg = c.main1 },
   ErrorMsg = { fg = c.red, fmt = "bold" },
-  EndOfBuffer = {
-    fg = config.show_eob and c.bg3 or c.bg0,
-    bg = config.transparent and c.none or c.bg0,
-  },
+  EndOfBuffer = { fg = config.show_eob and c.bg3 or c.bg0 },
   FloatBorder = { fg = c.bg4, bg = c.bg1 },
+  FloatTitle = { fg = c.bg4, bg = c.bg1 },
   Folded = { fg = c.fg, bg = config.transparent and c.none or c.bg2 },
   FoldColumn = { fg = c.fg, bg = config.transparent and c.none or c.bg0 },
   IncSearch = { fg = c.orange, bg = c.bg4 },
   LineNr = { fg = c.bg3 },
   MatchParen = { fg = c.bg0, bg = c.orange },
+  MsgArea = { fg = c.blue, bg = c.bg1, fmt = "bold" },
   MoreMsg = { fg = c.blue, fmt = "bold" },
   MsgSeparator = { fg = c.main1, bg = c.bg2, fmt = "bold" },
   NonText = { fg = c.bg4 },
@@ -161,7 +160,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     ["@type"] = hl.syntax["Type"], -- types
     ["@type.builtin"] = { fg = c.fg }, --builtin types
     ["@type.definition"] = hl.syntax["Typedef"], -- typedefs
-    ["@type.qualifier"] = { fg = c.fg }, -- type qualifiers, like 'const'
+    ["@type.qualifier"] = { fg = c.orange }, -- type qualifiers, like 'const'
 
     ["@attribute"] = { fg = c.pink }, -- attributes, like <decorators> in python
     ["@property"] = { fg = c.main0 }, --same as TSField
@@ -182,7 +181,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     ["@keyword"] = hl.syntax["Keyword"], -- keywords that don't fall in previous categories
     ["@keyword.function"] = hl.syntax["Function"], -- keywords used to define a function
     ["@keyword.conditional"] = hl.syntax["Conditional"], -- keywords used to define a function
-    ["@keyword.operator"] = hl.syntax["Operator"], -- new keyword operator
+    ["@keyword.operator"] = { fg = c.purple2 }, -- new keyword operator
     ["@keyword.import"] = hl.syntax["Include"], -- includes, like '#include' in c, 'require' in lua
     ["@keyword.storage"] = hl.syntax["StorageClass"], -- visibility/life-time 'static'
     ["@keyword.repeat"] = hl.syntax["Repeat"], -- for keywords related to loops
