@@ -53,7 +53,6 @@ hl.common = {
   IncSearch = { fg = c.orange, bg = c.bg4 },
   LineNr = { fg = c.bg3 },
   MatchParen = { fg = c.bg0, bg = c.orange },
-  MsgArea = { fg = c.blue, bg = c.bg1, fmt = "bold" },
   MoreMsg = { fg = c.blue, fmt = "bold" },
   MsgSeparator = { fg = c.main1, bg = c.bg2, fmt = "bold" },
   NonText = { fg = c.bg4 },
