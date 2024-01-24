@@ -121,7 +121,7 @@ hl.syntax = {
   Structure = { fg = c.yellow }, -- 'struct', 'union', 'enum' etc
   Tag = { fg = c.main1 }, -- can use <C-}> on this
   Title = { fg = c.main0 },
-  Type = { fg = c.blue2 }, -- (preferred) 'int', 'long', 'char' etc
+  Type = { fg = c.main0 }, -- (preferred) 'int', 'long', 'char' etc
   Typedef = { fg = c.blue }, -- 'typedef'
   Todo = { fg = c.fg, fmt = config.code_style.comments }, -- (preferred) 'TODO' keywords in comments
 }
@@ -133,6 +133,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     ["@variable.builtin"] = { fg = c.pink, fmt = config.code_style.variables }, -- variable names that are defined by the language, like 'this' or 'self'
     ["@variable.parameter"] = { fg = c.red }, -- parameters of a function
     ["@variable.field"] = { fg = c.pink }, -- fields
+    ["@variable.member"] = { fg = c.main0 }, -- fields
 
     ["@constant"] = hl.syntax["Constant"], -- constants
     ["@constant.builtin"] = hl.syntax["Constant"], -- constants that are defined by the language, like 'nil' in lua
@@ -557,11 +558,10 @@ hl.plugins.telescope = {
 }
 
 hl.plugins.dashboard = {
-  DashboardShortCut = { fg = c.blue },
-  DashboardHeader = { fg = c.yellow },
-  DashboardCenter = { fg = c.brown },
-  -- TODO:
-  -- DashboardFooter = { fg = c.vis_bg2, fmt = "italic" },
+  DashboardShortCut = { fg = c.blue2 },
+  DashboardHeader = { fg = c.main0 },
+  DashboardCenter = { fg = c.fg },
+  DashboardFooter = { fg = c.purple, fmt = "italic" },
 }
 
 hl.plugins.outline = {
