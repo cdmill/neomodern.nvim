@@ -7,6 +7,7 @@ return {
     bg4 = "#4f5b58", -- comment
     fg_dim = "#859289", -- punctuatoin
     fg = "#cec4ab", -- text
+    fg1 = "#525151",
     main0 = "#6A8570", -- property
     main1 = "#bfce94", -- string
     main2 = "#99ae9c", -- cursorlinenr

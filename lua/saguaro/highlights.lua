@@ -48,10 +48,10 @@ hl.common = {
   EndOfBuffer = { fg = config.show_eob and c.bg3 or c.bg0 },
   FloatBorder = { fg = c.bg4, bg = c.bg1 },
   FloatTitle = { fg = c.bg4, bg = c.bg1 },
-  Folded = { fg = c.fg, bg = config.transparent and c.none or c.bg2 },
-  FoldColumn = { fg = c.fg, bg = config.transparent and c.none or c.bg0 },
+  Folded = { fg = c.fg_dim, bg = config.transparent and c.none or c.bg2 },
+  FoldColumn = { fg = c.fg_dim, bg = config.transparent and c.none or c.bg0 },
   IncSearch = { fg = c.orange, bg = c.bg4 },
-  LineNr = { fg = c.bg3 },
+  LineNr = { fg = c.fg1 },
   MatchParen = { fg = c.bg0, bg = c.orange },
   MoreMsg = { fg = c.blue, fmt = "bold" },
   MsgSeparator = { fg = c.main1, bg = c.bg2, fmt = "bold" },
@@ -204,6 +204,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     ["@markup.underline"] = { fg = c.fg, fmt = "underline" }, -- underline
     ["@markup.strikethrough"] = { fg = c.fg_dim, fmt = "strikethrough" }, -- strikethrough
     ["@markup.heading"] = { fg = c.main0, fmt = "bold" }, -- markdown titles
+    ["@markup.quote.markdown"] = { fg = c.fg_dim }, -- quotes with >
     ["@markup.link.uri"] = { fg = c.blue, fmt = "underline" }, -- urls, links, emails
     ["@markup.link"] = { fg = c.purple }, -- text references, footnotes, citations, etc
     ["@markup.list"] = { fg = c.main1 },

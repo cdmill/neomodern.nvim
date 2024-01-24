@@ -7,9 +7,9 @@ local colors = {
   rep = c.blue2,
   comm = c.orange,
   fg = c.fg,
-  fg_dim = c.fg_dim,
+  fg_dim = c.fg1,
   bg = c.bg3,
-  bg2 = c.bg2,
+  bg2 = c.bg1,
   black = c.bg0,
   grey = c.bg3,
 }
