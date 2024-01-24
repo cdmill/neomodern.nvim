@@ -91,24 +91,24 @@ hl.common = {
 }
 
 hl.syntax = {
-  Boolean = { fg = c.fg }, -- boolean constants
-  Character = { fg = c.fg }, -- character constants
+  Boolean = { fg = c.purple2 }, -- boolean constants
+  Character = { fg = c.main1 }, -- character constants
   Comment = { fg = c.bg4, fmt = config.code_style.comments }, -- comments
   Conditional = { fg = c.purple, fmt = config.code_style.keywords }, -- conditionals
-  Constant = { fg = c.fg, fmt = config.code_style.constants }, -- (preferred) any constant
+  Constant = { fg = c.pink, fmt = config.code_style.constants }, -- (preferred) any constant
   Define = { fg = c.purple }, -- preprocessor '#define'
-  Delimiter = { fg = c.fg }, -- delimiter characters
+  Delimiter = { fg = c.main2 }, -- delimiter characters
   Float = { fg = c.orange }, -- float constants
   Function = { fg = c.blue, fmt = config.code_style.functions }, -- functions
   Error = { fg = c.fg }, -- (preferred) any erroneous construct
   Exception = { fg = c.fg }, -- 'try', 'catch', 'throw'
   Identifier = { fg = c.fg, fmt = config.code_style.variables }, -- (preferred) any variable
   Include = { fg = c.purple, fmt = config.code_style.keywords }, -- preprocessor '#include'
-  Keyword = { fg = c.blue2, fmt = config.code_style.keywords }, -- any other keyword
+  Keyword = { fg = c.main2, fmt = config.code_style.keywords }, -- any other keyword
   Label = { fg = c.yellow }, -- 'case', 'default', etc
   Macro = { fg = c.purple, fmt = config.code_style.constants }, -- macros
   Number = { fg = c.orange }, -- number constant
-  Operator = { fg = c.fg }, -- '+', '*', 'sizeof' etc
+  Operator = { fg = c.main2 }, -- '+', '*', 'sizeof' etc
   PreProc = { fg = c.purple }, -- (preferred) generic preprocessor
   PreCondit = { fg = c.fg_dim }, -- preprocessor conditionals '#if', '#endif' etc
   Repeat = { fg = c.purple, fmt = config.code_style.keywords }, -- loop keywords: 'for', 'while' etc
@@ -118,7 +118,7 @@ hl.syntax = {
   Statement = { fg = c.blue2 }, -- (preferred) any statement
   StorageClass = { fg = c.yellow, fmt = config.code_style.keywords }, -- 'static', 'volatile' etc
   String = { fg = c.main1, fmt = config.code_style.strings }, -- string constants
-  Structure = { fg = c.fg }, -- 'struct', 'union', 'enum' etc
+  Structure = { fg = c.yellow }, -- 'struct', 'union', 'enum' etc
   Tag = { fg = c.main1 }, -- can use <C-}> on this
   Title = { fg = c.main0 },
   Type = { fg = c.blue2 }, -- (preferred) 'int', 'long', 'char' etc
@@ -157,7 +157,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
 
     -- types
     ["@type"] = hl.syntax["Type"], -- types
-    ["@type.builtin"] = { fg = c.fg }, --builtin types
+    ["@type.builtin"] = hl.syntax["Type"], --builtin types
     ["@type.definition"] = hl.syntax["Typedef"], -- typedefs
     ["@type.qualifier"] = { fg = c.orange }, -- type qualifiers, like 'const'
 
@@ -170,15 +170,15 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     ["@function.call"] = { fg = c.blue, fmt = config.code_style.functions }, -- function calls
     ["@function.macro"] = { fg = c.blue2, fmt = config.code_style.functions }, -- macro defined functions
     --
-    ["@function.method"] = { fg = c.blue, fmt = config.code_style.functions }, -- method definitions
-    ["@function.method.call"] = { fg = c.fg, fmt = config.code_style.functions }, -- method calls
+    ["@function.method"] = hl.syntax["Function"], -- method definitions
+    ["@function.method.call"] = hl.syntax["Function"], -- method calls
 
     ["@constructor"] = { fg = c.main2, fmt = "bold" }, -- constructor calls and definitions, `= { }` in lua
     ["@operator"] = hl.syntax["Operator"], -- operators, like `+`
 
     -- keywords
     ["@keyword"] = hl.syntax["Keyword"], -- keywords that don't fall in previous categories
-    ["@keyword.function"] = hl.syntax["Function"], -- keywords used to define a function
+    ["@keyword.function"] = hl.syntax["Statement"], -- keywords used to define a function
     ["@keyword.conditional"] = hl.syntax["Conditional"], -- keywords used to define a function
     ["@keyword.operator"] = { fg = c.purple2 }, -- new keyword operator
     ["@keyword.import"] = hl.syntax["Include"], -- includes, like '#include' in c, 'require' in lua
