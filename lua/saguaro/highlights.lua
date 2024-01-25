@@ -174,7 +174,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     ["@function.method"] = hl.syntax["Function"], -- method definitions
     ["@function.method.call"] = hl.syntax["Function"], -- method calls
 
-    ["@constructor"] = { fg = c.main2, fmt = "bold" }, -- constructor calls and definitions, `= { }` in lua
+    ["@constructor"] = { fg = c.main2, fmt = config.code_style.functions }, -- constructor calls and definitions, `= { }` in lua
     ["@operator"] = hl.syntax["Operator"], -- operators, like `+`
 
     -- keywords
