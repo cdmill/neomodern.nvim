@@ -559,7 +559,7 @@ hl.plugins.telescope = {
 
 hl.plugins.dashboard = {
   DashboardShortCut = { fg = c.blue2 },
-  DashboardHeader = { fg = c.main0 },
+  DashboardHeader = { fg = c.blue2 },
   DashboardCenter = { fg = c.fg },
   DashboardFooter = { fg = c.purple, fmt = "italic" },
 }
