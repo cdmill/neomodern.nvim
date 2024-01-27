@@ -19,6 +19,7 @@ local saguaro = {
     a = { bg = colors.norm, fg = colors.black, gui = "bold" },
     b = { bg = colors.bg, fg = colors.fg },
     c = { bg = colors.bg2, fg = colors.fg_dim },
+    z = { bg = colors.bg, fg = colors.fg },
   },
   insert = {
     a = { bg = colors.ins, fg = colors.black, gui = "bold" },
