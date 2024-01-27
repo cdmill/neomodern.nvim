@@ -14,24 +14,24 @@ local colors = {
   grey = c.bg3,
 }
 
+-- stylua: ignore
 local saguaro = {
   normal = {
-    a = { bg = colors.norm, fg = colors.black, gui = "bold" },
-    b = { bg = colors.bg, fg = colors.fg },
-    c = { bg = colors.bg2, fg = colors.fg_dim },
-    z = { bg = colors.bg, fg = colors.fg },
+    a = { bg = cfg.lualine.transparent and c.none or colors.norm, fg = colors.norm, gui = "bold" },
+    b = { bg = cfg.lualine.transparent and c.none or colors.bg, fg = colors.comm },
+    c = { bg = cfg.lualine.transparent and c.none or colors.bg2, fg = colors.fg_dim },
   },
   insert = {
-    a = { bg = colors.ins, fg = colors.black, gui = "bold" },
+    a = { bg = cfg.lualine.transparent and c.none or colors.ins, fg = colors.ins, gui = "bold" },
   },
   visual = {
-    a = { bg = colors.vis, fg = colors.black, gui = "bold" },
+    a = { bg = cfg.lualine.transparent and c.none or colors.vis, fg = colors.vis, gui = "bold" },
   },
   replace = {
-    a = { bg = colors.rep, fg = colors.black, gui = "bold" },
+    a = { bg = cfg.lualine.transparent and c.none or colors.rep, fg = colors.rep, gui = "bold" },
   },
   command = {
-    a = { bg = colors.comm, fg = colors.black, gui = "bold" },
+    a = { bg = cfg.lualine.transparent and c.none or colors.comm, fg = colors.comm, gui = "bold" },
   },
 }
 
