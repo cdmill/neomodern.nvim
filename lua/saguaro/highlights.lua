@@ -30,7 +30,7 @@ hl.common = {
   lCursor = { fmt = "reverse" },
   CursorIM = { fmt = "reverse" },
   CursorColumn = { bg = c.bg2 },
-  CursorLine = { bg = c.bg2 },
+  CursorLine = { bg = c.bg1 },
   CursorLineNr = { fg = c.main2 },
   Debug = { fg = c.yellow },
   debugPC = { fg = c.bg0, bg = c.fg },
