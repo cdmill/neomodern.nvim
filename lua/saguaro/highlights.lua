@@ -57,7 +57,7 @@ hl.common = {
   MsgSeparator = { fg = c.main1, bg = c.bg2, fmt = "bold" },
   NonText = { fg = c.bg4 },
   Normal = { fg = c.fg, bg = config.transparent and c.none or c.bg0 },
-  NormalFloat = { fg = c.fg, bg = c.bg1 },
+  NormalFloat = { fg = c.fg, bg = config.transparent and c.none or c.bg1 },
   Pmenu = { fg = c.fg, bg = c.bg2 },
   PmenuSbar = { fg = c.none, bg = c.bg2 },
   PmenuSel = { fg = c.orange },
