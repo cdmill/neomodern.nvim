@@ -1,12 +1,17 @@
 return {
   night = {
-    bg0 = "#151515",
-    bg1 = "#1f1f1f", -- float
+    bg0 = "#181818", -- black
+    -- bg0 = "#1b1a20", -- purple
+    -- bg0 = "#181a1b", -- green
+    -- bg0 = "#1e1e1e", -- brown
+
+    -- bg1 = "#1f1f1f", -- float
+    bg1 = "#121212", -- float
     bg2 = "#232925",
     bg3 = "#3c4841", -- relnum, telescope border
     bg4 = "#4f5b58", -- comment
-    fg_dim = "#859289", -- punctuatoin
-    fg = "#cec4ab", -- text
+    fg_dim = "#859289", -- punctuation
+    fg = "#bbbbbb", -- text
     fg1 = "#525151",
     main0 = "#6A8570", -- property
     main1 = "#bfce94", -- string

@@ -46,7 +46,7 @@ hl.common = {
   Directory = { fg = c.main1 },
   ErrorMsg = { fg = c.red, fmt = "bold" },
   EndOfBuffer = { fg = config.show_eob and c.bg3 or c.bg0 },
-  FloatBorder = { fg = c.bg4, bg = c.bg1 },
+  FloatBorder = { fg = c.bg4, bg = config.transparent and c.none or c.bg1 },
   FloatTitle = { fg = c.bg4, bg = c.bg1 },
   Folded = { fg = c.fg_dim, bg = config.transparent and c.none or c.bg2 },
   FoldColumn = { fg = c.fg_dim, bg = config.transparent and c.none or c.bg0 },
