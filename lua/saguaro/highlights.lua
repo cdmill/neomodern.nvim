@@ -108,11 +108,11 @@ hl.syntax = {
   Label = { fg = c.c12 }, -- 'case', 'default', etc
   Macro = { fg = c.c16, fmt = config.code_style.constants }, -- macros
   Number = { fg = c.c9 }, -- number constant
-  Operator = { fg = c.c12 }, -- '+', '*', 'sizeof' etc
+  Operator = { fg = c.c7 }, -- '+', '*', 'sizeof' etc
   PreProc = { fg = c.c6 }, -- (preferred) generic preprocessor
   PreCondit = { fg = c.c6 }, -- preprocessor conditionals '#if', '#endif' etc
   Repeat = { fg = c.c13, fmt = config.code_style.keywords }, -- loop keywords: 'for', 'while' etc
-  Special = { fg = c.c16 }, -- (preferred) any special symbol
+  Special = { fg = c.c12 }, -- (preferred) any special symbol
   SpecialChar = { fg = c.c16 }, -- special character in a constant
   SpecialComment = { fg = c.c16, fmt = config.code_style.comments }, -- special things inside comments
   Statement = { fg = c.c2 }, -- (preferred) any statement
@@ -130,7 +130,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
   hl.treesitter = {
     -- identifiers
     ["@variable"] = hl.syntax["Identifier"], -- any variable that does not have another highlight
-    -- ["@variable.builtin"] = { fg = c.c12, fmt = config.code_style.variables }, -- variable names that are defined by the language, like 'this' or 'self'
+    ["@variable.builtin"] = hl.syntax["Label"], -- variable names that are defined by the language, like 'this' or 'self'
     -- ["@variable.parameter"] = { fg = c.c9 }, -- parameters of a function
     -- ["@variable.field"] = { fg = c.c12 }, -- fields
     -- ["@variable.member"] = { fg = c.c0 }, -- fields
@@ -158,7 +158,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
 
     -- types
     ["@type"] = hl.syntax["Type"], -- types
-    -- ["@type.builtin"] = hl.syntax["Type"], --builtin types
+    ["@type.builtin"] = hl.syntax["Label"], --builtin types
     -- ["@type.definition"] = hl.syntax["Typedef"], -- typedefs
     -- ["@type.qualifier"] = { fg = c.c16 }, -- type qualifiers, like 'const'
 
@@ -167,9 +167,9 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
 
     -- functions
     ["@function"] = hl.syntax["Function"], -- functions
-    -- ["@function.builtin"] = { fg = c.c10, fmt = config.code_style.functions }, --builtin functions
+    ["@function.builtin"] = hl.syntax["Label"], --builtin functions
+    ["@function.macro"] = hl.syntax["Macro"], -- macro defined functions
     -- ["@function.call"] = { fg = c.c11, fmt = config.code_style.functions }, -- function calls
-    -- ["@function.macro"] = { fg = c.c10, fmt = config.code_style.functions }, -- macro defined functions
     --
     -- ["@function.method"] = hl.syntax["Function"], -- method definitions
     -- ["@function.method.call"] = hl.syntax["Function"], -- method calls
@@ -204,20 +204,20 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     ["@markup.italic"] = { fg = c.c7, fmt = "italic" }, -- italic
     ["@markup.underline"] = { fg = c.c7, fmt = "underline" }, -- underline
     ["@markup.strikethrough"] = { fg = c.c6, fmt = "strikethrough" }, -- strikethrough
-    ["@markup.heading"] = { fg = c.c0, fmt = "bold" }, -- markdown titles
-    ["@markup.quote.markdown"] = { fg = c.c6 }, -- quotes with >
-    ["@markup.link.uri"] = { fg = c.c11, fmt = "underline" }, -- urls, links, emails
+    ["@markup.heading"] = { fg = c.c11, fmt = "bold" }, -- markdown titles
+    ["@markup.quote.markdown"] = { fg = c.c5 }, -- quotes with >
+    ["@markup.link.uri"] = { fg = c.c10, fmt = "underline" }, -- urls, links, emails
     ["@markup.link"] = { fg = c.c13 }, -- text references, footnotes, citations, etc
-    ["@markup.list"] = { fg = c.c1 },
-    ["@markup.list.checked"] = { fg = c.c9 }, -- todo checked
-    ["@markup.list.unchecked"] = { fg = c.c9 }, -- todo unchecked
-    ["@markup.raw"] = { fg = c.c1 }, -- inline code in markdown, python doc `"""`
-    ["@markup.math"] = { fg = c.c10 }, -- math environments, like `$$` in latex
+    ["@markup.list"] = { fg = c.c10 },
+    ["@markup.list.checked"] = { fg = c.c16 }, -- todo checked
+    ["@markup.list.unchecked"] = { fg = c.c10 }, -- todo unchecked
+    ["@markup.raw"] = { fg = c.c12 }, -- inline code in markdown, python doc `"""`
+    ["@markup.math"] = { fg = c.c11 }, -- math environments, like `$$` in latex
 
     -- diff
     ["@diff.plus"] = { fg = c.c0 }, -- added text (diff files)
     ["@diff.minus"] = { fg = c.c9 }, -- removed text (diff files)
-    ["@diff.delta"] = { fg = c.c10 }, -- changed text (diff files)
+    ["@diff.delta"] = { fg = c.c11 }, -- changed text (diff files)
 
     -- tags
     ["@tag"] = hl.syntax["Tag"], -- tags, like in html
@@ -236,20 +236,20 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
       ["@lsp.type.typeParameter"] = hl.treesitter["@type"],
       ["@lsp.type.keyword"] = hl.treesitter["@keyword"],
       ["@lsp.type.namespace"] = hl.treesitter["@module"],
-      ["@lsp.type.parameter"] = hl.treesitter["@variable.parameter"],
+      ["@lsp.type.parameter"] = hl.treesitter["@variable"],
       ["@lsp.type.property"] = hl.treesitter["@property"],
       ["@lsp.type.variable"] = hl.treesitter["@variable"],
       ["@lsp.type.macro"] = hl.treesitter["@function.macro"],
-      ["@lsp.type.method"] = hl.treesitter["@function.method"],
+      ["@lsp.type.method"] = hl.treesitter["@function"],
       ["@lsp.type.number"] = hl.treesitter["@number"],
       ["@lsp.type.generic"] = hl.treesitter["@markup"],
-      ["@lsp.type.builtinType"] = hl.treesitter["@type.builtin"],
-      ["@lsp.typemod.method.defaultLibrary"] = hl.treesitter["@function"],
+      ["@lsp.type.builtinType"] = hl.treesitter["@function.builtin"],
+      ["@lsp.typemod.method.defaultLibrary"] = hl.treesitter["@function.builtin"],
       ["@lsp.typemod.function.defaultLibrary"] = hl.treesitter["@function.builtin"],
-      ["@lsp.typemod.function.declaration"] = hl.treesitter["@function.method"],
+      ["@lsp.typemod.function.declaration"] = hl.treesitter["@function"],
       ["@lsp.typemod.operator.injected"] = hl.treesitter["@operator"],
       ["@lsp.typemod.string.injected"] = hl.treesitter["@string"],
-      ["@lsp.typemod.variable.defaultLibrary"] = hl.treesitter["@variable.builtin"],
+      ["@lsp.typemod.variable.defaultLibrary"] = hl.treesitter["@function.builtin"],
       ["@lsp.typemod.variable.injected"] = hl.treesitter["@variable"],
       ["@lsp.typemod.variable.static"] = hl.treesitter["@constant"],
     }
@@ -485,9 +485,9 @@ hl.plugins.gitsigns = {
   GitSignsAdd = { fg = c.c0 },
   GitSignsAddLn = { fg = c.c0 },
   GitSignsAddNr = { fg = c.c0 },
-  GitSignsChange = { fg = c.c10 },
-  GitSignsChangeLn = { fg = c.c10 },
-  GitSignsChangeNr = { fg = c.c10 },
+  GitSignsChange = { fg = c.c11 },
+  GitSignsChangeLn = { fg = c.c11 },
+  GitSignsChangeNr = { fg = c.c11 },
   GitSignsDelete = { fg = c.c9 },
   GitSignsDeleteLn = { fg = c.c9 },
   GitSignsDeleteNr = { fg = c.c9 },
@@ -558,8 +558,8 @@ hl.plugins.telescope = {
 }
 
 hl.plugins.dashboard = {
-  DashboardShortCut = { fg = c.c10 },
-  DashboardHeader = { fg = c.c10 },
+  DashboardShortCut = { fg = c.c11 },
+  DashboardHeader = { fg = c.c11 },
   DashboardCenter = { fg = c.c7 },
   DashboardFooter = { fg = c.c13, fmt = "italic" },
 }
