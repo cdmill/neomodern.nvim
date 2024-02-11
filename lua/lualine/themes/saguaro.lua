@@ -1,16 +1,15 @@
 local c = require("saguaro.colors")
 local cfg = vim.g.saguaro_config
 local colors = {
-  norm = c.fg_dim,
-  ins = c.yellow,
-  vis = c.purple,
-  rep = c.blue2,
-  comm = c.orange,
-  fg = c.fg,
-  fg_dim = c.fg1,
-  bg = c.bg3,
-  bg2 = c.bg1,
-  black = c.bg0,
+  norm = c.c2,
+  ins = c.c17,
+  vis = c.c13,
+  rep = c.c11,
+  comm = c.c16,
+  fg_dim = c.c8,
+  bg = c.float,
+  bg2 = c.line,
+  black = c.bg,
   grey = c.bg3,
 }
 

@@ -6,7 +6,7 @@ return {
     -- bg0 = "#181a1b", -- green
     -- bg0 = "#1e1e1e", -- brown
 
-    -- bg1 = "#1f1f1f", -- float
+    line = "#1f1f1f", -- float
     float = "#121212", -- float
     c0 = "#6A8570", -- dark green: property
     c1 = "#bfce94", -- light green: string

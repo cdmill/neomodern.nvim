@@ -104,7 +104,7 @@ hl.syntax = {
   Exception = { fg = c.c13 }, -- 'try', 'catch', 'throw' TODO:
   Identifier = { fg = c.c10, fmt = config.code_style.variables }, -- (preferred) any variable
   Include = { fg = c.c13, fmt = config.code_style.keywords }, -- preprocessor '#include'
-  Keyword = { fg = c.c11, fmt = config.code_style.keywords }, -- any other keyword
+  Keyword = { fg = c.c2, fmt = config.code_style.keywords }, -- any other keyword
   Label = { fg = c.c12 }, -- 'case', 'default', etc
   Macro = { fg = c.c16, fmt = config.code_style.constants }, -- macros
   Number = { fg = c.c9 }, -- number constant
@@ -115,7 +115,7 @@ hl.syntax = {
   Special = { fg = c.c16 }, -- (preferred) any special symbol
   SpecialChar = { fg = c.c16 }, -- special character in a constant
   SpecialComment = { fg = c.c16, fmt = config.code_style.comments }, -- special things inside comments
-  Statement = { fg = c.c11 }, -- (preferred) any statement
+  Statement = { fg = c.c2 }, -- (preferred) any statement
   StorageClass = { fg = c.c13, fmt = config.code_style.keywords }, -- 'static', 'volatile' etc
   String = { fg = c.c1, fmt = config.code_style.strings }, -- string constants
   Structure = { fg = c.c13 }, -- 'struct', 'union', 'enum' etc
@@ -178,8 +178,8 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     ["@operator"] = hl.syntax["Operator"], -- operators, like `+`
 
     -- keywords
-    ["@keyword"] = hl.syntax["Keyword"], -- keywords that don't fall in previous categories
-    ["@keyword.function"] = hl.syntax["Statement"], -- keywords used to define a function
+    ["@keyword"] = hl.syntax["Statement"], -- keywords that don't fall in previous categories
+    ["@keyword.function"] = hl.syntax["Function"], -- keywords used to define a function
     ["@keyword.conditional"] = hl.syntax["Conditional"], -- keywords used to define a function
     ["@keyword.operator"] = hl.syntax["Operator"], -- new keyword operator
     ["@keyword.import"] = hl.syntax["Include"], -- includes, like '#include' in c, 'require' in lua
@@ -188,10 +188,9 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     ["@keyword.exception"] = hl.syntax["Exception"], -- exception related keywords
 
     -- punctuation
-    ["@punctuation"] = { fg = c.c6 }, -- delimiters, like `; . , `
-    -- ["@punctuation.delimiter"] = { fg = c.c6 }, -- delimiters, like `; . , `
-    -- ["@punctuation.bracket"] = { fg = c.c6 }, -- brackets and parentheses
-    -- ["@punctuation.special"] = { fg = c.c6 }, -- punctuation that does not fall into above categories, like `{}` in string interpolation
+    ["@punctuation.delimiter"] = { fg = c.c6 }, -- delimiters, like `; . , `
+    ["@punctuation.bracket"] = { fg = c.c6 }, -- brackets and parentheses
+    ["@punctuation.special"] = { fg = c.c6 }, -- punctuation that does not fall into above categories, like `{}` in string interpolation
 
     -- comment
     ["@comment"] = hl.syntax["Comment"],
