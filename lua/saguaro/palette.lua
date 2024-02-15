@@ -1,10 +1,9 @@
 return {
-  night = {
+  night = { -- icebreaker?
     bg = "#181818", -- black
-    -- bg0 = "#151515", -- black -dim
     -- bg0 = "#1b1a20", -- purple
     -- bg0 = "#181a1b", -- green
-    -- bg0 = "#1e1e1e", -- brown
+    -- bg0 = "#1e1e1e", -- brown -- coffeecat?
 
     line = "#4f4f4f", -- float
     float = "#121212", -- float

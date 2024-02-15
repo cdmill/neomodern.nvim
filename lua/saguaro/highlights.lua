@@ -181,7 +181,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     ["@keyword"] = hl.syntax["Statement"], -- keywords that don't fall in previous categories
     ["@keyword.function"] = hl.syntax["Function"], -- keywords used to define a function
     ["@keyword.conditional"] = hl.syntax["Conditional"], -- keywords used to define a function
-    ["@keyword.operator"] = hl.syntax["Statement"], -- new keyword operator
+    ["@keyword.operator"] = hl.syntax["Conditional"], -- new keyword operator
     ["@keyword.import"] = hl.syntax["Include"], -- includes, like '#include' in c, 'require' in lua
     ["@keyword.storage"] = hl.syntax["StorageClass"], -- visibility/life-time 'static'
     ["@keyword.repeat"] = hl.syntax["Repeat"], -- for keywords related to loops
@@ -555,6 +555,7 @@ hl.plugins.telescope = {
   TelescopePromptPrefix = { fg = c.c1 },
   TelescopeSelection = { fg = c.c16, bg = c.bg },
   TelescopeSelectionCaret = { fg = c.c16 },
+  TelescopeResultsNormal = { fg = c.c6 },
 }
 
 hl.plugins.dashboard = {
