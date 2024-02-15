@@ -46,7 +46,7 @@ hl.common = {
   Directory = { fg = c.c1 },
   ErrorMsg = { fg = c.c9, fmt = "bold" },
   EndOfBuffer = { fg = config.show_eob and c.c4 or c.bg },
-  FloatBorder = { fg = c.c5, bg = config.transparent and c.none or c.float },
+  FloatBorder = { fg = c.c5, bg = config.transparent and c.none or c.line },
   FloatTitle = { fg = c.c5, bg = c.float },
   Folded = { fg = c.c6, bg = config.transparent and c.none or c.c3 },
   FoldColumn = { fg = c.c6, bg = config.transparent and c.none or c.bg },
@@ -87,7 +87,7 @@ hl.common = {
   WarningMsg = { fg = c.c16, fmt = "bold" },
   Whitespace = { fg = c.c5 },
   WildMenu = { fg = c.bg, bg = c.c11 },
-  WinSeparator = { fg = c.float },
+  WinSeparator = { fg = c.line },
 }
 
 hl.syntax = {
@@ -131,7 +131,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     -- identifiers
     ["@variable"] = hl.syntax["Identifier"], -- any variable that does not have another highlight
     ["@variable.builtin"] = hl.syntax["Label"], -- variable names that are defined by the language, like 'this' or 'self'
-    -- ["@variable.parameter"] = { fg = c.c9 }, -- parameters of a function
+    ["@variable.parameter"] = { fg = c.c17 }, -- parameters of a function
     -- ["@variable.field"] = { fg = c.c12 }, -- fields
     -- ["@variable.member"] = { fg = c.c0 }, -- fields
 
@@ -181,7 +181,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     ["@keyword"] = hl.syntax["Statement"], -- keywords that don't fall in previous categories
     ["@keyword.function"] = hl.syntax["Function"], -- keywords used to define a function
     ["@keyword.conditional"] = hl.syntax["Conditional"], -- keywords used to define a function
-    ["@keyword.operator"] = hl.syntax["Operator"], -- new keyword operator
+    ["@keyword.operator"] = hl.syntax["Statement"], -- new keyword operator
     ["@keyword.import"] = hl.syntax["Include"], -- includes, like '#include' in c, 'require' in lua
     ["@keyword.storage"] = hl.syntax["StorageClass"], -- visibility/life-time 'static'
     ["@keyword.repeat"] = hl.syntax["Repeat"], -- for keywords related to loops
@@ -550,7 +550,7 @@ hl.plugins.nvim_tree = {
   NvimTreeFolderName = { fg = c.c11 },
 }
 hl.plugins.telescope = {
-  TelescopeBorder = { fg = c.c4 },
+  TelescopeBorder = { fg = c.line },
   TelescopeMatching = { fg = c.c16, fmt = "bold" },
   TelescopePromptPrefix = { fg = c.c1 },
   TelescopeSelection = { fg = c.c16, bg = c.bg },
