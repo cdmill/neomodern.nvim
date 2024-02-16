@@ -555,7 +555,7 @@ hl.plugins.telescope = {
   TelescopePromptPrefix = { fg = c.c1 },
   TelescopeSelection = { fg = c.c16, bg = c.bg },
   TelescopeSelectionCaret = { fg = c.c16 },
-  TelescopeResultsNormal = { fg = c.c6 },
+  TelescopeResultsNormal = util.darken(c.c6, 0.1, c.bg),
 }
 
 hl.plugins.dashboard = {
