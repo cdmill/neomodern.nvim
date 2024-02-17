@@ -21,7 +21,7 @@ local function vim_highlights(highlights)
 end
 
 hl.common = {
-  ColorColumn = { bg = c.c3 },
+  ColorColumn = { bg = c.line },
   Conceal = { fg = c.c5, bg = c.c3 },
   CurSearch = { fg = c.c16, bg = c.c5 },
   Cursor = { fmt = "reverse" },
@@ -30,7 +30,7 @@ hl.common = {
   lCursor = { fmt = "reverse" },
   CursorIM = { fmt = "reverse" },
   CursorColumn = { bg = c.c3 },
-  CursorLine = { bg = c.float },
+  CursorLine = { bg = c.line },
   CursorLineNr = { fg = c.c2 },
   Debug = { fg = c.c17 },
   debugPC = { fg = c.bg, bg = c.c7 },
@@ -48,13 +48,13 @@ hl.common = {
   EndOfBuffer = { fg = config.show_eob and c.c4 or c.bg },
   FloatBorder = { fg = c.c5, bg = config.transparent and c.none or c.line },
   FloatTitle = { fg = c.c5, bg = c.float },
-  Folded = { fg = c.c6, bg = config.transparent and c.none or c.c3 },
+  Folded = { fg = c.c6, bg = config.transparent and c.none or c.line },
   FoldColumn = { fg = c.c6, bg = config.transparent and c.none or c.bg },
   IncSearch = { fg = c.c16, bg = c.c5 },
-  LineNr = { fg = c.c8 },
+  LineNr = { fg = c.c5 },
   MatchParen = { fg = c.bg, bg = c.c16 },
   MoreMsg = { fg = c.c11, fmt = "bold" },
-  MsgSeparator = { fg = c.c1, bg = c.c3, fmt = "bold" },
+  MsgSeparator = { fg = c.c1, bg = c.line, fmt = "bold" },
   NonText = { fg = c.c5 },
   Normal = { fg = c.c7, bg = config.transparent and c.none or c.bg },
   NormalFloat = { fg = c.c7, bg = config.transparent and c.none or c.float },
@@ -87,7 +87,7 @@ hl.common = {
   WarningMsg = { fg = c.c16, fmt = "bold" },
   Whitespace = { fg = c.c5 },
   WildMenu = { fg = c.bg, bg = c.c11 },
-  WinSeparator = { fg = c.line },
+  WinSeparator = { fg = c.border },
 }
 
 hl.syntax = {
@@ -212,7 +212,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     ["@markup.list.checked"] = { fg = c.c16 }, -- todo checked
     ["@markup.list.unchecked"] = { fg = c.c10 }, -- todo unchecked
     ["@markup.raw"] = { fg = c.c12 }, -- inline code in markdown, python doc `"""`
-    ["@markup.math"] = { fg = c.c11 }, -- math environments, like `$$` in latex
+    ["@markup.math"] = { fg = c.c9 }, -- math environments, like `$$` in latex
 
     -- diff
     ["@diff.plus"] = { fg = c.c0 }, -- added text (diff files)
@@ -550,7 +550,7 @@ hl.plugins.nvim_tree = {
   NvimTreeFolderName = { fg = c.c11 },
 }
 hl.plugins.telescope = {
-  TelescopeBorder = { fg = c.line },
+  TelescopeBorder = { fg = c.border },
   TelescopeMatching = { fg = c.c16, fmt = "bold" },
   TelescopePromptPrefix = { fg = c.c1 },
   TelescopeSelection = { fg = c.c16, bg = c.bg },

@@ -1,11 +1,12 @@
 return {
-  night = { -- icebreaker?
+  icebreaker = {
     bg = "#181818", -- black
     -- bg0 = "#1b1a20", -- purple
     -- bg0 = "#181a1b", -- green
     -- bg0 = "#1e1e1e", -- brown -- coffeecat?
 
-    line = "#4f4f4f", -- float
+    line = "#1f1f1f", -- line color (eg cursorline)
+    border = "#4f4f4f", -- border color
     float = "#121212", -- float
     c0 = "#6A8570", -- dark green: property
     c1 = "#bfce94", -- light green: string
@@ -15,7 +16,6 @@ return {
     c5 = "#4f5b58", -- green grey: comment
     c6 = "#859289", -- light green grey: punctuation
     c7 = "#bbbbbb", -- white: text
-    c8 = "#525151", -- red grey: relnum
     c9 = "#e67e80", -- red: parameter
     c10 = "#b7c3e3", -- light blue: statement
     c11 = "#8799cf", -- dark blue: function
@@ -31,7 +31,7 @@ return {
     c21 = "#45443c", -- vis yellow
   },
   -- TODO:
-  dusk = {
+  coffeecat = {
     base = "#151515",
     line = "#181818",
     float = "#1f1f1f",

@@ -1,6 +1,6 @@
 local M = {}
 
-M.styles_list = { "night", "dusk", "day", "dawn" }
+M.styles_list = { "icebreaker", "coffeecat", "day", "dawn" }
 
 ---Change saguaro option (vim.g.saguaro_config.option)
 ---It can't be changed directly by modifying that field due to a Neovim lua bug with global variables (saguaro_config is a global variable)
@@ -23,7 +23,7 @@ function M.colorscheme()
   if vim.o.background == "light" then
     M.set_options("style", "day")
   elseif vim.g.saguaro_config.style == "light" then
-    M.set_options("style", "night")
+    M.set_options("style", "icebreaker")
   end
   require("saguaro.highlights").setup()
   require("saguaro.terminal").setup()
@@ -47,7 +47,7 @@ end
 
 local default_config = {
   -- Main options --
-  style = "night", -- choose between 'night', 'dusk', 'day', 'dawn'
+  style = "icebreaker", -- choose between 'icebreaker', 'coffeecat', 'day', 'dawn'
   toggle_style_key = nil,
   toggle_style_list = M.styles_list,
   transparent = false, -- don't set background
