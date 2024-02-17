@@ -8,7 +8,7 @@ return {
     line = "#1f1f1f", -- line color (eg cursorline)
     border = "#4f4f4f", -- border color
     float = "#121212", -- float
-    c0 = "#6A8570", -- dark green: property
+    c0 = "#6d9476", -- dark green: property
     c1 = "#bfce94", -- light green: string
     c2 = "#99ae9c", -- agave green: cursorlinenr
     c3 = "#232925", -- dark agave green: color col
