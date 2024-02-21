@@ -43,7 +43,7 @@ hl.common = {
   DiffRemoved = { fg = c.c9 },
   DiffFile = { fg = c.c15 },
   DiffIndexLine = { fg = c.c5 },
-  Directory = { fg = c.c1 },
+  Directory = { fg = c.c11 },
   ErrorMsg = { fg = c.c9, fmt = "bold" },
   EndOfBuffer = { fg = config.show_eob and c.c4 or c.bg },
   FloatBorder = { fg = c.c5, bg = config.transparent and c.none or c.line },
