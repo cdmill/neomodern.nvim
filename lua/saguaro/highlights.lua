@@ -22,14 +22,14 @@ end
 
 hl.common = {
   ColorColumn = { bg = c.line },
-  Conceal = { fg = c.c5, bg = c.c3 },
+  Conceal = { fg = c.c5, bg = c.c4 },
   CurSearch = { fg = c.c16, bg = c.c5 },
   Cursor = { fmt = "reverse" },
   vCursor = { fmt = "reverse" },
   iCursor = { fmt = "reverse" },
   lCursor = { fmt = "reverse" },
   CursorIM = { fmt = "reverse" },
-  CursorColumn = { bg = c.c3 },
+  CursorColumn = { bg = c.line },
   CursorLine = { bg = c.line },
   CursorLineNr = { fg = c.c2 },
   Debug = { fg = c.c17 },
@@ -72,12 +72,12 @@ hl.common = {
   SpellLocal = { fg = c.none, fmt = "undercurl", sp = c.c12 },
   SpellRare = { fg = c.none, fmt = "undercurl", sp = c.c14 },
   StatusLine = { fg = c.c7, bg = c.c4 },
-  StatusLineTerm = { fg = c.c7, bg = c.c3 },
-  StatusLineNC = { fg = c.c5, bg = c.c3 },
-  StatusLineTermNC = { fg = c.c5, bg = c.c3 },
+  StatusLineTerm = { fg = c.c7, bg = c.line },
+  StatusLineNC = { fg = c.c5, bg = c.c4 },
+  StatusLineTermNC = { fg = c.c5, bg = c.line },
   Substitute = { fg = c.bg, bg = c.c7 },
-  TabLine = { fg = c.c7, bg = c.c3 },
-  TabLineFill = { fg = c.c5, bg = c.c3 },
+  TabLine = { fg = c.c7, bg = c.line },
+  TabLineFill = { fg = c.c5, bg = c.line },
   TabLineSel = { fg = c.bg, bg = c.c7 },
   Terminal = { fg = c.c7, bg = config.transparent and c.none or c.bg },
   ToolbarButton = { fg = c.bg, bg = c.c18 },
@@ -101,7 +101,7 @@ hl.syntax = {
   Float = { fg = c.c9 }, -- float constants
   Function = { fg = c.c11, fmt = config.code_style.functions }, -- functions
   Error = { fg = c.c9 }, -- (preferred) any erroneous construct
-  Exception = { fg = c.c13 }, -- 'try', 'catch', 'throw' TODO:
+  Exception = { fg = c.c13 }, -- 'try', 'catch', 'throw'
   Identifier = { fg = c.c10, fmt = config.code_style.variables }, -- (preferred) any variable
   Include = { fg = c.c13, fmt = config.code_style.keywords }, -- preprocessor '#include'
   Keyword = { fg = c.c2, fmt = config.code_style.keywords }, -- any other keyword
@@ -409,7 +409,7 @@ hl.plugins.barbar = {
   BufferCurrent = { fmt = "bold" },
   BufferCurrentMod = { fg = c.c16, fmt = "bold,italic" },
   BufferCurrentSign = { fg = c.c14 },
-  BufferInactiveMod = { fg = c.c6, bg = c.c3, fmt = "italic" },
+  BufferInactiveMod = { fg = c.c6, bg = c.line, fmt = "italic" },
   BufferVisible = { fg = c.c6, bg = c.bg },
   BufferVisibleMod = { fg = c.c17, bg = c.bg, fmt = "italic" },
   BufferVisibleIndex = { fg = c.c6, bg = c.bg },
@@ -496,8 +496,8 @@ hl.plugins.gitsigns = {
 hl.plugins.neo_tree = {
   NeoTreeNormal = { fg = c.c7, bg = config.transparent and c.none or c.float },
   NeoTreeNormalNC = { fg = c.c7, bg = config.transparent and c.none or c.float },
-  NeoTreeVertSplit = { fg = c.c3, bg = config.transparent and c.none or c.c3 },
-  NeoTreeWinSeparator = { fg = c.c3, bg = config.transparent and c.none or c.c3 },
+  NeoTreeVertSplit = { fg = c.c4, bg = config.transparent and c.none or c.c4 },
+  NeoTreeWinSeparator = { fg = c.c4, bg = config.transparent and c.none or c.c4 },
   NeoTreeEndOfBuffer = {
     fg = config.show_eob and c.c4 or c.float,
     bg = config.transparent and c.none or c.float,
@@ -612,13 +612,13 @@ hl.plugins.indent_blankline = {
   IndentBlanklineIndent4 = { fg = c.c6 },
   IndentBlanklineIndent5 = { fg = c.c14 },
   IndentBlanklineIndent6 = { fg = c.c9 },
-  IndentBlanklineChar = { fg = c.c3, fmt = "nocombine" },
+  IndentBlanklineChar = { fg = c.c4, fmt = "nocombine" },
   IndentBlanklineContextChar = { fg = c.c5, fmt = "nocombine" },
   IndentBlanklineContextStart = { sp = c.c5, fmt = "underline" },
   IndentBlanklineContextSpaceChar = { fmt = "nocombine" },
 
   -- Ibl v3
-  IblIndent = { fg = c.c3, fmt = "nocombine" },
+  IblIndent = { fg = c.c4, fmt = "nocombine" },
   IblWhitespace = { fg = c.c5, fmt = "nocombine" },
   IblScope = { fg = c.c5, fmt = "nocombine" },
 }
@@ -649,7 +649,7 @@ hl.plugins.mini = {
 
   MiniStatuslineDevinfo = { fg = c.c7, bg = c.c4 },
   MiniStatuslineFileinfo = { fg = c.c7, bg = c.c4 },
-  MiniStatuslineFilename = { fg = c.c5, bg = c.c3 },
+  MiniStatuslineFilename = { fg = c.c5, bg = c.c4 },
   MiniStatuslineInactive = { fg = c.c5, bg = c.bg },
   MiniStatuslineModeCommand = { fg = c.bg, bg = c.c17, fmt = "bold" },
   MiniStatuslineModeInsert = { fg = c.bg, bg = c.c11, fmt = "bold" },
@@ -661,10 +661,10 @@ hl.plugins.mini = {
   MiniSurround = { fg = c.bg, bg = c.c16 },
 
   MiniTablineCurrent = { fmt = "bold" },
-  MiniTablineFill = { fg = c.c5, bg = c.c3 },
-  MiniTablineHidden = { fg = c.c7, bg = c.c3 },
+  MiniTablineFill = { fg = c.c5, bg = c.c4 },
+  MiniTablineHidden = { fg = c.c7, bg = c.c4 },
   MiniTablineModifiedCurrent = { fg = c.c16, fmt = "bold,italic" },
-  MiniTablineModifiedHidden = { fg = c.c6, bg = c.c3, fmt = "italic" },
+  MiniTablineModifiedHidden = { fg = c.c6, bg = c.c4, fmt = "italic" },
   MiniTablineModifiedVisible = { fg = c.c17, bg = c.bg, fmt = "italic" },
   -- TODO:
   -- MiniTablineTabpagesection = { fg = c.bg, bg = c.bg_c17 },

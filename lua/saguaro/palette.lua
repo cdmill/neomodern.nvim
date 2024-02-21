@@ -11,7 +11,7 @@ return {
     c0 = "#6d9476", -- dark green: property
     c1 = "#bfce94", -- light green: string
     c2 = "#99ae9c", -- agave green: cursorlinenr
-    c3 = "#232925", -- dark agave green: color col
+    c3 = "#1b2033", -- dark agave green: color col
     c4 = "#3c4841", -- med agave green: telescope border
     c5 = "#4f5b58", -- green grey: comment
     c6 = "#859289", -- light green grey: punctuation
