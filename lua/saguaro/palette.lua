@@ -8,10 +8,10 @@ return {
     line = "#1f1f1f", -- line color (eg cursorline)
     border = "#4f4f4f", -- border color
     float = "#121212", -- float
-    c0 = "#6d9476", -- dark green: property
+    c0 = "#4e8a7c", -- dark green: property
     c1 = "#bfce94", -- light green: string
     c2 = "#99ae9c", -- agave green: cursorlinenr
-    c3 = "#1b2033", -- dark agave green: color col
+    c3 = "#282c38", -- dark agave green: color col
     c4 = "#3c4841", -- med agave green: telescope border
     c5 = "#4f5b58", -- green grey: comment
     c6 = "#859289", -- light green grey: punctuation
@@ -21,13 +21,13 @@ return {
     c11 = "#8799cf", -- dark blue: function
     c12 = "#d699b6", -- pink
     c13 = "#91809e", -- purple: repeat, conditional
-    c14 = "#A07A93", -- plum
-    c15 = "#b98d7b", -- brown
+    c14 = "#784e6b", -- plum
+    c15 = "#C5947C", -- brown
     c16 = "#ecae6d", -- orange
     c17 = "#f1cd92", -- yellow
     c18 = "#4c3743", -- vis red
     c19 = "#3c4841", -- vis green
-    c20 = "#384b55", -- vis blue
+    c20 = "#282c38", -- vis blue
     c21 = "#45443c", -- vis yellow
   },
   -- TODO:

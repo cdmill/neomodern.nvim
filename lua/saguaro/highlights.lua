@@ -58,10 +58,10 @@ hl.common = {
   NonText = { fg = c.c5 },
   Normal = { fg = c.c7, bg = config.transparent and c.none or c.bg },
   NormalFloat = { fg = c.c7, bg = config.transparent and c.none or c.float },
-  Pmenu = { fg = c.c7, bg = c.c3 },
-  PmenuSbar = { fg = c.none, bg = c.c3 },
+  Pmenu = { fg = c.c7, bg = c.c20 },
+  PmenuSbar = { fg = c.none, bg = c.c20 },
   PmenuSel = { fg = c.c16 },
-  PmenuThumb = { fg = c.none, bg = c.c3 },
+  PmenuThumb = { fg = c.none, bg = c.c20 },
   Question = { fg = c.c17 },
   QuickFixLine = { fg = c.c11, fmt = "underline" },
   Search = { fg = c.c11, bg = c.c5 },
@@ -117,7 +117,7 @@ hl.syntax = {
   SpecialComment = { fg = c.c16, fmt = config.code_style.comments }, -- special things inside comments
   Statement = { fg = c.c2 }, -- (preferred) any statement
   StorageClass = { fg = c.c13, fmt = config.code_style.keywords }, -- 'static', 'volatile' etc
-  String = { fg = c.c1, fmt = config.code_style.strings }, -- string constants
+  String = { fg = c.c14, fmt = config.code_style.strings }, -- string constants
   Structure = { fg = c.c13 }, -- 'struct', 'union', 'enum' etc
   Tag = { fg = c.c17 }, -- can use <C-}> on this
   Title = { fg = c.c0 },
@@ -131,7 +131,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     -- identifiers
     ["@variable"] = hl.syntax["Identifier"], -- any variable that does not have another highlight
     ["@variable.builtin"] = hl.syntax["Label"], -- variable names that are defined by the language, like 'this' or 'self'
-    ["@variable.parameter"] = { fg = c.c17 }, -- parameters of a function
+    ["@variable.parameter"] = { fg = c.c0 }, -- parameters of a function
     -- ["@variable.field"] = { fg = c.c12 }, -- fields
     -- ["@variable.member"] = { fg = c.c0 }, -- fields
 
