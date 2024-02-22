@@ -117,7 +117,7 @@ hl.syntax = {
   SpecialComment = { fg = c.c16, fmt = config.code_style.comments }, -- special things inside comments
   Statement = { fg = c.c2 }, -- (preferred) any statement
   StorageClass = { fg = c.c13, fmt = config.code_style.keywords }, -- 'static', 'volatile' etc
-  String = { fg = c.c14, fmt = config.code_style.strings }, -- string constants
+  String = { fg = c.c1, fmt = config.code_style.strings }, -- string constants
   Structure = { fg = c.c13 }, -- 'struct', 'union', 'enum' etc
   Tag = { fg = c.c17 }, -- can use <C-}> on this
   Title = { fg = c.c0 },
