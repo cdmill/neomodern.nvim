@@ -91,7 +91,7 @@ hl.common = {
 }
 
 hl.syntax = {
-  Boolean = { fg = c.c12 }, -- boolean constants
+  Boolean = { fg = c.c15 }, -- boolean constants
   Character = { fg = c.c16 }, -- character constants
   Comment = { fg = c.c5, fmt = config.code_style.comments }, -- comments
   Conditional = { fg = c.c13, fmt = config.code_style.keywords }, -- conditionals
@@ -103,7 +103,7 @@ hl.syntax = {
   Error = { fg = c.c9 }, -- (preferred) any erroneous construct
   Exception = { fg = c.c13 }, -- 'try', 'catch', 'throw'
   Identifier = { fg = c.c10, fmt = config.code_style.variables }, -- (preferred) any variable
-  Include = { fg = c.c13, fmt = config.code_style.keywords }, -- preprocessor '#include'
+  Include = { fg = c.c2, fmt = config.code_style.keywords }, -- preprocessor '#include'
   Keyword = { fg = c.c2, fmt = config.code_style.keywords }, -- any other keyword
   Label = { fg = c.c12 }, -- 'case', 'default', etc
   Macro = { fg = c.c16, fmt = config.code_style.constants }, -- macros
@@ -112,14 +112,14 @@ hl.syntax = {
   PreProc = { fg = c.c6 }, -- (preferred) generic preprocessor
   PreCondit = { fg = c.c6 }, -- preprocessor conditionals '#if', '#endif' etc
   Repeat = { fg = c.c13, fmt = config.code_style.keywords }, -- loop keywords: 'for', 'while' etc
-  Special = { fg = c.c12 }, -- (preferred) any special symbol
+  Special = { fg = c.c16 }, -- (preferred) any special symbol
   SpecialChar = { fg = c.c16 }, -- special character in a constant
   SpecialComment = { fg = c.c16, fmt = config.code_style.comments }, -- special things inside comments
   Statement = { fg = c.c2 }, -- (preferred) any statement
   StorageClass = { fg = c.c13, fmt = config.code_style.keywords }, -- 'static', 'volatile' etc
   String = { fg = c.c1, fmt = config.code_style.strings }, -- string constants
   Structure = { fg = c.c13 }, -- 'struct', 'union', 'enum' etc
-  Tag = { fg = c.c17 }, -- can use <C-}> on this
+  Tag = { fg = c.c17 }, -- can use <C-]> on this
   Title = { fg = c.c0 },
   Type = { fg = c.c16 }, -- (preferred) 'int', 'long', 'char' etc
   Typedef = { fg = c.c17 }, -- 'typedef'
@@ -132,8 +132,8 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     ["@variable"] = hl.syntax["Identifier"], -- any variable that does not have another highlight
     ["@variable.builtin"] = hl.syntax["Label"], -- variable names that are defined by the language, like 'this' or 'self'
     ["@variable.parameter"] = { fg = c.c0 }, -- parameters of a function
+    ["@variable.member"] = { fg = c.c0 }, -- fields
     -- ["@variable.field"] = { fg = c.c12 }, -- fields
-    -- ["@variable.member"] = { fg = c.c0 }, -- fields
 
     ["@constant"] = hl.syntax["Constant"], -- constants
     -- ["@constant.builtin"] = hl.syntax["Constant"], -- constants that are defined by the language, like 'nil' in lua
@@ -163,7 +163,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     -- ["@type.definition"] = hl.syntax["Typedef"], -- typedefs
     -- ["@type.qualifier"] = { fg = c.c16 }, -- type qualifiers, like 'const'
 
-    ["@attribute"] = { fg = c.c12 }, -- attributes, like <decorators> in python
+    ["@attribute"] = { fg = c.c0 }, -- attributes, like <decorators> in python
     ["@property"] = { fg = c.c0 }, --same as TSField
 
     -- functions
@@ -175,13 +175,13 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     -- ["@function.method"] = hl.syntax["Function"], -- method definitions
     -- ["@function.method.call"] = hl.syntax["Function"], -- method calls
 
-    ["@constructor"] = { fg = c.c2, fmt = config.code_style.functions }, -- constructor calls and definitions, `= { }` in lua
+    ["@constructor"] = hl.syntax["Function"], -- constructor calls and definitions, `= { }` in lua
     ["@operator"] = hl.syntax["Operator"], -- operators, like `+`
 
     -- keywords
     ["@keyword"] = hl.syntax["Statement"], -- keywords that don't fall in previous categories
-    ["@keyword.function"] = hl.syntax["Function"], -- keywords used to define a function
-    ["@keyword.conditional"] = hl.syntax["Conditional"], -- keywords used to define a function
+    -- ["@keyword.function"] = hl.syntax["Function"], -- keywords used to define a function
+    ["@keyword.conditional"] = hl.syntax["Conditional"], -- keywords for conditional statements
     ["@keyword.operator"] = hl.syntax["Conditional"], -- new keyword operator
     ["@keyword.import"] = hl.syntax["Include"], -- includes, like '#include' in c, 'require' in lua
     ["@keyword.storage"] = hl.syntax["StorageClass"], -- visibility/life-time 'static'

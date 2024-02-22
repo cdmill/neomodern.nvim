@@ -1,7 +1,8 @@
 return {
   icebreaker = {
     bg = "#181818", -- black
-    -- bg0 = "#1b1a20", -- purple
+    -- bg0 = "#1b1a20", -- purple?
+    -- bg0 = "#1F1E25", -- purple?
     -- bg0 = "#181a1b", -- green
     -- bg0 = "#1e1e1e", -- brown -- coffeecat?
 
@@ -22,13 +23,14 @@ return {
     c12 = "#d699b6", -- pink
     c13 = "#91809e", -- purple: repeat, conditional
     c14 = "#784e6b", -- plum
-    c15 = "#C5947C", -- brown
+    c15 = "#B39581", -- brown
     c16 = "#ecae6d", -- orange
     c17 = "#f1cd92", -- yellow
     c18 = "#4c3743", -- vis red
     c19 = "#3c4841", -- vis green
     c20 = "#282c38", -- vis blue
     c21 = "#45443c", -- vis yellow
+    -- green? #7B9C78
   },
   -- TODO:
   coffeecat = {
