@@ -175,7 +175,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     -- ["@function.method"] = hl.syntax["Function"], -- method definitions
     -- ["@function.method.call"] = hl.syntax["Function"], -- method calls
 
-    ["@constructor"] = hl.syntax["Function"], -- constructor calls and definitions, `= { }` in lua
+    ["@constructor"] = hl.syntax["Statement"], -- constructor calls and definitions, `= { }` in lua
     ["@operator"] = hl.syntax["Operator"], -- operators, like `+`
 
     -- keywords
@@ -205,7 +205,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     ["@markup.italic"] = { fg = c.c7, fmt = "italic" }, -- italic
     ["@markup.underline"] = { fg = c.c7, fmt = "underline" }, -- underline
     ["@markup.strikethrough"] = { fg = c.c6, fmt = "strikethrough" }, -- strikethrough
-    ["@markup.heading"] = { fg = c.c11, fmt = "bold" }, -- markdown titles
+    ["@markup.heading"] = { fg = c.c2, fmt = "bold" }, -- markdown titles
     ["@markup.quote.markdown"] = { fg = c.c5 }, -- quotes with >
     ["@markup.link.uri"] = { fg = c.c10, fmt = "underline" }, -- urls, links, emails
     ["@markup.link"] = { fg = c.c13 }, -- text references, footnotes, citations, etc
