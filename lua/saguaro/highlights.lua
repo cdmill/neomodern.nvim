@@ -131,8 +131,8 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     -- identifiers
     ["@variable"] = hl.syntax["Identifier"], -- any variable that does not have another highlight
     ["@variable.builtin"] = hl.syntax["Label"], -- variable names that are defined by the language, like 'this' or 'self'
-    ["@variable.parameter"] = { fg = c.c13 }, -- parameters of a function
-    ["@variable.member"] = { fg = c.c13 }, -- fields
+    ["@variable.parameter"] = { fg = c.c0 }, -- parameters of a function
+    ["@variable.member"] = { fg = c.c0 }, -- fields
     -- ["@variable.field"] = { fg = c.c9 }, -- fields
 
     ["@constant"] = hl.syntax["Constant"], -- constants
@@ -237,7 +237,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
       ["@lsp.type.typeParameter"] = hl.treesitter["@type"],
       ["@lsp.type.keyword"] = hl.treesitter["@keyword"],
       ["@lsp.type.namespace"] = hl.treesitter["@module"],
-      ["@lsp.type.parameter"] = hl.treesitter["@variable"],
+      ["@lsp.type.parameter"] = hl.treesitter["@variable.parameter"],
       ["@lsp.type.property"] = hl.treesitter["@property"],
       ["@lsp.type.variable"] = hl.treesitter["@variable"],
       ["@lsp.type.macro"] = hl.treesitter["@function.macro"],

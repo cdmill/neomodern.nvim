@@ -1,16 +1,15 @@
 local c = require("saguaro.colors")
 local cfg = vim.g.saguaro_config
 local colors = {
-  norm = c.c2,
-  ins = c.c17,
-  vis = c.c13,
-  rep = c.c11,
-  comm = c.c16,
-  fg_dim = c.c5,
+  norm = c.c7,
+  ins = c.c13,
+  vis = c.c10,
+  rep = c.c8,
+  comm = c.c12,
+  fg_dim = c.c3,
   bg = c.float,
   bg2 = c.line,
   black = c.bg,
-  grey = c.bg3,
 }
 
 -- stylua: ignore
