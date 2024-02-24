@@ -9,27 +9,22 @@ return {
     line = "#1f1f1f", -- line color (eg cursorline)
     border = "#4f4f4f", -- border color
     float = "#121212", -- float
-    c0 = "#4e8a7c", -- dark green: property
+    c0 = "#58a897", -- dark green: property
     c1 = "#bfce94", -- light green: string
     c2 = "#99ae9c", -- agave green: cursorlinenr
-    c3 = "#282c38", -- dark agave green: color col
-    c4 = "#3c4841", -- med agave green: telescope border
-    c5 = "#4f5b58", -- green grey: comment
-    c6 = "#859289", -- light green grey: punctuation
-    c7 = "#bbbbbb", -- white: text
-    c9 = "#e67e80", -- red: parameter
-    c10 = "#b7c3e3", -- light blue: statement
-    c11 = "#8799cf", -- dark blue: function
-    c12 = "#d699b6", -- pink
-    c13 = "#91809e", -- purple: repeat, conditional
-    c14 = "#784e6b", -- plum
-    c15 = "#B39581", -- brown
-    c16 = "#ecae6d", -- orange
-    c17 = "#f1cd92", -- yellow
-    c18 = "#4c3743", -- vis red
-    c19 = "#3c4841", -- vis green
-    c20 = "#282c38", -- vis blue
-    c21 = "#45443c", -- vis yellow
+    c3 = "#505858", -- grey: comment
+    c4 = "#859289", -- light green grey: punctuation
+    c5 = "#bbbbbb", -- white: text
+    c6 = "#e67e80", -- red: parameter
+    c7 = "#b7c3e3", -- light blue: statement
+    c8 = "#8799cf", -- dark blue: function
+    c9 = "#d699b6", -- pink
+    c10 = "#9c7bb8", -- purple: repeat, conditional
+    c11 = "#B39581", -- brown
+    c12 = "#ecae6d", -- orange
+    c13 = "#f1cd92", -- yellow
+    c14 = "#4c3743", -- vis red
+    c15 = "#282c38", -- vis blue
     -- green? #7B9C78
   },
   -- TODO:
