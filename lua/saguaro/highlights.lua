@@ -92,10 +92,10 @@ hl.common = {
 
 hl.syntax = {
   Boolean = { fg = c.c6 }, -- boolean constants
-  Character = { fg = c.c13 }, -- character constants
+  Character = { fg = c.c12 }, -- character constants
   Comment = { fg = c.c3, fmt = config.code_style.comments }, -- comments
   Conditional = { fg = c.c10, fmt = config.code_style.keywords }, -- conditionals
-  Constant = { fg = c.c13, fmt = config.code_style.constants }, -- (preferred) any constant
+  Constant = { fg = c.c12, fmt = config.code_style.constants }, -- (preferred) any constant
   Define = { fg = c.c4 }, -- preprocessor '#define'
   Delimiter = { fg = c.c4 }, -- delimiter characters
   Float = { fg = c.c6 }, -- float constants
