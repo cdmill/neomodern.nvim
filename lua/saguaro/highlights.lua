@@ -115,7 +115,7 @@ hl.syntax = {
   Special = { fg = c.c12 }, -- (preferred) any special symbol
   SpecialChar = { fg = c.c12 }, -- special character in a constant
   SpecialComment = { fg = c.c12, fmt = config.code_style.comments }, -- special things inside comments
-  Statement = { fg = c.c7 }, -- (preferred) any statement
+  Statement = { fg = c.c11 }, -- (preferred) any statement
   StorageClass = { fg = c.c12, fmt = config.code_style.keywords }, -- 'static', 'volatile' etc
   String = { fg = c.c1, fmt = config.code_style.strings }, -- string constants
   Structure = { fg = c.c12 }, -- 'struct', 'union', 'enum' etc
@@ -131,7 +131,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     -- identifiers
     ["@variable"] = hl.syntax["Identifier"], -- any variable that does not have another highlight
     ["@variable.builtin"] = hl.syntax["Label"], -- variable names that are defined by the language, like 'this' or 'self'
-    ["@variable.parameter"] = { fg = c.c13 }, -- parameters of a function
+    ["@variable.parameter"] = { fg = c.c7 }, -- parameters of a function
     ["@variable.member"] = { fg = c.c0 }, -- fields
     -- ["@variable.field"] = { fg = c.c9 }, -- fields
 
