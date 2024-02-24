@@ -103,12 +103,12 @@ hl.syntax = {
   Error = { fg = c.c6 }, -- (preferred) any erroneous construct
   Exception = { fg = c.c10 }, -- 'try', 'catch', 'throw'
   Identifier = { fg = c.c5, fmt = config.code_style.variables }, -- (preferred) any variable
-  Include = { fg = c.c2, fmt = config.code_style.keywords }, -- preprocessor '#include'
-  Keyword = { fg = c.c2, fmt = config.code_style.keywords }, -- any other keyword
+  Include = { fg = c.c13, fmt = config.code_style.keywords }, -- preprocessor '#include'
+  Keyword = { fg = c.c7, fmt = config.code_style.keywords }, -- any other keyword
   Label = { fg = c.c9 }, -- 'case', 'default', etc
   Macro = { fg = c.c12, fmt = config.code_style.constants }, -- macros
   Number = { fg = c.c6 }, -- number constant
-  Operator = { fg = c.c5 }, -- '+', '*', 'sizeof' etc
+  Operator = { fg = c.c4 }, -- '+', '*', 'sizeof' etc
   PreProc = { fg = c.c4 }, -- (preferred) generic preprocessor
   PreCondit = { fg = c.c4 }, -- preprocessor conditionals '#if', '#endif' etc
   Repeat = { fg = c.c10, fmt = config.code_style.keywords }, -- loop keywords: 'for', 'while' etc
@@ -131,7 +131,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     -- identifiers
     ["@variable"] = hl.syntax["Identifier"], -- any variable that does not have another highlight
     ["@variable.builtin"] = hl.syntax["Label"], -- variable names that are defined by the language, like 'this' or 'self'
-    ["@variable.parameter"] = { fg = c.c0 }, -- parameters of a function
+    ["@variable.parameter"] = { fg = c.c13 }, -- parameters of a function
     ["@variable.member"] = { fg = c.c0 }, -- fields
     -- ["@variable.field"] = { fg = c.c9 }, -- fields
 
