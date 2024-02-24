@@ -92,37 +92,37 @@ hl.common = {
 
 hl.syntax = {
   Boolean = { fg = c.c6 }, -- boolean constants
-  Character = { fg = c.c12 }, -- character constants
+  Character = { fg = c.c13 }, -- character constants
   Comment = { fg = c.c3, fmt = config.code_style.comments }, -- comments
   Conditional = { fg = c.c10, fmt = config.code_style.keywords }, -- conditionals
-  Constant = { fg = c.c12, fmt = config.code_style.constants }, -- (preferred) any constant
+  Constant = { fg = c.c13, fmt = config.code_style.constants }, -- (preferred) any constant
   Define = { fg = c.c4 }, -- preprocessor '#define'
   Delimiter = { fg = c.c4 }, -- delimiter characters
   Float = { fg = c.c6 }, -- float constants
   Function = { fg = c.c8, fmt = config.code_style.functions }, -- functions
   Error = { fg = c.c6 }, -- (preferred) any erroneous construct
-  Exception = { fg = c.c10 }, -- 'try', 'catch', 'throw'
+  Exception = { fg = c.c12 }, -- 'try', 'catch', 'throw'
   Identifier = { fg = c.c5, fmt = config.code_style.variables }, -- (preferred) any variable
-  Include = { fg = c.c13, fmt = config.code_style.keywords }, -- preprocessor '#include'
-  Keyword = { fg = c.c7, fmt = config.code_style.keywords }, -- any other keyword
+  Include = { fg = c.c4, fmt = config.code_style.keywords }, -- preprocessor '#include'
+  Keyword = { fg = c.c11, fmt = config.code_style.keywords }, -- any other keyword
   Label = { fg = c.c9 }, -- 'case', 'default', etc
-  Macro = { fg = c.c12, fmt = config.code_style.constants }, -- macros
+  Macro = { fg = c.c13, fmt = config.code_style.constants }, -- macros
   Number = { fg = c.c6 }, -- number constant
-  Operator = { fg = c.c4 }, -- '+', '*', 'sizeof' etc
+  Operator = { fg = c.c2 }, -- '+', '*', 'sizeof' etc
   PreProc = { fg = c.c4 }, -- (preferred) generic preprocessor
   PreCondit = { fg = c.c4 }, -- preprocessor conditionals '#if', '#endif' etc
   Repeat = { fg = c.c10, fmt = config.code_style.keywords }, -- loop keywords: 'for', 'while' etc
-  Special = { fg = c.c12 }, -- (preferred) any special symbol
-  SpecialChar = { fg = c.c12 }, -- special character in a constant
-  SpecialComment = { fg = c.c12, fmt = config.code_style.comments }, -- special things inside comments
+  Special = { fg = c.c13 }, -- (preferred) any special symbol
+  SpecialChar = { fg = c.c13 }, -- special character in a constant
+  SpecialComment = { fg = c.c13, fmt = config.code_style.comments }, -- special things inside comments
   Statement = { fg = c.c11 }, -- (preferred) any statement
   StorageClass = { fg = c.c12, fmt = config.code_style.keywords }, -- 'static', 'volatile' etc
   String = { fg = c.c1, fmt = config.code_style.strings }, -- string constants
   Structure = { fg = c.c12 }, -- 'struct', 'union', 'enum' etc
   Tag = { fg = c.c13 }, -- can use <C-]> on this
   Title = { fg = c.c0 },
-  Type = { fg = c.c12 }, -- (preferred) 'int', 'long', 'char' etc
-  Typedef = { fg = c.c13 }, -- 'typedef'
+  Type = { fg = c.c13 }, -- (preferred) 'int', 'long', 'char' etc
+  Typedef = { fg = c.c12 }, -- 'typedef'
   Todo = { fg = c.c8, fmt = config.code_style.comments }, -- (preferred) 'TODO' keywords in comments
 }
 
@@ -175,7 +175,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     -- ["@function.method"] = hl.syntax["Function"], -- method definitions
     -- ["@function.method.call"] = hl.syntax["Function"], -- method calls
 
-    ["@constructor"] = hl.syntax["Statement"], -- constructor calls and definitions, `= { }` in lua
+    ["@constructor"] = { fg = c.c2 }, -- constructor calls and definitions, `= { }` in lua
     ["@operator"] = hl.syntax["Operator"], -- operators, like `+`
 
     -- keywords
