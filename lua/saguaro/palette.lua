@@ -14,7 +14,7 @@ return {
     c2 = "#99ae9c", -- agave green: cursorlinenr
     c3 = "#505858", -- grey: comment
     c4 = "#859289", -- light green grey: punctuation
-    c5 = "#bbbbbb", -- white: text
+    c5 = "#BFBEC4", -- white: text
     c6 = "#e67e80", -- red: parameter
     c7 = "#b7c3e3", -- light blue: statement
     c8 = "#8799cf", -- dark blue: function
