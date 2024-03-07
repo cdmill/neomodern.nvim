@@ -2,34 +2,32 @@ return {
   icebreaker = {
     bg = "#181818", -- black
     -- bg0 = "#1b1a20", -- purple?
-    -- bg0 = "#1F1E25", -- purple?
+    -- bg0 = "#1f1e25", -- purple?
     -- bg0 = "#181a1b", -- green
     -- bg0 = "#1e1e1e", -- brown -- coffeecat?
 
-    line = "#1f1f1f", -- line color (eg cursorline)
-    border = "#4f4f4f", -- border color
-    float = "#121212", -- float
-    c0 = "#58a897", -- dark teal: property
-    c1 = "#587858", -- dark green: string
-    c2 = "#99ae9c", -- agave green: cursorlinenr
-    c3 = "#555555", -- grey: comment
-    c5 = "#BBBAC1", -- white: text
-    c6 = "#B17049", -- red: operator
-    c6_dim = "#8c593a",
-    c7 = "#b7c3e3", -- light blue: statement
-    c8 = "#8799cf", -- dark blue: function
-    c9 = "#d699b6", -- pink
-    c10 = "#9c7bb8", -- purple: repeat, conditional
-    c10_dim = "#8c593a",
-    c11 = "#B39581", -- brown
-    c12 = "#ecae6d", -- orange
-    c13 = "#f1cd92", -- yellow
-    c13_dim = "#ad9368",
-    c14 = "#30232b", -- vis red
-    c15 = "#282c38", -- vis blue
-    -- green? #7B9C78
+    border = "#4f4f4f",
+    builtin = "#d699b6",
+    comment = "#555555",
+    conditional = "#9c7bb8",
+    constant = "#f1cd92",
+    error = "#8c593a",
+    fg = "#bbbac1",
+    float = "#121212",
+    func = "#8799cf",
+    hint = "#8c593a",
+    keyword = "#b39581",
+    line = "#1f1f1f",
+    menu = "#282c38",
+    operator = "#b17049",
+    param = "#b7c3e3",
+    property = "#58a897",
+    string = "#587858",
+    type = "#ecae6d",
+    visual = "#30232b",
+    warning = "#ad9368",
   },
-  -- TODO:
+  -- todo:
   coffeecat = {
     base = "#151515",
     line = "#181818",
@@ -43,13 +41,13 @@ return {
     orange = "#ecae6d",
     yellow = "#f1cd92",
     green = "#bfce94",
-    green2 = "#A4B276",
+    green2 = "#a4b276",
     blue = "#a5b7de",
     pink = "#d699b6",
     purple = "#91809e",
     brown = "#c59877",
   },
-  -- TODO:
+  -- todo:
   day = {
     base = "#151515",
     line = "#181818",
@@ -63,13 +61,13 @@ return {
     orange = "#ecae6d",
     yellow = "#f1cd92",
     green = "#bfce94",
-    green2 = "#A4B276",
+    green2 = "#a4b276",
     blue = "#a5b7de",
     pink = "#d699b6",
     purple = "#91809e",
     brown = "#c59877",
   },
-  -- TODO:
+  -- todo:
   dawn = {
     base = "#151515",
     line = "#181818",
@@ -83,7 +81,7 @@ return {
     orange = "#ecae6d",
     yellow = "#f1cd92",
     green = "#bfce94",
-    green2 = "#A4B276",
+    green2 = "#a4b276",
     blue = "#a5b7de",
     pink = "#d699b6",
     purple = "#91809e",
