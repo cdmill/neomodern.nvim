@@ -7,8 +7,8 @@ local colors = {
   rep = c.c8,
   comm = c.c12,
   fg_dim = c.c3,
-  bg = c.float,
-  bg2 = c.line,
+  bg_b = c.line,
+  bg_c = c.float,
   black = c.bg,
   lightblue = c.c7,
 }
@@ -16,21 +16,21 @@ local colors = {
 -- stylua: ignore
 local saguaro = {
   normal = {
-    a = { bg = cfg.lualine.transparent and c.none or colors.norm, fg = colors.norm, gui = "bold" },
-    b = { bg = cfg.lualine.transparent and c.none or colors.bg, fg = colors.lightblue },
-    c = { bg = cfg.lualine.transparent and c.none or colors.bg2, fg = colors.fg_dim },
+    a = { bg = cfg.lualine.transparent and c.none or colors.norm, fg = cfg.lualine.transparent and colors.norm or colors.black, gui = "bold" },
+    b = { bg = cfg.lualine.transparent and c.none or colors.bg_b, fg = colors.lightblue },
+    c = { bg = cfg.lualine.transparent and c.none or colors.bg_c, fg = colors.fg_dim },
   },
   insert = {
-    a = { bg = cfg.lualine.transparent and c.none or colors.ins, fg = colors.ins, gui = "bold" },
+    a = { bg = cfg.lualine.transparent and c.none or colors.ins, fg = cfg.lualine.transparent and colors.ins or colors.black, gui = "bold" },
   },
   visual = {
-    a = { bg = cfg.lualine.transparent and c.none or colors.vis, fg = colors.vis, gui = "bold" },
+    a = { bg = cfg.lualine.transparent and c.none or colors.vis, fg = cfg.lualine.transparent and colors.vis or colors.black, gui = "bold" },
   },
   replace = {
-    a = { bg = cfg.lualine.transparent and c.none or colors.rep, fg = colors.rep, gui = "bold" },
+    a = { bg = cfg.lualine.transparent and c.none or colors.rep, fg = cfg.lualine.transparent and colors.rep or colors.black, gui = "bold" },
   },
   command = {
-    a = { bg = cfg.lualine.transparent and c.none or colors.comm, fg = colors.comm, gui = "bold" },
+    a = { bg = cfg.lualine.transparent and c.none or colors.comm, fg = cfg.lualine.transparent and colors.comm or colors.black, gui = "bold" },
   },
 }
 

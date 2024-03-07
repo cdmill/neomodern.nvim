@@ -22,7 +22,7 @@ return {
     c11 = "#B39581", -- brown
     c12 = "#ecae6d", -- orange
     c13 = "#f1cd92", -- yellow
-    c14 = "#4c3743", -- vis red
+    c14 = "#30232b", -- vis red
     c15 = "#282c38", -- vis blue
     -- green? #7B9C78
   },
