@@ -1,7 +1,7 @@
 local c = require("saguaro.colors")
 local cfg = vim.g.saguaro_config
 local colors = {
-  norm = c.c7,
+  norm = c.c11,
   ins = c.c13,
   vis = c.c10,
   rep = c.c8,
@@ -10,13 +10,14 @@ local colors = {
   bg = c.float,
   bg2 = c.line,
   black = c.bg,
+  lightblue = c.c7,
 }
 
 -- stylua: ignore
 local saguaro = {
   normal = {
     a = { bg = cfg.lualine.transparent and c.none or colors.norm, fg = colors.norm, gui = "bold" },
-    b = { bg = cfg.lualine.transparent and c.none or colors.bg, fg = colors.comm },
+    b = { bg = cfg.lualine.transparent and c.none or colors.bg, fg = colors.lightblue },
     c = { bg = cfg.lualine.transparent and c.none or colors.bg2, fg = colors.fg_dim },
   },
   insert = {
