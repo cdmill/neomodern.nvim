@@ -512,8 +512,6 @@ function M.setup()
   for kind, color in pairs(lsp_kind_icons_color) do
     hl.plugins.cmp["CmpItemKind" .. kind] =
       { fg = color, fmt = config.cmp_itemkind_reverse and "reverse" }
-    hl.plugins.outline["Aerial" .. kind .. "Icon"] = { fg = color }
-    hl.plugins.navic["NavicIcons" .. kind] = { fg = color }
   end
 
   vim_highlights(hl.common)
