@@ -64,7 +64,7 @@ hl.common = {
   PmenuThumb = { fg = c.none, bg = c.c15 },
   Question = { fg = c.c13 },
   QuickFixLine = { fg = c.c8, fmt = "underline" },
-  Search = { fg = "#aaaaaa", bg = c.c3 },
+  Search = { fg = "#aaaaaa", bg = c.c14 },
   SignColumn = { fg = c.c5, bg = config.transparent and c.none or c.bg },
   SpecialKey = { fg = c.c3 },
   SpellBad = { fg = c.none, fmt = "undercurl", sp = c.c6 },
@@ -257,18 +257,10 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
   end
 end
 
-local diagnostics_error_color = config.diagnostics.darker
-    and util.darken(c.c6, 0.1, c.bg)
-  or c.c6
-local diagnostics_hint_color = config.diagnostics.darker
-    and util.darken(c.c10, 0.1, c.bg)
-  or c.c10
-local diagnostics_warn_color = config.diagnostics.darker
-    and util.darken(c.c13, 0.1, c.bg)
-  or c.c13
-local diagnostics_info_color = config.diagnostics.darker
-    and util.darken(c.c7, 0.1, c.bg)
-  or c.c7
+local diagnostics_error_color = config.diagnostics.darker and c.c6_dim or c.c6
+local diagnostics_hint_color = config.diagnostics.darker and c.c10_dim or c.c10
+local diagnostics_warn_color = config.diagnostics.darker and c.c13_dim or c.c13
+local diagnostics_info_color = config.diagnostics.darker and c.c8 or c.c7
 
 hl.plugins.lsp = {
   LspCxxHlGroupEnumConstant = { fg = c.c12 },

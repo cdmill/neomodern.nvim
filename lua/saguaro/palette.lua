@@ -15,13 +15,16 @@ return {
     c3 = "#555555", -- grey: comment
     c5 = "#BBBAC1", -- white: text
     c6 = "#B17049", -- red: operator
+    c6_dim = "#8c593a",
     c7 = "#b7c3e3", -- light blue: statement
     c8 = "#8799cf", -- dark blue: function
     c9 = "#d699b6", -- pink
     c10 = "#9c7bb8", -- purple: repeat, conditional
+    c10_dim = "#8c593a",
     c11 = "#B39581", -- brown
     c12 = "#ecae6d", -- orange
     c13 = "#f1cd92", -- yellow
+    c13_dim = "#ad9368",
     c14 = "#30232b", -- vis red
     c15 = "#282c38", -- vis blue
     -- green? #7B9C78

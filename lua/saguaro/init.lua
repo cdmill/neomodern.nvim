@@ -66,7 +66,7 @@ local default_config = {
 
   -- Lualine options --
   lualine = {
-    transparent = false, -- center bar (c) transparency
+    transparent = false, -- plain lualine (no backgrounds)
   },
 
   -- Custom Highlights --
