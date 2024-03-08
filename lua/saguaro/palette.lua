@@ -17,7 +17,7 @@ return {
     operator = "#e67e80",
     param = "#b7c3e3",
     property = "#58a897",
-    string = "#587858",
+    string = "#bfce94",
     type = "#ecae6d",
     visual = "#30232b",
     warning = "#ad9368",
