@@ -206,14 +206,14 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     ["@markup.italic"] = { fg = c.fg, fmt = "italic" }, -- italic
     ["@markup.underline"] = { fg = c.fg, fmt = "underline" }, -- underline
     ["@markup.strikethrough"] = { fg = c.comment, fmt = "strikethrough" }, -- strikethrough
-    ["@markup.heading"] = { fg = c.func, fmt = "bold" }, -- markdown titles
+    ["@markup.heading"] = { fg = c.keyword, fmt = "bold" }, -- markdown titles
     ["@markup.quote.markdown"] = { fg = c.comment }, -- quotes with >
     ["@markup.link.uri"] = { fg = c.param, fmt = "underline" }, -- urls, links, emails
-    ["@markup.link"] = { fg = c.string }, -- text references, footnotes, citations, etc
-    ["@markup.list"] = { fg = c.keyword },
+    ["@markup.link"] = { fg = c.builtin }, -- text references, footnotes, citations, etc
+    ["@markup.list"] = { fg = c.property },
     ["@markup.list.checked"] = { fg = c.func }, -- todo checked
     ["@markup.list.unchecked"] = { fg = c.param }, -- todo unchecked
-    ["@markup.raw"] = { fg = c.builtin }, -- inline code in markdown, python doc `"""`
+    ["@markup.raw"] = { fg = c.func }, -- inline code in markdown, python doc `"""`
     ["@markup.math"] = { fg = c.operator }, -- math environments, like `$$` in latex
 
     -- diff
@@ -432,7 +432,7 @@ hl.plugins.nvim_tree = {
 hl.plugins.telescope = {
   TelescopeBorder = { fg = c.border },
   TelescopeMatching = { fg = c.type, fmt = "bold" },
-  TelescopePromptPrefix = { fg = c.keyword },
+  TelescopePromptPrefix = { fg = c.property },
   TelescopeSelection = { fg = c.type, bg = c.bg },
   TelescopeSelectionCaret = { fg = c.type },
   TelescopeResultsNormal = { fg = c.fg },
