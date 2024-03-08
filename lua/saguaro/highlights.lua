@@ -31,7 +31,7 @@ hl.common = {
   CursorIM = { fmt = "reverse" },
   CursorColumn = { bg = c.line },
   CursorLine = { bg = c.line },
-  CursorLineNr = { fg = c.fg, bg = c.line },
+  CursorLineNr = { fg = c.fg },
   Debug = { fg = c.constant },
   debugPC = { fg = c.bg, bg = c.fg },
   debugBreakpoint = { fg = c.bg, bg = c.operator },
@@ -270,10 +270,10 @@ hl.plugins.lsp = {
   LspCxxHlSkippedRegion = { fg = c.comment },
   LspCxxHlSkippedRegionBeginEnd = { fg = c.operator },
 
-  DiagnosticError = { fg = c.operator, bg = c.line },
-  DiagnosticHint = { fg = c.conditional, bg = c.line },
-  DiagnosticInfo = { fg = c.param, bg = c.line, fmt = "italic" },
-  DiagnosticWarn = { fg = c.constant, bg = c.line },
+  DiagnosticError = { fg = c.operator },
+  DiagnosticHint = { fg = c.conditional },
+  DiagnosticInfo = { fg = c.param, fmt = "italic" },
+  DiagnosticWarn = { fg = c.constant },
 
   DiagnosticVirtualTextError = {
     bg = config.diagnostics.background
