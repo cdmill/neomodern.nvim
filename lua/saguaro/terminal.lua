@@ -1,6 +1,6 @@
 local M = {}
-local config = vim.g.saguaro_config
-local c = require("saguaro.colors")
+local config = vim.g.neomodern_config
+local c = require("neomodern.colors")
 
 function M.setup()
   if not config.term_colors then

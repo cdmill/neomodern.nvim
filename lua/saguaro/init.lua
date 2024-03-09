@@ -2,47 +2,47 @@ local M = {}
 
 M.styles_list = { "icebreaker", "coffeecat", "darkforest", "dawn" }
 
----Change saguaro option (vim.g.saguaro_config.option)
----It can't be changed directly by modifying that field due to a Neovim lua bug with global variables (saguaro_config is a global variable)
+---Change neomodern option (vim.g.neomodern_config.option)
+---It can't be changed directly by modifying that field due to a Neovim lua bug with global variables (neomodern_config is a global variable)
 ---@param opt string: option name
 ---@param value any: new value
 function M.set_options(opt, value)
-  local cfg = vim.g.saguaro_config
+  local cfg = vim.g.neomodern_config
   cfg[opt] = value
-  vim.g.saguaro_config = cfg
+  vim.g.neomodern_config = cfg
 end
 
----Apply the colorscheme (same as ':colorscheme saguaro')
+---Apply the colorscheme (same as ':colorscheme neomodern')
 function M.colorscheme()
   vim.cmd("hi clear")
   if vim.fn.exists("syntax_on") then
     vim.cmd("syntax reset")
   end
   vim.o.termguicolors = true
-  vim.g.colors_name = "saguaro"
+  vim.g.colors_name = "neomodern"
   if vim.o.background == "light" then
     M.set_options("style", "day")
-  elseif vim.g.saguaro_config.style == "light" then
+  elseif vim.g.neomodern_config.style == "light" then
     M.set_options("style", "icebreaker")
   end
-  require("saguaro.highlights").setup()
-  require("saguaro.terminal").setup()
+  require("neomodern.highlights").setup()
+  require("neomodern.terminal").setup()
 end
 
----Toggle between saguaro styles
+---Toggle between neomodern styles
 function M.toggle()
-  local index = vim.g.saguaro_config.toggle_style_index + 1
-  if index > #vim.g.saguaro_config.toggle_style_list then
+  local index = vim.g.neomodern_config.toggle_style_index + 1
+  if index > #vim.g.neomodern_config.toggle_style_list then
     index = 1
   end
-  M.set_options("style", vim.g.saguaro_config.toggle_style_list[index])
+  M.set_options("style", vim.g.neomodern_config.toggle_style_list[index])
   M.set_options("toggle_style_index", index)
-  if vim.g.saguaro_config.style == "light" then
+  if vim.g.neomodern_config.style == "light" then
     vim.o.background = "light"
   else
     vim.o.background = "dark"
   end
-  vim.api.nvim_command("colorscheme saguaro")
+  vim.api.nvim_command("colorscheme neomodern")
 end
 
 local default_config = {
@@ -81,33 +81,33 @@ local default_config = {
   },
 }
 
----Setup saguaro.nvim options, without applying colorscheme
+---Setup neomodern.nvim options, without applying colorscheme
 ---@param opts table: a table containing options
 function M.setup(opts)
-  if not vim.g.saguaro_config or not vim.g.saguaro_config.loaded then -- if it's the first time setup() is called
-    vim.g.saguaro_config =
-      vim.tbl_deep_extend("keep", vim.g.saguaro_config or {}, default_config)
+  if not vim.g.neomodern_config or not vim.g.neomodern_config.loaded then -- if it's the first time setup() is called
+    vim.g.neomodern_config =
+      vim.tbl_deep_extend("keep", vim.g.neomodern_config or {}, default_config)
     M.set_options("loaded", true)
     M.set_options("toggle_style_index", 0)
   end
   if opts then
-    vim.g.saguaro_config = vim.tbl_deep_extend("force", vim.g.saguaro_config, opts)
+    vim.g.neomodern_config = vim.tbl_deep_extend("force", vim.g.neomodern_config, opts)
     if opts.toggle_style_list then -- this table cannot be extended, it has to be replaced
       M.set_options("toggle_style_list", opts.toggle_style_list)
     end
   end
-  if vim.g.saguaro_config.toggle_style_key then
+  if vim.g.neomodern_config.toggle_style_key then
     vim.api.nvim_set_keymap(
       "n",
-      vim.g.saguaro_config.toggle_style_key,
-      '<cmd>lua require("saguaro").toggle()<cr>',
+      vim.g.neomodern_config.toggle_style_key,
+      '<cmd>lua require("neomodern").toggle()<cr>',
       { noremap = true, silent = true }
     )
   end
 end
 
 function M.load()
-  vim.api.nvim_command("colorscheme saguaro")
+  vim.api.nvim_command("colorscheme neomodern")
 end
 
 return M

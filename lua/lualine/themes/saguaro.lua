@@ -1,5 +1,5 @@
-local c = require("saguaro.colors")
-local cfg = vim.g.saguaro_config
+local c = require("neomodern.colors")
+local cfg = vim.g.neomodern_config
 local colors = {
   norm = c.keyword,
   ins = c.constant,
@@ -14,7 +14,7 @@ local colors = {
 }
 
 -- stylua: ignore
-local saguaro = {
+local neomodern = {
   normal = {
     a = { bg = cfg.lualine.transparent and c.none or colors.norm, fg = cfg.lualine.transparent and colors.norm or colors.black, gui = "bold" },
     b = { bg = cfg.lualine.transparent and c.none or colors.bg_b, fg = colors.lightblue },
@@ -34,4 +34,4 @@ local saguaro = {
   },
 }
 
-return saguaro
+return neomodern

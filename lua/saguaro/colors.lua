@@ -1,9 +1,9 @@
-local colors = require("saguaro.palette")
+local colors = require("neomodern.palette")
 
 local function select_colors()
   local selected = { none = "none" }
-  selected = vim.tbl_extend("force", selected, colors[vim.g.saguaro_config.style])
-  selected = vim.tbl_extend("force", selected, vim.g.saguaro_config.colors)
+  selected = vim.tbl_extend("force", selected, colors[vim.g.neomodern_config.style])
+  selected = vim.tbl_extend("force", selected, vim.g.neomodern_config.colors)
   return selected
 end
 

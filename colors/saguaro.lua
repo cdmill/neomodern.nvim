@@ -1,8 +1,8 @@
 for k in pairs(package.loaded) do
-  if k:match(".*saguaro.*") then
+  if k:match(".*neomodern.*") then
     package.loaded[k] = nil
   end
 end
 
-require("saguaro").setup()
-require("saguaro").colorscheme()
+require("neomodern").setup()
+require("neomodern").colorscheme()

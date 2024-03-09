@@ -1,6 +1,6 @@
-local c = require("saguaro.colors")
-local config = vim.g.saguaro_config
-local util = require("saguaro.util")
+local c = require("neomodern.colors")
+local config = vim.g.neomodern_config
+local util = require("neomodern.util")
 
 local M = {}
 local hl = { plugins = {} }
@@ -106,7 +106,7 @@ hl.syntax = {
   Identifier = { fg = c.fg, fmt = config.code_style.variables }, -- (preferred) any variable
   Include = { fg = c.keyword, fmt = config.code_style.keywords }, -- preprocessor '#include'
   Keyword = { fg = c.keyword, fmt = config.code_style.keywords }, -- any other keyword
-  Label = { fg = c.builtin }, -- 'case', 'default', etc
+  Label = { fg = c.conditional }, -- 'case', 'default', etc
   Macro = { fg = c.constant, fmt = config.code_style.constants }, -- macros
   Number = { fg = c.func }, -- number constant
   Operator = { fg = c.operator }, -- '+', '*', 'sizeof' etc
@@ -231,6 +231,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
   }
   if vim.api.nvim_call_function("has", { "nvim-0.9" }) == 1 then
     hl.lsp = {
+      ["@lsp.type.class"] = hl.treesitter["@type"],
       ["@lsp.type.comment"] = hl.treesitter["@comment"],
       ["@lsp.type.enum"] = hl.treesitter["@type"],
       ["@lsp.type.enumMember"] = hl.treesitter["@variable.builtin"],
@@ -531,9 +532,9 @@ function M.setup()
       if not color_name then
         vim.schedule(function()
           vim.notify(
-            'saguaro.nvim: unknown color "' .. name .. '"',
+            'neomodern.nvim: unknown color "' .. name .. '"',
             vim.log.levels.ERROR,
-            { title = "saguaro.nvim" }
+            { title = "neomodern.nvim" }
           )
         end)
         return ""
@@ -542,7 +543,7 @@ function M.setup()
     return prefix .. "=" .. color_name
   end
 
-  for group_name, group_settings in pairs(vim.g.saguaro_config.highlights) do
+  for group_name, group_settings in pairs(vim.g.neomodern_config.highlights) do
     vim.api.nvim_command(
       string.format(
         "highlight %s %s %s %s %s",
