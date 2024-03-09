@@ -131,13 +131,13 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
   hl.treesitter = {
     -- identifiers
     ["@variable"] = hl.syntax["Identifier"], -- any variable that does not have another highlight
-    ["@variable.builtin"] = hl.syntax["Label"], -- variable names that are defined by the language, like 'this' or 'self'
+    ["@variable.builtin"] = hl.syntax["Tag"], -- variable names that are defined by the language, like 'this' or 'self'
     ["@variable.parameter"] = { fg = c.param }, -- parameters of a function
     ["@variable.member"] = { fg = c.property }, -- fields
     -- ["@variable.field"] = { fg = c.builtin }, -- fields
 
     ["@constant"] = hl.syntax["Constant"], -- constants
-    ["@constant.builtin"] = hl.syntax["Label"], -- constants that are defined by the language, like 'nil' in lua
+    ["@constant.builtin"] = hl.syntax["Tag"], -- constants that are defined by the language, like 'nil' in lua
     -- ["@constant.macro"] = hl.syntax["Macro"], -- constants that are defined by macros like 'NULL' in c
 
     ["@label"] = hl.syntax["Label"], -- labels
@@ -160,7 +160,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
 
     -- types
     ["@type"] = hl.syntax["Type"], -- types
-    ["@type.builtin"] = hl.syntax["Label"], --builtin types
+    ["@type.builtin"] = hl.syntax["Tag"], --builtin types
     -- ["@type.definition"] = hl.syntax["Typedef"], -- typedefs
     -- ["@type.qualifier"] = { fg = c.type }, -- type qualifiers, like 'const'
 
@@ -169,7 +169,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
 
     -- functions
     ["@function"] = hl.syntax["Function"], -- functions
-    ["@function.builtin"] = hl.syntax["Label"], --builtin functions
+    ["@function.builtin"] = hl.syntax["Tag"], --builtin functions
     ["@function.macro"] = hl.syntax["Macro"], -- macro defined functions
     -- ["@function.call"] = { fg = c.func, fmt = config.code_style.functions }, -- function calls
     --
