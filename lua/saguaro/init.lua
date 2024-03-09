@@ -1,6 +1,6 @@
 local M = {}
 
-M.styles_list = { "icebreaker", "coffeecat", "day", "dawn" }
+M.styles_list = { "icebreaker", "coffeecat", "darkforest", "dawn" }
 
 ---Change saguaro option (vim.g.saguaro_config.option)
 ---It can't be changed directly by modifying that field due to a Neovim lua bug with global variables (saguaro_config is a global variable)
