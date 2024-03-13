@@ -95,4 +95,28 @@ return {
     visual = "#30232b",
     warning = "#ad9368",
   },
+  roseprime = {
+    bg = "#121212",
+    border = "#4f4f4f", --
+    builtin = "#ba7685",
+    comment = "#555555", --
+    conditional = "#9c7bb8", --
+    constant = "#8192C7",
+    error = "#8c593a", --
+    fg = "#bbbac1",
+    float = "#121212", --
+    func = "#ddadb4",
+    hint = "#8c593a", --
+    keyword = "#6b8f89",
+    line = "#1f1f1f", --
+    menu = "#282c38", --
+    operator = "#838196",
+    param = "#9d90a5",
+    property = "#a3849b",
+    string = "#d2af98",
+    type = "#a3b8b5",
+    visual = "#30232b", --
+    warning = "#ad9368", --
+    -- #e3afa8
+  },
 }

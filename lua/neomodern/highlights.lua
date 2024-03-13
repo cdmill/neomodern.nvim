@@ -92,102 +92,104 @@ hl.common = {
 }
 
 hl.syntax = {
-  Boolean = { fg = c.func }, -- boolean constants
-  Character = { fg = c.constant }, -- character constants
+  Boolean = { link = "Constant" }, -- boolean constants
+  Character = { link = "String" }, -- character constants
   Comment = { fg = c.comment, fmt = config.code_style.comments }, -- comments
-  Conditional = { fg = c.conditional, fmt = config.code_style.keywords }, -- conditionals
   Constant = { fg = c.constant, fmt = config.code_style.constants }, -- (preferred) any constant
-  Define = { fg = c.comment }, -- preprocessor '#define'
   Delimiter = { fg = c.fg }, -- delimiter characters
-  Float = { fg = c.func }, -- float constants
+  Float = { link = "Number" }, -- float constants
   Function = { fg = c.func, fmt = config.code_style.functions }, -- functions
   Error = { fg = c.operator }, -- (preferred) any erroneous construct
-  Exception = { fg = c.keyword }, -- 'try', 'catch', 'throw'
-  Identifier = { fg = c.fg, fmt = config.code_style.variables }, -- (preferred) any variable
-  Include = { fg = c.keyword, fmt = config.code_style.keywords }, -- preprocessor '#include'
+  Exception = { fg = c.conditional }, -- 'try', 'catch', 'throw'
+  Identifier = { fg = c.property, fmt = config.code_style.variables }, -- (preferred) any variable
   Keyword = { fg = c.keyword, fmt = config.code_style.keywords }, -- any other keyword
-  Label = { fg = c.conditional }, -- 'case', 'default', etc
-  Macro = { fg = c.constant, fmt = config.code_style.constants }, -- macros
+  -- Conditional = { fg = c.conditional, fmt = config.code_style.keywords }, -- conditionals
+  -- Repeat = { fg = c.conditional, fmt = config.code_style.keywords }, -- loop keywords: 'for', 'while' etc
+  -- Label = { fg = c.conditional }, -- 'case', 'default', etc
   Number = { fg = c.func }, -- number constant
   Operator = { fg = c.operator }, -- '+', '*', 'sizeof' etc
-  PreProc = { fg = c.param }, -- (preferred) generic preprocessor
-  PreCondit = { fg = c.comment }, -- preprocessor conditionals '#if', '#endif' etc
-  Repeat = { fg = c.conditional, fmt = config.code_style.keywords }, -- loop keywords: 'for', 'while' etc
+  PreProc = { fg = c.conditional }, -- (preferred) generic preprocessor
+  -- Define = { fg = c.comment }, -- preprocessor '#define'
+  -- Include = { fg = c.keyword, fmt = config.code_style.keywords }, -- preprocessor '#include'
+  -- Macro = { fg = c.constant, fmt = config.code_style.constants }, -- macros
+  -- PreCondit = { fg = c.comment }, -- preprocessor conditionals '#if', '#endif' etc
   Special = { fg = c.builtin }, -- (preferred) any special symbol
-  SpecialChar = { fg = c.param }, -- special character in a constant
-  SpecialComment = { fg = c.param, fmt = config.code_style.comments }, -- special things inside comments
+  -- SpecialChar = { fg = c.param }, -- special character in a constant
+  -- SpecialComment = { fg = c.param, fmt = config.code_style.comments }, -- special things inside comments
+  -- Tag = { fg = c.builtin }, -- can use <C-]> on this
   Statement = { fg = c.param }, -- (preferred) any statement
-  StorageClass = { fg = c.constant, fmt = config.code_style.keywords }, -- 'static', 'volatile' etc
   String = { fg = c.string, fmt = config.code_style.strings }, -- string constants
-  Structure = { fg = c.constant }, -- 'struct', 'union', 'enum' etc
-  Tag = { fg = c.builtin }, -- can use <C-]> on this
   Title = { fg = c.property },
   Type = { fg = c.type }, -- (preferred) 'int', 'long', 'char' etc
-  Typedef = { fg = c.constant }, -- 'typedef'
+  -- StorageClass = { fg = c.constant, fmt = config.code_style.keywords }, -- 'static', 'volatile' etc
+  -- Structure = { fg = c.constant }, -- 'struct', 'union', 'enum' etc
+  -- Typedef = { fg = c.constant }, -- 'typedef'
   Todo = { fg = c.func, fmt = config.code_style.comments }, -- (preferred) 'TODO' keywords in comments
 }
 
 if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
   hl.treesitter = {
     -- identifiers
-    ["@variable"] = hl.syntax["Identifier"], -- any variable that does not have another highlight
-    ["@variable.builtin"] = hl.syntax["Tag"], -- variable names that are defined by the language, like 'this' or 'self'
+    ["@variable"] = { link = "Identifier" }, -- any variable that does not have another highlight
+    ["@variable.builtin"] = { link = "Special" }, -- variable names that are defined by the language, like 'this' or 'self'
     ["@variable.member"] = { fg = c.property }, -- fields
     -- ["@variable.parameter"] = { fg = c.param }, -- parameters of a function
     -- ["@variable.field"] = { fg = c.builtin }, -- fields
 
-    ["@constant"] = hl.syntax["Constant"], -- constants
-    ["@constant.builtin"] = hl.syntax["Tag"], -- constants that are defined by the language, like 'nil' in lua
-    -- ["@constant.macro"] = hl.syntax["Macro"], -- constants that are defined by macros like 'NULL' in c
+    -- ["@constant"] = { link = "Constant" }, -- constants
+    ["@constant.builtin"] = { link = "Special" }, -- constants that are defined by the language, like 'nil' in lua
+    -- ["@constant.macro"] = { link = "Macro" }, -- constants that are defined by macros like 'NULL' in c
 
-    ["@label"] = hl.syntax["Label"], -- labels
-    ["@module"] = hl.syntax["StorageClass"], -- modules and namespaces
+    -- ["@label"] = { link = "Label" }, -- labels
+    ["@module"] = { link = "Type" }, -- modules and namespaces
 
     -- literals
-    ["@string"] = hl.syntax["String"], -- strings
-    ["@string.documentation"] = hl.syntax["Comment"], -- doc strings
+    -- ["@string"] = { link = "String" }, -- strings
+    ["@string.documentation"] = { link = "Comment" }, -- doc strings
     ["@string.regexp"] = hl.syntax["SpecialChar"], -- regex
     ["@string.escape"] = hl.syntax["SpecialChar"], -- escape characters within string
-    -- ["@string.special.symbol"] = hl.syntax["Special"],
+    ["@string.special.symbol"] = { link = "Identifier" },
     -- ["@string.special.url"] = { fg = c.func }, -- urls, links, emails
 
-    ["@character"] = hl.syntax["Character"], -- character literals
+    -- ["@character"] = { link = "String" }, -- character literals
     -- ["@character.special"] = hl.syntax["SpecialChar"], -- special characters
 
-    ["@boolean"] = hl.syntax["Boolean"], -- booleans
-    ["@number"] = hl.syntax["Number"], -- all numbers
-    -- ["@number.float"] = hl.syntax["Float"], -- floats
+    -- ["@boolean"] = { link = "Constant" }, -- booleans
+    -- ["@number"] = { link = "Number" }, -- all numbers
+    -- ["@number.float"] = { link = "Number" }, -- floats
 
     -- types
-    ["@type"] = hl.syntax["Type"], -- types
-    ["@type.builtin"] = hl.syntax["Tag"], --builtin types
+    -- ["@type"] = hl.syntax["Type"], -- types
+    -- ["@type.builtin"] = hl.syntax["Special"], --builtin types
     -- ["@type.definition"] = hl.syntax["Typedef"], -- typedefs
-    -- ["@type.qualifier"] = { fg = c.type }, -- type qualifiers, like 'const'
+    -- ["@type.qualifier"]
 
-    ["@attribute"] = hl.syntax["Function"], -- attributes, like <decorators> in python
-    ["@property"] = { fg = c.property }, --same as TSField
+    ["@attribute"] = { link = "Constant" }, -- attributes, like <decorators> in python
+    -- ["@property"] = { fg = c.property }, --same as TSField
 
     -- functions
-    ["@function"] = hl.syntax["Function"], -- functions
-    ["@function.builtin"] = hl.syntax["Tag"], --builtin functions
-    ["@function.macro"] = hl.syntax["Macro"], -- macro defined functions
-    -- ["@function.call"] = { fg = c.func, fmt = config.code_style.functions }, -- function calls
-    --
-    -- ["@function.method"] = hl.syntax["Function"], -- method definitions
-    -- ["@function.method.call"] = hl.syntax["Function"], -- method calls
+    -- ["@function"] = { link = "Function" }, -- functions
+    ["@function.builtin"] = { link = "Special" }, --builtin functions
+    -- ["@function.macro"] = { link = "Macro" }, -- macro defined functions
+    -- ["@function.call"]
+    -- ["@function.method"]
+    -- ["@function.method.call"]
 
     ["@constructor"] = { fg = c.constant, fmt = config.code_style.functions }, -- constructor calls and definitions, `= { }` in lua
     ["@operator"] = hl.syntax["Operator"], -- operators, like `+`
 
     -- keywords
-    ["@keyword"] = hl.syntax["Keyword"], -- keywords that don't fall in previous categories
+    -- ["@keyword"] = { link = "Keyword" }, -- keywords that don't fall in previous categories
+    ["@keyword.import"] = { link = "Preproc" }, -- keywords used to define a function
+    ["@keyword.return"] = { fg = c.conditional, fmt = "italic" }, -- keywords used to define a function
+    -- ["@keyword.builtin"] = hl.syntax["Type"], -- keywords used to define a function
+    ["@keyword.operator"] = { fg = c.operator, fmt = "bold" }, -- keyword operator (eg, 'in' in python)
+    ["@keyword.exception"] = { link = "Exception" }, -- exception related keywords
     -- ["@keyword.function"] = hl.syntax["Function"], -- keywords used to define a function
     -- ["@keyword.conditional"] = hl.syntax["Conditional"], -- keywords for conditional statements
-    -- ["@keyword.operator"] = hl.syntax["Keyword"], -- new keyword operator
     -- ["@keyword.import"] = hl.syntax["Include"], -- includes, like '#include' in c, 'require' in lua
     -- ["@keyword.storage"] = hl.syntax["StorageClass"], -- visibility/life-time 'static'
     -- ["@keyword.repeat"] = hl.syntax["Repeat"], -- for keywords related to loops
-    -- ["@keyword.exception"] = hl.syntax["Exception"], -- exception related keywords
 
     -- punctuation
     ["@punctuation.delimiter"] = { fg = c.fg }, -- delimiters, like `; . , `
@@ -195,10 +197,10 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     ["@punctuation.special"] = { fg = c.fg }, -- punctuation that does not fall into above categories, like `{}` in string interpolation
 
     -- comment
-    ["@comment"] = hl.syntax["Comment"],
-    -- ["@comment.error"] = hl.syntax["Comment"],
-    -- ["@comment.warning"] = hl.syntax["Comment"],
-    -- ["@comment.note"] = hl.syntax["Comment"],
+    -- ["@comment"]
+    -- ["@comment.error"]
+    -- ["@comment.warning"]
+    -- ["@comment.note"]
 
     -- markup
     ["@markup"] = { fg = c.fg }, -- text in markup language
@@ -222,39 +224,41 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     ["@diff.delta"] = { fg = c.func }, -- changed text (diff files)
 
     -- tags
-    ["@tag"] = hl.syntax["Tag"], -- tags, like in html
-    ["@tag.attribute"] = { fg = c.fg }, -- tags, like in html
+    -- ["@tag"]
+    ["@tag.attribute"] = { link = "Identifier" }, -- tags, like in html
     ["@tag.delimiter"] = { fg = c.fg }, -- tag delimiter < >
-
-    -- misc
-    ["@error"] = hl.syntax["Error"],
   }
   if vim.api.nvim_call_function("has", { "nvim-0.9" }) == 1 then
     hl.lsp = {
-      ["@lsp.type.class"] = hl.treesitter["@type"],
-      ["@lsp.type.comment"] = hl.treesitter["@comment"],
-      ["@lsp.type.enum"] = hl.treesitter["@type"],
-      ["@lsp.type.enumMember"] = hl.treesitter["@variable.member"],
-      ["@lsp.type.interface"] = hl.treesitter["@type"],
-      ["@lsp.type.typeParameter"] = hl.treesitter["@type"],
-      ["@lsp.type.keyword"] = hl.treesitter["@keyword"],
-      ["@lsp.type.namespace"] = hl.treesitter["@module"],
-      ["@lsp.type.parameter"] = hl.treesitter["@variable"],
-      ["@lsp.type.property"] = hl.treesitter["@property"],
-      ["@lsp.type.variable"] = hl.treesitter["@variable"],
-      ["@lsp.type.macro"] = hl.syntax["Macro"],
-      ["@lsp.type.method"] = hl.treesitter["@function"],
-      ["@lsp.type.number"] = hl.treesitter["@number"],
-      ["@lsp.type.generic"] = hl.treesitter["@type"],
-      ["@lsp.type.builtinType"] = hl.treesitter["@type.builtin"],
-      ["@lsp.typemod.method.defaultLibrary"] = hl.treesitter["@function.builtin"],
-      ["@lsp.typemod.function.defaultLibrary"] = hl.treesitter["@function.builtin"],
-      ["@lsp.typemod.function.declaration"] = hl.treesitter["@function"],
-      ["@lsp.typemod.operator.injected"] = hl.treesitter["@operator"],
-      ["@lsp.typemod.string.injected"] = hl.treesitter["@string"],
-      ["@lsp.typemod.variable.defaultLibrary"] = hl.treesitter["@function.builtin"],
-      ["@lsp.typemod.variable.injected"] = hl.treesitter["@variable"],
-      ["@lsp.typemod.variable.static"] = hl.treesitter["@constant"],
+      -- ["@lsp.type.class"] = { link = "Structure" },
+      ["@lsp.type.comment"] = { link = "Comment" },
+      -- ["@lsp.type.enum"] = { link = "Structure" },
+      -- ["@lsp.type.enumMember"] = { link = "Constant" },
+      -- ["@lsp.type.interface"] = { link = "Structure" },
+      -- ["@lsp.type.typeParameter"] = { link = "Typedef" },
+      ["@lsp.type.namespace"] = { link = "@module" },
+      ["@lsp.type.parameter"] = { link = "@variable.parameter" },
+      -- ["@lsp.type.property"] = { link = "Identifier" },
+      ["@lsp.type.variable"] = { link = "@variable" },
+      -- ["@lsp.type.macro"] = { link = "Macro" },
+      -- ["@lsp.type.method"] = { link = "@function.method" },
+      -- ["@lsp.type.generic"] = { link = "Type" },
+      -- ["@lsp.type.builtinType"] = { link = "Special" },
+      ["@lsp.type.selfParameter"] = { link = "Special" },
+      ["@lsp.type.builtinConstant"] = { link = "Special" },
+      ["@lsp.typemod.method.defaultLibrary"] = { link = "Special" },
+      ["@lsp.typemod.function.defaultLibrary"] = { link = "Special" },
+      ["@lsp.typemod.function.builtin"] = { link = "Special" },
+      ["@lsp.typemod.operator.injected"] = { link = "Operator" },
+      ["@lsp.typemod.string.injected"] = { link = "String" },
+      ["@lsp.typemod.variable.injected"] = { link = "@variable" },
+      ["@lsp.typemod.variable.defaultLibrary"] = { link = "Special" },
+      ["@lsp.typemod.variable.static"] = { link = "Constant" },
+      ["@lsp.typemod.variable.global"] = { link = "Constant" },
+      ["@lsp.typemod.operator.controlFlow"] = { link = "@keyword.exception" },
+      ["@lsp.typemod.keyword.documentation"] = { link = "Special" },
+      ["@lsp.mod.readonly"] = { link = "Constant" },
+      ["@lsp.mod.typeHint"] = { link = "Type" },
     }
   end
 end
