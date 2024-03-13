@@ -132,8 +132,8 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     -- identifiers
     ["@variable"] = hl.syntax["Identifier"], -- any variable that does not have another highlight
     ["@variable.builtin"] = hl.syntax["Tag"], -- variable names that are defined by the language, like 'this' or 'self'
-    ["@variable.parameter"] = { fg = c.param }, -- parameters of a function
     ["@variable.member"] = { fg = c.property }, -- fields
+    -- ["@variable.parameter"] = { fg = c.param }, -- parameters of a function
     -- ["@variable.field"] = { fg = c.builtin }, -- fields
 
     ["@constant"] = hl.syntax["Constant"], -- constants
@@ -182,12 +182,12 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     -- keywords
     ["@keyword"] = hl.syntax["Keyword"], -- keywords that don't fall in previous categories
     -- ["@keyword.function"] = hl.syntax["Function"], -- keywords used to define a function
-    ["@keyword.conditional"] = hl.syntax["Conditional"], -- keywords for conditional statements
-    ["@keyword.operator"] = hl.syntax["Keyword"], -- new keyword operator
-    ["@keyword.import"] = hl.syntax["Include"], -- includes, like '#include' in c, 'require' in lua
-    ["@keyword.storage"] = hl.syntax["StorageClass"], -- visibility/life-time 'static'
-    ["@keyword.repeat"] = hl.syntax["Repeat"], -- for keywords related to loops
-    ["@keyword.exception"] = hl.syntax["Exception"], -- exception related keywords
+    -- ["@keyword.conditional"] = hl.syntax["Conditional"], -- keywords for conditional statements
+    -- ["@keyword.operator"] = hl.syntax["Keyword"], -- new keyword operator
+    -- ["@keyword.import"] = hl.syntax["Include"], -- includes, like '#include' in c, 'require' in lua
+    -- ["@keyword.storage"] = hl.syntax["StorageClass"], -- visibility/life-time 'static'
+    -- ["@keyword.repeat"] = hl.syntax["Repeat"], -- for keywords related to loops
+    -- ["@keyword.exception"] = hl.syntax["Exception"], -- exception related keywords
 
     -- punctuation
     ["@punctuation.delimiter"] = { fg = c.fg }, -- delimiters, like `; . , `
@@ -234,19 +234,19 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
       ["@lsp.type.class"] = hl.treesitter["@type"],
       ["@lsp.type.comment"] = hl.treesitter["@comment"],
       ["@lsp.type.enum"] = hl.treesitter["@type"],
-      ["@lsp.type.enumMember"] = hl.treesitter["@variable.builtin"],
+      ["@lsp.type.enumMember"] = hl.treesitter["@variable.member"],
       ["@lsp.type.interface"] = hl.treesitter["@type"],
       ["@lsp.type.typeParameter"] = hl.treesitter["@type"],
       ["@lsp.type.keyword"] = hl.treesitter["@keyword"],
       ["@lsp.type.namespace"] = hl.treesitter["@module"],
-      ["@lsp.type.parameter"] = hl.treesitter["@variable.parameter"],
+      ["@lsp.type.parameter"] = hl.treesitter["@variable"],
       ["@lsp.type.property"] = hl.treesitter["@property"],
       ["@lsp.type.variable"] = hl.treesitter["@variable"],
-      ["@lsp.type.macro"] = hl.treesitter["@function.macro"],
+      ["@lsp.type.macro"] = hl.syntax["Macro"],
       ["@lsp.type.method"] = hl.treesitter["@function"],
       ["@lsp.type.number"] = hl.treesitter["@number"],
-      ["@lsp.type.generic"] = hl.treesitter["@markup"],
-      ["@lsp.type.builtinType"] = hl.treesitter["@function.builtin"],
+      ["@lsp.type.generic"] = hl.treesitter["@type"],
+      ["@lsp.type.builtinType"] = hl.treesitter["@type.builtin"],
       ["@lsp.typemod.method.defaultLibrary"] = hl.treesitter["@function.builtin"],
       ["@lsp.typemod.function.defaultLibrary"] = hl.treesitter["@function.builtin"],
       ["@lsp.typemod.function.declaration"] = hl.treesitter["@function"],
