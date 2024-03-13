@@ -92,12 +92,9 @@ hl.common = {
 }
 
 hl.syntax = {
-  Boolean = { link = "Constant" }, -- boolean constants
-  Character = { link = "String" }, -- character constants
   Comment = { fg = c.comment, fmt = config.code_style.comments }, -- comments
   Constant = { fg = c.constant, fmt = config.code_style.constants }, -- (preferred) any constant
   Delimiter = { fg = c.fg }, -- delimiter characters
-  Float = { link = "Number" }, -- float constants
   Function = { fg = c.func, fmt = config.code_style.functions }, -- functions
   Error = { fg = c.operator }, -- (preferred) any erroneous construct
   Exception = { fg = c.conditional }, -- 'try', 'catch', 'throw'
@@ -125,12 +122,16 @@ hl.syntax = {
   -- Structure = { fg = c.constant }, -- 'struct', 'union', 'enum' etc
   -- Typedef = { fg = c.constant }, -- 'typedef'
   Todo = { fg = c.func, fmt = config.code_style.comments }, -- (preferred) 'TODO' keywords in comments
+
+  Boolean = { link = "Constant" }, -- boolean constants
+  Character = { link = "String" }, -- character constants
+  Float = { link = "Number" }, -- float constants
 }
 
 if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
   hl.treesitter = {
     -- identifiers
-    ["@variable"] = { link = "Identifier" }, -- any variable that does not have another highlight
+    ["@variable"] = { fg = c.fg }, -- any variable that does not have another highlight
     ["@variable.builtin"] = { link = "Special" }, -- variable names that are defined by the language, like 'this' or 'self'
     ["@variable.member"] = { fg = c.property }, -- fields
     -- ["@variable.parameter"] = { fg = c.param }, -- parameters of a function
@@ -180,10 +181,10 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
 
     -- keywords
     -- ["@keyword"] = { link = "Keyword" }, -- keywords that don't fall in previous categories
-    ["@keyword.import"] = { link = "Preproc" }, -- keywords used to define a function
+    ["@keyword.import"] = { link = "PreProc" }, -- keywords used to define a function
     ["@keyword.return"] = { fg = c.conditional, fmt = "italic" }, -- keywords used to define a function
     -- ["@keyword.builtin"] = hl.syntax["Type"], -- keywords used to define a function
-    ["@keyword.operator"] = { fg = c.operator, fmt = "bold" }, -- keyword operator (eg, 'in' in python)
+    ["@keyword.operator"] = { fg = c.operator }, -- keyword operator (eg, 'in' in python)
     ["@keyword.exception"] = { link = "Exception" }, -- exception related keywords
     -- ["@keyword.function"] = hl.syntax["Function"], -- keywords used to define a function
     -- ["@keyword.conditional"] = hl.syntax["Conditional"], -- keywords for conditional statements
