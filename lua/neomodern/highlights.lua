@@ -97,16 +97,16 @@ hl.syntax = {
   Comment = { fg = c.comment, fmt = config.code_style.comments }, -- comments
   Constant = { fg = c.constant, fmt = config.code_style.constants }, -- (preferred) any constant
   Delimiter = { fg = c.fg }, -- delimiter characters
-  Float = { fg = c.func }, -- float constants
+  Float = { fg = c.constant }, -- float constants
   Function = { fg = c.func, fmt = config.code_style.functions }, -- functions
-  Error = { fg = c.operator }, -- (preferred) any erroneous construct
-  Exception = { fg = c.conditional }, -- 'try', 'catch', 'throw'
+  Error = { fg = c.error }, -- (preferred) any erroneous construct
+  Exception = { fg = c.error }, -- 'try', 'catch', 'throw'
   Identifier = { fg = c.property, fmt = config.code_style.variables }, -- (preferred) any variable
   Keyword = { fg = c.keyword, fmt = config.code_style.keywords }, -- any other keyword
   -- Conditional = { fg = c.conditional, fmt = config.code_style.keywords }, -- conditionals
   -- Repeat = { fg = c.conditional, fmt = config.code_style.keywords }, -- loop keywords: 'for', 'while' etc
   -- Label = { fg = c.conditional }, -- 'case', 'default', etc
-  Number = { fg = c.func }, -- number constant
+  Number = { fg = c.constant }, -- number constant
   Operator = { fg = c.operator }, -- '+', '*', 'sizeof' etc
   PreProc = { fg = c.conditional }, -- (preferred) generic preprocessor
   -- Define = { fg = c.comment }, -- preprocessor '#define'
@@ -114,10 +114,10 @@ hl.syntax = {
   -- Macro = { fg = c.constant, fmt = config.code_style.constants }, -- macros
   -- PreCondit = { fg = c.comment }, -- preprocessor conditionals '#if', '#endif' etc
   Special = { fg = c.builtin }, -- (preferred) any special symbol
-  -- SpecialChar = { fg = c.param }, -- special character in a constant
+  SpecialChar = { fg = c.param }, -- special character in a constant
   -- SpecialComment = { fg = c.param, fmt = config.code_style.comments }, -- special things inside comments
   -- Tag = { fg = c.builtin }, -- can use <C-]> on this
-  Statement = { fg = c.param }, -- (preferred) any statement
+  Statement = { fg = c.keyword }, -- (preferred) any statement
   String = { fg = c.string, fmt = config.code_style.strings }, -- string constants
   Title = { fg = c.property },
   Type = { fg = c.type }, -- (preferred) 'int', 'long', 'char' etc
@@ -148,7 +148,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     ["@string.documentation"] = hl.syntax["Comment"], -- doc strings
     ["@string.regexp"] = hl.syntax["SpecialChar"], -- regex
     ["@string.escape"] = hl.syntax["SpecialChar"], -- escape characters within string
-    ["@string.special.symbol"] = hl.syntax["Identifie"],
+    ["@string.special.symbol"] = hl.syntax["Identifier"],
     -- ["@string.special.url"] = { fg = c.func }, -- urls, links, emails
 
     -- ["@character"] = { link = "String" }, -- character literals
@@ -175,16 +175,17 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     -- ["@function.method"]
     -- ["@function.method.call"]
 
-    ["@constructor"] = { fg = c.constant, fmt = config.code_style.functions }, -- constructor calls and definitions, `= { }` in lua
+    ["@constructor"] = { fg = c.constant, fmt = config.code_style.functions }, -- constructor calls and definitions
+    ["@constructor.lua"] = { fg = c.fg, fmt = config.code_style.functions }, -- constructor calls and definitions, `= { }` in lua
     ["@operator"] = hl.syntax["Operator"], -- operators, like `+`
 
     -- keywords
     -- ["@keyword"] = { link = "Keyword" }, -- keywords that don't fall in previous categories
+    ["@keyword.exception"] = hl.syntax["Exception"], -- exception related keywords
     ["@keyword.import"] = hl.syntax["PreProc"], -- keywords used to define a function
+    ["@keyword.operator"] = { fg = c.keyword, fmt = "italic" }, -- keyword operator (eg, 'in' in python)
     ["@keyword.return"] = { fg = c.conditional, fmt = "italic" }, -- keywords used to define a function
     -- ["@keyword.builtin"] = hl.syntax["Type"], -- keywords used to define a function
-    ["@keyword.operator"] = { fg = c.operator }, -- keyword operator (eg, 'in' in python)
-    ["@keyword.exception"] = hl.syntax["Exceptio"], -- exception related keywords
     -- ["@keyword.function"] = hl.syntax["Function"], -- keywords used to define a function
     -- ["@keyword.conditional"] = hl.syntax["Conditional"], -- keywords for conditional statements
     -- ["@keyword.import"] = hl.syntax["Include"], -- includes, like '#include' in c, 'require' in lua
@@ -225,7 +226,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
 
     -- tags
     -- ["@tag"]
-    ["@tag.attribute"] = hl.syntax["Identifie"], -- tags, like in html
+    ["@tag.attribute"] = hl.syntax["Identifier"], -- tags, like in html
     ["@tag.delimiter"] = { fg = c.fg }, -- tag delimiter < >
   }
   if vim.api.nvim_call_function("has", { "nvim-0.9" }) == 1 then
