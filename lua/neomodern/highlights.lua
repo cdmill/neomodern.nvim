@@ -44,7 +44,7 @@ hl.common = {
   DiffFile = { fg = c.keyword },
   DiffIndexLine = { fg = c.comment },
   Directory = { fg = c.func },
-  ErrorMsg = { fg = c.operator, fmt = "bold" },
+  ErrorMsg = { fg = c.error, fmt = "bold" },
   EndOfBuffer = { fg = config.show_eob and c.comment or c.bg },
   FloatBorder = { fg = c.comment, bg = config.transparent and c.none or c.bg },
   FloatTitle = { fg = c.comment, bg = c.float },
