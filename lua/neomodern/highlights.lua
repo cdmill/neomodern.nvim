@@ -263,7 +263,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
   end
 end
 
-local diagnostics_error_color = config.diagnostics.darker and c.error or c.operator
+local diagnostics_error_color = config.diagnostics.darker and c.error or c.error -- FIX: add specific diagnostic colors
 local diagnostics_hint_color = config.diagnostics.darker and c.hint or c.conditional
 local diagnostics_warn_color = config.diagnostics.darker and c.warning or c.constant
 local diagnostics_info_color = config.diagnostics.darker and c.func or c.param
@@ -275,7 +275,7 @@ hl.plugins.lsp = {
   LspCxxHlSkippedRegion = { fg = c.comment },
   LspCxxHlSkippedRegionBeginEnd = { fg = c.operator },
 
-  DiagnosticError = { fg = c.operator },
+  DiagnosticError = { fg = c.error },
   DiagnosticHint = { fg = c.conditional },
   DiagnosticInfo = { fg = c.param, fmt = "italic" },
   DiagnosticWarn = { fg = c.constant },
