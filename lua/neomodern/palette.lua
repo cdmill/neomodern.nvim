@@ -8,7 +8,7 @@ return {
     constant = "#f1cd92",
     error = "#e67e80",
     fg = "#bbbac1",
-    float = "#121212",
+    float = "#282828",
     func = "#8799cf",
     hint = "#8c593a",
     keyword = "#b39581",
