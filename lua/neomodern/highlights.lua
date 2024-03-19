@@ -252,7 +252,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
       ["@lsp.typemod.operator.injected"] = hl.syntax["Operator"],
       ["@lsp.typemod.string.injected"] = hl.syntax["String"],
       ["@lsp.typemod.variable.injected"] = hl.treesitter["@variable"],
-      ["@lsp.typemod.variable.defaultLibrary"] = hl.syntax["Special"],
+      ["@lsp.typemod.variable.defaultLibrary"] = hl.syntax["PreProc"],
       ["@lsp.typemod.variable.static"] = hl.syntax["Constant"],
       ["@lsp.typemod.variable.global"] = hl.syntax["Constant"],
       ["@lsp.typemod.operator.controlFlow"] = hl.treesitter["@keyword.exception"],
