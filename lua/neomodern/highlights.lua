@@ -382,15 +382,15 @@ hl.plugins.diffview = {
 }
 
 hl.plugins.gitsigns = {
-  GitSignsAdd = { fg = c.property },
-  GitSignsAddLn = { fg = c.property },
-  GitSignsAddNr = { fg = c.property },
+  GitSignsAdd = { fg = c.string },
+  GitSignsAddLn = { fg = c.string },
+  GitSignsAddNr = { fg = c.string },
   GitSignsChange = { fg = c.func },
   GitSignsChangeLn = { fg = c.func },
   GitSignsChangeNr = { fg = c.func },
-  GitSignsDelete = { fg = c.operator },
-  GitSignsDeleteLn = { fg = c.operator },
-  GitSignsDeleteNr = { fg = c.operator },
+  GitSignsDelete = { fg = c.error },
+  GitSignsDeleteLn = { fg = c.error },
+  GitSignsDeleteNr = { fg = c.error },
 }
 
 hl.plugins.neo_tree = {

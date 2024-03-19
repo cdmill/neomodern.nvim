@@ -13,7 +13,7 @@ return {
     func = "#8da0d6",
     hint = "#8c593a",
     keyword = "#b39581",
-    line = "#1f1f1f",
+    line = "#1d1d1f",
     menu = "#282c38",
     operator = "#9b99a3",
     param = "#abbceb",
