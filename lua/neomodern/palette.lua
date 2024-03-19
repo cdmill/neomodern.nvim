@@ -4,7 +4,7 @@ return {
     border = "#4f4f4f",
     -- builtin = "#d699b6",
     builtin = "#817faf",
-    comment = "#717377",
+    comment = "#55555e",
     conditional = "#d699b6",
     constant = "#dbbc8a",
     error = "#e67e80",
