@@ -6,7 +6,7 @@ return {
     builtin = "#817faf",
     comment = "#717377",
     conditional = "#d699b6",
-    constant = "#f1cd92",
+    constant = "#dbbc8a",
     error = "#e67e80",
     fg = "#bbbac1",
     float = "#282828",
