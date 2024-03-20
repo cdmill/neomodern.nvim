@@ -87,7 +87,7 @@ hl.common = {
   WarningMsg = { fg = c.type, fmt = "bold" },
   Whitespace = { fg = c.comment },
   WildMenu = { fg = c.bg, bg = c.func },
-  WinSeparator = { fg = c.border },
+  WinSeparator = { fg = c.comment },
 }
 
 hl.syntax = {
@@ -435,7 +435,7 @@ hl.plugins.nvim_tree = {
 }
 
 hl.plugins.telescope = {
-  TelescopeBorder = { fg = c.border },
+  TelescopeBorder = { fg = c.comment },
   TelescopeMatching = { fg = c.type, fmt = "bold" },
   TelescopePromptPrefix = { fg = c.property },
   TelescopeSelection = { fg = c.type, bg = c.bg },
