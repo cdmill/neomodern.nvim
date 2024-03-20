@@ -218,12 +218,12 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     ["@markup.list"] = { fg = c.property },
     ["@markup.list.checked"] = { fg = c.func }, -- todo checked
     ["@markup.list.unchecked"] = { fg = c.param }, -- todo unchecked
-    ["@markup.raw"] = { fg = c.func }, -- inline code in markdown, python doc `"""`
-    ["@markup.math"] = { fg = c.operator }, -- math environments, like `$$` in latex
+    ["@markup.raw"] = { fg = c.func }, -- inline code in markdown
+    ["@markup.math"] = { fg = c.builtin }, -- math environments, like `$$` in latex
 
     -- diff
     ["@diff.plus"] = { fg = c.string }, -- added text (diff files)
-    ["@diff.minus"] = { fg = c.operator }, -- removed text (diff files)
+    ["@diff.minus"] = { fg = c.error }, -- removed text (diff files)
     ["@diff.delta"] = { fg = c.func }, -- changed text (diff files)
 
     -- tags
