@@ -50,6 +50,7 @@ local default_config = {
   style = "icebreaker", -- choose between 'icebreaker', 'coffeecat', 'day', 'dawn'
   toggle_style_key = nil,
   toggle_style_list = M.styles_list,
+  plain_ui = true,
   transparent = false, -- don't set background
   term_colors = true, -- if true enable the terminal
   show_eob = true, -- show the end-of-buffer tildes
