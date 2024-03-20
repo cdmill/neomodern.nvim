@@ -105,7 +105,7 @@ hl.syntax = {
   Exception = { fg = c.error }, -- 'try', 'catch', 'throw'
   Identifier = { fg = c.property, fmt = config.code_style.variables }, -- (preferred) any variable
   Keyword = { fg = c.keyword, fmt = config.code_style.keywords }, -- any other keyword
-  -- Conditional = { fg = c.conditional, fmt = config.code_style.keywords }, -- conditionals
+  Conditional = { fg = c.keyword, fmt = config.code_style.conditionals }, -- conditionals
   -- Repeat = { fg = c.conditional, fmt = config.code_style.keywords }, -- loop keywords: 'for', 'while' etc
   -- Label = { fg = c.conditional }, -- 'case', 'default', etc
   Number = { fg = c.constant }, -- number constant
@@ -185,11 +185,11 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     -- ["@keyword"] = { link = "Keyword" }, -- keywords that don't fall in previous categories
     ["@keyword.exception"] = hl.syntax["Exception"], -- exception related keywords
     ["@keyword.import"] = hl.syntax["PreProc"], -- keywords used to define a function
-    ["@keyword.operator"] = { fg = c.keyword, fmt = "italic" }, -- keyword operator (eg, 'in' in python)
+    ["@keyword.conditional"] = { fg = c.keyword, fmt = config.code_style.conditionals }, -- keywords for conditional statements
+    ["@keyword.operator"] = { fg = c.keyword, fmt = config.code_style.operators }, -- keyword operator (eg, 'in' in python)
     ["@keyword.return"] = { fg = c.builtin, fmt = "italic" }, -- keywords used to define a function
     -- ["@keyword.builtin"] = hl.syntax["Type"], -- keywords used to define a function
     -- ["@keyword.function"] = hl.syntax["Function"], -- keywords used to define a function
-    -- ["@keyword.conditional"] = hl.syntax["Conditional"], -- keywords for conditional statements
     -- ["@keyword.import"] = hl.syntax["Include"], -- includes, like '#include' in c, 'require' in lua
     -- ["@keyword.storage"] = hl.syntax["StorageClass"], -- visibility/life-time 'static'
     -- ["@keyword.repeat"] = hl.syntax["Repeat"], -- for keywords related to loops
@@ -440,7 +440,7 @@ hl.plugins.nvim_tree = {
 hl.plugins.telescope = {
   TelescopeBorder = { fg = c.comment },
   TelescopeMatching = { fg = c.type, fmt = "bold" },
-  TelescopePromptPrefix = { fg = c.property },
+  TelescopePromptPrefix = { fg = c.func },
   TelescopeSelection = { fg = c.type, bg = c.bg },
   TelescopeSelectionCaret = { fg = c.type },
   TelescopeResultsNormal = { fg = c.fg },
