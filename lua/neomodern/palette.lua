@@ -2,7 +2,6 @@ return {
   icebreaker = {
     bg = "#171718",
     border = "#4f4f4f",
-    -- builtin = "#d699b6",
     builtin = "#817faf",
     comment = "#55555e",
     conditional = "#c491a9",
