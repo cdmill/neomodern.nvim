@@ -183,7 +183,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     ["@keyword.exception"] = hl.syntax["Exception"], -- exception related keywords
     ["@keyword.import"] = hl.syntax["PreProc"], -- keywords used to define a function
     ["@keyword.operator"] = { fg = c.keyword, fmt = "italic" }, -- keyword operator (eg, 'in' in python)
-    ["@keyword.return"] = { fg = c.conditional, fmt = "italic" }, -- keywords used to define a function
+    ["@keyword.return"] = { fg = c.builtin, fmt = "italic" }, -- keywords used to define a function
     -- ["@keyword.builtin"] = hl.syntax["Type"], -- keywords used to define a function
     -- ["@keyword.function"] = hl.syntax["Function"], -- keywords used to define a function
     -- ["@keyword.conditional"] = hl.syntax["Conditional"], -- keywords for conditional statements
@@ -252,7 +252,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
       ["@lsp.typemod.operator.injected"] = hl.syntax["Operator"],
       ["@lsp.typemod.string.injected"] = hl.syntax["String"],
       ["@lsp.typemod.variable.injected"] = hl.treesitter["@variable"],
-      ["@lsp.typemod.variable.defaultLibrary"] = hl.syntax["PreProc"],
+      ["@lsp.typemod.variable.defaultLibrary"] = hl.syntax["Special"],
       ["@lsp.typemod.variable.static"] = hl.syntax["Constant"],
       ["@lsp.typemod.variable.global"] = hl.syntax["Constant"],
       ["@lsp.typemod.operator.controlFlow"] = hl.treesitter["@keyword.exception"],
