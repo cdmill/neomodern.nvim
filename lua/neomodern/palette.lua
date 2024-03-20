@@ -5,7 +5,7 @@ return {
     -- builtin = "#d699b6",
     builtin = "#817faf",
     comment = "#55555e",
-    conditional = "#d699b6",
+    conditional = "#c491a9",
     constant = "#dbbc8a",
     error = "#e67e80",
     fg = "#bbbac1",
