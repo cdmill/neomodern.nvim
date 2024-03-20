@@ -9,7 +9,7 @@ return {
     constant = "#dbbc8a",
     error = "#e67e80",
     fg = "#bbbac1",
-    float = "#282828",
+    float = "#222225",
     func = "#8da0d6",
     hint = "#8c593a",
     keyword = "#b39581",
