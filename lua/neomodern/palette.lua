@@ -54,9 +54,9 @@ return {
     border = "#4f4f4f",
     builtin = "#d699b6", --
     comment = "#7a8478", --
-    constant = "#dbbc7f", --
+    constant = "#7fbbb3", --
     fg = "#bbbac1", --
-    float = "#272e33", --
+    float = "#222928", --
     func = "#a7c080", --
     alt = "#abbceb",
     keyword = "#e67e80", --
@@ -64,7 +64,7 @@ return {
     operator = "#9b99a3",
     preproc = "#c491a9",
     property = "#83c092", --
-    string = "#7da77e", --
+    string = "#dbbc7f", --
     type = "#e69875", --
     visual = "#3c4841", --
     error = "#e67e80",
