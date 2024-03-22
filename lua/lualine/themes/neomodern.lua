@@ -1,10 +1,10 @@
 local c = require("neomodern.colors")
 local cfg = vim.g.neomodern_config
 local colors = {
-  norm = c.keyword,
+  norm = c.func,
   ins = c.constant,
-  vis = c.conditional,
-  rep = c.func,
+  vis = c.builtin,
+  rep = c.property,
   comm = c.type,
   fg_dim = c.comment,
   vcs = c.alt,

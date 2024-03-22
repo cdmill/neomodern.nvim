@@ -187,7 +187,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     ["@keyword.import"] = hl.syntax["PreProc"], -- keywords used to define a function
     ["@keyword.conditional"] = { fg = c.keyword, fmt = config.code_style.conditionals }, -- keywords for conditional statements
     ["@keyword.operator"] = { fg = c.keyword, fmt = config.code_style.operators }, -- keyword operator (eg, 'in' in python)
-    ["@keyword.return"] = { fg = c.builtin, fmt = config.code_style.keword_return }, -- keywords used to define a function
+    ["@keyword.return"] = { fg = c.builtin, fmt = config.code_style.keyword_return }, -- keywords used to define a function
     -- ["@keyword.builtin"] = hl.syntax["Type"], -- keywords used to define a function
     -- ["@keyword.function"] = hl.syntax["Function"], -- keywords used to define a function
     -- ["@keyword.import"] = hl.syntax["Include"], -- includes, like '#include' in c, 'require' in lua
