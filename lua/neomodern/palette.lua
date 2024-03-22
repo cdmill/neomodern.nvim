@@ -5,6 +5,7 @@ return {
     builtin = "#817faf",
     comment = "#55555e",
     constant = "#dbbc8a",
+    dim = "#111111",
     fg = "#bbbac1",
     float = "#222225",
     func = "#8da0d6",
@@ -30,6 +31,7 @@ return {
     builtin = "#817faf",
     comment = "#55555e",
     constant = "#dbbc8a",
+    dim = "#111111",
     fg = "#bbbac1",
     float = "#222225",
     func = "#8da0d6",
@@ -55,6 +57,7 @@ return {
     builtin = "#d699b6", --
     comment = "#7a8478", --
     constant = "#7fbbb3", --
+    dim = "#111111",
     fg = "#bbbac1", --
     float = "#222928", --
     func = "#a7c080", --
@@ -81,6 +84,7 @@ return {
     builtin = "#817faf",
     comment = "#55555e",
     constant = "#dbbc8a",
+    dim = "#111111",
     fg = "#bbbac1",
     float = "#222225",
     func = "#8da0d6",
@@ -105,6 +109,7 @@ return {
     builtin = "#ba7685",
     comment = "#555555", --
     constant = "#8192C7",
+    dim = "#111111",
     fg = "#bbbac1",
     float = "#121212", --
     func = "#ddadb4",

@@ -8,8 +8,8 @@ local colors = {
   comm = c.type,
   fg_dim = c.comment,
   vcs = c.alt,
-  dark = c.bg,
-  bg_b = c.float,
+  dark = c.dim,
+  bg_b = c.dim,
   bg_c = c.line,
 }
 
