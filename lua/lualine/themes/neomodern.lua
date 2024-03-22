@@ -7,30 +7,30 @@ local colors = {
   rep = c.func,
   comm = c.type,
   fg_dim = c.comment,
+  vcs = c.alt,
+  dark = c.bg,
   bg_b = c.line,
   bg_c = c.float,
-  black = c.bg,
-  lightblue = c.param,
 }
 
 -- stylua: ignore
 local neomodern = {
   normal = {
-    a = { bg = cfg.lualine.transparent and c.none or colors.norm, fg = cfg.lualine.transparent and colors.norm or colors.black, gui = "bold" },
-    b = { bg = cfg.lualine.transparent and c.none or colors.bg_b, fg = colors.lightblue },
-    c = { bg = cfg.lualine.transparent and c.none or colors.bg_c, fg = colors.fg_dim },
+    a = { bg = cfg.plain_ui and c.none or colors.norm, fg = cfg.plain_ui and colors.norm or colors.dark, gui = "bold" },
+    b = { bg = cfg.plain_ui and c.none or colors.bg_b, fg = colors.vcs },
+    c = { bg = cfg.plain_ui and c.none or colors.bg_c, fg = colors.fg_dim },
   },
   insert = {
-    a = { bg = cfg.lualine.transparent and c.none or colors.ins, fg = cfg.lualine.transparent and colors.ins or colors.black, gui = "bold" },
+    a = { bg = cfg.plain_ui and c.none or colors.ins, fg = cfg.plain_ui and colors.ins or colors.dark, gui = "bold" },
   },
   visual = {
-    a = { bg = cfg.lualine.transparent and c.none or colors.vis, fg = cfg.lualine.transparent and colors.vis or colors.black, gui = "bold" },
+    a = { bg = cfg.plain_ui and c.none or colors.vis, fg = cfg.plain_ui and colors.vis or colors.dark, gui = "bold" },
   },
   replace = {
-    a = { bg = cfg.lualine.transparent and c.none or colors.rep, fg = cfg.lualine.transparent and colors.rep or colors.black, gui = "bold" },
+    a = { bg = cfg.plain_ui and c.none or colors.rep, fg = cfg.plain_ui and colors.rep or colors.dark, gui = "bold" },
   },
   command = {
-    a = { bg = cfg.lualine.transparent and c.none or colors.comm, fg = cfg.lualine.transparent and colors.comm or colors.black, gui = "bold" },
+    a = { bg = cfg.plain_ui and c.none or colors.comm, fg = cfg.plain_ui and colors.comm or colors.dark, gui = "bold" },
   },
 }
 

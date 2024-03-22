@@ -35,11 +35,11 @@ hl.common = {
   Debug = { fg = c.constant },
   debugPC = { fg = c.bg, bg = c.fg },
   debugBreakpoint = { fg = c.bg, bg = c.operator },
-  DiffAdd = { fg = c.none, bg = c.string },
-  DiffChange = { fg = c.none, bg = c.func },
+  DiffAdd = { fg = c.none, bg = c.plus },
+  DiffChange = { fg = c.none, bg = c.delta },
   DiffDelete = { fg = c.none, bg = c.error },
   DiffText = { fg = c.none, bg = c.fg },
-  DiffAdded = { fg = c.string },
+  DiffAdded = { fg = c.plus },
   DiffRemoved = { fg = c.error },
   DiffFile = { fg = c.keyword },
   DiffIndexLine = { fg = c.comment },
@@ -73,7 +73,7 @@ hl.common = {
   SpellBad = { fg = c.none, fmt = "undercurl", sp = c.operator },
   SpellCap = { fg = c.none, fmt = "undercurl", sp = c.constant },
   SpellLocal = { fg = c.none, fmt = "undercurl", sp = c.builtin },
-  SpellRare = { fg = c.none, fmt = "undercurl", sp = c.conditional },
+  SpellRare = { fg = c.none, fmt = "undercurl", sp = c.preproc },
   StatusLine = { fg = c.fg, bg = c.comment },
   StatusLineTerm = { fg = c.fg, bg = c.line },
   StatusLineNC = { fg = c.comment, bg = c.c3 },
@@ -106,18 +106,18 @@ hl.syntax = {
   Identifier = { fg = c.property, fmt = config.code_style.variables }, -- (preferred) any variable
   Keyword = { fg = c.keyword, fmt = config.code_style.keywords }, -- any other keyword
   Conditional = { fg = c.keyword, fmt = config.code_style.conditionals }, -- conditionals
-  -- Repeat = { fg = c.conditional, fmt = config.code_style.keywords }, -- loop keywords: 'for', 'while' etc
-  -- Label = { fg = c.conditional }, -- 'case', 'default', etc
+  -- Repeat = { fg = c.preproc, fmt = config.code_style.keywords }, -- loop keywords: 'for', 'while' etc
+  -- Label = { fg = c.preproc }, -- 'case', 'default', etc
   Number = { fg = c.constant }, -- number constant
-  Operator = { fg = c.operator }, -- '+', '*', 'sizeof' etc
-  PreProc = { fg = c.conditional }, -- (preferred) generic preprocessor
+  Operator = { fg = c.operator, fmt = config.code_style.operators }, -- '+', '*', 'sizeof' etc
+  PreProc = { fg = c.preproc }, -- (preferred) generic preprocessor
   -- Define = { fg = c.comment }, -- preprocessor '#define'
   -- Include = { fg = c.keyword, fmt = config.code_style.keywords }, -- preprocessor '#include'
   -- Macro = { fg = c.constant, fmt = config.code_style.constants }, -- macros
   -- PreCondit = { fg = c.comment }, -- preprocessor conditionals '#if', '#endif' etc
   Special = { fg = c.builtin }, -- (preferred) any special symbol
-  SpecialChar = { fg = c.param }, -- special character in a constant
-  -- SpecialComment = { fg = c.param, fmt = config.code_style.comments }, -- special things inside comments
+  SpecialChar = { fg = c.keyword }, -- special character in a constant
+  -- SpecialComment = { fg = c.keyword, fmt = config.code_style.comments }, -- special things inside comments
   -- Tag = { fg = c.builtin }, -- can use <C-]> on this
   Statement = { fg = c.keyword }, -- (preferred) any statement
   String = { fg = c.string, fmt = config.code_style.strings }, -- string constants
@@ -132,10 +132,10 @@ hl.syntax = {
 if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
   hl.treesitter = {
     -- identifiers
-    ["@variable"] = { fg = c.fg }, -- any variable that does not have another highlight
+    ["@variable"] = { fg = c.fg, fmt = config.code_style.variables }, -- any variable that does not have another highlight
     ["@variable.builtin"] = hl.syntax["Special"], -- variable names that are defined by the language, like 'this' or 'self'
     ["@variable.member"] = { fg = c.property }, -- fields
-    -- ["@variable.parameter"] = { fg = c.param }, -- parameters of a function
+    -- ["@variable.parameter"] = { fg = c.property }, -- parameters of a function
     -- ["@variable.field"] = { fg = c.builtin }, -- fields
 
     -- ["@constant"] = { link = "Constant" }, -- constants
@@ -187,7 +187,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     ["@keyword.import"] = hl.syntax["PreProc"], -- keywords used to define a function
     ["@keyword.conditional"] = { fg = c.keyword, fmt = config.code_style.conditionals }, -- keywords for conditional statements
     ["@keyword.operator"] = { fg = c.keyword, fmt = config.code_style.operators }, -- keyword operator (eg, 'in' in python)
-    ["@keyword.return"] = { fg = c.builtin, fmt = "italic" }, -- keywords used to define a function
+    ["@keyword.return"] = { fg = c.builtin, fmt = config.code_style.keword_return }, -- keywords used to define a function
     -- ["@keyword.builtin"] = hl.syntax["Type"], -- keywords used to define a function
     -- ["@keyword.function"] = hl.syntax["Function"], -- keywords used to define a function
     -- ["@keyword.import"] = hl.syntax["Include"], -- includes, like '#include' in c, 'require' in lua
@@ -213,18 +213,18 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     ["@markup.strikethrough"] = { fg = c.comment, fmt = "strikethrough" }, -- strikethrough
     ["@markup.heading"] = { fg = c.keyword, fmt = "bold" }, -- markdown titles
     ["@markup.quote.markdown"] = { fg = c.comment }, -- quotes with >
-    ["@markup.link.uri"] = { fg = c.param, fmt = "underline" }, -- urls, links, emails
+    ["@markup.link.uri"] = { fg = c.preproc, fmt = "underline" }, -- urls, links, emails
     ["@markup.link"] = { fg = c.builtin }, -- text references, footnotes, citations, etc
     ["@markup.list"] = { fg = c.property },
     ["@markup.list.checked"] = { fg = c.func }, -- todo checked
-    ["@markup.list.unchecked"] = { fg = c.param }, -- todo unchecked
+    ["@markup.list.unchecked"] = { fg = c.property }, -- todo unchecked
     ["@markup.raw"] = { fg = c.func }, -- inline code in markdown
     ["@markup.math"] = { fg = c.builtin }, -- math environments, like `$$` in latex
 
     -- diff
-    ["@diff.plus"] = { fg = c.string }, -- added text (diff files)
+    ["@diff.plus"] = { fg = c.plus }, -- added text (diff files)
     ["@diff.minus"] = { fg = c.error }, -- removed text (diff files)
-    ["@diff.delta"] = { fg = c.func }, -- changed text (diff files)
+    ["@diff.delta"] = { fg = c.delta }, -- changed text (diff files)
 
     -- tags
     -- ["@tag"]
@@ -266,10 +266,10 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
   end
 end
 
-local diagnostics_error_color = config.diagnostics.darker and c.error or c.error -- FIX: add specific diagnostic colors
-local diagnostics_hint_color = config.diagnostics.darker and c.hint or c.conditional
-local diagnostics_warn_color = config.diagnostics.darker and c.warning or c.constant
-local diagnostics_info_color = config.diagnostics.darker and c.func or c.param
+local diagnostics_error_color = c.error
+local diagnostics_hint_color = c.hint
+local diagnostics_warn_color = c.warning
+local diagnostics_info_color = c.delta
 
 hl.plugins.lsp = {
   LspCxxHlGroupEnumConstant = { fg = c.type },
@@ -279,9 +279,9 @@ hl.plugins.lsp = {
   LspCxxHlSkippedRegionBeginEnd = { fg = c.operator },
 
   DiagnosticError = { fg = c.error },
-  DiagnosticHint = { fg = c.conditional },
-  DiagnosticInfo = { fg = c.param, fmt = "italic" },
-  DiagnosticWarn = { fg = c.constant },
+  DiagnosticHint = { fg = c.hint },
+  DiagnosticInfo = { fg = c.delta, fmt = "italic" },
+  DiagnosticWarn = { fg = c.warning },
 
   DiagnosticVirtualTextError = {
     bg = config.diagnostics.background
@@ -310,19 +310,19 @@ hl.plugins.lsp = {
 
   DiagnosticUnderlineError = {
     fmt = config.diagnostics.undercurl and "undercurl" or "underline",
-    sp = c.operator,
+    sp = c.error,
   },
   DiagnosticUnderlineHint = {
     fmt = config.diagnostics.undercurl and "undercurl" or "underline",
-    sp = c.conditional,
+    sp = c.hint,
   },
   DiagnosticUnderlineInfo = {
     fmt = config.diagnostics.undercurl and "undercurl" or "underline",
-    sp = c.func,
+    sp = c.delta,
   },
   DiagnosticUnderlineWarn = {
     fmt = config.diagnostics.undercurl and "undercurl" or "underline",
-    sp = c.constant,
+    sp = c.warning,
   },
 
   LspReferenceText = { bg = c.comment },
@@ -357,85 +357,84 @@ hl.plugins.cmp = {
   CmpItemKind = { fg = c.fg, fmt = config.cmp_itemkind_reverse and "reverse" },
 }
 
-hl.plugins.diffview = {
-  DiffviewFilePanelTitle = { fg = c.func, fmt = "bold" },
-  DiffviewFilePanelCounter = { fg = c.conditional, fmt = "bold" },
-  DiffviewFilePanelFileName = { fg = c.fg },
-  DiffviewNormal = hl.common.Normal,
-  DiffviewCursorLine = hl.common.CursorLine,
-  DiffviewVertSplit = hl.common.VertSplit,
-  DiffviewSignColumn = hl.common.SignColumn,
-  DiffviewStatusLine = hl.common.StatusLine,
-  DiffviewStatusLineNC = hl.common.StatusLineNC,
-  DiffviewEndOfBuffer = hl.common.EndOfBuffer,
-  DiffviewFilePanelRootPath = { fg = c.comment },
-  DiffviewFilePanelPath = { fg = c.comment },
-  DiffviewFilePanelInsertions = { fg = c.fg },
-  DiffviewFilePanelDeletions = { fg = c.operator },
-  DiffviewStatusAdded = { fg = c.fg },
-  DiffviewStatusUntracked = { fg = c.func },
-  DiffviewStatusModified = { fg = c.func },
-  DiffviewStatusRenamed = { fg = c.func },
-  DiffviewStatusCopied = { fg = c.func },
-  DiffviewStatusTypeChange = { fg = c.func },
-  DiffviewStatusUnmerged = { fg = c.func },
-  DiffviewStatusUnknown = { fg = c.operator },
-  DiffviewStatusDeleted = { fg = c.operator },
-  DiffviewStatusBroken = { fg = c.operator },
-}
+-- hl.plugins.diffview = {
+--   DiffviewFilePanelTitle = { fg = c.func, fmt = "bold" },
+--   DiffviewFilePanelCounter = { fg = c.preproc, fmt = "bold" },
+--   DiffviewFilePanelFileName = { fg = c.fg },
+--   DiffviewNormal = hl.common.Normal,
+--   DiffviewCursorLine = hl.common.CursorLine,
+--   DiffviewVertSplit = hl.common.VertSplit,
+--   DiffviewSignColumn = hl.common.SignColumn,
+--   DiffviewStatusLine = hl.common.StatusLine,
+--   DiffviewStatusLineNC = hl.common.StatusLineNC,
+--   DiffviewEndOfBuffer = hl.common.EndOfBuffer,
+--   DiffviewFilePanelRootPath = { fg = c.comment },
+--   DiffviewFilePanelPath = { fg = c.comment },
+--   DiffviewFilePanelInsertions = { fg = c.fg },
+--   DiffviewFilePanelDeletions = { fg = c.operator },
+--   DiffviewStatusAdded = { fg = c.fg },
+--   DiffviewStatusUntracked = { fg = c.delta },
+--   DiffviewStatusModified = { fg = c.delta },
+--   DiffviewStatusRenamed = { fg = c.delta },
+--   DiffviewStatusCopied = { fg = c.delta },
+--   DiffviewStatusTypeChange = { fg = c.delta },
+--   DiffviewStatusUnmerged = { fg = c.delta },
+--   DiffviewStatusUnknown = { fg = c.error },
+--   DiffviewStatusDeleted = { fg = c.error },
+--   DiffviewStatusBroken = { fg = c.error },
+-- }
 
 hl.plugins.gitsigns = {
-  GitSignsAdd = { fg = c.string },
-  GitSignsAddLn = { fg = c.string },
-  GitSignsAddNr = { fg = c.string },
-  GitSignsChange = { fg = c.func },
-  GitSignsChangeLn = { fg = c.func },
-  GitSignsChangeNr = { fg = c.func },
+  GitSignsAdd = { fg = c.plus },
+  GitSignsAddLn = { fg = c.plus },
+  GitSignsAddNr = { fg = c.plus },
+  GitSignsChange = { fg = c.delta },
+  GitSignsChangeLn = { fg = c.delta },
+  GitSignsChangeNr = { fg = c.delta },
   GitSignsDelete = { fg = c.error },
   GitSignsDeleteLn = { fg = c.error },
   GitSignsDeleteNr = { fg = c.error },
 }
 
-hl.plugins.neo_tree = {
-  NeoTreeNormal = { fg = c.fg, bg = config.transparent and c.none or c.float },
-  NeoTreeNormalNC = { fg = c.fg, bg = config.transparent and c.none or c.float },
-  NeoTreeVertSplit = { fg = c.comment, bg = config.transparent and c.none or c.comment },
-  NeoTreeWinSeparator = {
-    fg = c.comment,
-    bg = config.transparent and c.none or c.comment,
-  },
-  NeoTreeEndOfBuffer = {
-    fg = config.show_eob and c.comment or c.float,
-    bg = config.transparent and c.none or c.float,
-  },
-  NeoTreeRootName = { fg = c.type, fmt = "bold" },
-  NeoTreeGitAdded = { fg = c.fg },
-  NeoTreeGitDeleted = { fg = c.operator },
-  NeoTreeGitModified = { fg = c.constant },
-  NeoTreeGitConflict = { fg = c.operator, fmt = "bold,italic" },
-  NeoTreeGitUntracked = { fg = c.operator, fmt = "italic" },
-  NeoTreeIndentMarker = { fg = c.comment },
-  NeoTreeSymbolicLinkTarget = { fg = c.conditional },
-}
+-- hl.plugins.neo_tree = {
+--   NeoTreeNormal = { fg = c.fg, bg = config.transparent and c.none or c.float },
+--   NeoTreeNormalNC = { fg = c.fg, bg = config.transparent and c.none or c.float },
+--   NeoTreeVertSplit = { fg = c.comment, bg = config.transparent and c.none or c.comment },
+--   NeoTreeWinSeparator = {
+--     fg = c.comment,
+--     bg = config.transparent and c.none or c.comment,
+--   },
+--   NeoTreeEndOfBuffer = {
+--     fg = config.show_eob and c.comment or c.float,
+--     bg = config.transparent and c.none or c.float,
+--   },
+--   NeoTreeRootName = { fg = c.type, fmt = "bold" },
+--   NeoTreeGitAdded = { fg = c.fg },
+--   NeoTreeGitDeleted = { fg = c.error },
+--   NeoTreeGitModified = { fg = c.delta },
+--   NeoTreeGitConflict = { fg = c.error, fmt = "bold,italic" },
+--   NeoTreeGitUntracked = { fg = c.error, fmt = "italic" },
+--   NeoTreeIndentMarker = { fg = c.comment },
+--   NeoTreeSymbolicLinkTarget = { fg = c.hint },
+-- }
 
-hl.plugins.nvim_tree = {
-  NvimTreeNormal = { fg = c.fg, bg = config.transparent and c.none or c.float },
-  NvimTreeVertSplit = { fg = c.float, bg = config.transparent and c.none or c.float },
-  NvimTreeEndOfBuffer = {
-    fg = config.show_eob and c.comment or c.float,
-    bg = config.transparent and c.none or c.float,
-  },
-  NvimTreeRootFolder = { fg = c.type, fmt = "bold" },
-  NvimTreeGitDirty = { fg = c.constant },
-  NvimTreeGitNew = { fg = c.fg },
-  NvimTreeGitDeleted = { fg = c.operator },
-  NvimTreeSpecialFile = { fg = c.constant, fmt = "underline" },
-  NvimTreeIndentMarker = { fg = c.fg },
-  -- TODO:
-  -- NvimTreeImageFile = { fg = c.dark_10 },
-  NvimTreeSymlink = { fg = c.conditional },
-  NvimTreeFolderName = { fg = c.func },
-}
+-- hl.plugins.nvim_tree = {
+--   NvimTreeNormal = { fg = c.fg, bg = config.transparent and c.none or c.float },
+--   NvimTreeVertSplit = { fg = c.float, bg = config.transparent and c.none or c.float },
+--   NvimTreeEndOfBuffer = {
+--     fg = config.show_eob and c.comment or c.float,
+--     bg = config.transparent and c.none or c.float,
+--   },
+--   NvimTreeRootFolder = { fg = c.type, fmt = "bold" },
+--   NvimTreeGitDirty = { fg = c.delta },
+--   NvimTreeGitNew = { fg = c.fg },
+--   NvimTreeGitDeleted = { fg = c.error },
+--   NvimTreeSpecialFile = { fg = c.warning, fmt = "underline" },
+--   NvimTreeIndentMarker = { fg = c.fg },
+--   NvimTreeImageFile = { fg = c.dark_10 },
+--   NvimTreeSymlink = { fg = c.hint },
+--   NvimTreeFolderName = { fg = c.func },
+-- }
 
 hl.plugins.telescope = {
   TelescopeBorder = { fg = c.comment },
@@ -450,26 +449,26 @@ hl.plugins.dashboard = {
   DashboardShortCut = { fg = c.func },
   DashboardHeader = { fg = c.func },
   DashboardCenter = { fg = c.fg },
-  DashboardFooter = { fg = c.conditional, fmt = "italic" },
+  DashboardFooter = { fg = c.builtin, fmt = "italic" },
 }
 
-hl.plugins.indent_blankline = {
-  IndentBlanklineIndent1 = { fg = c.func },
-  IndentBlanklineIndent2 = { fg = c.fg },
-  IndentBlanklineIndent3 = { fg = c.keyword },
-  IndentBlanklineIndent4 = { fg = c.comment },
-  IndentBlanklineIndent5 = { fg = c.conditional },
-  IndentBlanklineIndent6 = { fg = c.operator },
-  IndentBlanklineChar = { fg = c.comment, fmt = "nocombine" },
-  IndentBlanklineContextChar = { fg = c.comment, fmt = "nocombine" },
-  IndentBlanklineContextStart = { sp = c.comment, fmt = "underline" },
-  IndentBlanklineContextSpaceChar = { fmt = "nocombine" },
+-- hl.plugins.indent_blankline = {
+--   IndentBlanklineIndent1 = { fg = c.func },
+--   IndentBlanklineIndent2 = { fg = c.fg },
+--   IndentBlanklineIndent3 = { fg = c.keyword },
+--   IndentBlanklineIndent4 = { fg = c.comment },
+--   IndentBlanklineIndent5 = { fg = c.preproc },
+--   IndentBlanklineIndent6 = { fg = c.operator },
+--   IndentBlanklineChar = { fg = c.comment, fmt = "nocombine" },
+--   IndentBlanklineContextChar = { fg = c.comment, fmt = "nocombine" },
+--   IndentBlanklineContextStart = { sp = c.comment, fmt = "underline" },
+--   IndentBlanklineContextSpaceChar = { fmt = "nocombine" },
 
-  -- Ibl v3
-  IblIndent = { fg = c.comment, fmt = "nocombine" },
-  IblWhitespace = { fg = c.comment, fmt = "nocombine" },
-  IblScope = { fg = c.comment, fmt = "nocombine" },
-}
+--   -- Ibl v3
+--   IblIndent = { fg = c.comment, fmt = "nocombine" },
+--   IblWhitespace = { fg = c.comment, fmt = "nocombine" },
+--   IblScope = { fg = c.comment, fmt = "nocombine" },
+-- }
 
 local lsp_kind_icons_color = {
   Default = c.keyword,
@@ -483,7 +482,7 @@ local lsp_kind_icons_color = {
   EnumMember = c.property,
   Event = c.type,
   Field = c.property,
-  File = c.string,
+  File = c.fg,
   Folder = c.func,
   Function = c.func,
   Interface = c.constant,
@@ -498,18 +497,17 @@ local lsp_kind_icons_color = {
   Operator = c.operator,
   Package = c.constant,
   Property = c.property,
-  Reference = c.param,
-  Snippet = c.param,
+  Reference = c.builtin,
+  Snippet = c.builtin,
   String = c.string,
   Struct = c.keyword,
   Text = c.fg,
-  TypeParameter = c.param,
+  TypeParameter = c.type,
   Unit = c.fg,
   Value = c.fg,
   Variable = c.fg,
 }
 
--- TODO: notify of nvim 0.8 requirement
 function M.setup()
   --
   -- define cmp and aerial kind highlights with lsp_kind_icons_color

@@ -59,17 +59,13 @@ local default_config = {
   -- Changing Formats --
   code_style = {
     comments = "italic",
-    keywords = "none",
     conditionals = "italic",
-    operators = "italic",
     functions = "none",
+    keywords = "none",
+    operators = "italic",
+    keyword_return = "italic",
     strings = "none",
     variables = "none",
-  },
-
-  -- Lualine options --
-  lualine = {
-    transparent = false, -- plain lualine (no backgrounds)
   },
 
   -- Custom Highlights --
