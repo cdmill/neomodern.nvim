@@ -1,6 +1,6 @@
 local M = {}
 
-M.styles_list = { "icebreaker", "coffeecat", "darkforest", "dawn" }
+M.styles_list = { "icebreaker", "coffeecat", "darkforest", "roseprime" }
 
 ---Change neomodern option (vim.g.neomodern_config.option)
 ---It can't be changed directly by modifying that field due to a Neovim lua bug with global variables (neomodern_config is a global variable)
