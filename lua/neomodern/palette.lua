@@ -1,5 +1,7 @@
 return {
   icebreaker = {
+    alt1 = "#abbceb",
+    alt2 = "#333336",
     bg = "#171718",
     border = "#4f4f4f",
     builtin = "#817faf",
@@ -9,7 +11,6 @@ return {
     fg = "#bbbac1",
     float = "#222225",
     func = "#8da0d6",
-    alt = "#abbceb",
     keyword = "#b39581",
     line = "#1d1d1f",
     operator = "#9b99a3",
@@ -26,6 +27,8 @@ return {
   },
   -- todo:
   coffeecat = {
+    alt1 = "#abbceb",
+    alt2 = "#333336",
     bg = "#1e1e1e",
     border = "#4f4f4f",
     builtin = "#817faf",
@@ -35,7 +38,6 @@ return {
     fg = "#bbbac1",
     float = "#222225",
     func = "#8da0d6",
-    alt = "#abbceb",
     keyword = "#b39581",
     line = "#1d1d1f",
     operator = "#9b99a3",
@@ -52,6 +54,8 @@ return {
   },
   -- todo: --green
   darkforest = {
+    alt1 = "#abbceb",
+    alt2 = "#333336",
     bg = "#181a1b", --
     border = "#4f4f4f",
     builtin = "#d699b6", --
@@ -61,7 +65,6 @@ return {
     fg = "#bbbac1", --
     float = "#222928", --
     func = "#a7c080", --
-    alt = "#abbceb",
     keyword = "#e67e80", --
     line = "#1e2326", --
     operator = "#9b99a3",
@@ -78,6 +81,8 @@ return {
   },
   -- todo: purple
   dawn = {
+    alt1 = "#abbceb",
+    alt2 = "#333336",
     bg = "#1b1a20",
     -- bg0 = "#1f1e25",
     border = "#4f4f4f",
@@ -88,7 +93,6 @@ return {
     fg = "#bbbac1",
     float = "#222225",
     func = "#8da0d6",
-    alt = "#abbceb",
     keyword = "#b39581",
     line = "#1d1d1f",
     operator = "#9b99a3",
@@ -104,6 +108,8 @@ return {
     plus = "#7da77e",
   },
   roseprime = {
+    alt1 = "#abbceb",
+    alt2 = "#333336",
     bg = "#121212",
     border = "#4f4f4f", --
     builtin = "#ba7685",
@@ -113,7 +119,6 @@ return {
     fg = "#bbbac1",
     float = "#121212", --
     func = "#ddadb4",
-    alt = "#abbceb",
     keyword = "#6b8f89",
     line = "#1f1f1f", --
     operator = "#838196",
