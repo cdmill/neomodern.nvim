@@ -16,21 +16,21 @@ local colors = {
 -- stylua: ignore
 local neomodern = {
   normal = {
-    a = { bg = cfg.plain_ui and c.none or colors.norm, fg = cfg.plain_ui and colors.norm or colors.dark, gui = "bold" },
+    a = { bg = cfg.plain_ui and c.none or colors.norm, fg = cfg.plain_ui and colors.norm or colors.dark },
     b = { bg = cfg.plain_ui and c.none or colors.bg_b, fg = colors.vcs },
     c = { bg = cfg.plain_ui and c.none or colors.bg_c, fg = colors.fg_dim },
   },
   insert = {
-    a = { bg = cfg.plain_ui and c.none or colors.ins, fg = cfg.plain_ui and colors.ins or colors.dark, gui = "bold" },
+    a = { bg = cfg.plain_ui and c.none or colors.ins, fg = cfg.plain_ui and colors.ins or colors.dark },
   },
   visual = {
-    a = { bg = cfg.plain_ui and c.none or colors.vis, fg = cfg.plain_ui and colors.vis or colors.dark, gui = "bold" },
+    a = { bg = cfg.plain_ui and c.none or colors.vis, fg = cfg.plain_ui and colors.vis or colors.dark },
   },
   replace = {
-    a = { bg = cfg.plain_ui and c.none or colors.rep, fg = cfg.plain_ui and colors.rep or colors.dark, gui = "bold" },
+    a = { bg = cfg.plain_ui and c.none or colors.rep, fg = cfg.plain_ui and colors.rep or colors.dark },
   },
   command = {
-    a = { bg = cfg.plain_ui and c.none or colors.comm, fg = cfg.plain_ui and colors.comm or colors.dark, gui = "bold" },
+    a = { bg = cfg.plain_ui and c.none or colors.comm, fg = cfg.plain_ui and colors.comm or colors.dark },
   },
 }
 
