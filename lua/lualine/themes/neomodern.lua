@@ -9,8 +9,8 @@ local colors = {
   fg_dim = c.comment,
   vcs = c.alt,
   dark = c.bg,
-  bg_b = c.line,
-  bg_c = c.float,
+  bg_b = c.float,
+  bg_c = c.line,
 }
 
 -- stylua: ignore
