@@ -50,10 +50,10 @@ local default_config = {
   style = "icebreaker", -- choose between 'icebreaker', 'coffeecat', 'day', 'dawn'
   toggle_style_key = nil,
   toggle_style_list = M.styles_list,
-  plain_ui = false,
   transparent = false, -- don't set background
   term_colors = true, -- if true enable the terminal
   show_eob = true, -- show the end-of-buffer tildes
+  plain_ui = false, -- don't set background for search, lualine
   cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
 
   -- Changing Formats --
@@ -62,10 +62,14 @@ local default_config = {
     conditionals = "none",
     functions = "none",
     keywords = "none",
-    operators = "italic",
+    operators = "none",
     keyword_return = "none",
     strings = "none",
     variables = "none",
+  },
+
+  lualine = {
+    bold = true,
   },
 
   -- Custom Highlights --
