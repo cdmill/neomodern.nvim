@@ -1,7 +1,6 @@
 return {
   icebreaker = {
-    alt1 = "#abbceb",
-    alt2 = "#333336",
+    alt = "#abbceb",
     bg = "#171718",
     border = "#4f4f4f",
     builtin = "#817faf",
@@ -18,7 +17,7 @@ return {
     property = "#559ba3",
     string = "#7da77e",
     type = "#d6a56f",
-    visual = "#222225",
+    visual = "#333336",
     error = "#e67e80",
     hint = "#8c593a",
     warning = "#ad9368",
@@ -27,8 +26,7 @@ return {
   },
   -- todo:
   coffeecat = {
-    alt1 = "#abbceb",
-    alt2 = "#333336",
+    alt = "#abbceb",
     bg = "#1e1e1e",
     border = "#4f4f4f",
     builtin = "#817faf",
@@ -54,8 +52,7 @@ return {
   },
   -- todo: --green
   darkforest = {
-    alt1 = "#abbceb",
-    alt2 = "#333336",
+    alt = "#abbceb",
     bg = "#181a1b", --
     border = "#4f4f4f",
     builtin = "#d699b6", --
@@ -81,8 +78,7 @@ return {
   },
   -- todo: purple
   dawn = {
-    alt1 = "#abbceb",
-    alt2 = "#333336",
+    alt = "#abbceb",
     bg = "#1b1a20",
     -- bg0 = "#1f1e25",
     border = "#4f4f4f",
@@ -108,8 +104,7 @@ return {
     plus = "#7da77e",
   },
   roseprime = {
-    alt1 = "#abbceb",
-    alt2 = "#333336",
+    alt = "#abbceb",
     bg = "#121212",
     border = "#4f4f4f", --
     builtin = "#ba7685",

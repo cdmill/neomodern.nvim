@@ -7,9 +7,9 @@ local colors = {
   rep = c.property,
   comm = c.type,
   fg_dim = c.comment,
-  vcs = c.alt1,
+  vcs = c.alt,
   dark = c.dim,
-  bg_b = c.alt2,
+  bg_b = c.visual,
   bg_c = c.line,
 }
 
