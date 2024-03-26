@@ -215,9 +215,9 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     ["@markup.quote.markdown"] = { fg = c.comment }, -- quotes with >
     ["@markup.link.uri"] = { fg = c.preproc, fmt = "underline" }, -- urls, links, emails
     ["@markup.link"] = { fg = c.builtin }, -- text references, footnotes, citations, etc
-    ["@markup.list"] = { fg = c.property },
+    ["@markup.list"] = { fg = c.func },
     ["@markup.list.checked"] = { fg = c.func }, -- todo checked
-    ["@markup.list.unchecked"] = { fg = c.property }, -- todo unchecked
+    ["@markup.list.unchecked"] = { fg = c.func }, -- todo unchecked
     ["@markup.raw"] = { fg = c.func }, -- inline code in markdown
     ["@markup.math"] = { fg = c.builtin }, -- math environments, like `$$` in latex
 
