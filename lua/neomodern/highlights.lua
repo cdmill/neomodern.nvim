@@ -143,7 +143,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     -- ["@constant.macro"] = { link = "Macro" }, -- constants that are defined by macros like 'NULL' in c
 
     -- ["@label"] = { link = "Label" }, -- labels
-    ["@module"] = { link = "Type" }, -- modules and namespaces
+    ["@module"] = hl.syntax["Type"], -- modules and namespaces
 
     -- literals
     -- ["@string"] = { link = "String" }, -- strings
