@@ -130,6 +130,7 @@ hl.syntax = {
 }
 
 if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
+  DOCSTRING = (config.code_style.docstrings:gsub("^%l", string.upper))
   hl.treesitter = {
     -- identifiers
     ["@variable"] = { fg = c.fg, fmt = config.code_style.variables }, -- any variable that does not have another highlight
@@ -147,7 +148,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
 
     -- literals
     -- ["@string"] = { link = "String" }, -- strings
-    -- ["@string.documentation"] = hl.syntax["Comment"], -- doc strings
+    ["@string.documentation"] = hl.syntax[DOCSTRING], -- doc strings
     ["@string.regexp"] = hl.syntax["SpecialChar"], -- regex
     ["@string.escape"] = hl.syntax["SpecialChar"], -- escape characters within string
     ["@string.special.symbol"] = hl.syntax["Identifier"],

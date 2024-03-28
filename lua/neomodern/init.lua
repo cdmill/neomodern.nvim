@@ -66,6 +66,7 @@ local default_config = {
     keyword_return = "none",
     strings = "none",
     variables = "none",
+    docstrings = "string", -- options for which highlight to link docstring to: "string" | "comment"
   },
 
   lualine = {
