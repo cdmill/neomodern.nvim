@@ -197,7 +197,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     -- punctuation
     ["@punctuation.delimiter"] = { fg = c.fg }, -- delimiters, like `; . , `
     ["@punctuation.bracket"] = { fg = c.fg }, -- brackets and parentheses
-    ["@punctuation.special"] = { fg = c.fg }, -- punctuation that does not fall into above categories, like `{}` in string interpolation
+    ["@punctuation.special"] = hl.syntax["SpecialChar"], -- punctuation that does not fall into above categories, like `{}` in string interpolation
 
     -- comment
     -- ["@comment"]
