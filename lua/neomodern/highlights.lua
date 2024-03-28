@@ -147,7 +147,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
 
     -- literals
     -- ["@string"] = { link = "String" }, -- strings
-    ["@string.documentation"] = hl.syntax["Comment"], -- doc strings
+    -- ["@string.documentation"] = hl.syntax["Comment"], -- doc strings
     ["@string.regexp"] = hl.syntax["SpecialChar"], -- regex
     ["@string.escape"] = hl.syntax["SpecialChar"], -- escape characters within string
     ["@string.special.symbol"] = hl.syntax["Identifier"],
