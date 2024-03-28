@@ -66,7 +66,7 @@ return {
     line = "#1e2326", --
     operator = "#9b99a3",
     preproc = "#c491a9",
-    property = "#83c092", --
+    property = "#7da77e", --
     string = "#dbbc7f", --
     type = "#e69875", --
     visual = "#3c4841", --
