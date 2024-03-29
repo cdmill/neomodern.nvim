@@ -47,13 +47,11 @@ end
 
 local default_config = {
   -- Main options --
-  style = "icebreaker", -- choose between 'icebreaker', 'coffeecat', 'day', 'dawn'
+  style = "icebreaker", -- choose between 'icebreaker', 'coffeecat', 'darkforest', 'dawn', 'roseprime'
   toggle_style_key = nil,
   toggle_style_list = M.styles_list,
   transparent = false, -- don't set background
   term_colors = true, -- if true enable the terminal
-  show_eob = true, -- show the end-of-buffer tildes
-  cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
 
   -- Changing Formats --
   code_style = {
@@ -67,26 +65,26 @@ local default_config = {
     variables = "none",
   },
 
-  lualine = {
-    bold = true,
-  },
-
   ui = {
-    plain = false,
-    plain_ui = false, -- don't set background for search, lualine
-    colored_docstrings = true,
+    cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
+    colored_docstrings = true, -- highlight docstrings like strings
+    plain = false, -- don't set background for search, lualine
+    show_eob = true, -- show the end-of-buffer tildes
+
+    -- Plugins Related --
+    lualine = {
+      bold = true,
+    },
+    diagnostics = {
+      darker = true, -- darker colors for diagnostic
+      undercurl = true, -- use undercurl for diagnostics
+      background = true, -- use background color for virtual text
+    },
   },
 
   -- Custom Highlights --
   colors = {}, -- Override default colors
   highlights = {}, -- Override highlight groups
-
-  -- Plugins Related --
-  diagnostics = {
-    darker = true, -- darker colors for diagnostic
-    undercurl = true, -- use undercurl for diagnostics
-    background = true, -- use background color for virtual text
-  },
 }
 
 ---Setup neomodern.nvim options, without applying colorscheme

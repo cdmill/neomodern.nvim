@@ -23,7 +23,7 @@ end
 hl.common = {
   ColorColumn = { bg = c.line },
   Conceal = { fg = c.comment, bg = c.line },
-  CurSearch = { fg = c.type, bg = config.plain_ui and c.bg or c.visual },
+  CurSearch = { fg = c.type, bg = config.ui.plain and c.bg or c.visual },
   Cursor = { fmt = "reverse" },
   vCursor = { fmt = "reverse" },
   iCursor = { fmt = "reverse" },
@@ -45,7 +45,7 @@ hl.common = {
   DiffIndexLine = { fg = c.comment },
   Directory = { fg = c.func },
   ErrorMsg = { fg = c.error, fmt = "bold" },
-  EndOfBuffer = { fg = config.show_eob and c.comment or c.bg },
+  EndOfBuffer = { fg = config.ui.show_eob and c.comment or c.bg },
   FloatBorder = {
     fg = config.transparent and c.none or c.float,
     bg = config.transparent and c.none or c.float,
@@ -53,7 +53,7 @@ hl.common = {
   FloatTitle = { fg = c.comment, bg = c.float },
   Folded = { fg = c.comment, bg = config.transparent and c.none or c.line },
   FoldColumn = { fg = c.comment, bg = config.transparent and c.none or c.bg },
-  IncSearch = { fg = c.type, bg = config.plain_ui and c.bg or c.visual },
+  IncSearch = { fg = c.type, bg = config.ui.plain and c.bg or c.visual },
   LineNr = { fg = c.comment },
   MatchParen = { fg = c.bg, bg = c.type },
   MoreMsg = { fg = c.func, fmt = "bold" },
@@ -67,7 +67,7 @@ hl.common = {
   PmenuThumb = { fg = c.none, bg = c.visual },
   Question = { fg = c.constant },
   QuickFixLine = { fg = c.func, fmt = "underline" },
-  Search = { fg = "#aaaaaa", bg = config.plain_ui and c.bg or c.visual },
+  Search = { fg = "#aaaaaa", bg = config.ui.plain and c.bg or c.visual },
   SignColumn = { fg = c.fg, bg = config.transparent and c.none or c.bg },
   SpecialKey = { fg = c.comment },
   SpellBad = { fg = c.none, fmt = "undercurl", sp = c.operator },
@@ -148,7 +148,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
 
     -- literals
     -- ["@string"] = { link = "String" }, -- strings
-    ["@string.documentation"] = config.docstrings.colored and hl.syntax["String"] or hl.syntax["Comment"], -- doc strings
+    ["@string.documentation"] = config.ui.colored_docstrings and hl.syntax["String"] or hl.syntax["Comment"], -- doc strings
     ["@string.regexp"] = hl.syntax["SpecialChar"], -- regex
     ["@string.escape"] = hl.syntax["SpecialChar"], -- escape characters within string
     ["@string.special.symbol"] = hl.syntax["Identifier"],
@@ -285,44 +285,44 @@ hl.plugins.lsp = {
   DiagnosticWarn = { fg = c.warning },
 
   DiagnosticVirtualTextError = {
-    bg = config.diagnostics.background
+    bg = config.ui.diagnostics.background
         and util.darken(diagnostics_error_color, 0.1, c.bg)
       or c.none,
     fg = diagnostics_error_color,
   },
   DiagnosticVirtualTextWarn = {
-    bg = config.diagnostics.background
+    bg = config.ui.diagnostics.background
         and util.darken(diagnostics_warn_color, 0.1, c.bg)
       or c.none,
     fg = diagnostics_warn_color,
   },
   DiagnosticVirtualTextInfo = {
-    bg = config.diagnostics.background
+    bg = config.ui.diagnostics.background
         and util.darken(diagnostics_info_color, 0.1, c.bg)
       or c.none,
     fg = diagnostics_info_color,
   },
   DiagnosticVirtualTextHint = {
-    bg = config.diagnostics.background
+    bg = config.ui.diagnostics.background
         and util.darken(diagnostics_hint_color, 0.1, c.bg)
       or c.none,
     fg = diagnostics_hint_color,
   },
 
   DiagnosticUnderlineError = {
-    fmt = config.diagnostics.undercurl and "undercurl" or "underline",
+    fmt = config.ui.diagnostics.undercurl and "undercurl" or "underline",
     sp = c.error,
   },
   DiagnosticUnderlineHint = {
-    fmt = config.diagnostics.undercurl and "undercurl" or "underline",
+    fmt = config.ui.diagnostics.undercurl and "undercurl" or "underline",
     sp = c.hint,
   },
   DiagnosticUnderlineInfo = {
-    fmt = config.diagnostics.undercurl and "undercurl" or "underline",
+    fmt = config.ui.diagnostics.undercurl and "undercurl" or "underline",
     sp = c.delta,
   },
   DiagnosticUnderlineWarn = {
-    fmt = config.diagnostics.undercurl and "undercurl" or "underline",
+    fmt = config.ui.diagnostics.undercurl and "undercurl" or "underline",
     sp = c.warning,
   },
 
@@ -355,7 +355,7 @@ hl.plugins.cmp = {
   CmpItemAbbrMatch = { fg = c.keyword },
   CmpItemAbbrMatchFuzzy = { fg = c.keyword, fmt = "underline" },
   CmpItemMenu = { fg = c.comment },
-  CmpItemKind = { fg = c.fg, fmt = config.cmp_itemkind_reverse and "reverse" },
+  CmpItemKind = { fg = c.fg, fmt = config.ui.cmp_itemkind_reverse and "reverse" },
 }
 
 -- hl.plugins.diffview = {
@@ -406,7 +406,7 @@ hl.plugins.gitsigns = {
 --     bg = config.transparent and c.none or c.comment,
 --   },
 --   NeoTreeEndOfBuffer = {
---     fg = config.show_eob and c.comment or c.float,
+--     fg = config.ui.show_eob and c.comment or c.float,
 --     bg = config.transparent and c.none or c.float,
 --   },
 --   NeoTreeRootName = { fg = c.type, fmt = "bold" },
@@ -423,7 +423,7 @@ hl.plugins.gitsigns = {
 --   NvimTreeNormal = { fg = c.fg, bg = config.transparent and c.none or c.float },
 --   NvimTreeVertSplit = { fg = c.float, bg = config.transparent and c.none or c.float },
 --   NvimTreeEndOfBuffer = {
---     fg = config.show_eob and c.comment or c.float,
+--     fg = config.ui.show_eob and c.comment or c.float,
 --     bg = config.transparent and c.none or c.float,
 --   },
 --   NvimTreeRootFolder = { fg = c.type, fmt = "bold" },
@@ -514,7 +514,7 @@ function M.setup()
   -- define cmp and aerial kind highlights with lsp_kind_icons_color
   for kind, color in pairs(lsp_kind_icons_color) do
     hl.plugins.cmp["CmpItemKind" .. kind] =
-      { fg = color, fmt = config.cmp_itemkind_reverse and "reverse" }
+      { fg = color, fmt = config.ui.cmp_itemkind_reverse and "reverse" }
   end
 
   vim_highlights(hl.common)
