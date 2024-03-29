@@ -129,8 +129,8 @@ hl.syntax = {
   Todo = { fg = c.func, fmt = config.code_style.comments }, -- (preferred) 'TODO' keywords in comments
 }
 
+-- stylua: ignore
 if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
-  DOCSTRING = (config.code_style.docstrings:gsub("^%l", string.upper))
   hl.treesitter = {
     -- identifiers
     ["@variable"] = { fg = c.fg, fmt = config.code_style.variables }, -- any variable that does not have another highlight
@@ -148,7 +148,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
 
     -- literals
     -- ["@string"] = { link = "String" }, -- strings
-    ["@string.documentation"] = hl.syntax[DOCSTRING], -- doc strings
+    ["@string.documentation"] = config.docstrings.colored and hl.syntax["String"] or hl.syntax["Comment"], -- doc strings
     ["@string.regexp"] = hl.syntax["SpecialChar"], -- regex
     ["@string.escape"] = hl.syntax["SpecialChar"], -- escape characters within string
     ["@string.special.symbol"] = hl.syntax["Identifier"],
@@ -243,7 +243,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
       ["@lsp.type.namespace"] = hl.treesitter["@module"],
       ["@lsp.type.parameter"] = hl.treesitter["@variable.parameter"],
       -- ["@lsp.type.property"] = { link = "Identifier" },
-      ["@lsp.type.variable"] = hl.treesitter["@variable"],
+      -- ["@lsp.type.variable"] = hl.treesitter["@variable"],
       -- ["@lsp.type.macro"] = { link = "Macro" },
       -- ["@lsp.type.method"] = { link = "@function.method" },
       -- ["@lsp.type.generic"] = { link = "Type" },
