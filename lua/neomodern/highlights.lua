@@ -53,7 +53,10 @@ hl.common = {
   FloatTitle = { fg = c.comment, bg = c.float },
   Folded = { fg = c.comment, bg = config.transparent and c.none or c.line },
   FoldColumn = { fg = c.comment, bg = config.transparent and c.none or c.bg },
-  IncSearch = { fg = c.type, bg = config.ui.plain and c.bg or c.visual },
+  IncSearch = {
+    fg = config.ui.plain and c.type or c.bg,
+    bg = config.ui.plain and c.bg or c.type,
+  },
   LineNr = { fg = c.comment },
   MatchParen = { fg = c.bg, bg = c.type },
   MoreMsg = { fg = c.func, fmt = "bold" },
