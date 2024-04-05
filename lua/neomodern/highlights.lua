@@ -215,7 +215,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     ["@markup.italic"] = { fg = c.fg, fmt = "italic" }, -- italic
     ["@markup.underline"] = { fg = c.fg, fmt = "underline" }, -- underline
     ["@markup.strikethrough"] = { fg = c.comment, fmt = "strikethrough" }, -- strikethrough
-    ["@markup.heading"] = { fg = c.keyword, fmt = "bold" }, -- markdown titles
+    ["@markup.heading"] = { fg = c.keyword, fmt = config.code_style.headings}, -- markdown titles
     ["@markup.quote.markdown"] = { fg = c.comment }, -- quotes with >
     ["@markup.link.uri"] = { fg = c.preproc, fmt = "underline" }, -- urls, links, emails
     ["@markup.link"] = { fg = c.builtin }, -- text references, footnotes, citations, etc

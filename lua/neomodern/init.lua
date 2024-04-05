@@ -59,6 +59,7 @@ local default_config = {
     conditionals = "none",
     functions = "none",
     keywords = "none",
+    headings = "bold", -- markdown headers
     operators = "none",
     keyword_return = "none",
     strings = "none",
