@@ -2,7 +2,7 @@ return {
   icebreaker = {
     alt = "#abbceb",
     bg = "#171718",
-    border = "#4f4f4f",
+    border = "#2d2d2f",
     builtin = "#817faf",
     comment = "#55555e",
     constant = "#dbbc8a",

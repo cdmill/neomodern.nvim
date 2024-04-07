@@ -93,7 +93,7 @@ hl.common = {
   WarningMsg = { fg = c.type, fmt = "bold" },
   Whitespace = { fg = c.comment },
   WildMenu = { fg = c.bg, bg = c.func },
-  WinSeparator = { fg = c.comment },
+  WinSeparator = { fg = c.border },
 }
 
 hl.syntax = {
@@ -441,7 +441,7 @@ hl.plugins.gitsigns = {
 -- }
 
 hl.plugins.telescope = {
-  TelescopeBorder = { fg = c.comment },
+  TelescopeBorder = { fg = c.border },
   TelescopeMatching = { fg = c.type, fmt = "bold" },
   TelescopePromptPrefix = { fg = c.func },
   TelescopeSelection = { fg = c.type, bg = c.bg },
