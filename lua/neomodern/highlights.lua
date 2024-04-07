@@ -58,7 +58,7 @@ hl.common = {
     bg = config.ui.plain and c.bg or c.type,
   },
   LineNr = { fg = c.comment },
-  MatchParen = { fg = c.bg, bg = c.type },
+  MatchParen = { fg = c.fg, bg = c.visual },
   MoreMsg = { fg = c.func, fmt = "bold" },
   MsgSeparator = { fg = c.string, bg = c.line, fmt = "bold" },
   NonText = { fg = c.comment },
