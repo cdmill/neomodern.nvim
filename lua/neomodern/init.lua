@@ -69,12 +69,13 @@ local default_config = {
   ui = {
     cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
     colored_docstrings = true, -- highlight docstrings like strings
-    plain = false, -- don't set background for search, lualine
+    plain = false, -- don't set background for search
     show_eob = true, -- show the end-of-buffer tildes
 
     -- Plugins Related --
     lualine = {
       bold = true,
+      plain = true,
     },
     diagnostics = {
       darker = true, -- darker colors for diagnostic

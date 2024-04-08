@@ -16,21 +16,21 @@ local colors = {
 -- stylua: ignore
 local neomodern = {
   normal = {
-    a = { bg = cfg.ui.plain and c.none or colors.norm, fg = cfg.ui.plain and colors.norm or colors.dark, gui = cfg.ui.lualine.bold and "bold" or "none"},
-    b = { bg = cfg.ui.plain and c.none or colors.bg_b, fg = colors.vcs },
-    c = { bg = cfg.ui.plain and c.none or colors.bg_c, fg = colors.fg_dim },
+    a = { bg = cfg.lualine.plain and c.none or colors.norm, fg = cfg.lualine.plain and colors.norm or colors.dark, gui = cfg.lualine.bold and "bold" or "none"},
+    b = { bg = cfg.lualine.plain and c.none or colors.bg_b, fg = colors.vcs },
+    c = { bg = cfg.lualine.plain and c.none or colors.bg_c, fg = colors.fg_dim },
   },
   insert = {
-    a = { bg = cfg.ui.plain and c.none or colors.ins, fg = cfg.ui.plain and colors.ins or colors.dark, gui = cfg.ui.lualine.bold and "bold" or "none" },
+    a = { bg = cfg.lualine.plain and c.none or colors.ins, fg = cfg.lualine.plain and colors.ins or colors.dark, gui = cfg.lualine.bold and "bold" or "none" },
   },
   visual = {
-    a = { bg = cfg.ui.plain and c.none or colors.vis, fg = cfg.ui.plain and colors.vis or colors.dark, gui = cfg.ui.lualine.bold and "bold" or "none" },
+    a = { bg = cfg.lualine.plain and c.none or colors.vis, fg = cfg.lualine.plain and colors.vis or colors.dark, gui = cfg.lualine.bold and "bold" or "none" },
   },
   replace = {
-    a = { bg = cfg.ui.plain and c.none or colors.rep, fg = cfg.ui.plain and colors.rep or colors.dark, gui = cfg.ui.lualine.bold and "bold" or "none" },
+    a = { bg = cfg.lualine.plain and c.none or colors.rep, fg = cfg.lualine.plain and colors.rep or colors.dark, gui = cfg.lualine.bold and "bold" or "none" },
   },
   command = {
-    a = { bg = cfg.ui.plain and c.none or colors.comm, fg = cfg.ui.plain and colors.comm or colors.dark, gui = cfg.ui.lualine.bold and "bold" or "none" },
+    a = { bg = cfg.lualine.plain and c.none or colors.comm, fg = cfg.lualine.plain and colors.comm or colors.dark, gui = cfg.lualine.bold and "bold" or "none" },
   },
 }
 
