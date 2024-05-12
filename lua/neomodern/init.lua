@@ -77,6 +77,7 @@ local default_config = {
       bold = true,
       plain = true,
     },
+    telescope = "borderless", -- borderless | bordered
     diagnostics = {
       darker = true, -- darker colors for diagnostic
       undercurl = true, -- use undercurl for diagnostics

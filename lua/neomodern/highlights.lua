@@ -440,14 +440,27 @@ hl.plugins.gitsigns = {
 --   NvimTreeFolderName = { fg = c.func },
 -- }
 
-hl.plugins.telescope = {
-  TelescopeBorder = { fg = c.border },
-  TelescopeMatching = { fg = c.type, fmt = "bold" },
-  TelescopePromptPrefix = { fg = c.func },
-  TelescopeSelection = { fg = c.type, bg = c.bg },
-  TelescopeSelectionCaret = { fg = c.type },
-  TelescopeResultsNormal = { fg = c.fg },
+local telescope_ui = {
+  borderless = {
+    TelescopeTitle = { fg = c.fg },
+    TelescopeNormal = { bg = c.float },
+    TelescopePrompt = { bg = c.visual, fmt = "bold" },
+    TelescopePromptBorder = { fg = c.visual, bg = c.visual },
+    TelescopePromptPrefix = { fg = c.func },
+    TelescopeSelectionBorder = { fg = c.float, bg = c.float },
+    TelescopeSelectionCaret = { fg = c.type },
+  },
+  bordered = {
+    TelescopeBorder = { fg = c.border },
+    TelescopeMatching = { fg = c.type, fmt = "bold" },
+    TelescopePromptPrefix = { fg = c.func },
+    TelescopeSelection = { fg = c.type, bg = c.bg },
+    TelescopeSelectionCaret = { fg = c.type },
+    TelescopeResultsNormal = { fg = c.fg },
+  },
 }
+
+hl.plugins.telescope = telescope_ui[config.ui.telescope]
 
 hl.plugins.dashboard = {
   DashboardShortCut = { fg = c.func },
