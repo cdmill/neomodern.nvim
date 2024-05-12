@@ -444,11 +444,16 @@ local telescope_ui = {
   borderless = {
     TelescopeTitle = { fg = c.fg },
     TelescopeNormal = { bg = c.float },
-    TelescopePrompt = { bg = c.visual, fmt = "bold" },
+    TelescopePromptNormal = { bg = c.visual, fmt = "bold" },
     TelescopePromptBorder = { fg = c.visual, bg = c.visual },
+    TelescopePreviewBorder = { fg = c.float, bg = c.float },
+    TelescopeResultsBorder = { fg = c.float, bg = c.float },
     TelescopePromptPrefix = { fg = c.func },
     TelescopeSelectionBorder = { fg = c.float, bg = c.float },
     TelescopeSelectionCaret = { fg = c.type },
+    TelescopeSelection = { fg = c.fg },
+    TelescopeMatching = { fg = c.type, fmt = "bold" },
+    TelescopeResultsNormal = { fg = c.comment, bg = c.float },
   },
   bordered = {
     TelescopeBorder = { fg = c.border },
