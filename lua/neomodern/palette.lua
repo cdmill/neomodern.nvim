@@ -51,7 +51,7 @@ return {
   },
   -- TODO: --green
   darkforest = {
-    alt = "#ab6135",
+    alt = "#e69875",
     bg = "#181b1b",
     border = "#4f4f4f",
     builtin = "#d699b6",
