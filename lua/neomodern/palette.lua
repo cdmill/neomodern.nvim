@@ -130,4 +130,29 @@ return {
     -- #e3afa8
     --
   },
+  light = {
+    alt = "#abbceb",
+    bg = "#ffffff", -- done
+    border = "#2d2d2f",
+    builtin = "#e29eca",
+    comment = "#55555e",
+    constant = "#dbbc8a",
+    dim = "#111111",
+    fg = "#bbbac1",
+    float = "#222225",
+    func = "#8da0d6",
+    keyword = "#0f0b4d", --done
+    line = "#1d1d1f",
+    operator = "#111111", -- done
+    preproc = "#b39581",
+    property = "#0e8f9e", -- done
+    string = "#41a642", -- done
+    type = "#d6a56f",
+    visual = "#333336",
+    error = "#e67e80",
+    hint = "#8c593a",
+    warning = "#ad9368",
+    delta = "#8da0d6",
+    plus = "#7da77e",
+  },
 }

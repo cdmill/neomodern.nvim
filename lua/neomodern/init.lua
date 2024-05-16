@@ -1,6 +1,6 @@
 local M = {}
 
-M.styles_list = { "icebreaker", "coffeecat", "darkforest", "roseprime" }
+M.styles_list = { "icebreaker", "coffeecat", "darkforest", "roseprime", "light" }
 
 ---Change neomodern option (vim.g.neomodern_config.option)
 ---It can't be changed directly by modifying that field due to a Neovim lua bug with global variables (neomodern_config is a global variable)
@@ -21,7 +21,7 @@ function M.colorscheme()
   vim.o.termguicolors = true
   vim.g.colors_name = "neomodern"
   if vim.o.background == "light" then
-    M.set_options("style", "day")
+    M.set_options("style", "light")
   elseif vim.g.neomodern_config.style == "light" then
     M.set_options("style", "icebreaker")
   end
