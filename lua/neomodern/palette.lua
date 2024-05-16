@@ -141,7 +141,7 @@ return {
     fg = "#55555e",
     float = "#d3d3db",
     func = "#3462e3",
-    keyword = "#0f0b4d",
+    keyword = "#6b65d6",
     line = "#f0f0f5",
     operator = "#111111",
     preproc = "#7d5f4b",
