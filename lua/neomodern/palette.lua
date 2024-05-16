@@ -139,7 +139,7 @@ return {
     constant = "#fca921",
     dim = "#a7a7b0",
     fg = "#55555e",
-    float = "#d3d3db",
+    float = "#e8e8eb",
     func = "#5d86f5",
     keyword = "#6b65d6",
     line = "#f0f0f5",
