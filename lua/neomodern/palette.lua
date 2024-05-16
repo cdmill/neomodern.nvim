@@ -77,7 +77,7 @@ return {
     plus = "#a7c080",
   },
   -- todo: purple
-  dusk = {
+  campfire = {
     alt = "#abbceb",
     bg = "#1b1a20",
     -- bg0 = "#1f1e25",
@@ -130,7 +130,7 @@ return {
     -- #e3afa8
     --
   },
-  daybreak = {
+  daylight = {
     alt = "#5d86f5",
     bg = "#ffffff",
     border = "#d9d9de",
