@@ -23,7 +23,7 @@ function M.colorscheme()
   if vim.o.background == "light" then
     M.set_options("style", "light")
   elseif vim.g.neomodern_config.style == "light" then
-    M.set_options("style", "icebreaker")
+    M.set_options("style", "light")
   end
   require("neomodern.highlights").setup()
   require("neomodern.terminal").setup()
