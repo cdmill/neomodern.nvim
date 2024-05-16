@@ -1,6 +1,6 @@
 local M = {}
 
-M.styles_list = { "icebreaker", "coffeecat", "darkforest", "roseprime", "light" }
+M.styles_list = { "icebreaker", "coffeecat", "darkforest", "roseprime", "daybreak" }
 
 ---Change neomodern option (vim.g.neomodern_config.option)
 ---It can't be changed directly by modifying that field due to a Neovim lua bug with global variables (neomodern_config is a global variable)
@@ -21,9 +21,9 @@ function M.colorscheme()
   vim.o.termguicolors = true
   vim.g.colors_name = "neomodern"
   if vim.o.background == "light" then
-    M.set_options("style", "light")
+    M.set_options("style", "daybreak")
   elseif vim.g.neomodern_config.style == "light" then
-    M.set_options("style", "light")
+    M.set_options("style", "daybreak")
   end
   require("neomodern.highlights").setup()
   require("neomodern.terminal").setup()
@@ -37,17 +37,12 @@ function M.toggle()
   end
   M.set_options("style", vim.g.neomodern_config.toggle_style_list[index])
   M.set_options("toggle_style_index", index)
-  if vim.g.neomodern_config.style == "light" then
-    vim.o.background = "light"
-  else
-    vim.o.background = "dark"
-  end
-  vim.api.nvim_command("colorscheme neomodern")
+  vim.api.nvim_command(string.format("colorscheme %s", vim.g.neomodern_config.style))
 end
 
 local default_config = {
   -- Main options --
-  style = "icebreaker", -- choose between 'icebreaker', 'coffeecat', 'darkforest', 'dawn', 'roseprime'
+  style = "icebreaker", -- choose between 'icebreaker', 'coffeecat', 'darkforest', 'roseprime', 'daybreak'
   toggle_style_key = nil,
   toggle_style_list = M.styles_list,
   transparent = false, -- don't set background
