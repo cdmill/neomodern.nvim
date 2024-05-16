@@ -24,9 +24,8 @@ return {
     delta = "#8da0d6",
     plus = "#7da77e",
   },
-  -- todo:
   coffeecat = {
-    alt = "#817faf",
+    alt = "#9094de",
     bg = "#1e1e1e",
     border = "#5e5a5a",
     builtin = "#9094de",
@@ -50,33 +49,33 @@ return {
     delta = "#abbceb",
     plus = "#8fc490",
   },
-  -- todo: --green
+  -- TODO: --green
   darkforest = {
-    alt = "#abbceb",
-    bg = "#181a1b", --
+    alt = "#ab6135",
+    bg = "#181b1b",
     border = "#4f4f4f",
-    builtin = "#d699b6", --
-    comment = "#7a8478", --
-    constant = "#7fbbb3", --
-    dim = "#111111",
-    fg = "#bbbac1", --
-    float = "#222928", --
-    func = "#a7c080", --
-    keyword = "#e67e80", --
-    line = "#1e2326", --
-    operator = "#9b99a3",
-    preproc = "#c491a9",
-    property = "#7da77e", --
-    string = "#dbbc7f", --
-    type = "#e69875", --
-    visual = "#3c4841", --
+    builtin = "#d699b6",
+    comment = "#7a8478",
+    constant = "#e67e80",
+    dim = "#111312",
+    fg = "#bbbac1",
+    float = "#222928",
+    func = "#a7c080",
+    keyword = "#7da77e",
+    line = "#1e2323",
+    operator = "#abbceb",
+    preproc = "#e67e80",
+    property = "#7fbbb3",
+    string = "#dbbc7f",
+    type = "#e69875",
+    visual = "#313b35",
     error = "#e67e80",
-    hint = "#8c593a",
+    hint = "#abbceb",
     warning = "#ad9368",
-    delta = "#7fbbb3",
-    plus = "#a7c080",
+    delta = "#abbceb",
+    plus = "#7da77e",
   },
-  -- todo: purple
+  -- TODO: purple
   campfire = {
     alt = "#abbceb",
     bg = "#1b1a20",
@@ -103,6 +102,7 @@ return {
     delta = "#8da0d6",
     plus = "#7da77e",
   },
+  -- TODO:
   roseprime = {
     alt = "#abbceb",
     bg = "#121212",
