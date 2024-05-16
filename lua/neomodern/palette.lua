@@ -140,7 +140,7 @@ return {
     dim = "#a7a7b0",
     fg = "#55555e",
     float = "#d3d3db",
-    func = "#3462e3",
+    func = "#5d86f5",
     keyword = "#6b65d6",
     line = "#f0f0f5",
     operator = "#111111",

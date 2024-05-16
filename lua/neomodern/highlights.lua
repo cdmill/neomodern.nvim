@@ -186,7 +186,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     ["@operator"] = hl.syntax["Operator"], -- operators, like `+`
 
     -- keywords
-    -- ["@keyword"] = { link = "Keyword" }, -- keywords that don't fall in previous categories
+    ["@keyword"] = { fg = c.keyword, fmt = config.code_style.keywords }, -- keywords that don't fall in previous categories
     ["@keyword.exception"] = hl.syntax["Exception"], -- exception related keywords
     ["@keyword.import"] = hl.syntax["PreProc"], -- keywords used to define a function
     ["@keyword.conditional"] = { fg = c.keyword, fmt = config.code_style.conditionals }, -- keywords for conditional statements
