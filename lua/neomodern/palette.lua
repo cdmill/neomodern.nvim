@@ -130,7 +130,7 @@ return {
     -- #e3afa8
     --
   },
-  light = {
+  daybreak = {
     alt = "#5d86f5",
     bg = "#ffffff",
     border = "#d9d9de",
