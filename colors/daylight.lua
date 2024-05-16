@@ -4,5 +4,5 @@ for k in pairs(package.loaded) do
   end
 end
 
-require("neomodern").setup({ style = "light" })
+require("neomodern").setup({ style = "daylight" })
 require("neomodern").colorscheme()

@@ -22,9 +22,9 @@ function M.colorscheme()
   vim.o.termguicolors = true
   vim.g.colors_name = "neomodern"
   if vim.o.background == "light" then
-    M.set_options("style", "daybreak")
+    M.set_options("style", "daylight")
   elseif vim.g.neomodern_config.style == "light" then
-    M.set_options("style", "daybreak")
+    M.set_options("style", "daylight")
   end
   require("neomodern.highlights").setup()
   require("neomodern.terminal").setup()
