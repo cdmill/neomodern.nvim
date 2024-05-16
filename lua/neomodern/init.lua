@@ -116,7 +116,7 @@ function M.setup(opts)
 end
 
 function M.load()
-  vim.api.nvim_command("colorscheme neomodern")
+  vim.api.nvim_command("colorscheme icebreaker")
 end
 
 return M
