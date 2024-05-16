@@ -22,7 +22,7 @@ end
 
 hl.common = {
   ColorColumn = { bg = c.line },
-  Conceal = { fg = c.comment, bg = c.line },
+  Conceal = { fg = c.func, bg = c.bg },
   CurSearch = { fg = c.type, bg = config.ui.plain and c.bg or c.visual },
   Cursor = { fmt = "reverse" },
   vCursor = { fmt = "reverse" },
