@@ -77,7 +77,7 @@ return {
     plus = "#a7c080",
   },
   -- todo: purple
-  dawn = {
+  dusk = {
     alt = "#abbceb",
     bg = "#1b1a20",
     -- bg0 = "#1f1e25",
