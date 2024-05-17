@@ -1,5 +1,5 @@
 return {
-  icebreaker = {
+  iceclimber = {
     alt = "#abbceb",
     bg = "#171718",
     border = "#2d2d2f",

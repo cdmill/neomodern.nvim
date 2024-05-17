@@ -1,7 +1,7 @@
 local M = {}
 
 M.styles_list =
-  { "icebreaker", "coffeecat", "darkforest", "roseprime", "campfire", "daylight" }
+  { "iceclimber", "coffeecat", "darkforest", "roseprime", "campfire", "daylight" }
 
 ---Change neomodern option (vim.g.neomodern_config.option)
 ---It can't be changed directly by modifying that field due to a Neovim lua bug with global variables (neomodern_config is a global variable)
@@ -43,7 +43,7 @@ end
 
 local default_config = {
   -- Main options --
-  style = "icebreaker", -- choose between 'icebreaker', 'coffeecat', 'darkforest', 'campfire', 'roseprime', 'daylight'
+  style = "iceclimber", -- choose between 'iceclimber', 'coffeecat', 'darkforest', 'campfire', 'roseprime', 'daylight'
   toggle_style_key = nil,
   toggle_style_list = M.styles_list,
   transparent = false, -- don't set background
