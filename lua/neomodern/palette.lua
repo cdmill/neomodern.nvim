@@ -49,7 +49,6 @@ return {
     delta = "#abbceb",
     plus = "#8fc490",
   },
-  -- TODO: --green
   darkforest = {
     alt = "#e69875",
     bg = "#181b1b",
@@ -104,23 +103,23 @@ return {
   },
   -- TODO:
   roseprime = {
-    alt = "#abbceb",
-    bg = "#121212",
+    alt = "#e3afa8", -- done
+    bg = "#121212", -- done
     border = "#4f4f4f", --
-    builtin = "#ba7685",
+    builtin = "#ba7685", -- done
     comment = "#555555", --
-    constant = "#8192C7",
+    constant = "#8192C7", -- done
     dim = "#111111",
-    fg = "#bbbac1",
+    fg = "#bbbac1", -- done
     float = "#121212", --
-    func = "#ddadb4",
-    keyword = "#6b8f89",
+    func = "#ddadb4", -- done
+    keyword = "#6b8f89", -- done
     line = "#1f1f1f", --
-    operator = "#838196",
+    operator = "#838196", -- done
     preproc = "#9c7bb8", --
-    property = "#a3849b",
-    string = "#d2af98",
-    type = "#a3b8b5",
+    property = "#a3849b", -- done
+    string = "#d2af98", -- done
+    type = "#a3b8b5", -- done
     visual = "#30232b", --
     error = "#8c593a", --
     hint = "#8c593a", --

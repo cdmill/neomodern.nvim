@@ -31,7 +31,7 @@ function M.colorscheme()
 end
 
 ---Toggle between neomodern styles
-function M.toggle()
+function M.toggle_style()
   local index = vim.g.neomodern_config.toggle_style_index + 1
   if index > #vim.g.neomodern_config.toggle_style_list then
     index = 1
@@ -41,10 +41,22 @@ function M.toggle()
   vim.api.nvim_command(string.format("colorscheme %s", vim.g.neomodern_config.style))
 end
 
+---Toggle between light/dark theme
+function M.toggle_theme()
+  if vim.o.background == "dark" then
+    vim.o.background = "light"
+    vim.api.nvim_command("colorscheme daylight")
+  else
+    vim.o.background = "dark"
+    vim.api.nvim_command(string.format("colorscheme %s", vim.g.neomodern_config.style))
+  end
+end
+
 local default_config = {
   -- Main options --
   style = "icebreaker", -- choose between 'icebreaker', 'coffeecat', 'darkforest', 'roseprime', 'dusk', 'daybreak'
   toggle_style_key = nil,
+  toggle_theme_key = nil, -- toggle light/dark theme
   toggle_style_list = M.styles_list,
   transparent = false, -- don't set background
   term_colors = true, -- if true enable the terminal
@@ -102,10 +114,18 @@ function M.setup(opts)
     end
   end
   if vim.g.neomodern_config.toggle_style_key then
-    vim.api.nvim_set_keymap(
+    vim.keymap.set(
       "n",
       vim.g.neomodern_config.toggle_style_key,
-      '<cmd>lua require("neomodern").toggle()<cr>',
+      '<cmd>lua require("neomodern").toggle_style()<cr>',
+      { noremap = true, silent = true }
+    )
+  end
+  if vim.g.neomodern_config.toggle_theme_key then
+    vim.keymap.set(
+      "n",
+      vim.g.neomodern_config.toggle_theme_key,
+      '<cmd>lua require("neomodern").toggle_theme()<cr>',
       { noremap = true, silent = true }
     )
   end
