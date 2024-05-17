@@ -101,33 +101,30 @@ return {
     delta = "#8da0d6",
     plus = "#7da77e",
   },
-  -- TODO:
   roseprime = {
-    alt = "#abbceb",
+    alt = "#bbbac1",
     bg = "#121212",
-    border = "#4f4f4f", --
+    border = "#2e2e2f",
     builtin = "#ba7685",
-    comment = "#555555", --
+    comment = "#555555",
     constant = "#8192C7",
     dim = "#111111",
     fg = "#bbbac1",
-    float = "#121212", --
+    float = "#212123",
     func = "#ddadb4",
     keyword = "#6b8f89",
-    line = "#1f1f1f", --
+    line = "#1d1d1f",
     operator = "#838196",
-    preproc = "#9c7bb8", --
+    preproc = "#9879b0",
     property = "#a3849b",
     string = "#d2af98",
     type = "#a3b8b5",
-    visual = "#30232b", --
-    error = "#8c593a", --
-    hint = "#8c593a", --
-    warning = "#ad9368", --
-    delta = "#bbbbbb",
-    plus = "#bbbbbb",
-    -- #e3afa8
-    --
+    visual = "#26262a",
+    error = "#bd5355",
+    hint = "#abbceb",
+    warning = "#ad9368",
+    delta = "#8192C7",
+    plus = "#6b8f89",
   },
   daylight = {
     alt = "#5d86f5",
