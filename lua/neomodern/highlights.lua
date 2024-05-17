@@ -400,45 +400,45 @@ hl.plugins.gitsigns = {
   GitSignsDeleteNr = { fg = c.error },
 }
 
--- hl.plugins.neo_tree = {
---   NeoTreeNormal = { fg = c.fg, bg = config.transparent and c.none or c.float },
---   NeoTreeNormalNC = { fg = c.fg, bg = config.transparent and c.none or c.float },
---   NeoTreeVertSplit = { fg = c.comment, bg = config.transparent and c.none or c.comment },
---   NeoTreeWinSeparator = {
---     fg = c.comment,
---     bg = config.transparent and c.none or c.comment,
---   },
---   NeoTreeEndOfBuffer = {
---     fg = config.ui.show_eob and c.comment or c.float,
---     bg = config.transparent and c.none or c.float,
---   },
---   NeoTreeRootName = { fg = c.type, fmt = "bold" },
---   NeoTreeGitAdded = { fg = c.fg },
---   NeoTreeGitDeleted = { fg = c.error },
---   NeoTreeGitModified = { fg = c.delta },
---   NeoTreeGitConflict = { fg = c.error, fmt = "bold,italic" },
---   NeoTreeGitUntracked = { fg = c.error, fmt = "italic" },
---   NeoTreeIndentMarker = { fg = c.comment },
---   NeoTreeSymbolicLinkTarget = { fg = c.hint },
--- }
+hl.plugins.neo_tree = {
+  NeoTreeNormal = { fg = c.fg, bg = config.transparent and c.none or c.bg },
+  NeoTreeNormalNC = { fg = c.fg, bg = config.transparent and c.none or c.bg },
+  NeoTreeVertSplit = { fg = c.comment, bg = config.transparent and c.none or c.comment },
+  NeoTreeWinSeparator = {
+    fg = c.comment,
+    bg = config.transparent and c.none or c.comment,
+  },
+  NeoTreeEndOfBuffer = {
+    fg = config.ui.show_eob and c.comment or c.bg,
+    bg = config.transparent and c.none or c.bg,
+  },
+  NeoTreeRootName = { fg = c.type, fmt = "bold" },
+  NeoTreeGitAdded = { fg = c.fg },
+  NeoTreeGitDeleted = { fg = c.error },
+  NeoTreeGitModified = { fg = c.delta },
+  NeoTreeGitConflict = { fg = c.error, fmt = "bold,italic" },
+  NeoTreeGitUntracked = { fg = c.error, fmt = "italic" },
+  NeoTreeIndentMarker = { fg = c.comment },
+  NeoTreeSymbolicLinkTarget = { fg = c.hint },
+}
 
--- hl.plugins.nvim_tree = {
---   NvimTreeNormal = { fg = c.fg, bg = config.transparent and c.none or c.float },
---   NvimTreeVertSplit = { fg = c.float, bg = config.transparent and c.none or c.float },
---   NvimTreeEndOfBuffer = {
---     fg = config.ui.show_eob and c.comment or c.float,
---     bg = config.transparent and c.none or c.float,
---   },
---   NvimTreeRootFolder = { fg = c.type, fmt = "bold" },
---   NvimTreeGitDirty = { fg = c.delta },
---   NvimTreeGitNew = { fg = c.fg },
---   NvimTreeGitDeleted = { fg = c.error },
---   NvimTreeSpecialFile = { fg = c.warning, fmt = "underline" },
---   NvimTreeIndentMarker = { fg = c.fg },
---   NvimTreeImageFile = { fg = c.dark_10 },
---   NvimTreeSymlink = { fg = c.hint },
---   NvimTreeFolderName = { fg = c.func },
--- }
+hl.plugins.nvim_tree = {
+  NvimTreeNormal = { fg = c.fg, bg = config.transparent and c.none or c.bg },
+  NvimTreeVertSplit = { fg = c.float, bg = config.transparent and c.none or c.bg },
+  NvimTreeEndOfBuffer = {
+    fg = config.ui.show_eob and c.comment or c.bg,
+    bg = config.transparent and c.none or c.bg,
+  },
+  NvimTreeRootFolder = { fg = c.type, fmt = "bold" },
+  NvimTreeGitDirty = { fg = c.delta },
+  NvimTreeGitNew = { fg = c.fg },
+  NvimTreeGitDeleted = { fg = c.error },
+  NvimTreeSpecialFile = { fg = c.warning, fmt = "underline" },
+  NvimTreeIndentMarker = { fg = c.fg },
+  NvimTreeImageFile = { fg = c.visual },
+  NvimTreeSymlink = { fg = c.hint },
+  NvimTreeFolderName = { fg = c.func },
+}
 
 local telescope_ui = {
   borderless = {
