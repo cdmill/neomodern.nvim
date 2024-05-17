@@ -43,7 +43,7 @@ end
 
 local default_config = {
   -- Main options --
-  style = "icebreaker", -- choose between 'icebreaker', 'coffeecat', 'darkforest', 'roseprime', 'dusk', 'daybreak'
+  style = "icebreaker", -- choose between 'icebreaker', 'coffeecat', 'darkforest', 'campfire', 'roseprime', 'daylight'
   toggle_style_key = nil,
   toggle_style_list = M.styles_list,
   transparent = false, -- don't set background
@@ -55,7 +55,7 @@ local default_config = {
     conditionals = "none",
     functions = "none",
     keywords = "none",
-    headings = "bold", -- markdown headers
+    headings = "bold", -- markdown headings
     operators = "none",
     keyword_return = "none",
     strings = "none",
@@ -64,7 +64,7 @@ local default_config = {
 
   ui = {
     cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
-    colored_docstrings = true, -- highlight docstrings like strings
+    colored_docstrings = true, -- if true, docstrings will be highlighted like strings, otherwise they will be highlighted like comments
     plain = false, -- don't set background for search
     show_eob = true, -- show the end-of-buffer tildes
 
@@ -73,7 +73,7 @@ local default_config = {
       bold = true,
       plain = true,
     },
-    telescope = "borderless", -- borderless | bordered
+    telescope = "borderless", -- choose between 'borderless' or 'bordered'
     diagnostics = {
       darker = true, -- darker colors for diagnostic
       undercurl = true, -- use undercurl for diagnostics
