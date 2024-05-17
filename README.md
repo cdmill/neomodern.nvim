@@ -4,6 +4,8 @@ A collection of themes (5 dark, 1 light) written in [Lua](https://www.lua.org) f
 Support for [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter) syntax highlighting and LSP semantic highlighting.
 Forked from [OneDark.nvim](https://github.com/navarasu/onedark.nvim).
 
+Themes have been designed to be simple and pleasing to the eyes.
+
 ## Gallery
 
 ### ICECLIMBER
@@ -41,7 +43,7 @@ A darker, greener take on the classic [Everforest](https://github.com/sainnhe/ev
 
 ### CAMPFIRE
 
-A dark, purple-based theme with bright highlights
+A dark, purple-based theme with fiery highlights
 
 <details open>
 <summary>Click to toggle previews</summary>
