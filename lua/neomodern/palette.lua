@@ -49,7 +49,6 @@ return {
     delta = "#abbceb",
     plus = "#8fc490",
   },
-  -- TODO: --green
   darkforest = {
     alt = "#e69875",
     bg = "#181b1b",
@@ -65,7 +64,7 @@ return {
     line = "#1e2323",
     operator = "#abbceb",
     preproc = "#e67e80",
-    property = "#7fbbb3",
+    property = "#78b0a8",
     string = "#dbbc7f",
     type = "#e69875",
     visual = "#313b35",
