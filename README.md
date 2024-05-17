@@ -83,10 +83,10 @@ Install via your favorite package manager:
   lazy = false,
   priority = 1000,
   config = function()
-    require("neomdern").setup({
+    require("neomodern").setup({
       -- optional configuration here
     })
-    require("neomdern").load()
+    require("neomodern").load()
   end,
 },
 ```
@@ -150,7 +150,7 @@ require("neomodern").setup({
   colors = {}, -- Override default colors
   highlights = {}, -- Override highlight groups
 })
-require("neomdern").load()
+require("neomodern").load()
 ```
 
 ## Customization
@@ -158,7 +158,7 @@ require("neomdern").load()
 Example using custom colors and highlights:
 
 ```lua
-require("neomdern").setup {
+require("neomodern").setup {
   colors = {
     orange = '#ff8800', -- define a new color
     keyword = '#817faf', -- redefine an existing color
