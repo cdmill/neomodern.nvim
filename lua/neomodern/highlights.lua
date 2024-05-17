@@ -474,23 +474,21 @@ hl.plugins.dashboard = {
   DashboardFooter = { fg = c.builtin, fmt = "italic" },
 }
 
--- hl.plugins.indent_blankline = {
---   IndentBlanklineIndent1 = { fg = c.func },
---   IndentBlanklineIndent2 = { fg = c.fg },
---   IndentBlanklineIndent3 = { fg = c.keyword },
---   IndentBlanklineIndent4 = { fg = c.comment },
---   IndentBlanklineIndent5 = { fg = c.preproc },
---   IndentBlanklineIndent6 = { fg = c.operator },
---   IndentBlanklineChar = { fg = c.comment, fmt = "nocombine" },
---   IndentBlanklineContextChar = { fg = c.comment, fmt = "nocombine" },
---   IndentBlanklineContextStart = { sp = c.comment, fmt = "underline" },
---   IndentBlanklineContextSpaceChar = { fmt = "nocombine" },
-
---   -- Ibl v3
---   IblIndent = { fg = c.comment, fmt = "nocombine" },
---   IblWhitespace = { fg = c.comment, fmt = "nocombine" },
---   IblScope = { fg = c.comment, fmt = "nocombine" },
--- }
+hl.plugins.indent_blankline = {
+  IndentBlanklineIndent1 = { fg = c.func },
+  IndentBlanklineIndent2 = { fg = c.fg },
+  IndentBlanklineIndent3 = { fg = c.keyword },
+  IndentBlanklineIndent4 = { fg = c.comment },
+  IndentBlanklineIndent5 = { fg = c.preproc },
+  IndentBlanklineIndent6 = { fg = c.operator },
+  IndentBlanklineChar = { fg = c.comment, fmt = "nocombine" },
+  IndentBlanklineContextChar = { fg = c.comment, fmt = "nocombine" },
+  IndentBlanklineContextStart = { sp = c.comment, fmt = "underline" },
+  IndentBlanklineContextSpaceChar = { fmt = "nocombine" },
+  IblIndent = { fg = c.comment, fmt = "nocombine" },
+  IblWhitespace = { fg = c.comment, fmt = "nocombine" },
+  IblScope = { fg = c.comment, fmt = "nocombine" },
+}
 
 local lsp_kind_icons_color = {
   Default = c.keyword,
