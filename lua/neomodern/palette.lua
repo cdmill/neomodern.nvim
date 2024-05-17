@@ -38,7 +38,7 @@ return {
     keyword = "#b39581",
     line = "#303030",
     operator = "#9b99a3",
-    preproc = "#eb91bb",
+    preproc = "#9094de",
     property = "#cfa1bf",
     string = "#8fc490",
     type = "#e3a968",
