@@ -50,7 +50,7 @@ A dark, purple-based theme with bright highlights
 
 ### ROSEPRIME
 
-Inspired by [ThePrimeagen's](https://github.com/ThePrimeagen) use of the [Rosé-Pine](https://github.com/rose-pine/neovim) theme in [tmux](https://github.com/tmux/tmux/wiki) without color fixing.
+Inspired by [ThePrimeagen's](https://github.com/ThePrimeagen) use of the [Rosé-Pine](https://github.com/rose-pine/neovim) theme with [tmux](https://github.com/tmux/tmux/wiki) and no color fixing.
 
 <details open>
 <summary>Click to toggle previews</summary>
