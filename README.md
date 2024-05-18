@@ -138,7 +138,7 @@ require("neomodern").setup({
     -- Plugins Related --
     lualine = {
       bold = true,
-      plain = true, -- use a less distracting lualine
+      plain = false, -- use a less distracting lualine. note: works best when no lualine separators are used
     },
     telescope = "borderless", -- choose between 'borderless' or 'bordered'
     diagnostics = {
