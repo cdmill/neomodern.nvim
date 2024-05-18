@@ -71,7 +71,7 @@ local default_config = {
     -- Plugins Related --
     lualine = {
       bold = true,
-      plain = true,
+      plain = false,
     },
     telescope = "borderless", -- choose between 'borderless' or 'bordered'
     diagnostics = {
