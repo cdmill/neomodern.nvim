@@ -102,7 +102,7 @@ function M.setup(opts)
     end
   end
   if vim.g.neomodern_config.toggle_style_key then
-    vim.api.nvim_set_keymap(
+    vim.keymap.set(
       "n",
       vim.g.neomodern_config.toggle_style_key,
       '<cmd>lua require("neomodern").toggle()<cr>',
