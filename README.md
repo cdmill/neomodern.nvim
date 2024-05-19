@@ -4,7 +4,7 @@ A collection of themes (5 dark, 1 light) written in [Lua](https://www.lua.org) f
 Support for [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter) syntax highlighting and LSP semantic highlighting.
 Forked from [OneDark.nvim](https://github.com/navarasu/onedark.nvim).
 
-Themes have been designed to be simple and pleasing to the eyes.
+Themes have been designed to be unintrusive,simple, and pleasing to the eyes.
 
 ## Gallery
 
