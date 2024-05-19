@@ -132,7 +132,7 @@ return {
     comment = "#9b9ba3",
     constant = "#fca921",
     dim = "#a7a7b0",
-    fg = "#55555e",
+    fg = "#111111",
     float = "#e8e8eb",
     func = "#5d86f5",
     keyword = "#6b65d6",
