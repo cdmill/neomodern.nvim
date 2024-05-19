@@ -155,6 +155,38 @@ require("neomodern").setup({
 require("neomodern").load()
 ```
 
+Bordered Telescope
+<details close>
+<summary>Click to toggle previews</summary>
+
+![image](https://github.com/cdmill/neomodern.nvim/blob/assets/bordered.png)
+
+</details>
+
+Borderless Telescope
+<details close>
+<summary>Click to toggle previews</summary>
+
+![image](https://github.com/cdmill/neomodern.nvim/blob/assets/borderless.png)
+
+</details>
+
+Normal Lualine
+<details close>
+<summary>Click to toggle previews</summary>
+
+![image](https://github.com/cdmill/neomodern.nvim/blob/assets/regular_lualine.png)
+
+</details>
+
+Plain Lualine
+<details close>
+<summary>Click to toggle previews</summary>
+
+![image](https://github.com/cdmill/neomodern.nvim/blob/assets/plain_lualine.png)
+
+</details>
+
 ## Customization
 
 Example using custom colors and highlights:
