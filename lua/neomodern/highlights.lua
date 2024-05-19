@@ -66,7 +66,7 @@ hl.common = {
   NormalFloat = { fg = c.fg, bg = config.transparent and c.none or c.float },
   Pmenu = { fg = c.fg, bg = c.visual },
   PmenuSbar = { fg = c.none, bg = c.visual },
-  PmenuSel = { fg = c.type },
+  PmenuSel = { bg = c.float },
   PmenuThumb = { fg = c.none, bg = c.visual },
   Question = { fg = c.constant },
   QuickFixLine = { fg = c.func, fmt = "underline" },
