@@ -1,9 +1,11 @@
 -- CREDIT: https://github.com/folke/tokyonight.nvim/blob/main/lua/tokyonight/extra/init.lua
 
+local M = {}
+
 -- map of plugin name to plugin extension
 --- @type table<string, {ext:string, url:string, label:string}>
 -- stylua: ignore
-local extras = {
+M.extras = {
   kitty = {ext = "conf", url = "https://sw.kovidgoyal.net/kitty/conf.html", label = "Kitty"},
   fish = {ext = "fish", url = "https://fishshell.com/docs/current/index.html", label = "Fish"},
   fish_themes = {ext = "theme", url = "https://fishshell.com/docs/current/interactive.html#syntax-highlighting", label = "Fish Themes"},
@@ -22,37 +24,41 @@ local function write(str, fileName)
   file:close()
 end
 
-local neomodern = require("neomodern")
-vim.o.background = "dark"
+function M.setup()
+  local neomodern = require("neomodern")
+  vim.o.background = "dark"
 
--- map of style to style name
-local styles = {
-  iceclimber = "iceclimber",
-  coffeecat = "coffeecat",
-  darkforest = "darkforest",
-  campfire = "campfire",
-  roseprime = "roseprime",
-  daylight = "daylight",
-}
+  -- map of style to style name
+  local styles = {
+    iceclimber = "iceclimber",
+    coffeecat = "coffeecat",
+    darkforest = "darkforest",
+    campfire = "campfire",
+    roseprime = "roseprime",
+    daylight = "daylight",
+  }
 
--- stylua: ignore
-for extra, info in pairs(extras) do
-  package.loaded["neomodern.extras." .. extra] = nil
-  local plugin = require("neomodern.extras." .. extra)
-  for style, style_name in pairs(styles) do
-    neomodern.setup({ style = style })
-    neomodern.load()
-    vim.cmd.colorscheme(style)
-    local colors
-    if extra == "fzf" then
-      colors = require("neomodern.palette")[style_name]
-    else
-      colors = require("neomodern.terminal").colors()
+  -- stylua: ignore
+  for extra, info in pairs(M.extras) do
+    package.loaded["neomodern.extras." .. extra] = nil
+    local plugin = require("neomodern.extras." .. extra)
+    for style, style_name in pairs(styles) do
+      neomodern.setup({ style = style })
+      neomodern.load()
+      vim.cmd.colorscheme(style)
+      local colors
+      if extra == "fzf" then
+        colors = require("neomodern.palette")[style_name]
+      else
+        colors = require("neomodern.terminal").colors()
+      end
+      local fname = extra .. "/" .. style .. "." .. info.ext
+      colors["_upstream_url"] = "https://github.com/cdmill/neomodern.nvim/raw/main/extras/" .. fname
+      colors["_style_name"] = string.upper(style_name)
+      colors["_name"] = string.upper(style)
+      write(plugin.generate(colors), fname)
     end
-    local fname = extra .. "/" .. style .. "." .. info.ext
-    colors["_upstream_url"] = "https://github.com/cdmill/neomodern.nvim/raw/main/extras/" .. fname
-    colors["_style_name"] = string.upper(style_name)
-    colors["_name"] = string.upper(style)
-    write(plugin.generate(colors), fname)
   end
 end
+
+return M

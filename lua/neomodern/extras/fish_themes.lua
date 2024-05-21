@@ -1,3 +1,5 @@
+-- CREDIT: https://github.com/folke/tokyonight.nvim/blob/main/lua/tokyonight/extra/fish_themes.lua
+
 local util = require("neomodern.util")
 local palette = require("neomodern.palette")
 

@@ -1,3 +1,5 @@
+-- CREDIT: https://github.com/folke/tokyonight.nvim/blob/main/lua/tokyonight/extra/windows_terminal.lua
+
 local util = require("neomodern.util")
 
 local M = {}

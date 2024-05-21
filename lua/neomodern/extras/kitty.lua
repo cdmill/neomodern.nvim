@@ -1,3 +1,5 @@
+-- CREDIT: https://github.com/folke/tokyonight.nvim/blob/main/lua/tokyonight/extra/kitty.lua
+
 local util = require("neomodern.util")
 
 local M = {}
