@@ -1,7 +1,7 @@
-local util = {}
+local M = {}
 
-util.bg = "#000000"
-util.fg = "#ffffff"
+M.bg = "#000000"
+M.fg = "#ffffff"
 
 local function hexToRgb(hex_str)
   local hex = "[abcdef0-9][abcdef0-9]"
@@ -20,7 +20,7 @@ end
 ---@param fg string foreground color
 ---@param bg string background color
 ---@param alpha number number between 0 and 1. 0 results in bg, 1 results in fg
-function util.blend(fg, bg, alpha)
+function M.blend(fg, bg, alpha)
   bg = hexToRgb(bg)
   fg = hexToRgb(fg)
 
@@ -37,12 +37,28 @@ function util.blend(fg, bg, alpha)
   )
 end
 
-function util.darken(hex, amount, bg)
-  return util.blend(hex, bg or util.bg, math.abs(amount))
+-- Simple string interpolation.
+--
+-- Example template: "${name} is ${value}"
+--
+-- CREDIT: https://github.com/folke/tokyonight.nvim/blob/main/lua/tokyonight/util.lua
+---@param str string template string
+---@param table table key value pairs to replace in the string
+function M.template(str, table)
+  return (
+    str:gsub("($%b{})", function(w)
+      return vim.tbl_get(table, unpack(vim.split(w:sub(3, -2), ".", { plain = true })))
+        or w
+    end)
+  )
 end
 
-function util.lighten(hex, amount, fg)
-  return util.blend(hex, fg or util.fg, math.abs(amount))
+function M.darken(hex, amount, bg)
+  return M.blend(hex, bg or M.bg, math.abs(amount))
 end
 
-return util
+function M.lighten(hex, amount, fg)
+  return M.blend(hex, fg or M.fg, math.abs(amount))
+end
+
+return M
