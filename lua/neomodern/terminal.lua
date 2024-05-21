@@ -13,7 +13,7 @@ local color_map = {
     blue = "#8da0d6",
     magenta = "#817faf",
     cyan = "#559ba3",
-    fg = "#bbbac1",
+    white = "#bbbac1",
   },
   coffeecat = {
     black = "#191818",
@@ -35,7 +35,7 @@ local color_map = {
     blue = "#a7c080",
     magenta = "#d699b6",
     cyan = "#78b0a8",
-    fg = "#bbbac1",
+    white = "#bbbac1",
   },
   campfire = {
     black = "#121112",
@@ -46,7 +46,7 @@ local color_map = {
     blue = "#8da0d6",
     magenta = "#817faf",
     cyan = "#53a8b8",
-    fg = "#bbbac1",
+    white = "#bbbac1",
   },
   roseprime = {
     black = "#111111",
@@ -57,7 +57,7 @@ local color_map = {
     blue = "#8192C7",
     magenta = "#a3849b",
     cyan = "#ddadb4",
-    fg = "#bbbac1",
+    white = "#bbbac1",
   },
   daylight = {
     black = "#a7a7b0",
