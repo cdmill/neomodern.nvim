@@ -1,10 +1,10 @@
 # NEOMODERN.nvim
 
-A collection of themes (5 dark, 1 light) written in [Lua](https://www.lua.org) for [Neovim](https://github.com/neovim/neovim) $\geq$ 0.9. 
+A collection of themes (5 dark, 1 light) written in [Lua](https://www.lua.org) for [Neovim](https://github.com/neovim/neovim) $\geq$ 0.9.
 Support for [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter) syntax highlighting and LSP semantic highlighting.
 Forked from [OneDark.nvim](https://github.com/navarasu/onedark.nvim).
 
-Themes have been designed to be unintrusive,simple, and pleasing to the eyes.
+Themes have been designed to be unintrusive, simple, and pleasing to the eyes.
 
 ## Gallery
 
@@ -93,6 +93,12 @@ Install via your favorite package manager:
 },
 ```
 
+> [!NOTE]
+> `require("neomodern").load()` will call `set colorscheme` with your chosen style.
+> If you prefer, you can use `vim.cmd([[colorscheme <style>]])` instead. For
+> example, to use darkforest: `vim.cmd([[colorscheme darkforest]])`. Note if you
+> use `vim.cmd([[colorscheme neomodern]])`, `iceclimber` will be used.
+
 ## Configuration
 
 There are 6 themes included (5 dark, 1 light). The light theme is used when `{ style = "daylight" }` is passed to `setup(options)` or when `vim.o.background = "light"`.
@@ -111,7 +117,7 @@ require("neomodern").setup({
     "campfire",
     "roseprime",
     "daylight"
-  }, 
+  },
   transparent = false, -- don't set background
   term_colors = true, -- if true enable the terminal
 
@@ -224,7 +230,7 @@ require("neomodern").setup {
 
 ## Contributing
 
-Pull requests are welcome. 
+Pull requests are welcome.
 
 If you are wanting to submit a new theme/style, please create a pull request with your new colors in [this file](https://github.com/cdmill/neomodern.nvim/blob/main/lua/neomodern/palette.lua).
 
