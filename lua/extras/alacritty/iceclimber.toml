@@ -1,0 +1,32 @@
+# NEOMODERN Alacritty Colors
+# Default colors
+[colors.primary]
+background = '#171718'
+foreground = '#bbbac1'
+
+#[colors.cursor]
+#cursor = '#bbbac1'
+#text = '#171718'
+
+# Normal colors
+[colors.normal]
+black = '#2d2d2f'
+red = '#e67e80'
+green = '#7da77e'
+yellow = '#dbbc8a'
+blue = '#8da0d6'
+magenta = '#817faf'
+cyan = '#559ba3'
+white = '#bbbac1'
+
+# Bright colors
+[colors.bright]
+black = '#dbbc8a'
+red = '#e67e80'
+green = '#7da77e'
+yellow = '#dbbc8a'
+blue = '#8da0d6'
+magenta = '#817faf'
+cyan = '#559ba3'
+white = '#bbbac1'
+
