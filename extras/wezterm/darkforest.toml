@@ -1,0 +1,45 @@
+[colors]
+foreground = "#bbbac1"
+background = "#181b1b"
+cursor_bg = "#bbbac1"
+cursor_border = "#bbbac1"
+cursor_fg = "#181b1b"
+selection_bg = "#313b35"
+selection_fg = "#bbbac1"
+split = "#4f4f4f"
+compose_cursor = "#e69875"
+scrollbar_thumb = "#4f4f4f"
+
+ansi = ["#111312", "#e67e80", "#7da77e", "#dbbc7f", "#a7c080", "#abbceb", "#78b0a8", "#bbbac1"]
+brights = ["#4f4f4f", "#e67e80", "#7da77e", "#dbbc7f", "#a7c080", "#9094de", "#78b0a8", "#bbbac1"]
+
+[colors.tab_bar]
+inactive_tab_edge = "#4f4f4f"
+background = "#181b1b"
+
+[colors.tab_bar.active_tab]
+fg_color = "#e69875"
+bg_color = "#313b35"
+
+[colors.tab_bar.inactive_tab]
+fg_color = "#7a8478"
+bg_color = "#1e2323"
+
+[colors.tab_bar.inactive_tab_hover]
+fg_color = "#7a8478"
+bg_color = "#1e2323"
+# intensity = "Bold"
+
+[colors.tab_bar.new_tab_hover]
+fg_color = "#e69875"
+bg_color = "#313b35"
+intensity = "Bold"
+
+[colors.tab_bar.new_tab]
+fg_color = "#e69875"
+bg_color = "#181b1b"
+
+[metadata]
+aliases = []
+author = "Casey Miller"
+name = "DARKFOREST"

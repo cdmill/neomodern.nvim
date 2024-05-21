@@ -1,0 +1,45 @@
+[colors]
+foreground = "#bbbac1"
+background = "#121212"
+cursor_bg = "#bbbac1"
+cursor_border = "#bbbac1"
+cursor_fg = "#121212"
+selection_bg = "#26262a"
+selection_fg = "#bbbac1"
+split = "#2e2e2f"
+compose_cursor = "#a3b8b5"
+scrollbar_thumb = "#2e2e2f"
+
+ansi = ["#111111", "#ba7685", "#6b8f89", "#d2af98", "#8192C7", "#9879b0", "#a3849b", "#bbbac1"]
+brights = ["#2e2e2f", "#ba7685", "#6b8f89", "#d2af98", "#8192C7", "#ddadb4", "#a3849b", "#bbbac1"]
+
+[colors.tab_bar]
+inactive_tab_edge = "#2e2e2f"
+background = "#121212"
+
+[colors.tab_bar.active_tab]
+fg_color = "#bbbac1"
+bg_color = "#26262a"
+
+[colors.tab_bar.inactive_tab]
+fg_color = "#555555"
+bg_color = "#1d1d1f"
+
+[colors.tab_bar.inactive_tab_hover]
+fg_color = "#555555"
+bg_color = "#1d1d1f"
+# intensity = "Bold"
+
+[colors.tab_bar.new_tab_hover]
+fg_color = "#bbbac1"
+bg_color = "#26262a"
+intensity = "Bold"
+
+[colors.tab_bar.new_tab]
+fg_color = "#bbbac1"
+bg_color = "#121212"
+
+[metadata]
+aliases = []
+author = "Casey Miller"
+name = "ROSEPRIME"

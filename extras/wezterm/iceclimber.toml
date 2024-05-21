@@ -1,0 +1,45 @@
+[colors]
+foreground = "#bbbac1"
+background = "#171718"
+cursor_bg = "#bbbac1"
+cursor_border = "#bbbac1"
+cursor_fg = "#171718"
+selection_bg = "#333336"
+selection_fg = "#bbbac1"
+split = "#dbbc8a"
+compose_cursor = "#d6a56f"
+scrollbar_thumb = "#dbbc8a"
+
+ansi = ["#2d2d2f", "#e67e80", "#7da77e", "#dbbc8a", "#8da0d6", "#817faf", "#559ba3", "#bbbac1"]
+brights = ["#dbbc8a", "#e67e80", "#7da77e", "#dbbc8a", "#8da0d6", "#e29eca", "#559ba3", "#bbbac1"]
+
+[colors.tab_bar]
+inactive_tab_edge = "#dbbc8a"
+background = "#171718"
+
+[colors.tab_bar.active_tab]
+fg_color = "#abbceb"
+bg_color = "#333336"
+
+[colors.tab_bar.inactive_tab]
+fg_color = "#55555e"
+bg_color = "#1d1d1f"
+
+[colors.tab_bar.inactive_tab_hover]
+fg_color = "#55555e"
+bg_color = "#1d1d1f"
+# intensity = "Bold"
+
+[colors.tab_bar.new_tab_hover]
+fg_color = "#abbceb"
+bg_color = "#333336"
+intensity = "Bold"
+
+[colors.tab_bar.new_tab]
+fg_color = "#abbceb"
+bg_color = "#171718"
+
+[metadata]
+aliases = []
+author = "Casey Miller"
+name = "ICECLIMBER"

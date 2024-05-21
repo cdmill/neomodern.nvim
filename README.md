@@ -227,6 +227,17 @@ require("neomodern").setup {
 - [Nvim-tree](https://github.com/nvim-tree/nvim-tree.lua)
 - plus more
 
+## Extras
+
+Available [here](https://github.com/cdmill/neomodern.nvim/tree/main/extras)
+
+- [Alacritty](https://github.com/alacritty/alacritty)
+- [Foot](https://codeberg.org/dnkl/foot)
+- [FZF](https://github.com/junegunn/fzf)
+- [kitty](https://github.com/kovidgoyal/kitty)
+- [fish](https://github.com/fish-shell/fish-shell)
+- [wezterm](https://github.com/wez/wezterm)
+- [Windows Terminal](https://github.com/microsoft/terminal)
 
 ## Contributing
 

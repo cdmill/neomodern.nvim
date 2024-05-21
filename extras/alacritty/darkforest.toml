@@ -1,0 +1,40 @@
+# DARKFOREST Alacritty Colors
+# Default colors
+[colors.primary]
+background = '#181b1b'
+foreground = '#bbbac1'
+
+#[colors.cursor]
+#cursor = '#bbbac1'
+#text = '#181b1b'
+
+# Normal colors
+[colors.normal]
+black = '#111312'
+red = '#e67e80'
+green = '#7da77e'
+yellow = '#dbbc7f'
+blue = '#a7c080'
+magenta = '#abbceb'
+cyan = '#78b0a8'
+white = '#bbbac1'
+
+# Bright colors
+[colors.bright]
+black = '#4f4f4f'
+red = '#e67e80'
+green = '#7da77e'
+yellow = '#dbbc7f'
+blue = '#a7c080'
+magenta = '#9094de'
+cyan = '#78b0a8'
+white = '#bbbac1'
+
+# Indexed Colors
+[[colors.indexed_colors]]
+index = 16
+color = '#e69875'
+
+[[colors.indexed_colors]]
+index = 17
+color = '#e69875'

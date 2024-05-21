@@ -1,0 +1,25 @@
+# Add the following object to your Windows Terminal configuration
+# https://learn.microsoft.com/en-us/windows/terminal/customize-settings/color-schemes#creating-your-own-color-scheme
+{
+    "background": "#171718",
+    "black": "#2d2d2f",
+    "blue": "#8da0d6",
+    "brightBlack": "#dbbc8a",
+    "brightBlue": "#8da0d6",
+    "brightCyan": "#559ba3",
+    "brightGreen": "#7da77e",
+    "brightPurple": "#e29eca",
+    "brightRed": "#e67e80",
+    "brightWhite": "#bbbac1",
+    "brightYellow": "#dbbc8a",
+    "cursorColor": "#bbbac1",
+    "cyan": "#559ba3",
+    "foreground": "#bbbac1",
+    "green": "#7da77e",
+    "name": "ICECLIMBER",
+    "purple": "#817faf",
+    "red": "#e67e80",
+    "selectionBackground": "#333336",
+    "white": "#bbbac1",
+    "yellow": "#dbbc8a"
+}
