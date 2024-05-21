@@ -24,7 +24,7 @@ local color_map = {
     blue = "#abbceb",
     magenta = "#9094de",
     cyan = "#b39581",
-    fg = "#bbbac1",
+    white = "#bbbac1",
   },
   darkforest = {
     black = "#111312",
