@@ -1,0 +1,40 @@
+# COFFEECAT Alacritty Colors
+# Default colors
+[colors.primary]
+background = '#1e1e1e'
+foreground = '#bbbac1'
+
+#[colors.cursor]
+#cursor = '#bbbac1'
+#text = '#1e1e1e'
+
+# Normal colors
+[colors.normal]
+black = '#191818'
+red = '#d47b7d'
+green = '#8fc490'
+yellow = '#e8cea0'
+blue = '#abbceb'
+magenta = '#9094de'
+cyan = '#b39581'
+white = '#bbbac1'
+
+# Bright colors
+[colors.bright]
+black = '#5e5a5a'
+red = '#d47b7d'
+green = '#8fc490'
+yellow = '#e8cea0'
+blue = '#abbceb'
+magenta = '#cfa1bf'
+cyan = '#b39581'
+white = '#bbbac1'
+
+# Indexed Colors
+[[colors.indexed_colors]]
+index = 16
+color = '#e3a968'
+
+[[colors.indexed_colors]]
+index = 17
+color = '#9094de'
