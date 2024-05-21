@@ -51,7 +51,7 @@ for extra, info in pairs(extras) do
     end
     local fname = extra .. "/" .. style .. "." .. info.ext
     colors["_upstream_url"] = "https://github.com/cdmill/neomodern.nvim/raw/main/extras/" .. fname
-    colors["_style_name"] = "neomodern_" .. style_name
+    colors["_style_name"] = style_name
     colors["_name"] = string.upper(style)
     write(plugin.generate(colors), fname)
   end
