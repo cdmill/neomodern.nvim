@@ -93,11 +93,6 @@ function M.setup(opts)
     vim.g.neomodern_config =
       vim.tbl_deep_extend("keep", vim.g.neomodern_config or {}, default_config)
     M.set_options("loaded", true)
-    for i, v in ipairs(vim.g.neomodern_config.toggle_style_list) do
-      if v == vim.g.neomodern_config.style then
-        M.set_options("toggle_style_index", i)
-      end
-    end
   end
   if opts then
     vim.g.neomodern_config = vim.tbl_deep_extend("force", vim.g.neomodern_config, opts)
@@ -112,6 +107,11 @@ function M.setup(opts)
       '<cmd>lua require("neomodern").toggle()<cr>',
       { noremap = true, silent = true }
     )
+  end
+  for i, v in ipairs(vim.g.neomodern_config.toggle_style_list) do
+    if v == vim.g.neomodern_config.style then
+      M.set_options("toggle_style_index", i)
+    end
   end
 end
 
