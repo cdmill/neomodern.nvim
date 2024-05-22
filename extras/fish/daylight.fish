@@ -1,7 +1,7 @@
     # DAYLIGHT Color Palette
     set -l foreground 111111
     set -l selection e1e1eb
-    set -l comment d9d9de
+    set -l comment 9b9ba3
     set -l red e6050a
     set -l orange db7302
     set -l yellow fca921

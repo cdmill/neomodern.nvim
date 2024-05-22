@@ -1,7 +1,7 @@
     # CAMPFIRE Color Palette
     set -l foreground bbbac1
     set -l selection 413f4d
-    set -l comment 393842
+    set -l comment 686675
     set -l red e67e80
     set -l orange e69875
     set -l yellow dbbc8a
