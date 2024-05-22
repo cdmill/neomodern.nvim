@@ -23,11 +23,11 @@ bg_color = "#383737"
 
 [colors.tab_bar.inactive_tab]
 fg_color = "#6e6a65"
-bg_color = "#303030"
+bg_color = "#292929"
 
 [colors.tab_bar.inactive_tab_hover]
 fg_color = "#6e6a65"
-bg_color = "#303030"
+bg_color = "#292929"
 # intensity = "Bold"
 
 [colors.tab_bar.new_tab_hover]
