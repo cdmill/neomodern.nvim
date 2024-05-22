@@ -18,7 +18,7 @@ inactive_tab_edge = "#7a8478"
 background = "#181b1b"
 
 [colors.tab_bar.active_tab]
-fg_color = "#e69875"
+fg_color = "#d6a56f"
 bg_color = "#313b35"
 
 [colors.tab_bar.inactive_tab]
@@ -31,12 +31,12 @@ bg_color = "#1e2323"
 # intensity = "Bold"
 
 [colors.tab_bar.new_tab_hover]
-fg_color = "#e69875"
+fg_color = "#d6a56f"
 bg_color = "#313b35"
 intensity = "Bold"
 
 [colors.tab_bar.new_tab]
-fg_color = "#e69875"
+fg_color = "#d6a56f"
 bg_color = "#181b1b"
 
 [metadata]
