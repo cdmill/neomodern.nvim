@@ -1,7 +1,7 @@
     # DARKFOREST Color Palette
     set -l foreground bbbac1
     set -l selection 313b35
-    set -l comment 4f4f4f
+    set -l comment 7a8478
     set -l red e67e80
     set -l orange e69875
     set -l yellow dbbc7f

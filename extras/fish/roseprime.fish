@@ -1,7 +1,7 @@
     # ROSEPRIME Color Palette
     set -l foreground bbbac1
     set -l selection 26262a
-    set -l comment 2e2e2f
+    set -l comment 555555
     set -l red ba7685
     set -l orange a3b8b5
     set -l yellow d2af98

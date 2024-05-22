@@ -1,7 +1,7 @@
     # ICECLIMBER Color Palette
     set -l foreground bbbac1
     set -l selection 333336
-    set -l comment dbbc8a
+    set -l comment 55555e
     set -l red e67e80
     set -l orange d6a56f
     set -l yellow dbbc8a

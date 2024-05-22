@@ -6,15 +6,15 @@ cursor_border = "#bbbac1"
 cursor_fg = "#1b1a20"
 selection_bg = "#413f4d"
 selection_fg = "#bbbac1"
-split = "#393842"
+split = "#686675"
 compose_cursor = "#e69875"
-scrollbar_thumb = "#393842"
+scrollbar_thumb = "#686675"
 
 ansi = ["#121112", "#e67e80", "#a7c080", "#dbbc8a", "#8da0d6", "#817faf", "#53a8b8", "#bbbac1"]
-brights = ["#393842", "#e67e80", "#a7c080", "#dbbc8a", "#8da0d6", "#d6a56f", "#53a8b8", "#bbbac1"]
+brights = ["#686675", "#e67e80", "#a7c080", "#dbbc8a", "#8da0d6", "#d6a56f", "#53a8b8", "#bbbac1"]
 
 [colors.tab_bar]
-inactive_tab_edge = "#393842"
+inactive_tab_edge = "#686675"
 background = "#1b1a20"
 
 [colors.tab_bar.active_tab]
