@@ -50,7 +50,7 @@ return {
     plus = "#8fc490",
   },
   darkforest = {
-    alt = "#e69875",
+    alt = "#d6a56f",
     bg = "#181b1b",
     border = "#4f4f4f",
     builtin = "#d699b6",
