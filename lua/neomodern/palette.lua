@@ -89,7 +89,7 @@ return {
     line = "#1f1e26",
     operator = "#9b99a3",
     preproc = "#b39581",
-    property = "#817faf",
+    property = "#8c8abd",
     string = "#dbbc8a",
     type = "#d6a56f",
     visual = "#413f4d",
