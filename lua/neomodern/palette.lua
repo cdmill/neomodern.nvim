@@ -36,7 +36,7 @@ return {
     float = "#2b2a2a",
     func = "#abbceb",
     keyword = "#b39581",
-    line = "#303030",
+    line = "#292929",
     operator = "#9b99a3",
     preproc = "#9094de",
     property = "#cfa1bf",
