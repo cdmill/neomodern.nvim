@@ -470,9 +470,14 @@ hl.plugins.telescope = telescope_ui[config.ui.telescope]
 
 hl.plugins.dashboard = {
   DashboardShortCut = { fg = c.func },
-  DashboardHeader = { fg = c.func },
+  DashboardHeader = { fg = c.keyword },
   DashboardCenter = { fg = c.fg },
-  DashboardFooter = { fg = c.builtin, fmt = "italic" },
+  DashboardFooter = { fg = c.func, fmt = "italic" },
+}
+
+hl.plugins.ministarter = {
+  MiniStarterHeader = { fg = c.keyword },
+  MiniStarterFooter = { fg = c.keyword },
 }
 
 hl.plugins.indent_blankline = {
