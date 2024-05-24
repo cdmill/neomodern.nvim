@@ -55,7 +55,7 @@ function M.setup()
       local fname = extra .. "/" .. style .. "." .. info.ext
       colors["_upstream_url"] = "https://github.com/cdmill/neomodern.nvim/raw/main/extras/" .. fname
       colors["_style_name"] = string.upper(style_name)
-      colors["_name"] = string.upper(style)
+      colors["_name"] = style
       write(plugin.generate(colors), fname)
     end
   end

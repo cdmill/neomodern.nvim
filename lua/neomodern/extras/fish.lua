@@ -26,24 +26,18 @@ function M.generate(colors)
 
   local fish = util.template(
     [[
-    # ${_style_name} Color Palette
-    set -l foreground ${fg}
-    set -l selection ${selection}
-    set -l comment ${grey}
-    set -l red ${red}
-    set -l orange ${orange}
-    set -l yellow ${yellow}
-    set -l green ${green}
-    set -l purple ${purple}
-    set -l cyan ${cyan}
-    set -l pink ${magenta}
+    # ${_style_name}
+    # use in ~/.config/fish/conf.d/
+
+    set -g orange ${orange} # color 16
+    set -g alt ${alt} # color 17
 
     # Syntax Highlighting Colors
     set -g fish_color_normal ${fg}
-    set -g fish_color_command ${property}
+    set -g fish_color_command ${keyword}
     set -g fish_color_keyword ${keyword}
     set -g fish_color_quote ${string}
-    set -g fish_color_redirection ${fg}
+    set -g fish_color_redirection ${builtin}
     set -g fish_color_end ${keyword}
     set -g fish_color_error ${error}
     set -g fish_color_param ${fg}
@@ -51,7 +45,7 @@ function M.generate(colors)
     set -g fish_color_selection --background=${visual}
     set -g fish_color_search_match --background=${visual}
     set -g fish_color_operator ${operator}
-    set -g fish_color_escape ${keyword}
+    set -g fish_color_escape ${func}
     set -g fish_color_autosuggestion ${comment}
 
     # Completion Pager Colors}
