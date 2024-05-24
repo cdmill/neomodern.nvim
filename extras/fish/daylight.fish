@@ -1,21 +1,15 @@
-    # DAYLIGHT Color Palette
-    set -l foreground 111111
-    set -l selection e1e1eb
-    set -l comment 9b9ba3
-    set -l red e6050a
-    set -l orange db7302
-    set -l yellow fca921
-    set -l green 41a642
-    set -l purple 6b65d6
-    set -l cyan 0293a3
-    set -l pink e858b6
+    # DAYLIGHT
+    # use in ~/.config/fish/conf.d/
+
+    set -g orange db7302 # color 16
+    set -g alt 5d86f5 # color 17
 
     # Syntax Highlighting Colors
     set -g fish_color_normal 111111
-    set -g fish_color_command 0293a3
+    set -g fish_color_command 6b65d6
     set -g fish_color_keyword 6b65d6
     set -g fish_color_quote 41a642
-    set -g fish_color_redirection 111111
+    set -g fish_color_redirection e858b6
     set -g fish_color_end 6b65d6
     set -g fish_color_error e6050a
     set -g fish_color_param 111111
@@ -23,7 +17,7 @@
     set -g fish_color_selection --background=e1e1eb
     set -g fish_color_search_match --background=e1e1eb
     set -g fish_color_operator 111111
-    set -g fish_color_escape 6b65d6
+    set -g fish_color_escape 5d86f5
     set -g fish_color_autosuggestion 9b9ba3
 
     # Completion Pager Colors}
