@@ -10,7 +10,7 @@ return {
     fg = "#bbbac1",
     float = "#222225",
     func = "#8da0d6",
-    keyword = "#817faf",
+    keyword = "#8c8abd",
     line = "#1d1d1f",
     operator = "#9b99a3",
     preproc = "#b39581",
