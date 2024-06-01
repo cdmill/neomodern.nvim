@@ -19,7 +19,7 @@ return {
     type = "#d6a56f",
     visual = "#333336",
     error = "#e67e80",
-    hint = "#8c593a",
+    hint = "#8da0d6",
     warning = "#ad9368",
     delta = "#8da0d6",
     plus = "#7da77e",

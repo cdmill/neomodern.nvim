@@ -440,6 +440,21 @@ hl.plugins.nvim_tree = {
   NvimTreeFolderName = { fg = c.func },
 }
 
+hl.plugins.obsidian = {
+  ObsidianTodo = { link = "@markup.list.unchecked" },
+  ObsidianDone = { link = "@markup.list.checked" },
+  ObsidianRightArrow = { bold = true, fg = c.fg },
+  ObsidianTilde = { bold = true, fg = c.fg },
+  ObsidianBullet = { link = "@markup.list" },
+  ObsidianRefText = { link = "@markup.link" },
+  ObsidianExtLinkIcon = { link = "@markup.strikethrough" },
+  ObsidianTag = { link = "@markup.list.unchecked" },
+  ObsidianHighlightText = {
+    bg = util.darken(c.constant, 0.1, c.bg),
+    fg = c.constant,
+  },
+}
+
 local telescope_ui = {
   borderless = {
     TelescopeTitle = { fg = c.fg },
