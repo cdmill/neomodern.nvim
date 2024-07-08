@@ -238,6 +238,7 @@ Available [here](https://github.com/cdmill/neomodern.nvim/tree/main/extras)
 - [fish](https://github.com/fish-shell/fish-shell)
 - [wezterm](https://github.com/wez/wezterm)
 - [Windows Terminal](https://github.com/microsoft/terminal)
+- [Iterm2](https://iterm2.com)
 
 ## Contributing
 
