@@ -1,9 +1,9 @@
 [colors]
 foreground = "#bbbac1"
-background = "#1e1e1e"
+background = "#1d1d1d"
 cursor_bg = "#bbbac1"
 cursor_border = "#bbbac1"
-cursor_fg = "#1e1e1e"
+cursor_fg = "#1d1d1d"
 selection_bg = "#383737"
 selection_fg = "#bbbac1"
 split = "#5e5a5a"
@@ -15,7 +15,7 @@ brights = ["#5e5a5a", "#d47b7d", "#8fc490", "#e8cea0", "#abbceb", "#cfa1bf", "#b
 
 [colors.tab_bar]
 inactive_tab_edge = "#5e5a5a"
-background = "#1e1e1e"
+background = "#1d1d1d"
 
 [colors.tab_bar.active_tab]
 fg_color = "#9094de"
@@ -37,7 +37,7 @@ intensity = "Bold"
 
 [colors.tab_bar.new_tab]
 fg_color = "#9094de"
-bg_color = "#1e1e1e"
+bg_color = "#1d1d1d"
 
 [metadata]
 aliases = []

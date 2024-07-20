@@ -1,6 +1,6 @@
     # name: coffeecat
     # url: https://github.com/cdmill/neomodern.nvim/raw/main/extras/fish_themes/coffeecat.theme
-    # preferred_background: 1e1e1e
+    # preferred_background: 1d1d1d
 
     set -g fish_color_normal bbbac1
     set -g fish_color_command b39581

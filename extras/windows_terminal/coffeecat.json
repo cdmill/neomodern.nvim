@@ -1,7 +1,7 @@
 # Add the following object to your Windows Terminal configuration
 # https://learn.microsoft.com/en-us/windows/terminal/customize-settings/color-schemes#creating-your-own-color-scheme
 {
-    "background": "#1e1e1e",
+    "background": "#1d1d1d",
     "black": "#191818",
     "blue": "#abbceb",
     "brightBlack": "#5e5a5a",

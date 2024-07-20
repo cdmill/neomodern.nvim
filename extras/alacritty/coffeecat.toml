@@ -1,12 +1,12 @@
 # COFFEECAT Alacritty Colors
 # Default colors
 [colors.primary]
-background = '#1e1e1e'
+background = '#1d1d1d'
 foreground = '#bbbac1'
 
 #[colors.cursor]
 #cursor = '#bbbac1'
-#text = '#1e1e1e'
+#text = '#1d1d1d'
 
 # Normal colors
 [colors.normal]
