@@ -3,11 +3,11 @@
     # preferred_background: 171718
 
     set -g fish_color_normal bbbac1
-    set -g fish_color_command 817faf
-    set -g fish_color_keyword 817faf
+    set -g fish_color_command 8c8abd
+    set -g fish_color_keyword 8c8abd
     set -g fish_color_quote 7da77e
     set -g fish_color_redirection e29eca
-    set -g fish_color_end 817faf
+    set -g fish_color_end 8c8abd
     set -g fish_color_error e67e80
     set -g fish_color_param bbbac1
     set -g fish_color_comment 55555e

@@ -26,7 +26,7 @@ return {
   },
   coffeecat = {
     alt = "#9094de",
-    bg = "#1e1e1e",
+    bg = "#1d1d1d",
     border = "#5e5a5a",
     builtin = "#9094de",
     comment = "#6e6a65",
