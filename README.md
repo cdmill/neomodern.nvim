@@ -136,15 +136,19 @@ require("neomodern").setup({
 
   -- UI options --
   ui = {
-    cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
     colored_docstrings = true, -- if true, docstrings will be highlighted like strings, otherwise they will be highlighted like comments
-    plain = false, -- don't set background for search
+    plain_search = true, -- don't set background for search
+    plain_float = false, -- don't set background of floating windows. recommended for when using floating windows with borders
     show_eob = true, -- show the end-of-buffer tildes
 
     -- Plugins Related --
     lualine = {
       bold = true,
       plain = false, -- use a less distracting lualine. note: works best when no lualine separators are used
+    },
+    cmp = {
+      plain = false, --don't highlight lsp-kind items
+      reverse = false, -- reverse item kind highlights in cmp menu
     },
     telescope = "borderless", -- choose between 'borderless' or 'bordered'
     diagnostics = {
@@ -256,6 +260,7 @@ If you are wanting support for a plugin, either open an issue or submit a pull r
 - [Everforest](https://github.com/sainnhe/everforest)
 - [Rosé-Pine](https://github.com/rose-pine/neovim)
 - [TokyoNight](https://github.com/folke/tokyonight.nvim)
+- [No Clown Fiesta](https://github.com/aktersnurra/no-clown-fiesta.nvim)
 
 ## License
 
