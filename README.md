@@ -147,7 +147,7 @@ require("neomodern").setup({
       plain = false, -- use a less distracting lualine. note: works best when no lualine separators are used
     },
     cmp = {
-      plain = false, --don't highlight lsp-kind items
+      plain = false, -- don't highlight lsp-kind items
       reverse = false, -- reverse item kind highlights in cmp menu
     },
     telescope = "borderless", -- choose between 'borderless' or 'bordered'
