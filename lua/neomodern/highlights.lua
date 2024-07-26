@@ -66,7 +66,7 @@ hl.common = {
   },
   Pmenu = { fg = c.fg, bg = config.ui.plain_float and c.none or c.visual },
   PmenuSbar = { fg = c.none, bg = c.visual },
-  PmenuSel = { fg = c.type, bg = c.float },
+  PmenuSel = { fg = c.hint, bg = c.float },
   PmenuThumb = { fg = c.none, bg = c.visual },
   Question = { fg = c.constant },
   QuickFixLine = { fg = c.func, fmt = "underline" },
