@@ -46,8 +46,8 @@ hl.common = {
   Directory = { fg = c.func },
   ErrorMsg = { fg = c.error, fmt = "bold" },
   EndOfBuffer = { fg = config.ui.show_eob and c.comment or c.bg },
-  FloatBorder = { fg = c.border, bg = c.none },
-  FloatTitle = { fg = c.comment, bg = c.float },
+  FloatBorder = { fg = c.border, bg = config.ui.plain_float and c.none or c.float },
+  FloatTitle = { fg = c.comment, bg = config.ui.plain_float and c.none or c.float },
   Folded = { fg = c.comment, bg = config.transparent and c.none or c.line },
   FoldColumn = { fg = c.comment, bg = config.transparent and c.none or c.bg },
   IncSearch = {
