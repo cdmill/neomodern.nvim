@@ -555,7 +555,7 @@ local lsp_kind_icons_color = {
 
 function M.setup()
   -- highlight cmp items the same as lsp highlights
-  if ~config.ui.cmp.plain then
+  if not config.ui.cmp.plain then
     for kind, color in pairs(lsp_kind_icons_color) do
       hl.plugins.cmp["CmpItemKind" .. kind] =
         { fg = color, fmt = config.ui.cmp_itemkind_reverse and "reverse" }
