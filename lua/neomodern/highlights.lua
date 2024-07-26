@@ -66,7 +66,7 @@ hl.common = {
   },
   Pmenu = { fg = c.fg, bg = config.ui.plain_float and c.none or c.visual },
   PmenuSbar = { fg = c.none, bg = c.visual },
-  PmenuSel = { fg = c.constant, bg = c.float },
+  PmenuSel = { fg = c.type, bg = c.float },
   PmenuThumb = { fg = c.none, bg = c.visual },
   Question = { fg = c.constant },
   QuickFixLine = { fg = c.func, fmt = "underline" },
@@ -359,8 +359,8 @@ hl.plugins.lazy = {
 hl.plugins.cmp = {
   CmpItemAbbr = { fg = c.fg },
   CmpItemAbbrDeprecated = { fg = c.comment, fmt = "strikethrough" },
-  CmpItemAbbrMatch = { fg = c.keyword },
-  CmpItemAbbrMatchFuzzy = { fg = c.keyword, fmt = "underline" },
+  CmpItemAbbrMatch = { fg = c.type },
+  CmpItemAbbrMatchFuzzy = { fg = c.type, fmt = "underline" },
   CmpItemMenu = { fg = c.comment },
   CmpItemKind = { fg = c.comment, fmt = config.ui.cmp_itemkind_reverse and "reverse" },
 }
