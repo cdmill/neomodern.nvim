@@ -480,7 +480,7 @@ local telescope_ui = {
     TelescopeBorder = { fg = float_border },
     TelescopeMatching = { fg = c.type, fmt = "bold" },
     TelescopePromptPrefix = { fg = c.type },
-    TelescopeSelection = { fg = c.hint, bg = c.visual },
+    TelescopeSelection = { fg = c.hint, bg = c.float },
     TelescopeSelectionCaret = { fg = c.hint },
     TelescopeResultsNormal = { fg = c.fg },
   },
