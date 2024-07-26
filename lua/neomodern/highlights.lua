@@ -362,7 +362,7 @@ hl.plugins.cmp = {
   CmpItemAbbrMatch = { fg = c.type },
   CmpItemAbbrMatchFuzzy = { fg = c.type, fmt = "underline" },
   CmpItemMenu = { fg = c.comment },
-  CmpItemKind = { fg = c.comment, fmt = config.ui.cmp_itemkind_reverse and "reverse" },
+  CmpItemKind = { fg = c.comment, fmt = config.ui.cmp.reverse and "reverse" },
 }
 
 hl.plugins.diffview = {
@@ -558,7 +558,7 @@ function M.setup()
   if not config.ui.cmp.plain then
     for kind, color in pairs(lsp_kind_icons_color) do
       hl.plugins.cmp["CmpItemKind" .. kind] =
-        { fg = color, fmt = config.ui.cmp_itemkind_reverse and "reverse" }
+        { fg = color, fmt = config.ui.cmp.reverse and "reverse" }
     end
   end
 
