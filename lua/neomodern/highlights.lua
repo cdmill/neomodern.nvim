@@ -23,7 +23,7 @@ end
 hl.common = {
   ColorColumn = { bg = c.line },
   Conceal = { fg = c.func, bg = c.bg },
-  CurSearch = { fg = c.type, bg = config.ui.plain and c.bg or c.visual },
+  CurSearch = { fg = c.type, bg = config.ui.plain_search and c.bg or c.visual },
   Cursor = { fmt = "reverse" },
   vCursor = { fmt = "reverse" },
   iCursor = { fmt = "reverse" },
@@ -51,8 +51,8 @@ hl.common = {
   Folded = { fg = c.comment, bg = config.transparent and c.none or c.line },
   FoldColumn = { fg = c.comment, bg = config.transparent and c.none or c.bg },
   IncSearch = {
-    fg = config.ui.plain and c.type or c.bg,
-    bg = config.ui.plain and c.bg or c.type,
+    fg = config.ui.plain_search and c.type or c.bg,
+    bg = config.ui.plain_search and c.bg or c.type,
   },
   LineNr = { fg = c.comment },
   MatchParen = { fg = c.fg, bg = c.visual },
@@ -60,14 +60,17 @@ hl.common = {
   MsgSeparator = { fg = c.string, bg = c.line, fmt = "bold" },
   NonText = { fg = c.comment },
   Normal = { fg = c.fg, bg = config.transparent and c.none or c.bg },
-  NormalFloat = { fg = c.fg, bg = config.transparent and c.none or c.float },
-  Pmenu = { fg = c.fg, bg = c.visual },
+  NormalFloat = {
+    fg = c.fg,
+    bg = (config.transparent or config.ui.plain_float) and c.none or c.float,
+  },
+  Pmenu = { fg = c.fg, bg = config.ui.plain_float and c.none or c.visual },
   PmenuSbar = { fg = c.none, bg = c.visual },
-  PmenuSel = { bg = c.float },
+  PmenuSel = { fg = c.constant, bg = c.float },
   PmenuThumb = { fg = c.none, bg = c.visual },
   Question = { fg = c.constant },
   QuickFixLine = { fg = c.func, fmt = "underline" },
-  Search = { fg = "#aaaaaa", bg = config.ui.plain and c.bg or c.visual },
+  Search = { fg = "#aaaaaa", bg = config.ui.plain_search and c.bg or c.visual },
   SignColumn = { fg = c.fg, bg = config.transparent and c.none or c.bg },
   SpecialKey = { fg = c.comment },
   SpellBad = { fg = c.none, fmt = "undercurl", sp = c.operator },
@@ -349,13 +352,17 @@ hl.plugins.lsp.LspDiagnosticsVirtualTextInformation = hl.plugins.lsp.DiagnosticV
 hl.plugins.lsp.LspDiagnosticsVirtualTextHint = hl.plugins.lsp.DiagnosticVirtualTextHint
 -- stylua: ignore end
 
+hl.plugins.lazy = {
+  LazyNormal = { bg = c.float },
+}
+
 hl.plugins.cmp = {
   CmpItemAbbr = { fg = c.fg },
   CmpItemAbbrDeprecated = { fg = c.comment, fmt = "strikethrough" },
   CmpItemAbbrMatch = { fg = c.keyword },
   CmpItemAbbrMatchFuzzy = { fg = c.keyword, fmt = "underline" },
   CmpItemMenu = { fg = c.comment },
-  CmpItemKind = { fg = c.fg, fmt = config.ui.cmp_itemkind_reverse and "reverse" },
+  CmpItemKind = { fg = c.comment, fmt = config.ui.cmp_itemkind_reverse and "reverse" },
 }
 
 hl.plugins.diffview = {
@@ -547,11 +554,12 @@ local lsp_kind_icons_color = {
 }
 
 function M.setup()
-  --
-  -- define cmp and aerial kind highlights with lsp_kind_icons_color
-  for kind, color in pairs(lsp_kind_icons_color) do
-    hl.plugins.cmp["CmpItemKind" .. kind] =
-      { fg = color, fmt = config.ui.cmp_itemkind_reverse and "reverse" }
+  -- highlight cmp items the same as lsp highlights
+  if ~config.ui.cmp.plain then
+    for kind, color in pairs(lsp_kind_icons_color) do
+      hl.plugins.cmp["CmpItemKind" .. kind] =
+        { fg = color, fmt = config.ui.cmp_itemkind_reverse and "reverse" }
+    end
   end
 
   vim_highlights(hl.common)

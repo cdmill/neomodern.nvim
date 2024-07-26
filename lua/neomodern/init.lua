@@ -65,13 +65,17 @@ local default_config = {
   ui = {
     cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
     colored_docstrings = true, -- if true, docstrings will be highlighted like strings, otherwise they will be highlighted like comments
-    plain = false, -- don't set background for search
+    plain_search = true, -- don't set background for search
+    plain_float = false, -- don't set background of floating windows. recommended for when using floating windows with borders
     show_eob = true, -- show the end-of-buffer tildes
 
     -- Plugins Related --
     lualine = {
       bold = true,
-      plain = false,
+      plain = false, -- don't set section/component backgrounds
+    },
+    cmp = {
+      plain = false, --don't highlight lsp-kind items
     },
     telescope = "bordered", -- choose between 'borderless' or 'bordered'
     diagnostics = {
