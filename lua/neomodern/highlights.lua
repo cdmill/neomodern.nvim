@@ -4,6 +4,7 @@ local util = require("neomodern.util")
 
 local M = {}
 local hl = { plugins = {} }
+local float_border = "#999999"
 
 local function vim_highlights(highlights)
   for group_name, group_settings in pairs(highlights) do
@@ -46,7 +47,7 @@ hl.common = {
   Directory = { fg = c.func },
   ErrorMsg = { fg = c.error, fmt = "bold" },
   EndOfBuffer = { fg = config.ui.show_eob and c.comment or c.bg },
-  FloatBorder = { fg = "#999999", bg = c.none },
+  FloatBorder = { fg = float_border, bg = c.none },
   FloatTitle = { fg = c.comment, bg = c.float },
   Folded = { fg = c.comment, bg = config.transparent and c.none or c.line },
   FoldColumn = { fg = c.comment, bg = config.transparent and c.none or c.bg },
@@ -476,11 +477,11 @@ local telescope_ui = {
     TelescopeMatching = { fg = c.type, fmt = "bold" },
   },
   bordered = {
-    TelescopeBorder = { fg = c.border },
+    TelescopeBorder = { fg = float_border },
     TelescopeMatching = { fg = c.type, fmt = "bold" },
-    TelescopePromptPrefix = { fg = c.func },
-    TelescopeSelection = { fg = c.type, bg = c.bg },
-    TelescopeSelectionCaret = { fg = c.type },
+    TelescopePromptPrefix = { fg = c.type },
+    TelescopeSelection = { fg = c.hint, bg = c.visual },
+    TelescopeSelectionCaret = { fg = c.hint },
     TelescopeResultsNormal = { fg = c.fg },
   },
 }
