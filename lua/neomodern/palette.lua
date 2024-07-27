@@ -2,7 +2,7 @@ return {
   iceclimber = {
     alt = "#abbceb",
     bg = "#171718",
-    border = "#3c3c40",
+    border = "#515157",
     builtin = "#e29eca",
     comment = "#55555e",
     constant = "#dbbc8a",
@@ -102,7 +102,7 @@ return {
   roseprime = {
     alt = "#bbbac1",
     bg = "#121212",
-    border = "#3c3c40",
+    border = "#4a4a4f",
     builtin = "#ba7685",
     comment = "#555555",
     constant = "#8192C7",
