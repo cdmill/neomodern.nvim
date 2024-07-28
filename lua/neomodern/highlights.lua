@@ -52,7 +52,7 @@ hl.common = {
   FoldColumn = { fg = c.comment, bg = config.transparent and c.none or c.bg },
   IncSearch = {
     fg = config.ui.plain_search and c.type or c.bg,
-    bg = config.ui.plain_search and c.bg or c.type,
+    bg = config.ui.plain_search and c.bg or c.visual,
   },
   LineNr = { fg = c.comment },
   MatchParen = { fg = c.fg, bg = c.visual },
@@ -70,7 +70,7 @@ hl.common = {
   PmenuThumb = { fg = c.none, bg = c.visual },
   Question = { fg = c.constant },
   QuickFixLine = { fg = c.func, fmt = "underline" },
-  Search = { fg = "#aaaaaa", bg = config.ui.plain_search and c.bg or c.visual },
+  Search = { fg = c.hint, bg = config.ui.plain_search and c.bg or c.visual },
   SignColumn = { fg = c.fg, bg = config.transparent and c.none or c.bg },
   SpecialKey = { fg = c.comment },
   SpellBad = { fg = c.none, fmt = "undercurl", sp = c.operator },
@@ -352,8 +352,9 @@ hl.plugins.lsp.LspDiagnosticsVirtualTextInformation = hl.plugins.lsp.DiagnosticV
 hl.plugins.lsp.LspDiagnosticsVirtualTextHint = hl.plugins.lsp.DiagnosticVirtualTextHint
 -- stylua: ignore end
 
-hl.plugins.lazy = {
+hl.plugins.special = {
   LazyNormal = { bg = c.float },
+  MasonNormal = { bg = c.float },
 }
 
 hl.plugins.cmp = {
