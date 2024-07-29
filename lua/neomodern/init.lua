@@ -64,7 +64,6 @@ local default_config = {
 
   ui = {
     colored_docstrings = true, -- if true, docstrings will be highlighted like strings, otherwise they will be highlighted like comments
-    plain_search = true, -- don't set background for search
     plain_float = false, -- don't set background of floating windows. recommended for when using floating windows with borders
     show_eob = true, -- show the end-of-buffer tildes
 
