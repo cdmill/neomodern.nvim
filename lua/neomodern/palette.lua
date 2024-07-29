@@ -142,7 +142,7 @@ return {
     property = "#0293a3",
     string = "#41a642",
     type = "#db7302",
-    visual = "#e1e1eb",
+    visual = "#d2d2dc",
     error = "#e6050a",
     hint = "#5d86f5",
     warning = "#fca921",
