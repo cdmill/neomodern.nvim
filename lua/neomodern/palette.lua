@@ -127,7 +127,7 @@ return {
   daylight = {
     alt = "#5d86f5",
     bg = "#ffffff",
-    border = "#d9d9de",
+    border = "#bdbdc2",
     builtin = "#e858b6",
     comment = "#9b9ba3",
     constant = "#fca921",
