@@ -51,7 +51,7 @@ hl.common = {
   Folded = { fg = c.comment, bg = config.transparent and c.none or c.line },
   FoldColumn = { fg = c.comment, bg = config.transparent and c.none or c.bg },
   IncSearch = {
-    fg = config.ui.plain_search and c.type or c.bg,
+    fg = config.ui.plain_search and c.type,
     bg = config.ui.plain_search and c.bg or c.visual,
   },
   LineNr = { fg = c.comment },
