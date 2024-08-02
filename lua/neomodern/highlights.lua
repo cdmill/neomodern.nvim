@@ -326,11 +326,15 @@ hl.plugins.lsp = {
     sp = c.warning,
   },
 
-  LspReferenceText = { bg = c.comment },
-  LspReferenceWrite = { bg = c.comment },
-  LspReferenceRead = { bg = c.comment },
+  LspReferenceText = { bg = c.visual },
+  LspReferenceWrite = { bg = c.visual },
+  LspReferenceRead = { bg = c.visual },
 
-  LspCodeLens = { fg = c.comment, fmt = config.code_style.comments },
+  LspCodeLens = {
+    fg = c.keyword,
+    bg = util.darken(c.keyword, 0.1, c.bg),
+    fmt = config.code_style.comments,
+  },
   LspCodeLensSeparator = { fg = c.comment },
 }
 
