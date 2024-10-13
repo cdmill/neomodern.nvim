@@ -1,12 +1,12 @@
 # ICECLIMBER Alacritty Colors
 # Default colors
 [colors.primary]
-background = '#171718'
+background = '#171719'
 foreground = '#bbbac1'
 
 #[colors.cursor]
 #cursor = '#bbbac1'
-#text = '#171718'
+#text = '#171719'
 
 # Normal colors
 [colors.normal]
@@ -14,26 +14,26 @@ black = '#2d2d2f'
 red = '#e67e80'
 green = '#7da77e'
 yellow = '#dbbc8a'
-blue = '#8da0d6'
-magenta = '#817faf'
+blue = '#86a3f0'
+magenta = '#8a88db'
 cyan = '#559ba3'
 white = '#bbbac1'
 
 # Bright colors
 [colors.bright]
-black = '#55555e'
+black = '#555568'
 red = '#e67e80'
 green = '#7da77e'
 yellow = '#dbbc8a'
-blue = '#8da0d6'
-magenta = '#e29eca'
+blue = '#86a3f0'
+magenta = '#e89bce'
 cyan = '#559ba3'
 white = '#bbbac1'
 
 # Indexed Colors
 [[colors.indexed_colors]]
 index = 16
-color = '#d6a56f'
+color = '#e3a462'
 
 [[colors.indexed_colors]]
 index = 17

@@ -1,40 +1,40 @@
 # ROSEPRIME Alacritty Colors
 # Default colors
 [colors.primary]
-background = '#121212'
-foreground = '#bbbac1'
+background = '#121315'
+foreground = '#afafdd'
 
 #[colors.cursor]
-#cursor = '#bbbac1'
-#text = '#121212'
+#cursor = '#afafdd'
+#text = '#121315'
 
 # Normal colors
 [colors.normal]
 black = '#111111'
-red = '#ba7685'
-green = '#6b8f89'
+red = '#c76f82'
+green = '#9bbdb8'
 yellow = '#d2af98'
-blue = '#8192C7'
-magenta = '#9879b0'
+blue = '#95b1fc'
+magenta = '#9b9af5'
 cyan = '#a3849b'
-white = '#bbbac1'
+white = '#afafdd'
 
 # Bright colors
 [colors.bright]
-black = '#555555'
-red = '#ba7685'
-green = '#6b8f89'
+black = '#666a82'
+red = '#c76f82'
+green = '#9bbdb8'
 yellow = '#d2af98'
-blue = '#8192C7'
-magenta = '#ddadb4'
+blue = '#95b1fc'
+magenta = '#ad82a2'
 cyan = '#a3849b'
-white = '#bbbac1'
+white = '#afafdd'
 
 # Indexed Colors
 [[colors.indexed_colors]]
 index = 16
-color = '#a3b8b5'
+color = '#e3a1ab'
 
 [[colors.indexed_colors]]
 index = 17
-color = '#bbbac1'
+color = '#688cb3'

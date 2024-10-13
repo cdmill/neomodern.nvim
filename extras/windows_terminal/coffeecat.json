@@ -1,14 +1,14 @@
 # Add the following object to your Windows Terminal configuration
 # https://learn.microsoft.com/en-us/windows/terminal/customize-settings/color-schemes#creating-your-own-color-scheme
 {
-    "background": "#1d1d1d",
+    "background": "#1f1e1d",
     "black": "#191818",
-    "blue": "#abbceb",
-    "brightBlack": "#5e5a5a",
-    "brightBlue": "#abbceb",
+    "blue": "#96b1fa",
+    "brightBlack": "#6a6a6a",
+    "brightBlue": "#96b1fa",
     "brightCyan": "#b39581",
     "brightGreen": "#8fc490",
-    "brightPurple": "#cfa1bf",
+    "brightPurple": "#e3afd1",
     "brightRed": "#d47b7d",
     "brightWhite": "#bbbac1",
     "brightYellow": "#e8cea0",
@@ -17,7 +17,7 @@
     "foreground": "#bbbac1",
     "green": "#8fc490",
     "name": "COFFEECAT",
-    "purple": "#9094de",
+    "purple": "#9b9af5",
     "red": "#d47b7d",
     "selectionBackground": "#383737",
     "white": "#bbbac1",

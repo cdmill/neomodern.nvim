@@ -33,7 +33,6 @@ function M.setup()
     iceclimber = "iceclimber",
     coffeecat = "coffeecat",
     darkforest = "darkforest",
-    campfire = "campfire",
     roseprime = "roseprime",
     daylight = "daylight",
   }
