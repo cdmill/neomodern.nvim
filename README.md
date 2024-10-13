@@ -1,6 +1,6 @@
 # NEOMODERN.nvim
 
-A collection of themes (5 dark, 1 light) written in [Lua](https://www.lua.org) for [Neovim](https://github.com/neovim/neovim) $\geq$ 0.9.
+A collection of themes (4 dark, 1 light) written in [Lua](https://www.lua.org) for [Neovim](https://github.com/neovim/neovim) $\geq$ 0.9.
 Support for [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter) syntax highlighting and LSP semantic highlighting.
 Forked from [OneDark.nvim](https://github.com/navarasu/onedark.nvim).
 
@@ -38,17 +38,6 @@ A darker, greener take on the classic [Everforest](https://github.com/sainnhe/ev
 <summary>Click to toggle previews</summary>
 
 ![image](https://github.com/cdmill/neomodern.nvim/blob/assets/darkforest.png)
-
-</details>
-
-### CAMPFIRE
-
-A dark, purple-based theme with fiery highlights
-
-<details open>
-<summary>Click to toggle previews</summary>
-
-![image](https://github.com/cdmill/neomodern.nvim/blob/assets/campfire.png)
 
 </details>
 
@@ -109,19 +98,20 @@ Default options are given below
 require("neomodern").setup({
   -- Main options --
   style = "iceclimber", -- choose between 'iceclimber', 'coffeecat', 'darkforest', 'campfire', 'roseprime', 'daylight'
-  toggle_style_key = nil, -- keymap to cycle between styles
-  toggle_style_list = { -- a table of which styles to cycle through, by default all styles are included
-    "iceclimber",
-    "coffeecat",
-    "darkforest",
-    "campfire",
-    "roseprime",
-    "daylight"
-  },
+  toggle_style_key = nil,
+  toggle_style_list = M.styles_list,
   transparent = false, -- don't set background
   term_colors = true, -- if true enable the terminal
+  colored_docstrings = true, -- if true, docstrings will be highlighted like strings, otherwise they will be highlighted like comments
+  plain_float = false, -- don't set background of floating windows. recommended for when using floating windows with borders
+  show_eob = true, -- show the end-of-buffer tildes
+  diagnostics = {
+    darker = true, -- darker colors for diagnostic
+    undercurl = true, -- use undercurl for diagnostics
+    background = true, -- use background color for virtual text
+  },
 
-  -- Formatting --
+  -- Changing Formats --
   code_style = {
     comments = "italic",
     conditionals = "none",
@@ -134,27 +124,17 @@ require("neomodern").setup({
     variables = "none",
   },
 
-  -- UI options --
-  ui = {
-    colored_docstrings = true, -- if true, docstrings will be highlighted like strings, otherwise they will be highlighted like comments
-    plain_float = false, -- don't set background of floating windows. recommended for when using floating windows with borders
-    show_eob = true, -- show the end-of-buffer tildes
-
-    -- Plugins Related --
+  -- Plugin Related --
+  plugin = {
     lualine = {
       bold = true,
-      plain = false, -- use a less distracting lualine. note: works best when no lualine separators are used
+      plain = false, -- don't set section/component backgrounds
     },
     cmp = {
-      plain = false, -- don't highlight lsp-kind items
+      plain = false, --don't highlight lsp-kind items
       reverse = false, -- reverse item kind highlights in cmp menu
     },
-    telescope = "borderless", -- choose between 'borderless' or 'bordered'
-    diagnostics = {
-      darker = true, -- darker colors for diagnostic
-      undercurl = true, -- use undercurl for diagnostics
-      background = true, -- use background color for virtual text
-    },
+    telescope = "bordered", -- choose between 'borderless' or 'bordered'
   },
 
   -- Custom Highlights --

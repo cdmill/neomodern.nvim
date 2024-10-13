@@ -148,7 +148,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
 
     -- literals
     -- ["@string"] = { link = "String" }, -- strings
-    ["@string.documentation"] = config.ui.colored_docstrings and hl.syntax["String"] or hl.syntax["Comment"], -- doc strings
+    ["@string.documentation"] = config.colored_docstrings and hl.syntax["String"] or hl.syntax["Comment"], -- doc strings
     ["@string.regexp"] = hl.syntax["SpecialChar"], -- regex
     ["@string.escape"] = hl.syntax["SpecialChar"], -- escape characters within string
     ["@string.special.symbol"] = hl.syntax["Identifier"],
@@ -557,7 +557,7 @@ local lsp_kind_icons_color = {
 
 function M.setup()
   -- highlight cmp items the same as lsp highlights
-  if not config.ui.cmp.plain then
+  if not config.plugin.cmp.plain then
     for kind, color in pairs(lsp_kind_icons_color) do
       hl.plugins.cmp["CmpItemKind" .. kind] =
         { fg = color, fmt = config.ui.cmp.reverse and "reverse" }

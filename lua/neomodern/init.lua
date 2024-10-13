@@ -47,6 +47,14 @@ local default_config = {
   toggle_style_list = M.styles_list,
   transparent = false, -- don't set background
   term_colors = true, -- if true enable the terminal
+  colored_docstrings = true, -- if true, docstrings will be highlighted like strings, otherwise they will be highlighted like comments
+  plain_float = false, -- don't set background of floating windows. recommended for when using floating windows with borders
+  show_eob = true, -- show the end-of-buffer tildes
+  diagnostics = {
+    darker = true, -- darker colors for diagnostic
+    undercurl = true, -- use undercurl for diagnostics
+    background = true, -- use background color for virtual text
+  },
 
   -- Changing Formats --
   code_style = {
@@ -61,12 +69,8 @@ local default_config = {
     variables = "none",
   },
 
-  ui = {
-    colored_docstrings = true, -- if true, docstrings will be highlighted like strings, otherwise they will be highlighted like comments
-    plain_float = false, -- don't set background of floating windows. recommended for when using floating windows with borders
-    show_eob = true, -- show the end-of-buffer tildes
-
-    -- Plugins Related --
+  -- Plugin Related --
+  plugin = {
     lualine = {
       bold = true,
       plain = false, -- don't set section/component backgrounds
@@ -76,11 +80,6 @@ local default_config = {
       reverse = false, -- reverse item kind highlights in cmp menu
     },
     telescope = "bordered", -- choose between 'borderless' or 'bordered'
-    diagnostics = {
-      darker = true, -- darker colors for diagnostic
-      undercurl = true, -- use undercurl for diagnostics
-      background = true, -- use background color for virtual text
-    },
   },
 
   -- Custom Highlights --
