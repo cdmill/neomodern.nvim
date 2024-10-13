@@ -90,14 +90,14 @@ Install via your favorite package manager:
 
 ## Configuration
 
-There are 6 themes included (5 dark, 1 light). The light theme is used when `{ style = "daylight" }` is passed to `setup(options)` or when `vim.o.background = "light"`.
+There are 5 themes included (4 dark, 1 light). The light theme is used when `{ style = "daylight" }` is passed to `setup(options)` or when `vim.o.background = "light"`.
 
 Default options are given below
 
 ```lua
 require("neomodern").setup({
   -- Main options --
-  style = "iceclimber", -- choose between 'iceclimber', 'coffeecat', 'darkforest', 'campfire', 'roseprime', 'daylight'
+  style = "iceclimber", -- choose between 'iceclimber', 'coffeecat', 'darkforest', 'roseprime', 'daylight'
   toggle_style_key = nil,
   toggle_style_list = M.styles_list,
   transparent = false, -- don't set background

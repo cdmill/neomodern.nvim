@@ -42,7 +42,7 @@ end
 
 local default_config = {
   -- Main options --
-  style = "iceclimber", -- choose between 'iceclimber', 'coffeecat', 'darkforest', 'campfire', 'roseprime', 'daylight'
+  style = "iceclimber", -- choose between 'iceclimber', 'coffeecat', 'darkforest', 'roseprime', 'daylight'
   toggle_style_key = nil,
   toggle_style_list = M.styles_list,
   transparent = false, -- don't set background
