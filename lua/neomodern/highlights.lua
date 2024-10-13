@@ -45,9 +45,9 @@ hl.common = {
   DiffIndexLine = { fg = c.comment },
   Directory = { fg = c.func },
   ErrorMsg = { fg = c.error, fmt = "bold" },
-  EndOfBuffer = { fg = config.ui.show_eob and c.comment or c.bg },
-  FloatBorder = { fg = c.border, bg = config.ui.plain_float and c.none or c.float },
-  FloatTitle = { fg = c.comment, bg = config.ui.plain_float and c.none or c.float },
+  EndOfBuffer = { fg = config.show_eob and c.comment or c.bg },
+  FloatBorder = { fg = c.border, bg = config.plain_float and c.none or c.float },
+  FloatTitle = { fg = c.comment, bg = config.plain_float and c.none or c.float },
   Folded = { fg = c.comment, bg = config.transparent and c.none or c.line },
   FoldColumn = { fg = c.comment, bg = config.transparent and c.none or c.bg },
   IncSearch = { fg = c.type, bg = c.visual },
@@ -59,9 +59,9 @@ hl.common = {
   Normal = { fg = c.fg, bg = config.transparent and c.none or c.bg },
   NormalFloat = {
     fg = c.fg,
-    bg = (config.transparent or config.ui.plain_float) and c.none or c.float,
+    bg = (config.transparent or config.plain_float) and c.none or c.float,
   },
-  Pmenu = { fg = c.fg, bg = config.ui.plain_float and c.none or c.visual },
+  Pmenu = { fg = c.fg, bg = config.plain_float and c.none or c.visual },
   PmenuSbar = { bg = c.float },
   PmenuSel = { fg = c.hint, bg = config.transparent and c.none or c.float },
   PmenuThumb = { bg = c.visual },
@@ -285,44 +285,44 @@ hl.plugins.lsp = {
   DiagnosticWarn = { fg = c.warning },
 
   DiagnosticVirtualTextError = {
-    bg = config.ui.diagnostics.background
+    bg = config.diagnostics.background
         and util.darken(diagnostics_error_color, 0.1, c.bg)
       or c.none,
     fg = diagnostics_error_color,
   },
   DiagnosticVirtualTextWarn = {
-    bg = config.ui.diagnostics.background
+    bg = config.diagnostics.background
         and util.darken(diagnostics_warn_color, 0.1, c.bg)
       or c.none,
     fg = diagnostics_warn_color,
   },
   DiagnosticVirtualTextInfo = {
-    bg = config.ui.diagnostics.background
+    bg = config.diagnostics.background
         and util.darken(diagnostics_info_color, 0.1, c.bg)
       or c.none,
     fg = diagnostics_info_color,
   },
   DiagnosticVirtualTextHint = {
-    bg = config.ui.diagnostics.background
+    bg = config.diagnostics.background
         and util.darken(diagnostics_hint_color, 0.1, c.bg)
       or c.none,
     fg = diagnostics_hint_color,
   },
 
   DiagnosticUnderlineError = {
-    fmt = config.ui.diagnostics.undercurl and "undercurl" or "underline",
+    fmt = config.diagnostics.undercurl and "undercurl" or "underline",
     sp = c.error,
   },
   DiagnosticUnderlineHint = {
-    fmt = config.ui.diagnostics.undercurl and "undercurl" or "underline",
+    fmt = config.diagnostics.undercurl and "undercurl" or "underline",
     sp = c.hint,
   },
   DiagnosticUnderlineInfo = {
-    fmt = config.ui.diagnostics.undercurl and "undercurl" or "underline",
+    fmt = config.diagnostics.undercurl and "undercurl" or "underline",
     sp = c.delta,
   },
   DiagnosticUnderlineWarn = {
-    fmt = config.ui.diagnostics.undercurl and "undercurl" or "underline",
+    fmt = config.diagnostics.undercurl and "undercurl" or "underline",
     sp = c.warning,
   },
 
@@ -364,7 +364,7 @@ hl.plugins.cmp = {
   CmpItemAbbrMatch = { fg = c.type },
   CmpItemAbbrMatchFuzzy = { fg = c.type, fmt = "underline" },
   CmpItemMenu = { fg = c.comment },
-  CmpItemKind = { fg = c.comment, fmt = config.ui.cmp.reverse and "reverse" },
+  CmpItemKind = { fg = c.comment, fmt = config.plugin.cmp.reverse and "reverse" },
 }
 
 hl.plugins.diffview = {
@@ -415,7 +415,7 @@ hl.plugins.neo_tree = {
     bg = config.transparent and c.none or c.comment,
   },
   NeoTreeEndOfBuffer = {
-    fg = config.ui.show_eob and c.comment or c.bg,
+    fg = config.show_eob and c.comment or c.bg,
     bg = config.transparent and c.none or c.bg,
   },
   NeoTreeRootName = { fg = c.type, fmt = "bold" },
@@ -432,7 +432,7 @@ hl.plugins.nvim_tree = {
   NvimTreeNormal = { fg = c.fg, bg = config.transparent and c.none or c.bg },
   NvimTreeVertSplit = { fg = c.float, bg = config.transparent and c.none or c.bg },
   NvimTreeEndOfBuffer = {
-    fg = config.ui.show_eob and c.comment or c.bg,
+    fg = config.show_eob and c.comment or c.bg,
     bg = config.transparent and c.none or c.bg,
   },
   NvimTreeRootFolder = { fg = c.type, fmt = "bold" },
@@ -487,7 +487,7 @@ local telescope_ui = {
   },
 }
 
-hl.plugins.telescope = telescope_ui[config.ui.telescope]
+hl.plugins.telescope = telescope_ui[config.plugin.telescope]
 
 hl.plugins.dashboard = {
   DashboardShortCut = { fg = c.func },
@@ -560,7 +560,7 @@ function M.setup()
   if not config.plugin.cmp.plain then
     for kind, color in pairs(lsp_kind_icons_color) do
       hl.plugins.cmp["CmpItemKind" .. kind] =
-        { fg = color, fmt = config.ui.cmp.reverse and "reverse" }
+        { fg = color, fmt = config.plugin.cmp.reverse and "reverse" }
     end
   end
 
