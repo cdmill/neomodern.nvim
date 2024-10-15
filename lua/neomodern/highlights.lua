@@ -46,7 +46,7 @@ hl.common = {
   Directory = { fg = c.func },
   ErrorMsg = { fg = c.error, fmt = "bold" },
   EndOfBuffer = { fg = config.show_eob and c.comment or c.bg },
-  FloatBorder = { fg = c.border, bg = config.plain_float and c.none or c.float },
+  FloatBorder = { fg = c.comment, bg = config.plain_float and c.none or c.float },
   FloatTitle = { fg = c.comment, bg = config.plain_float and c.none or c.float },
   Folded = { fg = c.comment, bg = config.transparent and c.none or c.line },
   FoldColumn = { fg = c.comment, bg = config.transparent and c.none or c.bg },
@@ -90,7 +90,7 @@ hl.common = {
   WarningMsg = { fg = c.warning, fmt = "bold" },
   Whitespace = { fg = c.comment },
   WildMenu = { fg = c.hint, bg = util.darken(c.hint, 0.1, c.bg) },
-  WinSeparator = { fg = c.border },
+  WinSeparator = { fg = c.comment },
 }
 
 hl.syntax = {
@@ -467,8 +467,14 @@ local telescope_ui = {
     TelescopeNormal = { bg = c.float },
     TelescopePromptNormal = { bg = c.visual, fmt = "bold" },
     TelescopePromptBorder = { fg = c.visual, bg = c.visual },
-    TelescopePreviewNormal = { fg = c.dim, bg = c.dim },
-    TelescopePreviewBorder = { fg = c.dim, bg = c.dim },
+    TelescopePreviewNormal = {
+      fg = util.darken(c.float, 0.6, c.bg),
+      bg = util.darken(c.float, 0.6, c.bg),
+    },
+    TelescopePreviewBorder = {
+      fg = util.darken(c.float, 0.6, c.bg),
+      bg = util.darken(c.float, 0.6, c.bg),
+    },
     TelescopeResultsNormal = { fg = c.comment, bg = c.float },
     TelescopeResultsBorder = { fg = c.float, bg = c.float },
     TelescopePromptPrefix = { fg = c.func },
@@ -478,7 +484,8 @@ local telescope_ui = {
     TelescopeMatching = { fg = c.type, fmt = "bold" },
   },
   bordered = {
-    TelescopeBorder = { fg = c.border },
+    TelescopeTitle = { fg = c.comment },
+    TelescopeBorder = { fg = c.comment },
     TelescopeMatching = { fg = c.type, fmt = "bold" },
     TelescopePromptPrefix = { fg = c.type },
     TelescopeSelection = { fg = c.hint, bg = config.transparent and c.none or c.float },

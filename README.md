@@ -134,7 +134,7 @@ require("neomodern").setup({
       plain = false, --don't highlight lsp-kind items
       reverse = false, -- reverse item kind highlights in cmp menu
     },
-    telescope = "bordered", -- choose between 'borderless' or 'bordered'
+    telescope = "bordered", -- options are 'borderless' or 'bordered'
   },
 
   -- Custom Highlights --
