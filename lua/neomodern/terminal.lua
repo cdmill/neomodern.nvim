@@ -102,22 +102,23 @@ function M.setup()
   if not config.term_colors then
     return
   end
-  vim.g.terminal_color_0 = color_map[c].black
-  vim.g.terminal_color_1 = color_map[c].red
-  vim.g.terminal_color_2 = color_map[c].green
-  vim.g.terminal_color_3 = color_map[c].yellow
-  vim.g.terminal_color_4 = color_map[c].blue
-  vim.g.terminal_color_5 = color_map[c].purple
-  vim.g.terminal_color_6 = color_map[c].cyan
-  vim.g.terminal_color_7 = color_map[c].white
-  vim.g.terminal_color_8 = color_map[c].grey
-  vim.g.terminal_color_9 = color_map[c].orange
-  vim.g.terminal_color_10 = color_map[c].green
-  vim.g.terminal_color_11 = color_map[c].yellow
-  vim.g.terminal_color_12 = color_map[c].blue
-  vim.g.terminal_color_13 = color_map[c].magenta
-  vim.g.terminal_color_14 = color_map[c].cyan
-  vim.g.terminal_color_15 = color_map[c].white
+  local colors = color_map[c]
+  vim.g.terminal_color_0 = colors.black
+  vim.g.terminal_color_1 = colors.red
+  vim.g.terminal_color_2 = colors.green
+  vim.g.terminal_color_3 = colors.yellow
+  vim.g.terminal_color_4 = colors.blue
+  vim.g.terminal_color_5 = colors.purple
+  vim.g.terminal_color_6 = colors.cyan
+  vim.g.terminal_color_7 = colors.white
+  vim.g.terminal_color_8 = colors.grey
+  vim.g.terminal_color_9 = colors.orange
+  vim.g.terminal_color_10 = colors.green
+  vim.g.terminal_color_11 = colors.yellow
+  vim.g.terminal_color_12 = colors.blue
+  vim.g.terminal_color_13 = colors.magenta
+  vim.g.terminal_color_14 = colors.cyan
+  vim.g.terminal_color_15 = colors.white
 end
 
 return M

@@ -1,16 +1,16 @@
-local c = require("neomodern.colors")
+local c = require("neomodern.terminal").colors()
 local cfg = vim.g.neomodern_config
 local colors = {
-  norm = c.func,
-  ins = c.constant,
-  vis = c.builtin,
-  rep = c.property,
-  comm = c.type,
+  norm = c.blue,
+  ins = c.yellow,
+  vis = c.purple,
+  rep = c.cyan,
+  comm = c.orange,
   fg_dim = c.comment,
   vcs = c.alt,
-  dark = c.dim,
-  bg_b = c.visual,
-  bg_c = c.line,
+  bg_b = c.selection,
+  bg_c = c.inactive,
+  dark = c.bg,
 }
 
 -- stylua: ignore
