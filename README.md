@@ -145,7 +145,9 @@ require("neomodern").setup({
 require("neomodern").load()
 ```
 
-Bordered Telescope
+### Images for Select Config Opts
+
+- Bordered Telescope
 <details close>
 <summary>Click to toggle previews</summary>
 
@@ -153,7 +155,7 @@ Bordered Telescope
 
 </details>
 
-Borderless Telescope
+- Borderless Telescope
 <details close>
 <summary>Click to toggle previews</summary>
 
@@ -161,7 +163,7 @@ Borderless Telescope
 
 </details>
 
-Normal Lualine
+- Normal Lualine
 <details close>
 <summary>Click to toggle previews</summary>
 
@@ -169,7 +171,7 @@ Normal Lualine
 
 </details>
 
-Plain Lualine
+- Plain Lualine
 <details close>
 <summary>Click to toggle previews</summary>
 
@@ -177,7 +179,7 @@ Plain Lualine
 
 </details>
 
-Example setup for plain cmp
+- Example setup for plain cmp
 
 ```lua
 -- use these opts in setup and also rounded borders enabled in your lsp config
