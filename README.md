@@ -147,39 +147,35 @@ require("neomodern").load()
 
 ### Images for Select Config Opts
 
-- Bordered Telescope
 <details close>
-<summary>Click to toggle previews</summary>
+<summary>Bordered Telescope</summary>
 
 ![image](https://github.com/cdmill/neomodern.nvim/blob/assets/bordered-tscope.png)
 
 </details>
 
-- Borderless Telescope
 <details close>
-<summary>Click to toggle previews</summary>
+<summary>Borderless Telescope</summary>
 
 ![image](https://github.com/cdmill/neomodern.nvim/blob/assets/borderless-tscope.png)
 
 </details>
 
-- Normal Lualine
 <details close>
-<summary>Click to toggle previews</summary>
+<summary>Normal Lualine</summary>
 
 ![image](https://github.com/cdmill/neomodern.nvim/blob/assets/roseprime.png)
 
 </details>
 
-- Plain Lualine
 <details close>
-<summary>Click to toggle previews</summary>
+<summary>Plain Lualine</summary>
 
 ![image](https://github.com/cdmill/neomodern.nvim/blob/assets/plain_lualine.png)
 
 </details>
 
-- Example setup for plain cmp
+Example setup for plain cmp (preview below):
 
 ```lua
 -- use these opts in setup and also rounded borders enabled in your lsp config
@@ -194,7 +190,7 @@ require("neomodern").setup({
 ```
 
 <details close>
-<summary>Click to toggle previews</summary>
+<summary>Click to toggle preview for plain cmp</summary>
 
 ![image](https://github.com/cdmill/neomodern.nvim/blob/assets/plain_cmp.png)
 
