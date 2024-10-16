@@ -14,8 +14,8 @@
     set -g fish_color_error e67e80
     set -g fish_color_param bbbac1
     set -g fish_color_comment 555568
-    set -g fish_color_selection --background=333336
-    set -g fish_color_search_match --background=333336
+    set -g fish_color_selection --background=2a2a31
+    set -g fish_color_search_match --background=2a2a31
     set -g fish_color_operator 9b99a3
     set -g fish_color_escape 86a3f0
     set -g fish_color_autosuggestion 555568
@@ -25,6 +25,6 @@
     set -g fish_pager_color_prefix 559ba3
     set -g fish_pager_color_completion bbbac1
     set -g fish_pager_color_description 555568
-    set -g fish_pager_color_selected_background --background=333336
+    set -g fish_pager_color_selected_background --background=2a2a31
 
   

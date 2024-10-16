@@ -84,7 +84,7 @@ return {
     property = "#ad82a2",
     string = "#d2af98",
     type = "#9bbdb8",
-    visual = "#1d1f26",
+    visual = "#262830",
     error = "#ba5f60",
     hint = "#abbceb",
     warning = "#ad9368",

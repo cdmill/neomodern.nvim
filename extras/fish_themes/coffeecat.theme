@@ -1,5 +1,5 @@
     # name: coffeecat
-    # url: https://github.com/cdmill/neomodern.nvim/raw/main/extras/fzf/coffeecat.zsh
+    # url: https://github.com/cdmill/neomodern.nvim/raw/main/extras/fish_themes/coffeecat.theme
     # preferred_background: 1f1e1d
 
     set -g fish_color_normal bbbac1

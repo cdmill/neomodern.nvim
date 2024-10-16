@@ -6,7 +6,7 @@ local palette = require("neomodern.palette")
 local color_map = {
   iceclimber = {
     black = "#2d2d2f",
-    selection = "#333336",
+    selection = "#2a2a31",
     grey = "#555568",
     red = "#e67e80",
     orange = "#e3a462",
@@ -48,7 +48,7 @@ local color_map = {
   },
   roseprime = {
     black = "#111111",
-    selection = "#1d1f26",
+    selection = "#262830",
     grey = "#666a82",
     red = "#c76f82",
     orange = "#e3a1ab",

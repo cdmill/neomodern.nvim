@@ -2,10 +2,10 @@
 # Default colors
 [colors.primary]
 background = '#121315'
-foreground = '#afafdd'
+foreground = '#adadcc'
 
 #[colors.cursor]
-#cursor = '#afafdd'
+#cursor = '#adadcc'
 #text = '#121315'
 
 # Normal colors
@@ -37,4 +37,4 @@ color = '#e3a1ab'
 
 [[colors.indexed_colors]]
 index = 17
-color = '#688cb3'
+color = '#9b9af5'
