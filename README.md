@@ -149,7 +149,7 @@ Bordered Telescope
 <details close>
 <summary>Click to toggle previews</summary>
 
-![image](https://github.com/cdmill/neomodern.nvim/blob/assets/bordered.png)
+![image](https://github.com/cdmill/neomodern.nvim/blob/assets/bordered-tscope.png)
 
 </details>
 
@@ -157,7 +157,7 @@ Borderless Telescope
 <details close>
 <summary>Click to toggle previews</summary>
 
-![image](https://github.com/cdmill/neomodern.nvim/blob/assets/borderless.png)
+![image](https://github.com/cdmill/neomodern.nvim/blob/assets/borderless-tscope.png)
 
 </details>
 
@@ -165,7 +165,7 @@ Normal Lualine
 <details close>
 <summary>Click to toggle previews</summary>
 
-![image](https://github.com/cdmill/neomodern.nvim/blob/assets/regular_lualine.png)
+![image](https://github.com/cdmill/neomodern.nvim/blob/assets/roseprime.png)
 
 </details>
 
@@ -174,6 +174,27 @@ Plain Lualine
 <summary>Click to toggle previews</summary>
 
 ![image](https://github.com/cdmill/neomodern.nvim/blob/assets/plain_lualine.png)
+
+</details>
+
+Example setup for plain cmp
+
+```lua
+-- use these opts in setup and also rounded borders enabled in your lsp config
+require("neomodern").setup({
+  plain_float = true,
+  plugin = {
+    cmp = {
+      plain = true,
+    },
+  },
+})
+```
+
+<details close>
+<summary>Click to toggle previews</summary>
+
+![image](https://github.com/cdmill/neomodern.nvim/blob/assets/plain_cmp.png)
 
 </details>
 
