@@ -1,36 +1,37 @@
-local c = require("neomodern.terminal").colors()
+local colors = require("neomodern.terminal").colors()
 local cfg = vim.g.neomodern_config
-local colors = {
-  norm = c.blue,
-  ins = c.yellow,
-  vis = c.purple,
-  rep = c.cyan,
-  comm = c.orange,
-  fg_dim = c.comment,
-  vcs = c.alt,
-  bg_b = c.selection,
-  bg_c = c.inactive,
-  dark = c.bg,
+local c = {
+  norm = colors.blue,
+  ins = colors.yellow,
+  vis = colors.purple,
+  rep = colors.cyan,
+  comm = colors.orange,
+  fg_dim = colors.comment,
+  vcs = colors.alt,
+  bg_b = colors.selection,
+  bg_c = colors.inactive,
+  dark = colors.bg,
+  none = "none",
 }
 
 -- stylua: ignore
 local neomodern = {
   normal = {
-    a = { bg = cfg.plugin.lualine.plain and c.none or colors.norm, fg = cfg.plugin.lualine.plain and colors.norm or colors.dark, gui = cfg.plugin.lualine.bold and "bold" or "none"},
-    b = { bg = cfg.plugin.lualine.plain and c.none or colors.bg_b, fg = colors.vcs },
-    c = { bg = cfg.plugin.lualine.plain and c.none or colors.bg_c, fg = colors.fg_dim },
+    a = { bg = cfg.plugin.lualine.plain and c.none or c.norm, fg = cfg.plugin.lualine.plain and c.norm or c.dark, gui = cfg.plugin.lualine.bold and "bold" or "none"},
+    b = { bg = cfg.plugin.lualine.plain and c.none or c.bg_b, fg = c.vcs },
+    c = { bg = cfg.plugin.lualine.plain and c.none or c.bg_c, fg = c.fg_dim },
   },
   insert = {
-    a = { bg = cfg.plugin.lualine.plain and c.none or colors.ins, fg = cfg.plugin.lualine.plain and colors.ins or colors.dark, gui = cfg.plugin.lualine.bold and "bold" or "none" },
+    a = { bg = cfg.plugin.lualine.plain and c.none or c.ins, fg = cfg.plugin.lualine.plain and c.ins or c.dark, gui = cfg.plugin.lualine.bold and "bold" or "none" },
   },
   visual = {
-    a = { bg = cfg.plugin.lualine.plain and c.none or colors.vis, fg = cfg.plugin.lualine.plain and colors.vis or colors.dark, gui = cfg.plugin.lualine.bold and "bold" or "none" },
+    a = { bg = cfg.plugin.lualine.plain and c.none or c.vis, fg = cfg.plugin.lualine.plain and c.vis or c.dark, gui = cfg.plugin.lualine.bold and "bold" or "none" },
   },
   replace = {
-    a = { bg = cfg.plugin.lualine.plain and c.none or colors.rep, fg = cfg.plugin.lualine.plain and colors.rep or colors.dark, gui = cfg.plugin.lualine.bold and "bold" or "none" },
+    a = { bg = cfg.plugin.lualine.plain and c.none or c.rep, fg = cfg.plugin.lualine.plain and c.rep or c.dark, gui = cfg.plugin.lualine.bold and "bold" or "none" },
   },
   command = {
-    a = { bg = cfg.plugin.lualine.plain and c.none or colors.comm, fg = cfg.plugin.lualine.plain and colors.comm or colors.dark, gui = cfg.plugin.lualine.bold and "bold" or "none" },
+    a = { bg = cfg.plugin.lualine.plain and c.none or c.comm, fg = cfg.plugin.lualine.plain and c.comm or c.dark, gui = cfg.plugin.lualine.bold and "bold" or "none" },
   },
 }
 
