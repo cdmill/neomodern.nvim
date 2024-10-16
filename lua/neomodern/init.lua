@@ -48,6 +48,7 @@ local default_config = {
   transparent = false, -- don't set background
   term_colors = true, -- if true enable the terminal
   colored_docstrings = true, -- if true, docstrings will be highlighted like strings, otherwise they will be highlighted like comments
+  colored_brackets = true, -- if false, brackets will be highlighted similar to default fg color
   plain_float = false, -- don't set background of floating windows. recommended for when using floating windows with borders
   show_eob = true, -- show the end-of-buffer tildes
   diagnostics = {

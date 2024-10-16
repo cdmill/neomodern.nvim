@@ -179,7 +179,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     -- ["@function.method.call"]
 
     ["@constructor"] = { fg = c.constant, fmt = config.code_style.functions }, -- constructor calls and definitions
-    ["@constructor.lua"] = { fg = c.alt, fmt = config.code_style.functions }, -- constructor calls and definitions, `= { }` in lua
+    ["@constructor.lua"] = { fg = config.colored_brackets and c.alt or c.fg, fmt = config.code_style.functions }, -- constructor calls and definitions, `= { }` in lua
     ["@operator"] = hl.syntax["Operator"], -- operators, like `+`
 
     -- keywords
@@ -197,7 +197,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
 
     -- punctuation
     ["@punctuation.delimiter"] = { fg = c.fg }, -- delimiters, like `; . , `
-    ["@punctuation.bracket"] = { fg = c.fg }, -- brackets and parentheses
+    ["@punctuation.bracket"] = { fg = config.colored_brackets and c.alt or c.fg }, -- brackets and parentheses
     ["@punctuation.special"] = hl.syntax["SpecialChar"], -- punctuation that does not fall into above categories, like `{}` in string interpolation
 
     -- comment
