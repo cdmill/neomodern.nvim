@@ -2,7 +2,6 @@ return {
   iceclimber = {
     alt = "#abbceb",
     bg = "#171719",
-    border = "#51515d",
     builtin = "#e89bce",
     comment = "#555568",
     constant = "#dbbc8a",
@@ -25,7 +24,6 @@ return {
   coffeecat = {
     alt = "#9b9af5",
     bg = "#1f1e1d",
-    border = "#5e5a5a",
     builtin = "#9b9af5",
     comment = "#6a6a6a",
     constant = "#e8cea0",
@@ -48,7 +46,6 @@ return {
   darkforest = {
     alt = "#d6a56f",
     bg = "#181b1b",
-    border = "#4f4f4f",
     builtin = "#d699b6",
     comment = "#7a8478",
     constant = "#e67e80",
@@ -71,7 +68,6 @@ return {
   roseprime = {
     alt = "#9b9af5",
     bg = "#121315",
-    border = "#4a4a56",
     builtin = "#c76f82",
     comment = "#666a82",
     constant = "#95b1fc",
@@ -91,10 +87,33 @@ return {
     delta = "#8192C7",
     plus = "#6b8f89",
   },
+  -- deepblue = {
+  --   alt = "#bbbac1",
+  --   bg = "#1B1D21", --
+  --   builtin = "#7da77e", --
+  --   comment = "#555555",
+  --   constant = "#8192C7",
+  --   dim = "#111111",
+  --   fg = "#bbbac1",
+  --   float = "#212123",
+  --   func = "#4a818c", --
+  --   keyword = "#abbceb", --
+  --   line = "#1d1d1f",
+  --   operator = "#bbbac1", --
+  --   preproc = "#9879b0",
+  --   property = "#8c8abd", --
+  --   string = "#dbbc8a", --
+  --   type = "#8192C7", --
+  --   visual = "#26262a",
+  --   error = "#ba5f60",
+  --   hint = "#abbceb",
+  --   warning = "#ad9368",
+  --   delta = "#8192C7",
+  --   plus = "#6b8f89",
+  -- },
   daylight = {
     alt = "#5d86f5",
     bg = "#ffffff",
-    border = "#bdbdc2",
     builtin = "#e858b6",
     comment = "#9b9ba3",
     constant = "#fca921",
