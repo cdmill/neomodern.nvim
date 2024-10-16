@@ -106,11 +106,11 @@ hl.syntax = {
   Identifier = { fg = c.property, fmt = config.code_style.variables }, -- (preferred) any variable
   Keyword = { fg = c.keyword, fmt = config.code_style.keywords }, -- any other keyword
   Conditional = { fg = c.keyword, fmt = config.code_style.conditionals }, -- conditionals
-  -- Repeat = { fg = c.preproc, fmt = config.code_style.keywords }, -- loop keywords: 'for', 'while' etc
-  -- Label = { fg = c.preproc }, -- 'case', 'default', etc
+  -- Repeat = { fg = c.keyword, fmt = config.code_style.keywords }, -- loop keywords: 'for', 'while' etc
+  -- Label = { fg = c.keyword }, -- 'case', 'default', etc
   Number = { fg = c.constant }, -- number constant
   Operator = { fg = c.operator, fmt = config.code_style.operators }, -- '+', '*', 'sizeof' etc
-  PreProc = { fg = c.preproc }, -- (preferred) generic preprocessor
+  PreProc = { fg = c.keyword }, -- (preferred) generic preprocessor
   -- Define = { fg = c.comment }, -- preprocessor '#define'
   -- Include = { fg = c.keyword, fmt = config.code_style.keywords }, -- preprocessor '#include'
   -- Macro = { fg = c.constant, fmt = config.code_style.constants }, -- macros
@@ -214,7 +214,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     ["@markup.strikethrough"] = { fg = c.comment, fmt = "strikethrough" }, -- strikethrough
     ["@markup.heading"] = { fg = c.keyword, fmt = config.code_style.headings}, -- markdown titles
     ["@markup.quote.markdown"] = { fg = c.comment }, -- quotes with >
-    ["@markup.link.uri"] = { fg = c.preproc, fmt = "underline" }, -- urls, links, emails
+    ["@markup.link.uri"] = { fg = c.alt, fmt = "underline" }, -- urls, links, emails
     ["@markup.link"] = { fg = c.builtin }, -- text references, footnotes, citations, etc
     ["@markup.list"] = { fg = c.func },
     ["@markup.list.checked"] = { fg = c.func }, -- todo checked
@@ -369,7 +369,7 @@ hl.plugins.cmp = {
 
 hl.plugins.diffview = {
   DiffviewFilePanelTitle = { fg = c.func, fmt = "bold" },
-  DiffviewFilePanelCounter = { fg = c.preproc, fmt = "bold" },
+  DiffviewFilePanelCounter = { fg = c.alt, fmt = "bold" },
   DiffviewFilePanelFileName = { fg = c.fg },
   DiffviewNormal = hl.common.Normal,
   DiffviewCursorLine = hl.common.CursorLine,
@@ -513,7 +513,7 @@ hl.plugins.indent_blankline = {
   IndentBlanklineIndent2 = { fg = c.fg },
   IndentBlanklineIndent3 = { fg = c.keyword },
   IndentBlanklineIndent4 = { fg = c.comment },
-  IndentBlanklineIndent5 = { fg = c.preproc },
+  IndentBlanklineIndent5 = { fg = c.alt },
   IndentBlanklineIndent6 = { fg = c.operator },
   IndentBlanklineChar = { fg = c.comment, fmt = "nocombine" },
   IndentBlanklineContextChar = { fg = c.comment, fmt = "nocombine" },
