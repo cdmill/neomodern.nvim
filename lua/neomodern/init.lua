@@ -40,6 +40,20 @@ function M.toggle()
   vim.api.nvim_command(string.format("colorscheme %s", vim.g.neomodern_config.style))
 end
 
+---Toggle between light/dark scheme
+function M.toggle_mode()
+  if vim.o.background == "dark" then
+    M.set_options("prev_style", vim.g.neomodern_config.style)
+    vim.o.background = "light"
+    M.set_options("style", "daylight")
+    vim.api.nvim_command("colorscheme daylight")
+  else
+    vim.o.background = "dark"
+    M.set_options("style", vim.g.neomodern_config.prev_style)
+    vim.api.nvim_command(string.format("colorscheme %s", vim.g.neomodern_config.style))
+  end
+end
+
 local default_config = {
   -- Main options --
   style = "iceclimber", -- choose between 'iceclimber', 'coffeecat', 'darkforest', 'roseprime', 'daylight'

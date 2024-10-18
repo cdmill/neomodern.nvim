@@ -1,6 +1,6 @@
 local M = {}
 local config = vim.g.neomodern_config
-local c = vim.g.neomodern_config.style
+local style = vim.g.neomodern_config.style
 local palette = require("neomodern.palette")
 
 local color_map = {
@@ -78,23 +78,23 @@ local color_map = {
 
 function M.colors()
   return {
-    bg = palette[c].bg,
-    fg = palette[c].fg,
-    alt = palette[c].alt,
-    inactive = palette[c].line,
-    comment = palette[c].comment,
-    black = color_map[c].black,
-    selection = color_map[c].selection,
-    grey = color_map[c].grey,
-    red = color_map[c].red,
-    orange = color_map[c].orange,
-    green = color_map[c].green,
-    yellow = color_map[c].yellow,
-    blue = color_map[c].blue,
-    purple = color_map[c].purple,
-    magenta = color_map[c].magenta,
-    cyan = color_map[c].cyan,
-    white = color_map[c].white,
+    bg = palette[style].bg,
+    fg = palette[style].fg,
+    alt = palette[style].alt,
+    inactive = palette[style].line,
+    comment = palette[style].comment,
+    black = color_map[style].black,
+    selection = color_map[style].selection,
+    grey = color_map[style].grey,
+    red = color_map[style].red,
+    orange = color_map[style].orange,
+    green = color_map[style].green,
+    yellow = color_map[style].yellow,
+    blue = color_map[style].blue,
+    purple = color_map[style].purple,
+    magenta = color_map[style].magenta,
+    cyan = color_map[style].cyan,
+    white = color_map[style].white,
   }
 end
 
@@ -102,7 +102,7 @@ function M.setup()
   if not config.term_colors then
     return
   end
-  local colors = color_map[c]
+  local colors = color_map[style]
   vim.g.terminal_color_0 = colors.black
   vim.g.terminal_color_1 = colors.red
   vim.g.terminal_color_2 = colors.green
