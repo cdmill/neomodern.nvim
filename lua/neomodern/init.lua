@@ -30,7 +30,7 @@ function M.colorscheme()
 end
 
 ---Toggle between neomodern styles
-function M.toggle()
+function M.toggle_style()
   local index = vim.g.neomodern_config.toggle_style_index + 1
   if index > #vim.g.neomodern_config.toggle_style_list then
     index = 1
@@ -40,16 +40,17 @@ function M.toggle()
   vim.api.nvim_command(string.format("colorscheme %s", vim.g.neomodern_config.style))
 end
 
----Toggle between light/dark scheme
+---Toggle between light/dark mode
 function M.toggle_mode()
-  if vim.o.background == "dark" then
+  if vim.g.neomodern_config.style ~= "daylight" then
     M.set_options("prev_style", vim.g.neomodern_config.style)
-    vim.o.background = "light"
+    M.set_options("prev_style_index", vim.g.neomodern_config.toggle_style_index)
     M.set_options("style", "daylight")
     vim.api.nvim_command("colorscheme daylight")
+    M.set_options("toggle_style_index", vim.g.neomodern_config.prev_style_index)
   else
-    vim.o.background = "dark"
     M.set_options("style", vim.g.neomodern_config.prev_style)
+    M.set_options("toggle_style_index", vim.g.neomodern_config.prev_style_index)
     vim.api.nvim_command(string.format("colorscheme %s", vim.g.neomodern_config.style))
   end
 end
@@ -58,6 +59,7 @@ local default_config = {
   -- Main options --
   style = "iceclimber", -- choose between 'iceclimber', 'coffeecat', 'darkforest', 'roseprime', 'daylight'
   toggle_style_key = nil,
+  toggle_mode_key = nil,
   toggle_style_list = M.styles_list,
   transparent = false, -- don't set background
   term_colors = true, -- if true enable the terminal
@@ -120,7 +122,7 @@ function M.setup(opts)
     vim.keymap.set(
       "n",
       vim.g.neomodern_config.toggle_style_key,
-      '<cmd>lua require("neomodern").toggle()<cr>',
+      '<cmd>lua require("neomodern").toggle_style()<cr>',
       { noremap = true, silent = true }
     )
   end
@@ -128,6 +130,15 @@ function M.setup(opts)
     if v == vim.g.neomodern_config.style then
       M.set_options("toggle_style_index", i)
     end
+  end
+
+  if vim.g.neomodern_config.toggle_mode_key then
+    vim.keymap.set(
+      "n",
+      vim.g.neomodern_config.toggle_mode_key,
+      '<cmd>lua require("neomodern").toggle_mode()<cr>',
+      { noremap = true, silent = true }
+    )
   end
 end
 

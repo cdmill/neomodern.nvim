@@ -98,7 +98,8 @@ Default options are given below
 require("neomodern").setup({
   -- Main options --
   style = "iceclimber", -- choose between 'iceclimber', 'coffeecat', 'darkforest', 'roseprime', 'daylight'
-  toggle_style_key = nil,
+  toggle_style_key = nil, -- key to toggle between schemes in style list
+  toggle_mode_key = nil, -- key to toggle light/dark mode
   toggle_style_list = M.styles_list,
   transparent = false, -- don't set background
   term_colors = true, -- if true enable the terminal
