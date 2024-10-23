@@ -273,12 +273,6 @@ local diagnostics_warn_color = c.warning
 local diagnostics_info_color = c.delta
 
 hl.plugins.lsp = {
-  LspCxxHlGroupEnumConstant = { fg = c.type },
-  LspCxxHlGroupMemberVariable = { fg = c.type },
-  LspCxxHlGroupNamespace = { fg = c.func },
-  LspCxxHlSkippedRegion = { fg = c.comment },
-  LspCxxHlSkippedRegionBeginEnd = { fg = c.operator },
-
   DiagnosticError = { fg = c.error },
   DiagnosticHint = { fg = c.hint },
   DiagnosticInfo = { fg = c.delta, fmt = "italic" },
