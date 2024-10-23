@@ -83,8 +83,8 @@ Install via your favorite package manager:
 ```
 
 > [!NOTE]
-> `require("neomodern").load()` will call `set colorscheme` with your chosen style.
-> If you prefer, you can use `vim.cmd("colorscheme <style>")` instead. For
+> `require("neomodern").load()` will call `set colorscheme` with your chosen theme.
+> If you prefer, you can use `vim.cmd("colorscheme <theme>")` instead. For
 > example, to use darkforest: `vim.cmd("colorscheme darkforest")`. Note if you
 > use `vim.cmd("colorscheme neomodern")`, `iceclimber` will be used.
 

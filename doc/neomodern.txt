@@ -1,0 +1,225 @@
+*neomodern.txt*              For 0.9              Last change: 2024 October 22
+
+==============================================================================
+Table of Contents                                *neomodern-table-of-contents*
+
+1. NEOMODERN.nvim                                   |neomodern-neomodern.nvim|
+2. Installation                                       |neomodern-installation|
+3. Configuration                                     |neomodern-configuration|
+4. Customization                                     |neomodern-customization|
+5. Supported Plugins                             |neomodern-supported-plugins|
+6. Extras                                                   |neomodern-extras|
+7. Contributing                                       |neomodern-contributing|
+8. Inspiration                                         |neomodern-inspiration|
+9. License                                                 |neomodern-license|
+
+==============================================================================
+1. NEOMODERN.nvim                                   *neomodern-neomodern.nvim*
+
+A collection of themes (4 dark, 1 light) written in Lua for Neovim >= 0.9.
+Support for Treesitter syntax highlighting and LSP semantic highlighting.
+Forked from OneDark.nvim
+
+Themes have been designed to be unintrusive, simple, and pleasing to the eyes.
+
+See https://github.com/cdmill/neomodern.nvim for image previews.
+
+
+==============================================================================
+2. Installation                                       *neomodern-installation*
+
+Install via your favorite package manager:
+
+>lua
+    -- Using lazy.nvim
+    {
+      "cdmill/neomodern.nvim",
+      lazy = false,
+      priority = 1000,
+      config = function()
+        require("neomodern").setup({
+          -- optional configuration here
+        })
+        require("neomodern").load()
+      end,
+    },
+<
+
+
+  NOTE: `require("neomodern").load()` will call `set colorscheme` with your
+  chosen theme. If you prefer, you can use `vim.cmd("colorscheme <theme>")`
+  instead. For example, to use darkforest: `vim.cmd("colorscheme darkforest")`.
+  Note if you use `vim.cmd("colorscheme neomodern")`, `iceclimber` will be used.
+
+==============================================================================
+3. Configuration                                     *neomodern-configuration*
+
+There are 5 themes included (4 dark, 1 light). The light theme is used when `{
+style = "daylight" }` is passed to `setup(options)` or when `vim.o.background =
+"light"`.
+
+Default options are given below
+
+>lua
+    require("neomodern").setup({
+      -- MAIN OPTIONS --
+      -- Choose between 'iceclimber', 'coffeecat', 'darkforest', 'roseprime', 'daylight'
+      theme = "iceclimber",
+      -- Keymap (in normal mode) to toggle between themes in theme list
+      cycle_theme_key = nil,
+      cycle_theme_list = { "iceclimber", "coffeecat", "darkforest", "roseprime", "daylight" },
+      -- Keymap (in normal mode) to toggle between light and dark mode.
+      -- Recommended to remove `daylight` from `toggle_theme_list` if you are also using
+      -- `cycle_theme_key` keymap for a more intuitive cycle behavior
+      toggle_mode_key = nil,
+      -- Don't set background
+      transparent = false,
+      -- If true, enable the terminal
+      term_colors = true,
+      -- If true, docstrings will be highlighted like strings, otherwise they will be highlighted
+      -- like comments. Note, behavior is depending on the language server.
+      colored_docstrings = true,
+      -- If false, brackets will be highlighted similar to the default fg color
+      colored_brackets = true,
+      -- Don't set background of floating windows. Recommended for when using floating windows
+      -- with borders.
+      plain_float = false,
+      -- Show the end-of-buffer tildes
+      show_eob = true,
+      diagnostics = {
+        darker = true, -- Darker colors for diagnostic
+        undercurl = true, -- Use undercurl for diagnostics
+        background = true, -- Use background color for virtual text
+      },
+
+      -- CODE FORMATTING --
+      -- The following table accepts values the same as the `gui` option for normal
+      -- highlights. For example, `bold`, `italic`, `underline`, `none`.
+      code_style = {
+        comments = "italic",
+        conditionals = "none",
+        functions = "none",
+        keywords = "none",
+        -- Markdown headings
+        headings = "bold",
+        operators = "none",
+        keyword_return = "none",
+        strings = "none",
+        variables = "none",
+      },
+
+      -- PLUGINS --
+      -- The following options allow for more control over some plugin appearances.
+      plugin = {
+        lualine = {
+          -- Bold lualine_a sections
+          bold = true,
+          -- Don't set section/component backgrounds. Recommended to not set
+          -- section/component separators.
+          plain = false,
+        },
+        cmp = {
+          -- Don't highlight lsp-kind items. Only the current selection will be highlighted.
+          plain = false,
+          -- Reverse lsp-kind items' highlights in cmp menu.
+          reverse = false,
+        },
+        -- Options are 'borderless' or 'bordered'.
+        telescope = "bordered",
+      },
+
+      -- CUSTOM HIGHLIGHTS --
+      -- Override default colors
+      colors = {},
+      -- Override highlight groups
+      highlights = {},
+    })
+    -- Convenience function that simply calls `:colorscheme <theme>` with the theme
+    -- specified in your config. If not specified, `iceclimber` is used.
+    require("neomodern").load()
+<
+
+
+==============================================================================
+4. Customization                                     *neomodern-customization*
+
+Example using custom colors and highlights:
+
+>lua
+    require("neomodern").setup {
+      colors = {
+        orange = '#ff8800', -- define a new color
+        keyword = '#817faf', -- redefine an existing color
+      },
+      highlights = {
+        ...
+        ["@keyword"] = { fg = "$keyword", fmt = 'bold' },
+        ["@function"] = { bg = "$orange", fmt = 'underline,italic' },
+        ...
+      },
+    }
+<
+
+
+==============================================================================
+5. Supported Plugins                             *neomodern-supported-plugins*
+
+- Dashboard <https://github.com/nvimdev/dashboard-nvim>
+- cmp <https://github.com/hrsh7th/nvim-cmp>
+- Diffview <https://github.com/sindrets/diffview.nvim>
+- Gitsigns <https://github.com/lewis6991/gitsigns.nvim>
+- Telescope <https://github.com/nvim-telescope/telescope.nvim>
+- Neo-tree <https://github.com/nvim-neo-tree/neo-tree.nvim>
+- Nvim-tree <https://github.com/nvim-tree/nvim-tree.lua>
+- plus more
+
+
+==============================================================================
+6. Extras                                                   *neomodern-extras*
+
+Available here <https://github.com/cdmill/neomodern.nvim/tree/main/extras>
+
+- Alacritty <https://github.com/alacritty/alacritty>
+- Foot <https://codeberg.org/dnkl/foot>
+- FZF <https://github.com/junegunn/fzf>
+- kitty <https://github.com/kovidgoyal/kitty>
+- fish <https://github.com/fish-shell/fish-shell>
+- wezterm <https://github.com/wez/wezterm>
+- Windows Terminal <https://github.com/microsoft/terminal>
+- Iterm2 <https://iterm2.com>
+
+
+==============================================================================
+7. Contributing                                       *neomodern-contributing*
+
+Pull requests are welcome.
+
+If you are wanting to submit a new theme/style, please create a pull request
+with your new colors in this file
+<https://github.com/cdmill/neomodern.nvim/blob/main/lua/neomodern/palette.lua>.
+
+If you are wanting support for a plugin, either open an issue or submit a pull
+request with your highlight additions in this file
+<https://github.com/cdmill/neomodern.nvim/blob/main/lua/neomodern/highlights.lua>.
+
+
+==============================================================================
+8. Inspiration                                         *neomodern-inspiration*
+
+- OneDark.nvim <https://github.com/navarasu/onedark.nvim>
+- Bamboo.nvim <https://github.com/ribru17/bamboo.nvim>
+- Catppuccin <https://github.com/catppuccin/nvim>
+- Everforest <https://github.com/sainnhe/everforest>
+- Rosé-Pine <https://github.com/rose-pine/neovim>
+- TokyoNight <https://github.com/folke/tokyonight.nvim>
+- No Clown Fiesta <https://github.com/aktersnurra/no-clown-fiesta.nvim>
+
+
+==============================================================================
+9. License                                                 *neomodern-license*
+
+MIT <https://choosealicense.com/licenses/mit/>
+
+Generated by panvimdoc <https://github.com/kdheepak/panvimdoc>
+
+vim:tw=78:ts=8:noet:ft=help:norl:
