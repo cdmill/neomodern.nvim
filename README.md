@@ -84,65 +84,93 @@ Install via your favorite package manager:
 
 > [!NOTE]
 > `require("neomodern").load()` will call `set colorscheme` with your chosen style.
-> If you prefer, you can use `vim.cmd([[colorscheme <style>]])` instead. For
-> example, to use darkforest: `vim.cmd([[colorscheme darkforest]])`. Note if you
-> use `vim.cmd([[colorscheme neomodern]])`, `iceclimber` will be used.
+> If you prefer, you can use `vim.cmd("colorscheme <style>")` instead. For
+> example, to use darkforest: `vim.cmd("colorscheme darkforest")`. Note if you
+> use `vim.cmd("colorscheme neomodern")`, `iceclimber` will be used.
 
 ## Configuration
 
-There are 5 themes included (4 dark, 1 light). The light theme is used when `{ style = "daylight" }` is passed to `setup(options)` or when `vim.o.background = "light"`.
+There are 5 themes included (4 dark, 1 light).
+The light theme is used when `{ style = "daylight" }` is passed to `setup(options)` or when `vim.o.background = "light"`.
 
 Default options are given below
 
 ```lua
 require("neomodern").setup({
-  -- Main options --
-  style = "iceclimber", -- choose between 'iceclimber', 'coffeecat', 'darkforest', 'roseprime', 'daylight'
-  toggle_style_key = nil, -- key to toggle between schemes in style list
-  toggle_mode_key = nil, -- key to toggle light/dark mode
-  toggle_style_list = M.styles_list,
-  transparent = false, -- don't set background
-  term_colors = true, -- if true enable the terminal
-  colored_docstrings = true, -- if true, docstrings will be highlighted like strings, otherwise they will be highlighted like comments
-  colored_brackets = true, -- if false, brackets will be highlighted similar to default fg color
-  plain_float = false, -- don't set background of floating windows. recommended for when using floating windows with borders
-  show_eob = true, -- show the end-of-buffer tildes
+  -- MAIN OPTIONS --
+  -- Choose between 'iceclimber', 'coffeecat', 'darkforest', 'roseprime', 'daylight'
+  theme = "iceclimber",
+  -- Keymap (in normal mode) to toggle between themes in theme list
+  cycle_theme_key = nil,
+  cycle_theme_list = { "iceclimber", "coffeecat", "darkforest", "roseprime", "daylight" },
+  -- Keymap (in normal mode) to toggle between light and dark mode.
+  -- Recommended to remove `daylight` from `toggle_theme_list` if you are also using
+  -- `cycle_theme_key` keymap for a more intuitive cycle behavior
+  toggle_mode_key = nil,
+  -- Don't set background
+  transparent = false,
+  -- If true, enable the terminal
+  term_colors = true,
+  -- If true, docstrings will be highlighted like strings, otherwise they will be highlighted
+  -- like comments. Note, behavior is depending on the language server.
+  colored_docstrings = true,
+  -- If false, brackets will be highlighted similar to the default fg color
+  colored_brackets = true,
+  -- Don't set background of floating windows. Recommended for when using floating windows
+  -- with borders.
+  plain_float = false,
+  -- Show the end-of-buffer tildes
+  show_eob = true,
   diagnostics = {
-    darker = true, -- darker colors for diagnostic
-    undercurl = true, -- use undercurl for diagnostics
-    background = true, -- use background color for virtual text
+    darker = true, -- Darker colors for diagnostic
+    undercurl = true, -- Use undercurl for diagnostics
+    background = true, -- Use background color for virtual text
   },
 
-  -- Changing Formats --
+  -- CODE FORMATTING --
+  -- The following table accepts values the same as the `gui` option for normal
+  -- highlights. For example, `bold`, `italic`, `underline`, `none`.
   code_style = {
     comments = "italic",
     conditionals = "none",
     functions = "none",
     keywords = "none",
-    headings = "bold", -- markdown headings
+    -- Markdown headings
+    headings = "bold",
     operators = "none",
     keyword_return = "none",
     strings = "none",
     variables = "none",
   },
 
-  -- Plugin Related --
+  -- PLUGINS --
+  -- The following options allow for more control over some plugin appearances.
   plugin = {
     lualine = {
+      -- Bold lualine_a sections
       bold = true,
-      plain = false, -- don't set section/component backgrounds
+      -- Don't set section/component backgrounds. Recommended to not set
+      -- section/component separators.
+      plain = false,
     },
     cmp = {
-      plain = false, --don't highlight lsp-kind items
-      reverse = false, -- reverse item kind highlights in cmp menu
+      -- Don't highlight lsp-kind items. Only the current selection will be highlighted.
+      plain = false,
+      -- Reverse lsp-kind items' highlights in cmp menu.
+      reverse = false,
     },
-    telescope = "bordered", -- options are 'borderless' or 'bordered'
+    -- Options are 'borderless' or 'bordered'.
+    telescope = "bordered",
   },
 
-  -- Custom Highlights --
-  colors = {}, -- Override default colors
-  highlights = {}, -- Override highlight groups
+  -- CUSTOM HIGHLIGHTS --
+  -- Override default colors
+  colors = {},
+  -- Override highlight groups
+  highlights = {},
 })
+-- Convenience function that simply calls `:colorscheme <theme>` with the theme
+-- specified in your config. If not specified, `iceclimber` is used.
 require("neomodern").load()
 ```
 
@@ -179,7 +207,7 @@ require("neomodern").load()
 Example setup for plain cmp (preview below):
 
 ```lua
--- use these opts in setup and also rounded borders enabled in your lsp config
+-- Use these opts in setup and also rounded borders enabled in your lsp config
 require("neomodern").setup({
   plain_float = true,
   plugin = {
@@ -265,9 +293,3 @@ If you are wanting support for a plugin, either open an issue or submit a pull r
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
-
-
-
-
-
-
