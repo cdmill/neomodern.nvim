@@ -5,21 +5,6 @@ local util = require("neomodern.util")
 local M = {}
 local hl = { plugins = {} }
 
-local function vim_highlights(highlights)
-  for group_name, group_settings in pairs(highlights) do
-    vim.api.nvim_command(
-      string.format(
-        "highlight %s guifg=%s guibg=%s guisp=%s gui=%s",
-        group_name,
-        group_settings.fg or "none",
-        group_settings.bg or "none",
-        group_settings.sp or "none",
-        group_settings.fmt or "none"
-      )
-    )
-  end
-end
-
 hl.common = {
   ColorColumn = { bg = c.line },
   Conceal = { fg = c.func, bg = c.bg },
@@ -31,7 +16,9 @@ hl.common = {
   CursorIM = { fmt = "reverse" },
   CursorColumn = { bg = c.line },
   CursorLine = { bg = c.line },
-  CursorLineNr = { fg = c.fg },
+  CursorLineNr = { fg = c.fg, bg = c.line },
+  CursorLineSign = { bg = c.line },
+  CursorLineFold = { fg = c.fg, bg = c.line },
   Debug = { fg = c.operator },
   debugPC = { fg = c.error },
   debugBreakpoint = { fg = c.error },
@@ -392,12 +379,15 @@ hl.plugins.gitsigns = {
   GitSignsAdd = { fg = c.plus },
   GitSignsAddLn = { fg = c.plus },
   GitSignsAddNr = { fg = c.plus },
+  GitSignsAddCul = { fg = c.plus, bg = c.line },
   GitSignsChange = { fg = c.delta },
   GitSignsChangeLn = { fg = c.delta },
   GitSignsChangeNr = { fg = c.delta },
+  GitSignsChangeCul = { fg = c.delta, bg = c.line },
   GitSignsDelete = { fg = c.error },
   GitSignsDeleteLn = { fg = c.error },
   GitSignsDeleteNr = { fg = c.error },
+  GitSignsDeleteCul = { fg = c.error, bg = c.line },
 }
 
 hl.plugins.neo_tree = {
@@ -556,8 +546,22 @@ local lsp_kind_icons_color = {
   Variable = c.fg,
 }
 
+local function vim_highlights(highlights)
+  for group_name, group_settings in pairs(highlights) do
+    vim.api.nvim_command(
+      string.format(
+        "highlight %s guifg=%s guibg=%s guisp=%s gui=%s",
+        group_name,
+        group_settings.fg or "none",
+        group_settings.bg or "none",
+        group_settings.sp or "none",
+        group_settings.fmt or "none"
+      )
+    )
+  end
+end
+
 function M.setup()
-  -- highlight cmp items the same as lsp highlights
   if not config.plugin.cmp.plain then
     for kind, color in pairs(lsp_kind_icons_color) do
       hl.plugins.cmp["CmpItemKind" .. kind] =
@@ -575,7 +579,8 @@ function M.setup()
     vim_highlights(group)
   end
 
-  -- user defined highlights: vim_highlights function cannot be used because it sets an attribute to none if not specified
+  -- user defined highlights: vim_highlights function cannot be used because it sets an
+  -- attribute to none if not specified
   local function replace_color(prefix, color_name)
     if not color_name then
       return ""
