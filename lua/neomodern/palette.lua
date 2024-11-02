@@ -140,7 +140,6 @@ M.roseprime = {
 --   delta = "#8192C7",
 --   plus = "#6b8f89",
 -- },
--- TODO: saturate daylight colors
 M.daylight = {
   alt = "#5d86f5",
   bg = "#ffffff",
@@ -222,20 +221,19 @@ M.colormap = {
     cyan = M.roseprime.keyword,
     white = M.roseprime.fg,
   },
-  -- TODO: saturate daylight colors
   daylight = {
-    black = "#a7a7b0",
-    selection = "#e1e1eb",
-    grey = "#9b9ba3",
-    red = "#e6050a",
-    orange = "#db7302",
-    green = "#41a642",
-    yellow = "#fca921",
-    blue = "#5d86f5",
-    purple = "#6b65d6",
-    magenta = "#e858b6",
-    cyan = "#0293a3",
-    white = "#111111",
+    black = "#000000",
+    selection = M.daylight.visual,
+    grey = M.daylight.comment,
+    red = M.daylight.error,
+    orange = M.daylight.type,
+    green = M.daylight.string,
+    yellow = M.daylight.constant,
+    blue = M.daylight.func,
+    purple = M.daylight.keyword,
+    magenta = M.daylight.builtin,
+    cyan = M.daylight.property,
+    white = M.daylight.fg,
   },
 }
 

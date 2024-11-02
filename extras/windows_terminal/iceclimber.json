@@ -11,7 +11,7 @@
     "brightPurple": "#e89bce",
     "brightRed": "#e67e80",
     "brightWhite": "#bbbac1",
-    "brightYellow": "#dbbc8a",
+    "brightYellow": "#7da77e",
     "cursorColor": "#bbbac1",
     "cyan": "#559ba3",
     "foreground": "#bbbac1",
@@ -21,5 +21,5 @@
     "red": "#e67e80",
     "selectionBackground": "#2a2a31",
     "white": "#bbbac1",
-    "yellow": "#dbbc8a"
+    "yellow": "#7da77e"
 }

@@ -5,7 +5,8 @@ local palette = require("neomodern.palette")
 local colormap = require("neomodern.palette").colormap
 
 function M.colors()
-  return {
+  ---@class ColorScheme
+  local scheme = {
     bg = palette[style].bg,
     fg = palette[style].fg,
     alt = palette[style].alt,
@@ -24,6 +25,7 @@ function M.colors()
     cyan = colormap[style].cyan,
     white = colormap[style].white,
   }
+  return scheme
 end
 
 function M.setup()

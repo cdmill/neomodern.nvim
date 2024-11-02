@@ -14,6 +14,7 @@ M.extras = {
   foot = {ext = "ini", url = "https://codeberg.org/dnkl/foot", label = "Foot"},
   windows_terminal = {ext = "json", url = "https://aka.ms/terminal-documentation", label = "Windows Terminal"},
   fzf = { ext = "zsh", url = "https://github.com/junegunn/fzf", label = "Fzf"},
+  yazi = { ext = "toml", url = "https://github.com/sxyazi/yazi", label = "Yazi"},
 }
 
 local function write(str, fileName)

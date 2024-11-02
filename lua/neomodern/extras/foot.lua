@@ -6,10 +6,10 @@ local M = {}
 
 --- @param colors ColorScheme
 function M.generate(colors)
-  local footColors = {}
+  local foot_colors = {}
   for k, v in pairs(colors) do
     if type(v) == "string" then
-      footColors[k] = v:gsub("^#", "")
+      foot_colors[k] = v:gsub("^#", "")
     end
   end
 
@@ -46,7 +46,7 @@ bright7=${fg}
 16=${orange}
 17=${alt}
 ]],
-    footColors
+    foot_colors
   )
 
   return foot

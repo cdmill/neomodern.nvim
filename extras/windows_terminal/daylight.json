@@ -2,24 +2,24 @@
 # https://learn.microsoft.com/en-us/windows/terminal/customize-settings/color-schemes#creating-your-own-color-scheme
 {
     "background": "#ffffff",
-    "black": "#a7a7b0",
-    "blue": "#5d86f5",
+    "black": "#000000",
+    "blue": "#2e62f2",
     "brightBlack": "#9b9ba3",
-    "brightBlue": "#5d86f5",
+    "brightBlue": "#2e62f2",
     "brightCyan": "#0293a3",
-    "brightGreen": "#41a642",
+    "brightGreen": "#2ca32d",
     "brightPurple": "#e858b6",
     "brightRed": "#e6050a",
     "brightWhite": "#111111",
-    "brightYellow": "#fca921",
+    "brightYellow": "#f79b07",
     "cursorColor": "#111111",
     "cyan": "#0293a3",
     "foreground": "#111111",
-    "green": "#41a642",
+    "green": "#2ca32d",
     "name": "DAYLIGHT",
-    "purple": "#6b65d6",
+    "purple": "#4b46b8",
     "red": "#e6050a",
-    "selectionBackground": "#e1e1eb",
+    "selectionBackground": "#d2d2dc",
     "white": "#111111",
-    "yellow": "#fca921"
+    "yellow": "#f79b07"
 }

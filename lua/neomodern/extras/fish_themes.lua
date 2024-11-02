@@ -7,21 +7,21 @@ local M = {}
 
 --- @param colors ColorScheme
 function M.generate(colors)
-  local fishColors = {}
+  local fish_colors = {}
   for k, v in pairs(colors) do
     if type(v) == "string" then
-      fishColors[k] = v:gsub("^#", "")
+      fish_colors[k] = v:gsub("^#", "")
     end
   end
   local fishPalette = {}
-  for k, v in pairs(palette[vim.g.neomodern_config.style]) do
+  for k, v in pairs(palette[vim.g.neomodern_config.theme]) do
     if type(v) == "string" then
       fishPalette[k] = v:gsub("^#", "")
     end
   end
 
   for k, v in pairs(fishPalette) do
-    fishColors[k] = v
+    fish_colors[k] = v
   end
 
   local fish = util.template(
@@ -51,7 +51,7 @@ function M.generate(colors)
   set -g fish_pager_color_description ${comment}
   set -g fish_pager_color_selected_background --background=${visual}
   ]],
-    fishColors
+    fish_colors
   )
 
   return fish

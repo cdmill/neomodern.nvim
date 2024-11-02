@@ -1,30 +1,29 @@
-    # DAYLIGHT
-    # use in ~/.config/fish/conf.d/
+  # DAYLIGHT
+  # use in ~/.config/fish/conf.d/
 
-    set -g orange db7302 # color 16
-    set -g alt 5d86f5 # color 17
+  set -g orange db7302 # color 16
+  set -g alt d6a56f # color 17
 
-    # Syntax Highlighting Colors
-    set -g fish_color_normal 111111
-    set -g fish_color_command 6b65d6
-    set -g fish_color_keyword 6b65d6
-    set -g fish_color_quote 41a642
-    set -g fish_color_redirection e858b6
-    set -g fish_color_end 6b65d6
-    set -g fish_color_error e6050a
-    set -g fish_color_param 111111
-    set -g fish_color_comment 9b9ba3
-    set -g fish_color_selection --background=d2d2dc
-    set -g fish_color_search_match --background=d2d2dc
-    set -g fish_color_operator 111111
-    set -g fish_color_escape 5d86f5
-    set -g fish_color_autosuggestion 9b9ba3
+  # Syntax Highlighting Colors
+  set -g fish_color_normal bbbac1
+  set -g fish_color_command 7da77e
+  set -g fish_color_keyword 7da77e
+  set -g fish_color_quote dbbc7f
+  set -g fish_color_redirection c76f82
+  set -g fish_color_end 7da77e
+  set -g fish_color_error e67e80
+  set -g fish_color_param bbbac1
+  set -g fish_color_comment 7a8478
+  set -g fish_color_selection --background=313b35
+  set -g fish_color_search_match --background=313b35
+  set -g fish_color_operator c3c082
+  set -g fish_color_escape a7c080
+  set -g fish_color_autosuggestion 7a8478
 
-    # Completion Pager Colors}
-    set -g fish_pager_color_progress 9b9ba3
-    set -g fish_pager_color_prefix 0293a3
-    set -g fish_pager_color_completion 111111
-    set -g fish_pager_color_description 9b9ba3
-    set -g fish_pager_color_selected_background --background=d2d2dc
-
+  # Completion Pager Colors}
+  set -g fish_pager_color_progress 7a8478
+  set -g fish_pager_color_prefix 78b0a8
+  set -g fish_pager_color_completion bbbac1
+  set -g fish_pager_color_description 7a8478
+  set -g fish_pager_color_selected_background --background=313b35
   

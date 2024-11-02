@@ -16,8 +16,8 @@ green = '#9bbdb8'
 yellow = '#d2af98'
 blue = '#95b1fc'
 magenta = '#9b9af5'
-cyan = '#a3849b'
-white = '#afafdd'
+cyan = '#6397cf'
+white = '#adadcc'
 
 # Bright colors
 [colors.bright]
@@ -27,8 +27,8 @@ green = '#9bbdb8'
 yellow = '#d2af98'
 blue = '#95b1fc'
 magenta = '#ad82a2'
-cyan = '#a3849b'
-white = '#afafdd'
+cyan = '#6397cf'
+white = '#adadcc'
 
 # Indexed Colors
 [[colors.indexed_colors]]
