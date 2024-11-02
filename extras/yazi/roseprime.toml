@@ -1,0 +1,92 @@
+  # Theme: roseprime
+  # URL: https://github.com/cdmill/neomodern.nvim/raw/main/extras/yazi/roseprime.toml
+
+  [manager]
+  cwd = { fg = #a7c080 }
+
+  hovered         = { fg = #78b0a8, bg = #1e2323 }
+  preview_hovered = { fg = #78b0a8, bg = #1e2323 }
+
+  find_keyword  = { fg = #d6a56f, italic = true }
+  find_position = { fg = #d6a56f, bg = "reset", italic = true }
+
+  marker_copied   = { fg = #d6a56f }
+  marker_cut      = { fg = #e67e80 }
+  marker_selected = { fg = #d6a56f, bg = #313b35 }
+
+  tab_active   = { fg = #d6a56f, bg = #313b35 }
+  tab_inactive = { fg = #7a8478, bg = #313b35 }
+  tab_width    = 1
+
+  count_cut      = { fg = #d6a56f, bg = #1e2323 }
+  count_copied   = { fg = #d6a56f, bg = #1e2323 }
+  count_selected = { fg = #d6a56f, bg = #1e2323 }
+
+  border_symbol = "│"
+  border_style  = { fg = #7a8478 }
+
+  [status]
+  separator_open  = ""
+  separator_close = ""
+  separator_style = { fg = ${dark}, bg = #95b1fc }
+
+  mode_normal = { fg = ${dark}, bg = #95b1fc, bold = true }
+  mode_select = { fg = ${dark}, bg = #9b9af5, bold = true }
+  mode_unset  = { fg = ${dark}, bg = #6397cf, bold = true }
+
+  progress_label  = { fg = #d6a56f, bold = true }
+  progress_normal = { fg = #d6a56f, bg = #262830 }
+  progress_error  = { fg = ${dark}, bg = #e67e80 }
+
+  permissions_t = { fg = #bbbac1 }
+  permissions_r = { fg = #d2af98 }
+  permissions_w = { fg = #c76f82 }
+  permissions_x = { fg = #95b1fc }
+  permissions_s = { fg = #c3c082 }
+
+  [input]
+  border   = { fg = #7a8478 }
+  title    = {}
+  value    = {}
+  selected = { reversed = true }
+
+  [select]
+  border   = { fg = #7a8478 }
+  active   = { fg = #7da77e }
+  inactive = {}
+
+  [tasks]
+  border  = { fg = #7a8478 }
+  title   = {}
+  hovered = { underline = true }
+
+  [which]
+  mask            = { bg = #7da77e }
+  cand            = { fg = #78b0a8 }
+  rest            = { fg = #e69875 }
+  desc            = { fg = #dbbc7f }
+  separator       = "  "
+  separator_style = { fg = #c3c082}
+
+  [help]
+  on      = { fg = #c76f82 }
+  exec    = { fg = #e69875 }
+  desc    = { fg = #dbbc7f }
+  hovered = { bg = #78b0a8, bold = true }
+  footer  = { fg = #7a8478, bg = #1e2323 }
+
+  [filetype]
+  rules = [
+    # Media
+    { mime = "image/*", fg = #ad82a2},
+    { mime = "{audio,video}/*", fg = #dbbc7f},
+
+    # Archives
+    { mime = "application/{,g}zip", fg = #c76f82},
+    { mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = #c76f82},
+
+    # Fallback
+    { name = "*", fg = #bbbac1},
+    { name = "*/", fg = #a7c080}
+  ]
+  
