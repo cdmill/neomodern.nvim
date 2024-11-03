@@ -14,13 +14,13 @@
   marker_cut      = { fg = "#e67e80" }
   marker_selected = { fg = "#d6a56f" }
 
-  tab_active   = { fg = "#d6a56f", bg = "#313b35" }
+  tab_active   = { fg = "#c76f82", bg = "#313b35" }
   tab_inactive = { fg = "#7a8478", bg = "#313b35" }
   tab_width    = 1
 
-  count_cut      = { fg = "#c76f82", bg = "#1e2323" }
-  count_copied   = { fg = "#c76f82", bg = "#1e2323" }
-  count_selected = { fg = "#c76f82", bg = "#1e2323" }
+  count_cut      = { fg = "#d6a56f", bg = "#1e2323" }
+  count_copied   = { fg = "#d6a56f", bg = "#1e2323" }
+  count_selected = { fg = "#d6a56f", bg = "#1e2323" }
 
   border_symbol = "│"
   border_style  = { fg = "#7a8478" }

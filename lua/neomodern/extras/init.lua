@@ -43,7 +43,7 @@ function M.setup()
     package.loaded["neomodern.extras." .. extra] = nil
     local plugin = require("neomodern.extras." .. extra)
     for theme, theme_name in pairs(themes) do
-      neomodern.setup({ style = theme })
+      neomodern.setup({ theme = theme })
       neomodern.load()
       local colors = require("neomodern.terminal").colors(true)
       local fname = extra .. "/" .. theme .. "." .. info.ext

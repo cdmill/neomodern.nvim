@@ -21,13 +21,13 @@ function M.generate(colors)
   marker_cut      = { fg = "${error}" }
   marker_selected = { fg = "${alt}" }
 
-  tab_active   = { fg = "${alt}", bg = "${visual}" }
+  tab_active   = { fg = "${builtin}", bg = "${visual}" }
   tab_inactive = { fg = "${comment}", bg = "${visual}" }
   tab_width    = 1
 
-  count_cut      = { fg = "${builtin}", bg = "${line}" }
-  count_copied   = { fg = "${builtin}", bg = "${line}" }
-  count_selected = { fg = "${builtin}", bg = "${line}" }
+  count_cut      = { fg = "${alt}", bg = "${line}" }
+  count_copied   = { fg = "${alt}", bg = "${line}" }
+  count_selected = { fg = "${alt}", bg = "${line}" }
 
   border_symbol = "│"
   border_style  = { fg = "${comment}" }
