@@ -1,12 +1,14 @@
 local M = {}
 local config = vim.g.neomodern_config
 local style = vim.g.neomodern_config.style
+local util = require("neomodern.util")
 local palette = require("neomodern.palette")
 local colormap = require("neomodern.palette").colormap
 
 function M.colors()
   ---@class ColorScheme
   local scheme = {
+    dim = util.darken(palette[style].bg, 0.9, "#000000"),
     bg = palette[style].bg,
     fg = palette[style].fg,
     alt = palette[style].alt,

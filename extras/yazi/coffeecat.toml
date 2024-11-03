@@ -28,7 +28,7 @@
   [status]
   separator_open  = ""
   separator_close = ""
-  separator_style = { fg = "${visua}", bg = "#313b35" }
+  separator_style = { fg = "#313b35", bg = "#313b35" }
 
   mode_normal = { fg = "#181b1b", bg = "#96b1fa", bold = true }
   mode_select = { fg = "#181b1b", bg = "#9b9af5", bold = true }
@@ -61,7 +61,7 @@
   hovered = { underline = true }
 
   [which]
-  mask            = { bg = "#7da77e" }
+  mask            = { bg = "#1C1B1A" }
   cand            = { fg = "#78b0a8" }
   rest            = { fg = "#e69875" }
   desc            = { fg = "#dbbc7f" }
@@ -69,10 +69,10 @@
   separator_style = { fg = "#c3c082"}
 
   [help]
-  on      = { fg = "#c76f82" }
-  exec    = { fg = "#e69875" }
-  desc    = { fg = "#dbbc7f" }
-  hovered = { bg = "#78b0a8", bold = true }
+  on      = { fg = "#e69875" }
+  run    = { fg = "#dbbc7f" }
+  desc    = { fg = "#7a8478" }
+  hovered = { fg = "#78b0a8", bg = "#1e2323", bold = true }
   footer  = { fg = "#7a8478", bg = "#1e2323" }
 
   [filetype]

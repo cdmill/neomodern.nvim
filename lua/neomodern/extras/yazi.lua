@@ -45,7 +45,7 @@ function M.generate(colors)
   [status]
   separator_open  = ""
   separator_close = ""
-  separator_style = { fg = "${visua}", bg = "${visual}" }
+  separator_style = { fg = "${visual}", bg = "${visual}" }
 
   mode_normal = { fg = "${bg}", bg = "${blue}", bold = true }
   mode_select = { fg = "${bg}", bg = "${purple}", bold = true }
@@ -78,7 +78,7 @@ function M.generate(colors)
   hovered = { underline = true }
 
   [which]
-  mask            = { bg = "${keyword}" }
+  mask            = { bg = "${dim}" }
   cand            = { fg = "${property}" }
   rest            = { fg = "${type}" }
   desc            = { fg = "${string}" }
@@ -86,10 +86,10 @@ function M.generate(colors)
   separator_style = { fg = "${operator}"}
 
   [help]
-  on      = { fg = "${builtin}" }
-  exec    = { fg = "${type}" }
-  desc    = { fg = "${string}" }
-  hovered = { bg = "${property}", bold = true }
+  on      = { fg = "${type}" }
+  run    = { fg = "${string}" }
+  desc    = { fg = "${comment}" }
+  hovered = { fg = "${property}", bg = "${line}", bold = true }
   footer  = { fg = "${comment}", bg = "${line}" }
 
   [filetype]
