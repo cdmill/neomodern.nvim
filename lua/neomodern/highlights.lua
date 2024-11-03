@@ -109,7 +109,7 @@ hl.syntax = {
   -- Tag = { fg = c.builtin }, -- can use <C-]> on this
   Statement = { fg = c.keyword }, -- (preferred) any statement
   String = { fg = c.string, fmt = config.code_style.strings }, -- string constants
-  Title = { fg = c.property },
+  Title = { fg = c.keyword },
   Type = { fg = c.type }, -- (preferred) 'int', 'long', 'char' etc
   -- StorageClass = { fg = c.constant, fmt = config.code_style.keywords }, -- 'static', 'volatile' etc
   -- Structure = { fg = c.constant }, -- 'struct', 'union', 'enum' etc

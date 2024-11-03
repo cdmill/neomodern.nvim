@@ -27,17 +27,17 @@ function M.generate(colors)
   find_keyword  = { fg = "${alt}", italic = true }
   find_position = { fg = "${alt}", bg = "reset", italic = true }
 
-  marker_copied   = { fg = "${alt}" }
+  marker_copied   = { fg = "${string}" }
   marker_cut      = { fg = "${error}" }
-  marker_selected = { fg = "${alt}", bg = "${visual}" }
+  marker_selected = { fg = "${alt}" }
 
   tab_active   = { fg = "${alt}", bg = "${visual}" }
   tab_inactive = { fg = "${comment}", bg = "${visual}" }
   tab_width    = 1
 
-  count_cut      = { fg = "${alt}", bg = "${line}" }
-  count_copied   = { fg = "${alt}", bg = "${line}" }
-  count_selected = { fg = "${alt}", bg = "${line}" }
+  count_cut      = { fg = "${builtin}", bg = "${line}" }
+  count_copied   = { fg = "${builtin}", bg = "${line}" }
+  count_selected = { fg = "${builtin}", bg = "${line}" }
 
   border_symbol = "│"
   border_style  = { fg = "${comment}" }
@@ -45,14 +45,14 @@ function M.generate(colors)
   [status]
   separator_open  = ""
   separator_close = ""
-  separator_style = { fg = "${bg}", bg = "${blue}" }
+  separator_style = { fg = "${visua}", bg = "${visual}" }
 
   mode_normal = { fg = "${bg}", bg = "${blue}", bold = true }
   mode_select = { fg = "${bg}", bg = "${purple}", bold = true }
   mode_unset  = { fg = "${bg}", bg = "${cyan}", bold = true }
 
   progress_label  = { fg = "${alt}", bold = true }
-  progress_normal = { fg = "${alt}", bg = "${selection}" }
+  progress_normal = { fg = "${alt}", bg = "${visual}" }
   progress_error  = { fg = "${bg}", bg = "${error}" }
 
   permissions_t = { fg = "${fg}" }

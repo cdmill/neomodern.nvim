@@ -10,17 +10,17 @@
   find_keyword  = { fg = "#d6a56f", italic = true }
   find_position = { fg = "#d6a56f", bg = "reset", italic = true }
 
-  marker_copied   = { fg = "#d6a56f" }
+  marker_copied   = { fg = "#dbbc7f" }
   marker_cut      = { fg = "#e67e80" }
-  marker_selected = { fg = "#d6a56f", bg = "#313b35" }
+  marker_selected = { fg = "#d6a56f" }
 
   tab_active   = { fg = "#d6a56f", bg = "#313b35" }
   tab_inactive = { fg = "#7a8478", bg = "#313b35" }
   tab_width    = 1
 
-  count_cut      = { fg = "#d6a56f", bg = "#1e2323" }
-  count_copied   = { fg = "#d6a56f", bg = "#1e2323" }
-  count_selected = { fg = "#d6a56f", bg = "#1e2323" }
+  count_cut      = { fg = "#c76f82", bg = "#1e2323" }
+  count_copied   = { fg = "#c76f82", bg = "#1e2323" }
+  count_selected = { fg = "#c76f82", bg = "#1e2323" }
 
   border_symbol = "│"
   border_style  = { fg = "#7a8478" }
@@ -28,14 +28,14 @@
   [status]
   separator_open  = ""
   separator_close = ""
-  separator_style = { fg = "#181b1b", bg = "#95b1fc" }
+  separator_style = { fg = "${visua}", bg = "#313b35" }
 
   mode_normal = { fg = "#181b1b", bg = "#95b1fc", bold = true }
   mode_select = { fg = "#181b1b", bg = "#9b9af5", bold = true }
   mode_unset  = { fg = "#181b1b", bg = "#6397cf", bold = true }
 
   progress_label  = { fg = "#d6a56f", bold = true }
-  progress_normal = { fg = "#d6a56f", bg = "#262830" }
+  progress_normal = { fg = "#d6a56f", bg = "#313b35" }
   progress_error  = { fg = "#181b1b", bg = "#e67e80" }
 
   permissions_t = { fg = "#bbbac1" }
