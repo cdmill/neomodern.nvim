@@ -5,17 +5,10 @@ local util = require("neomodern.util")
 local palette = require("neomodern.palette")
 local colormap = require("neomodern.palette").colormap
 
-function M.colors()
-  ---@class ColorScheme
+function M.colors(with_palette)
   local scheme = {
     dim = util.darken(palette[style].bg, 0.9, "#000000"),
-    bg = palette[style].bg,
-    fg = palette[style].fg,
-    alt = palette[style].alt,
-    inactive = palette[style].line,
-    comment = palette[style].comment,
     black = colormap[style].black,
-    selection = colormap[style].selection,
     grey = colormap[style].grey,
     red = colormap[style].red,
     orange = colormap[style].orange,
@@ -27,6 +20,11 @@ function M.colors()
     cyan = colormap[style].cyan,
     white = colormap[style].white,
   }
+  if with_palette then
+    for k, v in pairs(palette[style]) do
+      scheme[k] = v
+    end
+  end
   return scheme
 end
 

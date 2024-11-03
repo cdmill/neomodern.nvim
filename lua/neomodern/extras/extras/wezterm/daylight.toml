@@ -1,0 +1,45 @@
+[colors]
+foreground = "#111111"
+background = "#ffffff"
+cursor_bg = "#111111"
+cursor_border = "#111111"
+cursor_fg = "#ffffff"
+selection_bg = "${selection}"
+selection_fg = "#111111"
+split = "#9b9ba3"
+compose_cursor = "#db7302"
+scrollbar_thumb = "#9b9ba3"
+
+ansi = ["#000000", "#e6050a", "#2ca32d", "#f79b07", "#2e62f2", "#4b46b8", "#0293a3", "#111111"]
+brights = ["#9b9ba3", "#e6050a", "#2ca32d", "#f79b07", "#2e62f2", "#e858b6", "#0293a3", "#111111"]
+
+[colors.tab_bar]
+inactive_tab_edge = "#9b9ba3"
+background = "#ffffff"
+
+[colors.tab_bar.active_tab]
+fg_color = "#5d86f5"
+bg_color = "${selection}"
+
+[colors.tab_bar.inactive_tab]
+fg_color = "#9b9ba3"
+bg_color = "${inactive}"
+
+[colors.tab_bar.inactive_tab_hover]
+fg_color = "#9b9ba3"
+bg_color = "${inactive}"
+# intensity = "Bold"
+
+[colors.tab_bar.new_tab_hover]
+fg_color = "#5d86f5"
+bg_color = "${selection}"
+intensity = "Bold"
+
+[colors.tab_bar.new_tab]
+fg_color = "#5d86f5"
+bg_color = "#ffffff"
+
+[metadata]
+aliases = []
+author = "Casey Miller"
+name = "daylight"

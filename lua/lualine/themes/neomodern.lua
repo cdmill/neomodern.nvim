@@ -1,4 +1,4 @@
-local colors = require("neomodern.terminal").colors()
+local colors = require("neomodern.terminal").colors(true)
 local cfg = vim.g.neomodern_config
 local c = {
   norm = colors.blue,
@@ -8,8 +8,8 @@ local c = {
   comm = colors.orange,
   fg_dim = colors.comment,
   vcs = colors.alt,
-  bg_b = colors.selection,
-  bg_c = colors.inactive,
+  bg_b = colors.visual,
+  bg_c = colors.line,
   dark = colors.bg,
   none = "none",
 }

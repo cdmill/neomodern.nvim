@@ -167,7 +167,6 @@ M.daylight = {
 M.colormap = {
   iceclimber = {
     black = "#2d2d2f",
-    selection = M.iceclimber.visual,
     grey = M.iceclimber.comment,
     red = M.iceclimber.error,
     orange = M.iceclimber.type,
@@ -181,7 +180,6 @@ M.colormap = {
   },
   coffeecat = {
     black = "#191818",
-    selection = M.coffeecat.visual,
     grey = M.coffeecat.comment,
     red = M.coffeecat.error,
     orange = M.coffeecat.type,
@@ -195,7 +193,6 @@ M.colormap = {
   },
   darkforest = {
     black = "#111312",
-    selection = M.darkforest.visual,
     grey = M.darkforest.comment,
     red = M.darkforest.error,
     orange = M.darkforest.type,
@@ -209,7 +206,6 @@ M.colormap = {
   },
   roseprime = {
     black = "#111111",
-    selection = M.roseprime.visual,
     grey = M.roseprime.comment,
     red = M.roseprime.builtin,
     orange = M.roseprime.func,
@@ -223,7 +219,6 @@ M.colormap = {
   },
   daylight = {
     black = "#000000",
-    selection = M.daylight.visual,
     grey = M.daylight.comment,
     red = M.daylight.error,
     orange = M.daylight.type,
