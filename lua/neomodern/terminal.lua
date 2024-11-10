@@ -5,6 +5,10 @@ local util = require("neomodern.util")
 local palette = require("neomodern.palette")
 local colormap = require("neomodern.palette").colormap
 
+--- Returns the terminal colors associated with a theme, and optionally the entire
+--- palette.
+---@param with_palette boolean include the theme's palette colors
+---@return table
 function M.colors(with_palette)
   local scheme = {
     dim = util.darken(palette[style].bg, 0.9, "#000000"),

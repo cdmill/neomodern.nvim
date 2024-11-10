@@ -1,4 +1,4 @@
----@class (exact) Style
+---@class (exact) Theme
 ---@field alt string highlight
 ---@field bg string background
 ---@field builtin string default/builtin library
@@ -21,11 +21,11 @@
 ---@field plus string diff mod
 
 ---@class Colorscheme
----@field iceclimber Style
----@field coffeecat Style
----@field darkforest Style
----@field roseprime Style
----@field daylight Style
+---@field iceclimber Theme
+---@field coffeecat Theme
+---@field darkforest Theme
+---@field roseprime Theme
+---@field daylight Theme
 local M = {}
 
 M.iceclimber = {

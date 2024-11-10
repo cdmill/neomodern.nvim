@@ -5,6 +5,7 @@ M.theme_list = { "iceclimber", "coffeecat", "darkforest", "roseprime", "daylight
 ---Change neomodern option (`vim.g.neomodern_config.option`)
 ---It can't be changed directly by modifying that field due to a Neovim lua bug with
 ---global variables (`neomodern_config` is a global variable).
+---@private
 ---@param opt string option name
 ---@param value any new value
 function M.set_options(opt, value)
