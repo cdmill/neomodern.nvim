@@ -7,7 +7,7 @@ local hl = { plugins = {} }
 
 hl.common = {
   ColorColumn = { bg = c.line },
-  Conceal = { fg = c.func, bg = c.bg },
+  Conceal = { fg = c.func, bg = config.transparent and c.none or c.bg },
   CurSearch = { fg = c.type, bg = c.visual },
   Cursor = { fmt = "reverse" },
   vCursor = { fmt = "reverse" },
