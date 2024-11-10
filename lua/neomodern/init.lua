@@ -59,7 +59,7 @@ function M.toggle_mode()
   end
 end
 
----@class neomodern.Config
+---@class (exact) neomodern.Config
 ---@field theme? string Preferred theme
 ---@field cycle_theme_key? nil|string Keymap (normal mode) to cycle between themes
 ---@field cycle_theme_list? table Themes to cycle through when using `cycle_theme_key` keymap.
@@ -70,6 +70,7 @@ end
 ---@field colored_brackets? boolean If false, highlights brackets like default fg color
 ---@field plain_float? boolean If true, does not set background of floating windows. Recommend for when using floating windows with borders
 ---@field show_eob? boolean If true, highlights end-of-buffer tildes like comments
+---@field cursorline_gutter? boolean If true, highlights {sign, fold}column the same as cursorline
 ---@field diagnostics? table Has boolean fields to determine diagnostics appearance: 'darker', 'undercurl', 'background'
 ---@field code_style? table Has string values to determine code style. Field values can be the same as gui highlight values, e.g. 'bold', 'italic', 'none'
 ---@field plugin? table Has table or string fields to determine appearnce of plugins. Current plugin options are 'lualine', 'cmp', and 'telescope'
@@ -86,6 +87,7 @@ local default_config = {
   colored_brackets = true,
   plain_float = false,
   show_eob = true,
+  cursorline_gutter = true,
   diagnostics = {
     darker = true,
     undercurl = true,
