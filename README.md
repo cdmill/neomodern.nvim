@@ -121,6 +121,8 @@ require("neomodern").setup({
   plain_float = false,
   -- Show the end-of-buffer tildes
   show_eob = true,
+  -- If true, highlights {sign,fold}column the same as cursorline
+  cursorline_gutter = true,
   diagnostics = {
     darker = true, -- Darker colors for diagnostic
     undercurl = true, -- Use undercurl for diagnostics
