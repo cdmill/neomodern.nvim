@@ -50,21 +50,22 @@ M.iceclimber = {
   delta = "#8da0d6",
   plus = "#7da77e",
 }
+
 M.coffeecat = {
   alt = "#9b9af5",
-  bg = "#1f1e1d",
+  bg = "#1d1c1b",
   builtin = "#9b9af5",
   comment = "#6a6a6a",
-  constant = "#e8cea0",
+  constant = "#ebc686",
   fg = "#bbbac1",
   float = "#2b2a2a",
   func = "#96b1fa",
   keyword = "#b39581",
   line = "#262524",
   operator = "#9b99a3",
-  property = "#e3afd1",
+  property = "#ebabd5",
   string = "#8fc490",
-  type = "#e3a968",
+  type = "#eba454",
   visual = "#383737",
   error = "#d47b7d",
   hint = "#abbceb",
@@ -72,6 +73,7 @@ M.coffeecat = {
   delta = "#abbceb",
   plus = "#8fc490",
 }
+
 M.darkforest = {
   alt = "#d6a56f",
   bg = "#181b1b",
@@ -94,6 +96,7 @@ M.darkforest = {
   delta = "#78b0a8",
   plus = "#a7c080",
 }
+
 M.roseprime = {
   alt = "#9b9af5",
   bg = "#121315",
@@ -116,6 +119,7 @@ M.roseprime = {
   delta = "#8192C7",
   plus = "#6b8f89",
 }
+
 -- deepblue = {
 --   alt = "#bbbac1",
 --   bg = "#1B1D21", --

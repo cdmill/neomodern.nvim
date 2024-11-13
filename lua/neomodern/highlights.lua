@@ -155,7 +155,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     -- ["@type.definition"] = hl.syntax["Typedef"], -- typedefs
     -- ["@type.qualifier"]
 
-    ["@attribute"] = hl.syntax["Constant"], -- attributes, like <decorators> in python
+    ["@attribute"] = hl.syntax["Special"], -- attributes, like <decorators> in python
     -- ["@property"] = { fg = c.property }, --same as TSField
 
     -- functions
