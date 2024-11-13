@@ -39,7 +39,7 @@ hl.common = {
   FoldColumn = { fg = c.comment, bg = config.transparent and c.none or c.bg },
   IncSearch = { fg = c.type, bg = c.visual },
   LineNr = { fg = c.comment },
-  MatchParen = { fg = c.fg, bg = c.visual },
+  MatchParen = { fg = c.fg, bg = c.visual, fmt = "bold" },
   ModeMsg = { fg = c.fg, fmt = "bold" },
   MoreMsg = { fg = c.func, fmt = "bold" },
   MsgSeparator = { fg = c.string, bg = c.line, fmt = "bold" },
