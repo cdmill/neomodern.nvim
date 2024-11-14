@@ -120,30 +120,6 @@ M.roseprime = {
   plus = "#6b8f89",
 }
 
--- deepblue = {
---   alt = "#bbbac1",
---   bg = "#1B1D21", --
---   builtin = "#7da77e", --
---   comment = "#555555",
---   constant = "#8192C7",
---   dim = "#111111",
---   fg = "#bbbac1",
---   float = "#212123",
---   func = "#4a818c", --
---   keyword = "#abbceb", --
---   line = "#1d1d1f",
---   operator = "#bbbac1", --
---   preproc = "#9879b0",
---   property = "#8c8abd", --
---   string = "#dbbc8a", --
---   type = "#8192C7", --
---   visual = "#26262a",
---   error = "#ba5f60",
---   hint = "#abbceb",
---   warning = "#ad9368",
---   delta = "#8192C7",
---   plus = "#6b8f89",
--- },
 M.daylight = {
   alt = "#5d86f5",
   bg = "#ffffff",
