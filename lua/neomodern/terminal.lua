@@ -1,6 +1,6 @@
 local M = {}
 local config = vim.g.neomodern_config
-local style = vim.g.neomodern_config.style
+local style = vim.g.neomodern_config.theme
 local util = require("neomodern.util")
 local palette = require("neomodern.palette")
 local colormap = require("neomodern.palette").colormap
