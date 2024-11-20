@@ -17,7 +17,6 @@
 ---@field error string diagnostic errors
 ---@field hint string diagnostic hints
 ---@field warning string diagnostic warnings
----@field delta string diff add
 ---@field plus string diff mod
 
 ---@class Colorscheme
@@ -45,9 +44,8 @@ M.iceclimber = {
   type = "#e3a462",
   visual = "#2a2a31",
   error = "#e67e80",
-  hint = "#8da0d6",
+  hint = "#86a3f0",
   warning = "#ad9368",
-  delta = "#8da0d6",
   plus = "#7da77e",
 }
 
@@ -68,9 +66,8 @@ M.coffeecat = {
   type = "#eba454",
   visual = "#383737",
   error = "#d47b7d",
-  hint = "#abbceb",
+  hint = "#96b1fa",
   warning = "#e8cea0",
-  delta = "#abbceb",
   plus = "#8fc490",
 }
 
@@ -93,7 +90,6 @@ M.darkforest = {
   error = "#e67e80",
   hint = "#78b0a8",
   warning = "#ad9368",
-  delta = "#78b0a8",
   plus = "#a7c080",
 }
 
@@ -114,9 +110,8 @@ M.roseprime = {
   type = "#9bbdb8",
   visual = "#262830",
   error = "#ba5f60",
-  hint = "#abbceb",
+  hint = "#95b1fc",
   warning = "#ad9368",
-  delta = "#8192C7",
   plus = "#6b8f89",
 }
 
@@ -138,9 +133,8 @@ M.daylight = {
   type = "#db7302",
   visual = "#d2d2dc",
   error = "#e6050a",
-  hint = "#5d86f5",
+  hint = "#3462e3",
   warning = "#fca921",
-  delta = "#3462e3",
   plus = "#41a642",
 }
 

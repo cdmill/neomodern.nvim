@@ -22,14 +22,10 @@ hl.common = {
   Debug = { fg = c.operator },
   debugPC = { fg = c.error },
   debugBreakpoint = { fg = c.error },
-  DiffAdd = { fg = c.plus },
-  DiffChange = { fg = c.delta },
-  DiffDelete = { fg = c.error },
+  DiffAdd = { bg = util.darken(c.plus, 0.3, c.bg) },
+  DiffChange = { bg = util.darken(c.hint, 0.2, c.bg) },
+  DiffDelete = { bg = util.darken(c.error, 0.4, c.bg) },
   DiffText = { fg = c.fg },
-  DiffAdded = { fg = c.plus },
-  DiffRemoved = { fg = c.error },
-  DiffFile = { fg = c.keyword },
-  DiffIndexLine = { fg = c.comment },
   Directory = { fg = c.func },
   ErrorMsg = { fg = c.error, fmt = "bold" },
   EndOfBuffer = { fg = config.show_eob and c.comment or c.bg },
@@ -213,7 +209,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     -- diff
     ["@diff.plus"] = { fg = c.plus }, -- added text (diff files)
     ["@diff.minus"] = { fg = c.error }, -- removed text (diff files)
-    ["@diff.delta"] = { fg = c.delta }, -- changed text (diff files)
+    ["@diff.delta"] = { fg = c.hint }, -- changed text (diff files)
 
     -- tags
     -- ["@tag"]
@@ -258,12 +254,12 @@ end
 local diagnostics_error_color = c.error
 local diagnostics_hint_color = c.hint
 local diagnostics_warn_color = c.warning
-local diagnostics_info_color = c.delta
+local diagnostics_info_color = c.hint
 
 hl.plugins.lsp = {
   DiagnosticError = { fg = c.error },
   DiagnosticHint = { fg = c.hint },
-  DiagnosticInfo = { fg = c.delta, fmt = "italic" },
+  DiagnosticInfo = { fg = c.hint, fmt = "italic" },
   DiagnosticWarn = { fg = c.warning },
 
   DiagnosticVirtualTextError = {
@@ -301,7 +297,7 @@ hl.plugins.lsp = {
   },
   DiagnosticUnderlineInfo = {
     fmt = config.diagnostics.undercurl and "undercurl" or "underline",
-    sp = c.delta,
+    sp = c.hint,
   },
   DiagnosticUnderlineWarn = {
     fmt = config.diagnostics.undercurl and "undercurl" or "underline",
@@ -365,12 +361,12 @@ hl.plugins.diffview = {
   DiffviewFilePanelInsertions = { fg = c.fg },
   DiffviewFilePanelDeletions = { fg = c.operator },
   DiffviewStatusAdded = { fg = c.fg },
-  DiffviewStatusUntracked = { fg = c.delta },
-  DiffviewStatusModified = { fg = c.delta },
-  DiffviewStatusRenamed = { fg = c.delta },
-  DiffviewStatusCopied = { fg = c.delta },
-  DiffviewStatusTypeChange = { fg = c.delta },
-  DiffviewStatusUnmerged = { fg = c.delta },
+  DiffviewStatusUntracked = { fg = c.hint },
+  DiffviewStatusModified = { fg = c.hint },
+  DiffviewStatusRenamed = { fg = c.hint },
+  DiffviewStatusCopied = { fg = c.hint },
+  DiffviewStatusTypeChange = { fg = c.hint },
+  DiffviewStatusUnmerged = { fg = c.hint },
   DiffviewStatusUnknown = { fg = c.error },
   DiffviewStatusDeleted = { fg = c.error },
   DiffviewStatusBroken = { fg = c.error },
@@ -381,10 +377,10 @@ hl.plugins.gitsigns = {
   GitSignsAddLn = { fg = c.plus },
   GitSignsAddNr = { fg = c.plus },
   GitSignsAddCul = { fg = c.plus, bg = c.line },
-  GitSignsChange = { fg = c.delta },
-  GitSignsChangeLn = { fg = c.delta },
-  GitSignsChangeNr = { fg = c.delta },
-  GitSignsChangeCul = { fg = c.delta, bg = c.line },
+  GitSignsChange = { fg = c.hint },
+  GitSignsChangeLn = { fg = c.hint },
+  GitSignsChangeNr = { fg = c.hint },
+  GitSignsChangeCul = { fg = c.hint, bg = c.line },
   GitSignsDelete = { fg = c.error },
   GitSignsDeleteLn = { fg = c.error },
   GitSignsDeleteNr = { fg = c.error },
@@ -406,7 +402,7 @@ hl.plugins.neo_tree = {
   NeoTreeRootName = { fg = c.type, fmt = "bold" },
   NeoTreeGitAdded = { fg = c.fg },
   NeoTreeGitDeleted = { fg = c.error },
-  NeoTreeGitModified = { fg = c.delta },
+  NeoTreeGitModified = { fg = c.hint },
   NeoTreeGitConflict = { fg = c.error, fmt = "bold,italic" },
   NeoTreeGitUntracked = { fg = c.error, fmt = "italic" },
   NeoTreeIndentMarker = { fg = c.comment },
@@ -421,7 +417,7 @@ hl.plugins.nvim_tree = {
     bg = config.transparent and c.none or c.bg,
   },
   NvimTreeRootFolder = { fg = c.type, fmt = "bold" },
-  NvimTreeGitDirty = { fg = c.delta },
+  NvimTreeGitDirty = { fg = c.hint },
   NvimTreeGitNew = { fg = c.fg },
   NvimTreeGitDeleted = { fg = c.error },
   NvimTreeSpecialFile = { fg = c.warning, fmt = "underline" },
