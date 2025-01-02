@@ -39,7 +39,7 @@
   progress_error  = { fg = "#171719", bg = "#e67e80" }
 
   permissions_t = { fg = "#bbbac1" }
-  permissions_r = { fg = "#7da77e" }
+  permissions_r = { fg = "#dbbc8a" }
   permissions_w = { fg = "#e67e80" }
   permissions_x = { fg = "#86a3f0" }
   permissions_s = { fg = "#9b99a3" }

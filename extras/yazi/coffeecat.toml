@@ -2,19 +2,19 @@
   # URL: https://github.com/cdmill/neomodern.nvim/raw/main/extras/yazi/coffeecat.toml
 
   [manager]
-  cwd = { fg = "#96b1fa" }
+  cwd = { fg = "#a2bafa" }
 
-  hovered         = { fg = "#e3afd1", bg = "#262524" }
-  preview_hovered = { fg = "#e3afd1", bg = "#262524" }
+  hovered         = { fg = "#ebabd5", bg = "#262524" }
+  preview_hovered = { fg = "#ebabd5", bg = "#262524" }
 
   find_keyword  = { fg = "#9b9af5", italic = true }
   find_position = { fg = "#9b9af5", bg = "reset", italic = true }
 
-  marker_copied   = { fg = "#8fc490" }
+  marker_copied   = { fg = "#8ab56d" }
   marker_cut      = { fg = "#d47b7d" }
   marker_selected = { fg = "#9b9af5" }
 
-  tab_active   = { fg = "#9b9af5", bg = "#383737" }
+  tab_active   = { fg = "#d67287", bg = "#383737" }
   tab_inactive = { fg = "#6a6a6a", bg = "#383737" }
   tab_width    = 1
 
@@ -30,18 +30,18 @@
   separator_close = ""
   separator_style = { fg = "#383737", bg = "#383737" }
 
-  mode_normal = { fg = "#1f1e1d", bg = "#96b1fa", bold = true }
-  mode_select = { fg = "#1f1e1d", bg = "#9b9af5", bold = true }
-  mode_unset  = { fg = "#1f1e1d", bg = "#b39581", bold = true }
+  mode_normal = { fg = "#1e1d1c", bg = "#a2bafa", bold = true }
+  mode_select = { fg = "#1e1d1c", bg = "#9b9af5", bold = true }
+  mode_unset  = { fg = "#1e1d1c", bg = "#e8a85f", bold = true }
 
   progress_label  = { fg = "#9b9af5", bold = true }
   progress_normal = { fg = "#9b9af5", bg = "#383737" }
-  progress_error  = { fg = "#1f1e1d", bg = "#d47b7d" }
+  progress_error  = { fg = "#1e1d1c", bg = "#d47b7d" }
 
   permissions_t = { fg = "#bbbac1" }
-  permissions_r = { fg = "#e8cea0" }
-  permissions_w = { fg = "#d47b7d" }
-  permissions_x = { fg = "#96b1fa" }
+  permissions_r = { fg = "#ebc686" }
+  permissions_w = { fg = "#d67287" }
+  permissions_x = { fg = "#a2bafa" }
   permissions_s = { fg = "#9b99a3" }
 
   [input]
@@ -52,7 +52,7 @@
 
   [select]
   border   = { fg = "#6a6a6a" }
-  active   = { fg = "#b39581" }
+  active   = { fg = "#e8a85f" }
   inactive = {}
 
   [tasks]
@@ -61,32 +61,32 @@
   hovered = { underline = true }
 
   [which]
-  mask            = { bg = "#1C1B1A" }
-  cand            = { fg = "#e3afd1" }
-  rest            = { fg = "#e3a968" }
-  desc            = { fg = "#8fc490" }
+  mask            = { bg = "#1B1A19" }
+  cand            = { fg = "#ebabd5" }
+  rest            = { fg = "#cfa991" }
+  desc            = { fg = "#8ab56d" }
   separator       = "  "
   separator_style = { fg = "#9b99a3"}
 
   [help]
-  on      = { fg = "#e3a968" }
-  run    = { fg = "#8fc490" }
+  on      = { fg = "#cfa991" }
+  run    = { fg = "#8ab56d" }
   desc    = { fg = "#6a6a6a" }
-  hovered = { fg = "#e3afd1", bg = "#262524", bold = true }
+  hovered = { fg = "#ebabd5", bg = "#262524", bold = true }
   footer  = { fg = "#6a6a6a", bg = "#262524" }
 
   [filetype]
   rules = [
     # Media
-    { mime = "image/*", fg = "#e3afd1"},
-    { mime = "{audio,video}/*", fg = "#8fc490"},
+    { mime = "image/*", fg = "#ebabd5"},
+    { mime = "{audio,video}/*", fg = "#8ab56d"},
 
     # Archives
-    { mime = "application/{,g}zip", fg = "#d47b7d"},
-    { mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#d47b7d"},
+    { mime = "application/{,g}zip", fg = "#d67287"},
+    { mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#d67287"},
 
     # Fallback
     { name = "*", fg = "#bbbac1"},
-    { name = "*/", fg = "#96b1fa"}
+    { name = "*/", fg = "#a2bafa"}
   ]
   

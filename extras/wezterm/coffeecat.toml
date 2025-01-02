@@ -1,21 +1,21 @@
 [colors]
 foreground = "#bbbac1"
-background = "#1f1e1d"
+background = "#1e1d1c"
 cursor_bg = "#bbbac1"
 cursor_border = "#bbbac1"
-cursor_fg = "#1f1e1d"
+cursor_fg = "#1e1d1c"
 selection_bg = "#383737"
 selection_fg = "#bbbac1"
 split = "#6a6a6a"
-compose_cursor = "#e3a968"
+compose_cursor = "#cfa991"
 scrollbar_thumb = "#6a6a6a"
 
-ansi = ["#191818", "#d47b7d", "#8fc490", "#e8cea0", "#96b1fa", "#9b9af5", "#b39581", "#bbbac1"]
-brights = ["#6a6a6a", "#d47b7d", "#8fc490", "#e8cea0", "#96b1fa", "#e3afd1", "#b39581", "#bbbac1"]
+ansi = ["#121110", "#d67287", "#8ab56d", "#ebc686", "#a2bafa", "#9b9af5", "#e8a85f", "#bbbac1"]
+brights = ["#6a6a6a", "#d67287", "#8ab56d", "#ebc686", "#a2bafa", "#ebabd5", "#e8a85f", "#bbbac1"]
 
 [colors.tab_bar]
 inactive_tab_edge = "#6a6a6a"
-background = "#1f1e1d"
+background = "#1e1d1c"
 
 [colors.tab_bar.active_tab]
 fg_color = "#9b9af5"
@@ -37,7 +37,7 @@ intensity = "Bold"
 
 [colors.tab_bar.new_tab]
 fg_color = "#9b9af5"
-bg_color = "#1f1e1d"
+bg_color = "#1e1d1c"
 
 [metadata]
 aliases = []

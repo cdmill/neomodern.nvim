@@ -1,6 +1,6 @@
   export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS
-  --color=fg:#bbbac1,bg:#1f1e1d,hl:#e3afd1,gutter:#1f1e1d
-  --color=fg+:#bbbac1,bg+:#262524,hl+:#e3a968
-  --color=info:#6a6a6a,prompt:#e3afd1,pointer:#e3afd1
-  --color=marker:#b39581,spinner:#b39581,header:#b39581"
+  --color=fg:#bbbac1,bg:#1e1d1c,hl:#cfa991,gutter:#1e1d1c
+  --color=fg+:#ebabd5,bg+:#262524,hl+:#cfa991
+  --color=info:#6a6a6a,prompt:#cfa991,pointer:#ebabd5
+  --color=marker:#e8a85f,spinner:#e8a85f,header:#e8a85f"
   
