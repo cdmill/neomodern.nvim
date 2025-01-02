@@ -32,11 +32,11 @@ bg_color = "${visual}"
 
 [colors.tab_bar.inactive_tab]
 fg_color = "${comment}"
-bg_color = "${inactive}"
+bg_color = "${line}"
 
 [colors.tab_bar.inactive_tab_hover]
 fg_color = "${comment}"
-bg_color = "${inactive}"
+bg_color = "${line}"
 # intensity = "Bold"
 
 [colors.tab_bar.new_tab_hover]

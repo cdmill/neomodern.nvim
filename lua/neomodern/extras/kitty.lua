@@ -26,7 +26,7 @@ cursor_text_color ${bg}
 # Tabs
 active_tab_background ${visual}
 active_tab_foreground ${alt}
-inactive_tab_background ${inactive}
+inactive_tab_background ${line}
 inactive_tab_foreground ${grey}
 #tab_bar_background ${bg}
 
