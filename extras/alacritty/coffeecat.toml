@@ -15,8 +15,8 @@ red = '#d67287'
 green = '#8ab56d'
 yellow = '#ebc686'
 blue = '#a2bafa'
-magenta = '#9b9af5'
-cyan = '#e8a85f'
+magenta = '#cfa991'
+cyan = '#78bfc4'
 white = '#bbbac1'
 
 # Bright colors
@@ -27,14 +27,14 @@ green = '#8ab56d'
 yellow = '#ebc686'
 blue = '#a2bafa'
 magenta = '#ebabd5'
-cyan = '#e8a85f'
+cyan = '#78bfc4'
 white = '#bbbac1'
 
 # Indexed Colors
 [[colors.indexed_colors]]
 index = 16
-color = '#cfa991'
+color = '#e8a85f'
 
 [[colors.indexed_colors]]
 index = 17
-color = '#9b9af5'
+color = '#cfa991'

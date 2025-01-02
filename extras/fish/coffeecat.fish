@@ -1,8 +1,8 @@
   # COFFEECAT
   # use in ~/.config/fish/conf.d/
 
-  set -g orange cfa991 # color 16
-  set -g alt 9b9af5 # color 17
+  set -g orange e8a85f # color 16
+  set -g alt cfa991 # color 17
 
   # Syntax Highlighting Colors
   set -g fish_color_normal bbbac1

@@ -7,20 +7,20 @@
   hovered         = { fg = "#ebabd5", bg = "#262524" }
   preview_hovered = { fg = "#ebabd5", bg = "#262524" }
 
-  find_keyword  = { fg = "#9b9af5", italic = true }
-  find_position = { fg = "#9b9af5", bg = "reset", italic = true }
+  find_keyword  = { fg = "#cfa991", italic = true }
+  find_position = { fg = "#cfa991", bg = "reset", italic = true }
 
   marker_copied   = { fg = "#8ab56d" }
   marker_cut      = { fg = "#d47b7d" }
-  marker_selected = { fg = "#9b9af5" }
+  marker_selected = { fg = "#cfa991" }
 
   tab_active   = { fg = "#d67287", bg = "#383737" }
   tab_inactive = { fg = "#6a6a6a", bg = "#383737" }
   tab_width    = 1
 
-  count_cut      = { fg = "#9b9af5", bg = "#262524" }
-  count_copied   = { fg = "#9b9af5", bg = "#262524" }
-  count_selected = { fg = "#9b9af5", bg = "#262524" }
+  count_cut      = { fg = "#cfa991", bg = "#262524" }
+  count_copied   = { fg = "#cfa991", bg = "#262524" }
+  count_selected = { fg = "#cfa991", bg = "#262524" }
 
   border_symbol = "│"
   border_style  = { fg = "#6a6a6a" }
@@ -31,11 +31,11 @@
   separator_style = { fg = "#383737", bg = "#383737" }
 
   mode_normal = { fg = "#1e1d1c", bg = "#a2bafa", bold = true }
-  mode_select = { fg = "#1e1d1c", bg = "#9b9af5", bold = true }
-  mode_unset  = { fg = "#1e1d1c", bg = "#e8a85f", bold = true }
+  mode_select = { fg = "#1e1d1c", bg = "#cfa991", bold = true }
+  mode_unset  = { fg = "#1e1d1c", bg = "#78bfc4", bold = true }
 
-  progress_label  = { fg = "#9b9af5", bold = true }
-  progress_normal = { fg = "#9b9af5", bg = "#383737" }
+  progress_label  = { fg = "#cfa991", bold = true }
+  progress_normal = { fg = "#cfa991", bg = "#383737" }
   progress_error  = { fg = "#1e1d1c", bg = "#d47b7d" }
 
   permissions_t = { fg = "#bbbac1" }
@@ -63,13 +63,13 @@
   [which]
   mask            = { bg = "#1B1A19" }
   cand            = { fg = "#ebabd5" }
-  rest            = { fg = "#cfa991" }
+  rest            = { fg = "#78bfc4" }
   desc            = { fg = "#8ab56d" }
   separator       = "  "
   separator_style = { fg = "#9b99a3"}
 
   [help]
-  on      = { fg = "#cfa991" }
+  on      = { fg = "#78bfc4" }
   run    = { fg = "#8ab56d" }
   desc    = { fg = "#6a6a6a" }
   hovered = { fg = "#ebabd5", bg = "#262524", bold = true }

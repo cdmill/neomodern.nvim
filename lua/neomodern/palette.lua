@@ -50,7 +50,7 @@ M.iceclimber = {
 }
 
 M.coffeecat = {
-  alt = "#9b9af5",
+  alt = "#cfa991",
   bg = "#1e1d1c",
   builtin = "#d67287",
   comment = "#6a6a6a",
@@ -63,7 +63,7 @@ M.coffeecat = {
   operator = "#9b99a3",
   property = "#ebabd5",
   string = "#8ab56d",
-  type = "#cfa991",
+  type = "#78bfc4",
   visual = "#383737",
   error = "#d47b7d",
   hint = "#96b1fa",
@@ -156,13 +156,13 @@ M.colormap = {
     black = "#121110",
     grey = M.coffeecat.comment,
     red = M.coffeecat.builtin,
-    orange = M.coffeecat.type,
+    orange = M.coffeecat.keyword,
     green = M.coffeecat.string,
     yellow = M.coffeecat.constant,
     blue = M.coffeecat.func,
     purple = M.coffeecat.alt,
     magenta = M.coffeecat.property,
-    cyan = M.coffeecat.keyword,
+    cyan = M.coffeecat.type,
     white = M.coffeecat.fg,
   },
   darkforest = {
