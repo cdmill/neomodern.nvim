@@ -348,6 +348,10 @@ hl.plugins.cmp = {
   CmpItemKind = { fg = c.comment, fmt = config.plugin.cmp.reverse and "reverse" },
 }
 
+hl.plugins.blink = {
+  BlinkCmpKind = { fg = c.comment, fmt = config.plugin.cmp.reverse and "reverse" },
+}
+
 hl.plugins.diffview = {
   DiffviewFilePanelTitle = { fg = c.func, fmt = "bold" },
   DiffviewFilePanelCounter = { fg = c.alt, fmt = "bold" },
@@ -565,6 +569,8 @@ function M.setup()
   if not config.plugin.cmp.plain then
     for kind, color in pairs(lsp_kind_icons_color) do
       hl.plugins.cmp["CmpItemKind" .. kind] =
+        { fg = color, fmt = config.plugin.cmp.reverse and "reverse" }
+      hl.plugins.cmp["BlinkCmpKind" .. kind] =
         { fg = color, fmt = config.plugin.cmp.reverse and "reverse" }
     end
   end
