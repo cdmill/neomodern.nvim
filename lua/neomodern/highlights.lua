@@ -16,7 +16,10 @@ hl.common = {
   CursorIM = { fmt = "reverse" },
   CursorColumn = { bg = c.line },
   CursorLine = { bg = c.line },
-  CursorLineNr = { fg = c.fg, bg = config.cursorline_gutter and c.line or c.none },
+  CursorLineNr = {
+    fg = config.alt_culnr_hl and c.alt or c.fg,
+    bg = config.cursorline_gutter and c.line or c.none,
+  },
   CursorLineSign = { bg = config.cursorline_gutter and c.line or c.none },
   CursorLineFold = { fg = c.fg, bg = config.cursorline_gutter and c.line or c.none },
   Debug = { fg = c.operator },
