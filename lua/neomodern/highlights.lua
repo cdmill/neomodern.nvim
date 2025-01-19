@@ -449,6 +449,13 @@ hl.plugins.obsidian = {
   },
 }
 
+hl.plugins.snacks = {
+  SnacksDashboardIcon = { fg = c.func },
+  SnacksDashboardDesc = { fg = c.func },
+  SnacksDashboardFile = { fg = c.alt },
+  SnacksDashboardSpecial = { fg = c.type },
+}
+
 local telescope_ui = {
   borderless = {
     TelescopeTitle = { fg = c.fg },
