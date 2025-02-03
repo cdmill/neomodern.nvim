@@ -99,7 +99,7 @@ hl.syntax = {
   Operator = { fg = c.operator, fmt = config.code_style.operators }, -- '+', '*', 'sizeof' etc
   PreProc = { fg = c.keyword }, -- (preferred) generic preprocessor
   -- Define = { fg = c.comment }, -- preprocessor '#define'
-  -- Include = { fg = c.keyword, fmt = config.code_style.keywords }, -- preprocessor '#include'
+  Include = { fg = c.constant, fmt = config.code_style.keywords }, -- preprocessor '#include'
   -- Macro = { fg = c.constant, fmt = config.code_style.constants }, -- macros
   -- PreCondit = { fg = c.comment }, -- preprocessor conditionals '#if', '#endif' etc
   Special = { fg = c.builtin }, -- (preferred) any special symbol
@@ -392,6 +392,30 @@ hl.plugins.gitsigns = {
   GitSignsDeleteLn = { fg = c.error },
   GitSignsDeleteNr = { fg = c.error },
   GitSignsDeleteCul = { fg = c.error, bg = c.line },
+}
+
+hl.plugins.neogit = {
+  NeogitBranch = { fg = c.alt },
+  NeogitUntrackedfiles = { fg = c.hint, fmt = "italic" },
+  NeogitUnpulledchanges = { fg = c.hint, fmt = "italic" },
+  NeogitDiffAdd = hl.common.DiffAdd,
+  NeogitDiffAddHighlight = hl.common.DiffAdd,
+  NeogitDiffAddCursor = { bg = util.darken(c.plus, 0.2, c.bg) },
+  NeogitDiffDelete = hl.common.DiffDelete,
+  NeogitDiffDeleteHighlight = hl.common.DiffDelete,
+  NeogitDiffDeleteCursor = {
+    bg = util.darken(c.error, 0.2, c.bg),
+  },
+  NeogitDiffContext = { bg = c.float },
+  NeogitDiffContextHighlight = { bg = c.float },
+  NeogitDiffContextCursor = { bg = c.line },
+  NeogitSectionHeader = { fg = c.func },
+  NeogitHunkHeader = { fg = c.comment },
+  NeogitHunkHeaderHighlight = { fg = c.comment, fmt = "italic" },
+  NeogitHunkHeaderCursor = { fg = c.comment, fmt = "bolditalic" },
+  NeogitHunkMergeHeader = { fg = c.hint, bg = c.line, fmt = "bold" },
+  NeogitHunkMergeHeaderHighlight = { fg = c.hint, bg = c.line, fmt = "italic" },
+  NeogitHunkMergeHeaderCursor = { fg = c.hint, bg = c.line, fmt = "bolditalic" },
 }
 
 hl.plugins.neo_tree = {
