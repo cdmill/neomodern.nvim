@@ -398,6 +398,7 @@ hl.plugins.neogit = {
   NeogitBranch = { fg = c.alt },
   NeogitUntrackedfiles = { fg = c.hint, fmt = "italic" },
   NeogitUnpulledchanges = { fg = c.hint, fmt = "italic" },
+  NeogitUnmergedchanges = { fg = c.keyword, fmt = "bolditalic" },
   NeogitDiffAdd = hl.common.DiffAdd,
   NeogitDiffAddHighlight = hl.common.DiffAdd,
   NeogitDiffAddCursor = { bg = util.darken(c.plus, 0.2, c.bg) },
