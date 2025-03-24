@@ -5,15 +5,15 @@ local util = require("neomodern.util")
 local M = {}
 
 function M.generate(colors)
-  local foot_colors = {}
-  for k, v in pairs(colors) do
-    if type(v) == "string" then
-      foot_colors[k] = v:gsub("^#", "")
+    local foot_colors = {}
+    for k, v in pairs(colors) do
+        if type(v) == "string" then
+            foot_colors[k] = v:gsub("^#", "")
+        end
     end
-  end
 
-  local foot = util.template(
-    [[
+    local foot = util.template(
+        [[
 [cursor]
 color=${fg} ${visual}
 
@@ -45,10 +45,10 @@ bright7=${fg}
 16=${orange}
 17=${alt}
 ]],
-    foot_colors
-  )
+        foot_colors
+    )
 
-  return foot
+    return foot
 end
 
 return M

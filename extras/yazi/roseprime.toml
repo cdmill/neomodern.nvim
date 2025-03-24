@@ -2,7 +2,7 @@
   # URL: https://github.com/cdmill/neomodern.nvim/raw/main/extras/yazi/roseprime.toml
 
   [manager]
-  cwd = { fg = "#e3a1ab" }
+  cwd = { fg = "#c4959c" }
 
   hovered         = { fg = "#ad82a2", bg = "#16171b" }
   preview_hovered = { fg = "#ad82a2", bg = "#16171b" }
@@ -11,7 +11,7 @@
   find_position = { fg = "#9b9af5", bg = "reset", italic = true }
 
   marker_copied   = { fg = "#d2af98" }
-  marker_cut      = { fg = "#ba5f60" }
+  marker_cut      = { fg = "${error}" }
   marker_selected = { fg = "#9b9af5" }
 
   tab_active   = { fg = "#c76f82", bg = "#262830" }
@@ -25,18 +25,22 @@
   border_symbol = "│"
   border_style  = { fg = "#666a82" }
 
+  [mode]
+  normal_main   = { fg = "#121315", bg = "#95b1fc", bold = true }
+  normal_alt    = { fg = "#121315", bg = "#95b1fc", bold = true }
+  select_main   = { fg = "#121315", bg = "#9b9af5", bold = true }
+  select_alt    = { fg = "#121315", bg = "#9b9af5", bold = true }
+  unset_main    = { fg = "#121315", bg = "#6397cf", bold = true }
+  unset_alt     = { fg = "#121315", bg = "#6397cf", bold = true }
+
   [status]
   separator_open  = ""
   separator_close = ""
   separator_style = { fg = "#262830", bg = "#262830" }
 
-  mode_normal = { fg = "#121315", bg = "#95b1fc", bold = true }
-  mode_select = { fg = "#121315", bg = "#9b9af5", bold = true }
-  mode_unset  = { fg = "#121315", bg = "#6397cf", bold = true }
-
   progress_label  = { fg = "#9b9af5", bold = true }
   progress_normal = { fg = "#9b9af5", bg = "#262830" }
-  progress_error  = { fg = "#121315", bg = "#ba5f60" }
+  progress_error  = { fg = "#121315", bg = "${error}" }
 
   permissions_t = { fg = "#adadcc" }
   permissions_r = { fg = "#d2af98" }
@@ -87,6 +91,6 @@
 
     # Fallback
     { name = "*", fg = "#adadcc"},
-    { name = "*/", fg = "#e3a1ab"}
+    { name = "*/", fg = "#c4959c"}
   ]
   

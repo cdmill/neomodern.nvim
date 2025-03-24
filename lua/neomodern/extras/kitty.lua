@@ -5,8 +5,8 @@ local util = require("neomodern.util")
 local M = {}
 
 function M.generate(colors)
-  local kitty = util.template(
-    [[
+    local kitty = util.template(
+        [[
 # vim:ft=kitty
 
 ## name: ${_style_name}
@@ -58,9 +58,9 @@ color15 ${fg}
 color16 ${orange}
 color17 ${alt}
 ]],
-    colors
-  )
-  return kitty
+        colors
+    )
+    return kitty
 end
 
 return M

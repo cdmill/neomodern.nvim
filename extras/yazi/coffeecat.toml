@@ -11,7 +11,7 @@
   find_position = { fg = "#cfa991", bg = "reset", italic = true }
 
   marker_copied   = { fg = "#8ab56d" }
-  marker_cut      = { fg = "#d47b7d" }
+  marker_cut      = { fg = "${error}" }
   marker_selected = { fg = "#cfa991" }
 
   tab_active   = { fg = "#d67287", bg = "#383737" }
@@ -25,18 +25,22 @@
   border_symbol = "│"
   border_style  = { fg = "#6a6a6a" }
 
+  [mode]
+  normal_main   = { fg = "#1e1d1c", bg = "#a2bafa", bold = true }
+  normal_alt    = { fg = "#1e1d1c", bg = "#a2bafa", bold = true }
+  select_main   = { fg = "#1e1d1c", bg = "#ebabd5", bold = true }
+  select_alt    = { fg = "#1e1d1c", bg = "#ebabd5", bold = true }
+  unset_main    = { fg = "#1e1d1c", bg = "#78bfc4", bold = true }
+  unset_alt     = { fg = "#1e1d1c", bg = "#78bfc4", bold = true }
+
   [status]
   separator_open  = ""
   separator_close = ""
   separator_style = { fg = "#383737", bg = "#383737" }
 
-  mode_normal = { fg = "#1e1d1c", bg = "#a2bafa", bold = true }
-  mode_select = { fg = "#1e1d1c", bg = "#cfa991", bold = true }
-  mode_unset  = { fg = "#1e1d1c", bg = "#78bfc4", bold = true }
-
   progress_label  = { fg = "#cfa991", bold = true }
   progress_normal = { fg = "#cfa991", bg = "#383737" }
-  progress_error  = { fg = "#1e1d1c", bg = "#d47b7d" }
+  progress_error  = { fg = "#1e1d1c", bg = "${error}" }
 
   permissions_t = { fg = "#bbbac1" }
   permissions_r = { fg = "#ebc686" }
@@ -78,7 +82,7 @@
   [filetype]
   rules = [
     # Media
-    { mime = "image/*", fg = "#ebabd5"},
+    { mime = "image/*", fg = "#cfa991"},
     { mime = "{audio,video}/*", fg = "#8ab56d"},
 
     # Archives

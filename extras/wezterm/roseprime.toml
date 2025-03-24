@@ -7,7 +7,7 @@ cursor_fg = "#121315"
 selection_bg = "#262830"
 selection_fg = "#adadcc"
 split = "#666a82"
-compose_cursor = "#e3a1ab"
+compose_cursor = "#c4959c"
 scrollbar_thumb = "#666a82"
 
 ansi = ["#111111", "#c76f82", "#9bbdb8", "#d2af98", "#95b1fc", "#9b9af5", "#6397cf", "#adadcc"]

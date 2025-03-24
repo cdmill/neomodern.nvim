@@ -3,10 +3,10 @@
 local M = {}
 local util = require("neomodern.util")
 
---- @param colors ColorScheme
+---@param colors ColorScheme
 function M.generate(colors)
-  local alacritty = util.template(
-    [=[
+    local alacritty = util.template(
+        [=[
 # ${_style_name} Alacritty Colors
 # Default colors
 [colors.primary]
@@ -48,10 +48,10 @@ color = '${orange}'
 index = 17
 color = '${alt}'
 ]=],
-    colors
-  )
+        colors
+    )
 
-  return alacritty
+    return alacritty
 end
 
 return M

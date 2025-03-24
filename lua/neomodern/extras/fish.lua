@@ -5,15 +5,15 @@ local util = require("neomodern.util")
 local M = {}
 
 function M.generate(colors)
-  local fish_colors = {}
-  for k, v in pairs(colors) do
-    if type(v) == "string" then
-      fish_colors[k] = v:gsub("^#", "")
+    local fish_colors = {}
+    for k, v in pairs(colors) do
+        if type(v) == "string" then
+            fish_colors[k] = v:gsub("^#", "")
+        end
     end
-  end
 
-  local fish = util.template(
-    [[
+    local fish = util.template(
+        [[
   # ${_style_name}
   # use in ~/.config/fish/conf.d/
 
@@ -27,7 +27,7 @@ function M.generate(colors)
   set -g fish_color_quote ${string}
   set -g fish_color_redirection ${builtin}
   set -g fish_color_end ${keyword}
-  set -g fish_color_error ${error}
+  set -g fish_color_error ${diag_red}
   set -g fish_color_param ${fg}
   set -g fish_color_comment ${comment}
   set -g fish_color_selection --background=${visual}
@@ -43,10 +43,10 @@ function M.generate(colors)
   set -g fish_pager_color_description ${comment}
   set -g fish_pager_color_selected_background --background=${visual}
   ]],
-    fish_colors
-  )
+        fish_colors
+    )
 
-  return fish
+    return fish
 end
 
 return M

@@ -5,8 +5,8 @@ local util = require("neomodern.util")
 local M = {}
 
 function M.generate(colors)
-  local windows_terminal = util.template(
-    [[
+    local windows_terminal = util.template(
+        [[
 # Add the following object to your Windows Terminal configuration
 # https://learn.microsoft.com/en-us/windows/terminal/customize-settings/color-schemes#creating-your-own-color-scheme
 {
@@ -33,10 +33,10 @@ function M.generate(colors)
     "yellow": "${yellow}"
 }
 ]],
-    colors
-  )
+        colors
+    )
 
-  return windows_terminal
+    return windows_terminal
 end
 
 return M

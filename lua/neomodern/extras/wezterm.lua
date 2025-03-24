@@ -5,8 +5,8 @@ local util = require("neomodern.util")
 local M = {}
 
 function M.generate(colors)
-  local wezterm = util.template(
-    [[
+    local wezterm = util.template(
+        [[
 [colors]
 foreground = "${fg}"
 background = "${bg}"
@@ -52,9 +52,9 @@ bg_color = "${bg}"
 aliases = []
 author = "Casey Miller"
 name = "${_name}"]],
-    colors
-  )
-  return wezterm
+        colors
+    )
+    return wezterm
 end
 
 return M

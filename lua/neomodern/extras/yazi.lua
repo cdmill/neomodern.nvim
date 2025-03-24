@@ -3,8 +3,8 @@ local util = require("neomodern.util")
 local M = {}
 
 function M.generate(colors)
-  local yazi = util.template(
-    [[
+    local yazi = util.template(
+        [[
   # Theme: ${_name}
   # URL: ${_upstream_url}
 
@@ -32,14 +32,18 @@ function M.generate(colors)
   border_symbol = "│"
   border_style  = { fg = "${comment}" }
 
+  [mode]
+  normal_main   = { fg = "${bg}", bg = "${blue}", bold = true }
+  normal_alt    = { fg = "${bg}", bg = "${blue}", bold = true }
+  select_main   = { fg = "${bg}", bg = "${purple}", bold = true }
+  select_alt    = { fg = "${bg}", bg = "${purple}", bold = true }
+  unset_main    = { fg = "${bg}", bg = "${cyan}", bold = true }
+  unset_alt     = { fg = "${bg}", bg = "${cyan}", bold = true }
+
   [status]
   separator_open  = ""
   separator_close = ""
   separator_style = { fg = "${visual}", bg = "${visual}" }
-
-  mode_normal = { fg = "${bg}", bg = "${blue}", bold = true }
-  mode_select = { fg = "${bg}", bg = "${purple}", bold = true }
-  mode_unset  = { fg = "${bg}", bg = "${cyan}", bold = true }
 
   progress_label  = { fg = "${alt}", bold = true }
   progress_normal = { fg = "${alt}", bg = "${visual}" }
@@ -97,9 +101,9 @@ function M.generate(colors)
     { name = "*/", fg = "${func}"}
   ]
   ]],
-    colors
-  )
-  return yazi
+        colors
+    )
+    return yazi
 end
 
 return M

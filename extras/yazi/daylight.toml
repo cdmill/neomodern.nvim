@@ -11,7 +11,7 @@
   find_position = { fg = "#5d86f5", bg = "reset", italic = true }
 
   marker_copied   = { fg = "#2ca32d" }
-  marker_cut      = { fg = "#e6050a" }
+  marker_cut      = { fg = "${error}" }
   marker_selected = { fg = "#5d86f5" }
 
   tab_active   = { fg = "#e858b6", bg = "#d2d2dc" }
@@ -25,18 +25,22 @@
   border_symbol = "│"
   border_style  = { fg = "#9b9ba3" }
 
+  [mode]
+  normal_main   = { fg = "#ffffff", bg = "#2e62f2", bold = true }
+  normal_alt    = { fg = "#ffffff", bg = "#2e62f2", bold = true }
+  select_main   = { fg = "#ffffff", bg = "#4b46b8", bold = true }
+  select_alt    = { fg = "#ffffff", bg = "#4b46b8", bold = true }
+  unset_main    = { fg = "#ffffff", bg = "#0293a3", bold = true }
+  unset_alt     = { fg = "#ffffff", bg = "#0293a3", bold = true }
+
   [status]
   separator_open  = ""
   separator_close = ""
   separator_style = { fg = "#d2d2dc", bg = "#d2d2dc" }
 
-  mode_normal = { fg = "#ffffff", bg = "#2e62f2", bold = true }
-  mode_select = { fg = "#ffffff", bg = "#4b46b8", bold = true }
-  mode_unset  = { fg = "#ffffff", bg = "#0293a3", bold = true }
-
   progress_label  = { fg = "#5d86f5", bold = true }
   progress_normal = { fg = "#5d86f5", bg = "#d2d2dc" }
-  progress_error  = { fg = "#ffffff", bg = "#e6050a" }
+  progress_error  = { fg = "#ffffff", bg = "${error}" }
 
   permissions_t = { fg = "#111111" }
   permissions_r = { fg = "#f79b07" }

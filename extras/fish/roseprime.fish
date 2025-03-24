@@ -1,7 +1,7 @@
   # ROSEPRIME
   # use in ~/.config/fish/conf.d/
 
-  set -g orange e3a1ab # color 16
+  set -g orange c4959c # color 16
   set -g alt 9b9af5 # color 17
 
   # Syntax Highlighting Colors
@@ -17,7 +17,7 @@
   set -g fish_color_selection --background=262830
   set -g fish_color_search_match --background=262830
   set -g fish_color_operator 838196
-  set -g fish_color_escape e3a1ab
+  set -g fish_color_escape c4959c
   set -g fish_color_autosuggestion 666a82
 
   # Completion Pager Colors}

@@ -33,7 +33,7 @@ white = '#adadcc'
 # Indexed Colors
 [[colors.indexed_colors]]
 index = 16
-color = '#e3a1ab'
+color = '#c4959c'
 
 [[colors.indexed_colors]]
 index = 17

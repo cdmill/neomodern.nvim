@@ -18,25 +18,25 @@ M.extras = {
 }
 
 local function write(str, fname)
-  print("[write] extra/" .. fname)
-  vim.fn.mkdir(vim.fs.dirname("extras/" .. fname), "p")
-  local file = io.open("extras/" .. fname, "w")
-  file:write(str)
-  file:close()
+    print("[write] extra/" .. fname)
+    vim.fn.mkdir(vim.fs.dirname("extras/" .. fname), "p")
+    local file = io.open("extras/" .. fname, "w")
+    file:write(str)
+    file:close()
 end
 
 function M.setup()
-  local neomodern = require("neomodern")
-  vim.o.background = "dark"
+    local neomodern = require("neomodern")
+    vim.o.background = "dark"
 
-  -- map of style to style name
-  local themes = {
-    iceclimber = "iceclimber",
-    coffeecat = "coffeecat",
-    darkforest = "darkforest",
-    roseprime = "roseprime",
-    daylight = "daylight",
-  }
+    -- map of style to style name
+    local themes = {
+        iceclimber = "iceclimber",
+        coffeecat = "coffeecat",
+        darkforest = "darkforest",
+        roseprime = "roseprime",
+        daylight = "daylight",
+    }
 
   -- stylua: ignore
   for extra, info in pairs(M.extras) do
