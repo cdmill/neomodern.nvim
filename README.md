@@ -123,6 +123,11 @@ require("neomodern").setup({
   show_eob = true,
   -- If true, highlights {sign,fold}column the same as cursorline
   cursorline_gutter = true,
+  -- If true, highlights current line number as an alternate color
+  alt_culnr_hl = true,
+  -- if true favor treesitter highlights over semantic highlights
+  favor_treesitter_hl = false,
+
   diagnostics = {
     darker = true, -- Darker colors for diagnostic
     undercurl = true, -- Use undercurl for diagnostics
@@ -137,8 +142,7 @@ require("neomodern").setup({
     conditionals = "none",
     functions = "none",
     keywords = "none",
-    -- Markdown headings
-    headings = "bold",
+    headings = "bold", -- Markdown headings
     operators = "none",
     keyword_return = "none",
     strings = "none",
