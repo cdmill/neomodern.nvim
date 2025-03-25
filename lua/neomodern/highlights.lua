@@ -100,7 +100,7 @@ hl.syntax = {
     PreProc = { fg = c.string }, -- (preferred) generic preprocessor
     -- Define = { fg = c.comment }, -- preprocessor '#define'
     Include = { fg = c.constant, fmt = config.code_style.keywords }, -- preprocessor '#include'
-    -- Macro = { fg = c.constant, fmt = config.code_style.constants }, -- macros
+    Macro = { fg = c.number, fmt = config.code_style.constants }, -- macros
     -- PreCondit = { fg = c.comment }, -- preprocessor conditionals '#if', '#endif' etc
     Special = { fg = c.type }, -- (preferred) any special symbol
     SpecialChar = { fg = c.keyword }, -- special character in a constant
@@ -123,7 +123,7 @@ if vim.version()["minor"] > 0.8 then
         ["@variable"] = { fg = c.fg, fmt = config.code_style.variables }, -- any variable that does not have another highlight
         ["@variable.builtin"] = hl.syntax["Type"], -- variable names that are defined by the language, like 'this' or 'self'
         ["@variable.member"] = { fg = c.property }, -- fields
-        -- ["@variable.parameter"] = { fg = c.property }, -- parameters of a function
+        ["@variable.parameter"] = { fg = c.alt }, -- parameters of a function
         -- ["@variable.field"] = { fg = c.property }, -- fields
 
         -- ["@constant"] = { link = "Constant" }, -- constants
@@ -176,7 +176,6 @@ if vim.version()["minor"] > 0.8 then
         ["@keyword.conditional"] = { fg = c.keyword, fmt = config.code_style.conditionals, }, -- keywords for conditional statements
         ["@keyword.operator"] = { fg = c.keyword, fmt = config.code_style.operators }, -- keyword operator (eg, 'in' in python)
         ["@keyword.return"] = { fg = c.keyword, fmt = config.code_style.keyword_return }, -- keywords used to define a function
-        -- ["@keyword.builtin"] = hl.syntax["Type"], -- keywords used to define a function
         -- ["@keyword.function"] = hl.syntax["Function"], -- keywords used to define a function
         -- ["@keyword.import"] = hl.syntax["Include"], -- includes, like '#include' in c, 'require' in lua
         -- ["@keyword.storage"] = hl.syntax["StorageClass"], -- visibility/life-time 'static'
@@ -221,33 +220,14 @@ if vim.version()["minor"] > 0.8 then
     }
     if vim.version()["minor"] > 0.9 then
         hl.lsp = {
-            -- ["@lsp.type.class"] = { link = "Structure" },
-            -- ["@lsp.type.enum"] = { link = "Structure" },
-            -- ["@lsp.type.enumMember"] = { link = "Constant" },
-            -- ["@lsp.type.interface"] = { link = "Structure" },
-            -- ["@lsp.type.typeParameter"] = { link = "Typedef" },
-            ["@lsp.type.namespace"] = hl.syntax["Type"],
-            ["@lsp.type.parameter"] = hl.treesitter["@variable.parameter"],
-            -- ["@lsp.type.property"] = { link = "Identifier" },
-            -- ["@lsp.type.variable"] = hl.treesitter["@variable"],
-            -- ["@lsp.type.macro"] = { link = "Macro" },
-            -- ["@lsp.type.method"] = { link = "@function.method" },
-            -- ["@lsp.type.generic"] = { link = "Type" },
-            -- ["@lsp.type.builtinType"] = { link = "Special" },
-            ["@lsp.type.selfParameter"] = hl.syntax["Type"],
-            ["@lsp.type.builtinConstant"] = hl.syntax["Type"],
-            ["@lsp.typemod.method.defaultLibrary"] = hl.syntax["Function"],
-            ["@lsp.typemod.function.defaultLibrary"] = hl.syntax["Function"],
-            ["@lsp.typemod.function.builtin"] = hl.syntax["Function"],
-            ["@lsp.typemod.operator.injected"] = hl.syntax["Operator"],
-            ["@lsp.typemod.string.injected"] = hl.syntax["String"],
-            ["@lsp.typemod.variable.injected"] = hl.treesitter["@variable"],
-            ["@lsp.typemod.variable.defaultLibrary"] = hl.syntax["Type"],
-            ["@lsp.typemod.variable.static"] = hl.syntax["Constant"],
-            ["@lsp.typemod.variable.global"] = hl.syntax["Constant"],
-            ["@lsp.typemod.operator.controlFlow"] = hl.treesitter["@keyword.exception"],
+            ["@lsp.typemod.variable.global"] = { fg = util.darken(c.constant, 0.8, c.bg)},
             ["@lsp.typemod.keyword.documentation"] = { fg = util.darken(c.type, 0.8, c.bg)},
-            ["@lsp.mod.readonly"] = hl.syntax["Constant"],
+            ["@lsp.type.namespace"] = { fg = util.darken(c.constant, 0.8, c.bg)},
+            ["@lsp.type.macro"] = hl.syntax["Macro"],
+            ["@lsp.type.parameter"] = hl.treesitter["@variable.parameter"],
+            ["@lsp.type.lifetime"] = { fg = c.type, fmt = "italic" },
+            ["@lsp.type.readonly"] = { fg = c.constant, fmt = "italic" },
+            ["@lsp.mod.readonly"] = { fg = c.constant, fmt = "italic" },
             ["@lsp.mod.typeHint"] = hl.syntax["Type"],
         }
     end
@@ -656,6 +636,9 @@ function M.setup()
                 replace_color("gui", group_settings.fmt)
             )
         )
+    end
+    if config.favor_treesitter_hl then
+        vim.highlight.priorities.semantic_tokens = 95
     end
 end
 
