@@ -75,6 +75,7 @@ end
 ---@field show_eob? boolean If true, highlights end-of-buffer tildes like comments
 ---@field cursorline_gutter? boolean If true, highlights {sign, fold}column the same as cursorline
 ---@field alt_culnr_hl? boolean If true, highlights current line number as an alternate color
+---@field favor_treesitter_hl? boolean if true favor treesitter highlights over semantic highlights
 ---@field diagnostics? table Has boolean fields to determine diagnostics appearance: 'darker', 'undercurl', 'background'
 ---@field code_style? table Has string values to determine code style. Field values can be the same as gui highlight values, e.g. 'bold', 'italic', 'none'
 ---@field plugin? table Has table or string fields to determine appearnce of plugins. Current plugin options are 'lualine', 'cmp', and 'telescope'
@@ -93,6 +94,8 @@ local default_config = {
     show_eob = true,
     cursorline_gutter = true,
     alt_culnr_hl = true,
+    favor_treesitter_hl = false,
+
     diagnostics = {
         darker = true,
         undercurl = true,
