@@ -2,6 +2,8 @@ local c = require("neomodern.colors")
 local config = vim.g.neomodern_config
 local util = require("neomodern.util")
 
+c.darkgutter = util.darken(c.bg, 0.85, "#000000")
+
 local M = {
     ColorColumn = { bg = c.line },
     Conceal = { fg = c.func, bg = config.transparent and c.none or c.bg },
@@ -15,7 +17,10 @@ local M = {
     CursorLine = { bg = c.line },
     CursorLineNr = {
         fg = config.alt_culnr_hl and c.alt or c.fg,
-        bg = config.cursorline_gutter and c.line or c.none,
+        bg = (
+            (config.cursorline_gutter and c.line or nil)
+            or (config.dark_gutter and c.darkgutter or nil)
+        ) or c.bg,
     },
     CursorLineSign = { bg = config.cursorline_gutter and c.line or c.none },
     CursorLineFold = { fg = c.fg, bg = config.cursorline_gutter and c.line or c.none },
@@ -32,9 +37,18 @@ local M = {
     FloatBorder = { fg = c.comment, bg = config.plain_float and c.none or c.float },
     FloatTitle = { fg = c.comment, bg = config.plain_float and c.none or c.float },
     Folded = { fg = c.comment, bg = config.transparent and c.none or c.line },
-    FoldColumn = { fg = c.comment, bg = config.transparent and c.none or c.bg },
+    FoldColumn = {
+        fg = c.comment,
+        bg = (
+            (config.transparent and c.none or nil)
+            or (config.dark_gutter and c.darkgutter or nil)
+        ) or c.bg,
+    },
     IncSearch = { fg = c.type, bg = c.visual },
-    LineNr = { fg = c.comment },
+    LineNr = {
+        fg = c.comment,
+        bg = config.dark_gutter and c.darkgutter or c.bg,
+    },
     MatchParen = { fg = c.fg, bg = c.visual, fmt = "bold" },
     ModeMsg = { fg = c.fg, fmt = "bold" },
     MoreMsg = { fg = c.func, fmt = "bold" },
@@ -52,7 +66,13 @@ local M = {
     Question = { fg = c.constant },
     QuickFixLine = { fg = c.func, fmt = "underline" },
     Search = { fg = c.diag_blue, bg = c.visual },
-    SignColumn = { fg = c.fg, bg = config.transparent and c.none or c.bg },
+    SignColumn = {
+        fg = c.fg,
+        bg = (
+            (config.transparent and c.none or nil)
+            or (config.dark_gutter and c.darkgutter or nil)
+        ) or c.bg,
+    },
     SpecialKey = { fg = c.comment },
     SpellBad = { fg = c.none, fmt = "undercurl", sp = c.diag_red },
     SpellCap = { fg = c.none, fmt = "undercurl", sp = c.diag_yellow },

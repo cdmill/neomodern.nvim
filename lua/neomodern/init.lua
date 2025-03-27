@@ -74,6 +74,7 @@ end
 ---@field plain_float? boolean If true, does not set background of floating windows. Recommend for when using floating windows with borders
 ---@field show_eob? boolean If true, highlights end-of-buffer tildes like comments
 ---@field cursorline_gutter? boolean If true, highlights {sign, fold}column the same as cursorline
+---@field dark_gutter? boolean If true, highlights the gutter darker than the bg
 ---@field alt_culnr_hl? boolean If true, highlights current line number as an alternate color
 ---@field favor_treesitter_hl? boolean if true favor treesitter highlights over semantic highlights
 ---@field diagnostics? table Has boolean fields to determine diagnostics appearance: 'darker', 'undercurl', 'background'
@@ -93,6 +94,7 @@ local default_config = {
     plain_float = false,
     show_eob = true,
     cursorline_gutter = true,
+    dark_gutter = false,
     alt_culnr_hl = true,
     favor_treesitter_hl = false,
 

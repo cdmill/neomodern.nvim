@@ -2,87 +2,7 @@ local c = require("neomodern.colors")
 local config = vim.g.neomodern_config
 local util = require("neomodern.util")
 
-local diagnostics_error_color = c.diag_red
-local diagnostics_hint_color = c.diag_blue
-local diagnostics_warn_color = c.diag_yellow
-local diagnostics_info_color = c.diag_blue
-
 local M = {}
-
-M.lsp = {
-    DiagnosticError = { fg = c.diag_red },
-    DiagnosticHint = { fg = c.diag_blue },
-    DiagnosticInfo = { fg = c.diag_blue, fmt = "italic" },
-    DiagnosticWarn = { fg = c.diag_yellow },
-
-    DiagnosticVirtualTextError = {
-        bg = config.diagnostics.background
-                and util.darken(diagnostics_error_color, 0.1, c.bg)
-            or c.none,
-        fg = diagnostics_error_color,
-    },
-    DiagnosticVirtualTextWarn = {
-        bg = config.diagnostics.background
-                and util.darken(diagnostics_warn_color, 0.1, c.bg)
-            or c.none,
-        fg = diagnostics_warn_color,
-    },
-    DiagnosticVirtualTextInfo = {
-        bg = config.diagnostics.background
-                and util.darken(diagnostics_info_color, 0.1, c.bg)
-            or c.none,
-        fg = diagnostics_info_color,
-    },
-    DiagnosticVirtualTextHint = {
-        bg = config.diagnostics.background
-                and util.darken(diagnostics_hint_color, 0.1, c.bg)
-            or c.none,
-        fg = diagnostics_hint_color,
-    },
-
-    DiagnosticUnderlineError = {
-        fmt = config.diagnostics.undercurl and "undercurl" or "underline",
-        sp = c.diag_red,
-    },
-    DiagnosticUnderlineHint = {
-        fmt = config.diagnostics.undercurl and "undercurl" or "underline",
-        sp = c.diag_blue,
-    },
-    DiagnosticUnderlineInfo = {
-        fmt = config.diagnostics.undercurl and "undercurl" or "underline",
-        sp = c.diag_blue,
-    },
-    DiagnosticUnderlineWarn = {
-        fmt = config.diagnostics.undercurl and "undercurl" or "underline",
-        sp = c.diag_yellow,
-    },
-
-    LspReferenceText = { bg = c.visual },
-    LspReferenceWrite = { bg = c.visual },
-    LspReferenceRead = { bg = c.visual },
-
-    LspCodeLens = {
-        fg = c.keyword,
-        bg = util.darken(c.keyword, 0.1, c.bg),
-        fmt = config.code_style.comments,
-    },
-    LspCodeLensSeparator = { fg = c.comment },
-}
-
--- stylua: ignore start
-M.lsp.LspDiagnosticsDefaultError = M.lsp.DiagnosticError
-M.lsp.LspDiagnosticsDefaultHint = M.lsp.DiagnosticHint
-M.lsp.LspDiagnosticsDefaultInformation = M.lsp.DiagnosticInfo
-M.lsp.LspDiagnosticsDefaultWarning = M.lsp.DiagnosticWarn
-M.lsp.LspDiagnosticsUnderlineError = M.lsp.DiagnosticUnderlineError
-M.lsp.LspDiagnosticsUnderlineHint = M.lsp.DiagnosticUnderlineHint
-M.lsp.LspDiagnosticsUnderlineInformation = M.lsp.DiagnosticUnderlineInfo
-M.lsp.LspDiagnosticsUnderlineWarning = M.lsp.DiagnosticUnderlineWarn
-M.lsp.LspDiagnosticsVirtualTextError = M.lsp.DiagnosticVirtualTextError
-M.lsp.LspDiagnosticsVirtualTextWarning = M.lsp.DiagnosticVirtualTextWarn
-M.lsp.LspDiagnosticsVirtualTextInformation = M.lsp.DiagnosticVirtualTextInfo
-M.lsp.LspDiagnosticsVirtualTextHint = M.lsp.DiagnosticVirtualTextHint
--- stylua: ignore end
 
 M.special = {
     LazyNormal = { bg = c.float },
@@ -338,7 +258,7 @@ local lsp_kind_icons_color = {
     Variable = c.fg,
 }
 
-if not config.plugin.plain then
+if not config.plugin.cmp.plain then
     for kind, color in pairs(lsp_kind_icons_color) do
         M.cmp["CmpItemKind" .. kind] =
             { fg = color, fmt = config.plugin.cmp.reverse and "reverse" }

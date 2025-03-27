@@ -24,7 +24,7 @@ M.vim = {
     PreProc = { fg = c.string }, -- (preferred) generic preprocessor
     -- Define = { fg = c.comment }, -- preprocessor '#define'
     Include = { fg = c.constant, fmt = config.code_style.keywords }, -- preprocessor '#include'
-    Macro = { fg = c.number, fmt = config.code_style.constants }, -- macros
+    Macro = { fg = c.number, fmt = "italic" }, -- macros
     -- PreCondit = { fg = c.comment }, -- preprocessor conditionals '#if', '#endif' etc
     Special = { fg = c.type }, -- (preferred) any special symbol
     SpecialChar = { fg = c.keyword }, -- special character in a constant
@@ -82,8 +82,8 @@ if vim.version()["minor"] > 0.8 then
         -- ["@property"] = { fg = c.property }, --same as TSField
 
         -- functions
-        -- ["@function"] = { link = "Function" }, -- functions
-        -- ["@function.builtin"] = M.syntax["Function"], --builtin functions
+        ["@function"] = M.vim["Function"], -- functions
+        ["@function.builtin"] = M.vim["Function"], --builtin functions
         -- ["@function.macro"] = { link = "Macro" }, -- macro defined functions
         -- ["@function.call"]
         -- ["@function.method"]
@@ -157,5 +157,82 @@ if vim.version()["minor"] > 0.8 then
     end
 end
 
-return M
+local virtual_error = {
+    bg = config.diagnostics.background and util.darken(c.diag_red, 0.1, c.bg) or c.none,
+    fg = c.diag_red,
+}
 
+local virtual_warn = {
+    bg = config.diagnostics.background and util.darken(c.diag_yellow, 0.1, c.bg)
+        or c.none,
+    fg = c.diag_yellow,
+}
+
+local virtual_info = {
+    bg = config.diagnostics.background and util.darken(c.diag_blue, 0.1, c.bg)
+        or c.none,
+    fg = c.diag_blue,
+}
+
+local virtual_hint = {
+    bg = config.diagnostics.background and util.darken(c.diag_blue, 0.1, c.bg)
+        or c.none,
+    fg = c.diag_blue,
+}
+
+M.diag = {
+    DiagnosticError = { fg = c.diag_red },
+    DiagnosticHint = { fg = c.diag_blue },
+    DiagnosticInfo = { fg = c.diag_blue, fmt = "italic" },
+    DiagnosticWarn = { fg = c.diag_yellow },
+
+    DiagnosticVirtualTextError = virtual_error,
+    DiagnosticVirtualTextWarn = virtual_warn,
+    DiagnosticVirtualTextInfo = virtual_info,
+    DiagnosticVirtualTextHint = virtual_hint,
+
+    DiagnosticUnderlineError = {
+        fmt = config.diagnostics.undercurl and "undercurl" or "underline",
+        sp = c.diag_red,
+    },
+    DiagnosticUnderlineHint = {
+        fmt = config.diagnostics.undercurl and "undercurl" or "underline",
+        sp = c.diag_blue,
+    },
+    DiagnosticUnderlineInfo = {
+        fmt = config.diagnostics.undercurl and "undercurl" or "underline",
+        sp = c.diag_blue,
+    },
+    DiagnosticUnderlineWarn = {
+        fmt = config.diagnostics.undercurl and "undercurl" or "underline",
+        sp = c.diag_yellow,
+    },
+
+    LspReferenceText = { bg = c.visual },
+    LspReferenceWrite = { bg = c.visual },
+    LspReferenceRead = { bg = c.visual },
+
+    LspCodeLens = {
+        fg = c.keyword,
+        bg = util.darken(c.keyword, 0.1, c.bg),
+        fmt = config.code_style.comments,
+    },
+    LspCodeLensSeparator = { fg = c.comment },
+}
+
+-- stylua: ignore start
+M.diag.LspDiagnosticsDefaultError = M.diag.DiagnosticError
+M.diag.LspDiagnosticsDefaultHint = M.diag.DiagnosticHint
+M.diag.LspDiagnosticsDefaultInformation = M.diag.DiagnosticInfo
+M.diag.LspDiagnosticsDefaultWarning = M.diag.DiagnosticWarn
+M.diag.LspDiagnosticsUnderlineError = M.diag.DiagnosticUnderlineError
+M.diag.LspDiagnosticsUnderlineHint = M.diag.DiagnosticUnderlineHint
+M.diag.LspDiagnosticsUnderlineInformation = M.diag.DiagnosticUnderlineInfo
+M.diag.LspDiagnosticsUnderlineWarning = M.diag.DiagnosticUnderlineWarn
+M.diag.LspDiagnosticsVirtualTextError = M.diag.DiagnosticVirtualTextError
+M.diag.LspDiagnosticsVirtualTextWarning = M.diag.DiagnosticVirtualTextWarn
+M.diag.LspDiagnosticsVirtualTextInformation = M.diag.DiagnosticVirtualTextInfo
+M.diag.LspDiagnosticsVirtualTextHint = M.diag.DiagnosticVirtualTextHint
+-- stylua: ignore end
+
+return M

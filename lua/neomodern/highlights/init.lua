@@ -2,6 +2,10 @@ local c = require("neomodern.colors")
 local config = vim.g.neomodern_config
 local M = {}
 
+local COMMON = require("neomodern.highlights.common")
+local SYNTAX = require("neomodern.highlights.syntax")
+local PLUGIN = require("neomodern.highlights.plugin")
+
 local function vim_highlights(highlights)
     if highlights == nil then
         return
@@ -21,14 +25,10 @@ local function vim_highlights(highlights)
 end
 
 function M.setup()
-    local COMMON = require("neomodern.highlights.common")
-    local SYNTAX = require("neomodern.highlights.syntax")
-    local PLUGIN = require("neomodern.highlights.plugin")
-
     vim_highlights(COMMON)
-    vim_highlights(SYNTAX.vim)
-    vim_highlights(SYNTAX.treesitter)
-    vim_highlights(SYNTAX.lsp)
+    for _, group in pairs(SYNTAX) do
+        vim_highlights(group)
+    end
     for _, group in pairs(PLUGIN) do
         vim_highlights(group)
     end
