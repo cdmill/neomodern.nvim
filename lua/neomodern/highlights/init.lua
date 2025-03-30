@@ -1,30 +1,58 @@
-local c = require("neomodern.colors")
-local config = vim.g.neomodern_config
 local M = {}
 
-local COMMON = require("neomodern.highlights.common")
-local SYNTAX = require("neomodern.highlights.syntax")
-local PLUGIN = require("neomodern.highlights.plugin")
+---@alias Highlight {fg:string, bg:string, sp:string, fmt:string}
 
+---@param highlights table<string,Highlight>
 local function vim_highlights(highlights)
-    if highlights == nil then
-        return
-    end
-    for group_name, group_settings in pairs(highlights) do
+    for group, hi in pairs(highlights) do
         vim.api.nvim_command(
             string.format(
                 "highlight %s guifg=%s guibg=%s guisp=%s gui=%s",
-                group_name,
-                group_settings.fg or "none",
-                group_settings.bg or "none",
-                group_settings.sp or "none",
-                group_settings.fmt or "none"
+                group,
+                hi.fg or "none",
+                hi.bg or "none",
+                hi.sp or "none",
+                hi.fmt or "none"
             )
         )
     end
 end
 
+---@param prefix string
+---@param color string
+---@param palette neomodern.Theme
+---@return string
+local function overwrite(prefix, color, palette)
+    if not color then
+        return ""
+    end
+    if color:sub(1, 1) == "$" then
+        local name = color:sub(2, -1)
+        color = palette[name]
+        if not color then
+            vim.schedule(function()
+                vim.notify(
+                    'neomodern.nvim: unknown color "' .. name .. '"',
+                    vim.log.levels.ERROR,
+                    { title = "neomodern.nvim" }
+                )
+            end)
+            return ""
+        end
+    end
+    return prefix .. "=" .. color
+end
+
 function M.setup()
+    ---@type neomodern.Config
+    local Config = require("neomodern").options()
+    ---@type neomodern.Theme
+    local c = require("neomodern.palette")[Config.theme]
+
+    local COMMON = require("neomodern.highlights.common").get()
+    local SYNTAX = require("neomodern.highlights.syntax").get()
+    local PLUGIN = require("neomodern.highlights.plugin").get()
+
     vim_highlights(COMMON)
     for _, group in pairs(SYNTAX) do
         vim_highlights(group)
@@ -33,42 +61,19 @@ function M.setup()
         vim_highlights(group)
     end
 
-    -- user defined highlights: vim_highlights function cannot be used because it sets an
-    -- attribute to none if not specified
-    local function replace_color(prefix, color_name)
-        if not color_name then
-            return ""
-        end
-        if color_name:sub(1, 1) == "$" then
-            local name = color_name:sub(2, -1)
-            color_name = c[name]
-            if not color_name then
-                vim.schedule(function()
-                    vim.notify(
-                        'neomodern.nvim: unknown color "' .. name .. '"',
-                        vim.log.levels.ERROR,
-                        { title = "neomodern.nvim" }
-                    )
-                end)
-                return ""
-            end
-        end
-        return prefix .. "=" .. color_name
-    end
-
-    for group_name, group_settings in pairs(vim.g.neomodern_config.highlights) do
+    for group, hi in pairs(Config.highlights) do
         vim.api.nvim_command(
             string.format(
                 "highlight %s %s %s %s %s",
-                group_name,
-                replace_color("guifg", group_settings.fg),
-                replace_color("guibg", group_settings.bg),
-                replace_color("guisp", group_settings.sp),
-                replace_color("gui", group_settings.fmt)
+                group,
+                overwrite("guifg", hi.fg, c),
+                overwrite("guibg", hi.bg, c),
+                overwrite("guisp", hi.sp, c),
+                overwrite("gui", hi.fmt, c)
             )
         )
     end
-    if config.favor_treesitter_hl then
+    if Config.favor_treesitter_hl then
         vim.highlight.priorities.semantic_tokens = 95
     end
 end

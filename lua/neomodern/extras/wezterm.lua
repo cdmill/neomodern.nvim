@@ -4,9 +4,11 @@ local util = require("neomodern.util")
 
 local M = {}
 
-function M.generate(colors)
+function M.generate(colors, url, theme)
+    colors.url = url
+    colors.theme = theme
     local wezterm = util.template(
-        [[
+        [=[
 [colors]
 foreground = "${fg}"
 background = "${bg}"
@@ -50,8 +52,10 @@ bg_color = "${bg}"
 
 [metadata]
 aliases = []
+name = "${theme}"
+upstream = "${url}"
 author = "Casey Miller"
-name = "${_name}"]],
+]=],
         colors
     )
     return wezterm

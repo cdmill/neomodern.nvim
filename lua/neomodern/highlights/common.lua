@@ -1,100 +1,108 @@
-local c = require("neomodern.colors")
-local config = vim.g.neomodern_config
+local M = {}
 local util = require("neomodern.util")
 
-c.darkgutter = util.darken(c.bg, 0.85, "#000000")
+function M.get()
+    ---@type neomodern.Config
+    local Config = require("neomodern").options()
+    ---@type neomodern.Theme
+    local c = require("neomodern.palette")[Config.theme]
+    local darkgutter = util.darken(c.bg, 0.85, "#000000")
+    local hl = {}
 
-local M = {
-    ColorColumn = { bg = c.line },
-    Conceal = { fg = c.func, bg = config.transparent and c.none or c.bg },
-    CurSearch = { fg = c.type, bg = c.visual },
-    Cursor = { fmt = "reverse" },
-    vCursor = { fmt = "reverse" },
-    iCursor = { fmt = "reverse" },
-    lCursor = { fmt = "reverse" },
-    CursorIM = { fmt = "reverse" },
-    CursorColumn = { bg = c.line },
-    CursorLine = { bg = c.line },
-    CursorLineNr = {
-        fg = config.alt_culnr_hl and c.alt or c.fg,
+    hl.ColorColumn = { bg = c.line }
+    hl.Conceal = { fg = c.func, bg = Config.transparent and "none" or c.bg }
+    hl.CurSearch = { fg = c.type, bg = c.visual }
+    hl.Cursor = { fmt = "reverse" }
+    hl.vCursor = { fmt = "reverse" }
+    hl.iCursor = { fmt = "reverse" }
+    hl.lCursor = { fmt = "reverse" }
+    hl.CursorIM = { fmt = "reverse" }
+    hl.CursorColumn = { bg = c.line }
+    hl.CursorLine = { bg = c.line }
+    hl.CursorLineNr = {
+        fg = Config.alt_culnr_hl and c.alt or c.fg,
         bg = (
-            (config.cursorline_gutter and c.line or nil)
-            or (config.dark_gutter and c.darkgutter or nil)
+            (Config.cursorline_gutter and c.line or nil)
+            or (Config.dark_gutter and darkgutter or "none")
         ) or c.bg,
-    },
-    CursorLineSign = { bg = config.cursorline_gutter and c.line or c.none },
-    CursorLineFold = { fg = c.fg, bg = config.cursorline_gutter and c.line or c.none },
-    Debug = { fg = c.operator },
-    debugPC = { fg = c.diag_red },
-    debugBreakpoint = { fg = c.diag_red },
-    DiffAdd = { bg = util.darken(c.diag_green, 0.3, c.bg) },
-    DiffChange = { bg = util.darken(c.diag_blue, 0.2, c.bg) },
-    DiffDelete = { bg = util.darken(c.diag_red, 0.4, c.bg) },
-    DiffText = { fg = c.fg },
-    Directory = { fg = c.func },
-    ErrorMsg = { fg = c.diag_red, fmt = "bold" },
-    EndOfBuffer = { fg = config.show_eob and c.comment or c.bg },
-    FloatBorder = { fg = c.comment, bg = config.plain_float and c.none or c.float },
-    FloatTitle = { fg = c.comment, bg = config.plain_float and c.none or c.float },
-    Folded = { fg = c.comment, bg = config.transparent and c.none or c.line },
-    FoldColumn = {
+    }
+    hl.CursorLineSign = { bg = Config.cursorline_gutter and c.line or "none" }
+    hl.CursorLineFold = {
+        fg = c.fg,
+        bg = Config.cursorline_gutter and c.line or "none",
+    }
+    hl.Debug = { fg = c.operator }
+    hl.debugPC = { fg = c.diag_red }
+    hl.debugBreakpoint = { fg = c.diag_red }
+    hl.DiffAdd = { bg = util.darken(c.diag_green, 0.3, c.bg) }
+    hl.DiffChange = { bg = util.darken(c.diag_blue, 0.2, c.bg) }
+    hl.DiffDelete = { bg = util.darken(c.diag_red, 0.4, c.bg) }
+    hl.DiffText = { fg = c.fg }
+    hl.Directory = { fg = c.func }
+    hl.ErrorMsg = { fg = c.diag_red, fmt = "bold" }
+    hl.EndOfBuffer = { fg = Config.show_eob and c.comment or c.bg }
+    hl.FloatBorder = { fg = c.comment, bg = Config.plain_float and "none" or c.bg }
+    hl.FloatTitle = { fg = c.comment, bg = Config.plain_float and "none" or c.line }
+    hl.Folded = { fg = c.comment, bg = Config.transparent and "none" or c.line }
+    hl.FoldColumn = {
         fg = c.comment,
         bg = (
-            (config.transparent and c.none or nil)
-            or (config.dark_gutter and c.darkgutter or nil)
+            (Config.transparent and "none" or nil)
+            or (Config.dark_gutter and darkgutter or "none")
         ) or c.bg,
-    },
-    IncSearch = { fg = c.type, bg = c.visual },
-    LineNr = {
+    }
+    hl.IncSearch = { fg = c.type, bg = c.visual }
+    hl.LineNr = {
         fg = c.comment,
-        bg = config.dark_gutter and c.darkgutter or c.bg,
-    },
-    MatchParen = { fg = c.fg, bg = c.visual, fmt = "bold" },
-    ModeMsg = { fg = c.fg, fmt = "bold" },
-    MoreMsg = { fg = c.func, fmt = "bold" },
-    MsgSeparator = { fg = c.string, bg = c.line, fmt = "bold" },
-    NonText = { fg = c.comment },
-    Normal = { fg = c.fg, bg = config.transparent and c.none or c.bg },
-    NormalFloat = {
+        bg = Config.dark_gutter and darkgutter or c.bg,
+    }
+    hl.MatchParen = { fg = c.fg, bg = c.visual, fmt = "bold" }
+    hl.ModeMsg = { fg = c.fg, fmt = "bold" }
+    hl.MoreMsg = { fg = c.func, fmt = "bold" }
+    hl.MsgSeparator = { fg = c.string, bg = c.line, fmt = "bold" }
+    hl.NonText = { fg = c.comment }
+    hl.Normal = { fg = c.fg, bg = Config.transparent and "none" or c.bg }
+    hl.NormalFloat = {
         fg = c.fg,
-        bg = (config.transparent or config.plain_float) and c.none or c.float,
-    },
-    Pmenu = { fg = c.fg, bg = config.plain_float and c.none or c.visual },
-    PmenuSbar = { bg = c.float },
-    PmenuSel = { fg = c.diag_blue, bg = config.transparent and c.none or c.float },
-    PmenuThumb = { bg = c.visual },
-    Question = { fg = c.constant },
-    QuickFixLine = { fg = c.func, fmt = "underline" },
-    Search = { fg = c.diag_blue, bg = c.visual },
-    SignColumn = {
+        bg = (Config.transparent or Config.plain_float) and "none" or c.line,
+    }
+    hl.Pmenu = { fg = c.fg, bg = Config.plain_float and "none" or c.visual }
+    hl.PmenuSbar = { bg = c.line }
+    hl.PmenuSel = { fg = c.diag_blue, bg = Config.transparent and "none" or c.line }
+    hl.PmenuThumb = { bg = c.visual }
+    hl.Question = { fg = c.constant }
+    hl.QuickFixLine = { fg = c.func, fmt = "underline" }
+    hl.Search = { fg = c.diag_blue, bg = c.visual }
+    hl.SignColumn = {
         fg = c.fg,
         bg = (
-            (config.transparent and c.none or nil)
-            or (config.dark_gutter and c.darkgutter or nil)
+            (Config.transparent and "none" or nil)
+            or (Config.dark_gutter and darkgutter or nil)
         ) or c.bg,
-    },
-    SpecialKey = { fg = c.comment },
-    SpellBad = { fg = c.none, fmt = "undercurl", sp = c.diag_red },
-    SpellCap = { fg = c.none, fmt = "undercurl", sp = c.diag_yellow },
-    SpellLocal = { fg = c.none, fmt = "undercurl", sp = c.diag_blue },
-    SpellRare = { fg = c.none, fmt = "undercurl", sp = c.diag_blue },
-    StatusLine = { fg = c.comment, bg = c.line },
-    StatusLineTerm = { fg = c.comment, bg = c.line },
-    StatusLineNC = { fg = c.comment, bg = c.line },
-    StatusLineTermNC = { fg = c.comment, bg = c.line },
-    Substitute = { fg = c.type, bg = c.visual },
-    TabLine = { fg = c.comment, bg = c.line },
-    TabLineFill = { fg = c.comment, bg = c.line },
-    TabLineSel = { fg = c.diag_blue, bg = c.visual },
-    Terminal = { fg = c.fg, bg = config.transparent and c.none or c.bg },
-    ToolbarButton = { fg = c.bg, bg = c.visual },
-    ToolbarLine = { fg = c.fg },
-    Visual = { fg = c.alt, bg = c.visual },
-    VisualNOS = { fg = c.none, bg = c.comment, fmt = "underline" },
-    WarningMsg = { fg = c.diag_yellow, fmt = "bold" },
-    Whitespace = { fg = c.comment },
-    WildMenu = { fg = c.diag_blue, bg = util.darken(c.diag_blue, 0.1, c.bg) },
-    WinSeparator = { fg = c.comment },
-}
+    }
+    hl.SpecialKey = { fg = c.comment }
+    hl.SpellBad = { fg = "none", fmt = "undercurl", sp = c.diag_red }
+    hl.SpellCap = { fg = "none", fmt = "undercurl", sp = c.diag_yellow }
+    hl.SpellLocal = { fg = "none", fmt = "undercurl", sp = c.diag_blue }
+    hl.SpellRare = { fg = "none", fmt = "undercurl", sp = c.diag_blue }
+    hl.StatusLine = { fg = c.comment, bg = c.line }
+    hl.StatusLineTerm = { fg = c.comment, bg = c.line }
+    hl.StatusLineNC = { fg = c.comment, bg = c.line }
+    hl.StatusLineTermNC = { fg = c.comment, bg = c.line }
+    hl.Substitute = { fg = c.type, bg = c.visual }
+    hl.TabLine = { fg = c.comment, bg = c.line }
+    hl.TabLineFill = { fg = c.comment, bg = c.line }
+    hl.TabLineSel = { fg = c.diag_blue, bg = c.visual }
+    hl.Terminal = { fg = c.fg, bg = Config.transparent and "none" or c.bg }
+    hl.ToolbarButton = { fg = c.bg, bg = c.visual }
+    hl.ToolbarLine = { fg = c.fg }
+    hl.Visual = { fg = c.alt, bg = c.visual }
+    hl.VisualNOS = { fg = "none", bg = c.comment, fmt = "underline" }
+    hl.WarningMsg = { fg = c.diag_yellow, fmt = "bold" }
+    hl.Whitespace = { fg = c.comment }
+    hl.WildMenu = { fg = c.diag_blue, bg = util.darken(c.diag_blue, 0.1, c.bg) }
+    hl.WinSeparator = { fg = c.comment }
+    return hl
+end
 
 return M
