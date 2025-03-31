@@ -28,7 +28,7 @@ function M.blend(fg, amount, bg)
     local alpha = math.abs(amount)
 
     local blendChannel = function(i)
-        local ret = (alpha * BG[i] + ((1 - alpha) * FG[i]))
+        local ret = ((1 - alpha) * BG[i] + alpha * FG[i])
         return math.floor(math.min(math.max(0, ret), 255) + 0.5)
     end
 
