@@ -1,23 +1,22 @@
 local Config = require("neomodern.config")
 local M = {
     ---@class neomodern.Config
+    ---@field alt_bg? boolean If true, uses a darker alternate bg color
     ---@field theme? string Preferred theme
-    ---@field toggle_mode_key? nil|string Keymap (normal mode) to toggle light/dark mode
-    ---@field transparent? boolean If true, does not set background colors
-    ---@field term_colors? boolean If true, enables terminal colors
+    ---@field colors? table Has string fields to override default colors
     ---@field colored_docstrings? boolean If true, highlights docstrings like strings instead like of comments
-    ---@field colored_brackets? boolean If false, highlights brackets like default fg color
-    ---@field plain_float? boolean If true, does not set background of floating windows. Recommend for when using floating windows with borders
-    ---@field show_eob? boolean If true, highlights end-of-buffer tildes like comments
+    ---@field code_style? table Has string values to determine code style. Field values can be the same as gui highlight values, e.g. 'bold', 'italic', 'none'
     ---@field cursorline_gutter? boolean If true, highlights {sign, fold}column the same as cursorline
     ---@field dark_gutter? boolean If true, highlights the gutter darker than the bg
-    ---@field alt_culnr_hl? boolean If true, highlights current line number as an alternate color
+    ---@field diagnostics? table { darker:bool, undercurl:bool, background:bool }
     ---@field favor_treesitter_hl? boolean if true favor treesitter highlights over semantic highlights
-    ---@field diagnostics? table Has boolean fields to determine diagnostics appearance: 'darker', 'undercurl', 'background'
-    ---@field code_style? table Has string values to determine code style. Field values can be the same as gui highlight values, e.g. 'bold', 'italic', 'none'
-    ---@field plugin? table Has table or string fields to determine appearnce of plugins. Current plugin options are 'lualine', 'cmp', and 'telescope'
-    ---@field colors? table Has string fields to override default colors
     ---@field highlights? table Has string fields to override default highlights
+    ---@field plain_float? boolean If true, does not set background of floating windows. Recommend for when using floating windows with borders
+    ---@field plugin? table Has table or string fields to determine appearnce of plugins. Current plugin options are 'lualine', 'cmp', and 'telescope'
+    ---@field show_eob? boolean If true, highlights end-of-buffer tildes like comments
+    ---@field term_colors? boolean If true, enables terminal colors
+    ---@field toggle_mode_key? nil|string Keymap (normal mode) to toggle light/dark mode
+    ---@field transparent? boolean If true, does not set background colors
     __opts = {},
 }
 

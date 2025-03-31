@@ -96,7 +96,7 @@ function M.get()
 
                 -- ["@constructor"] = { fg = c.constant, fmt = config.code_style.functions }, -- constructor calls and definitions
                 ["@constructor.lua"] = {
-                    fg = Config.colored_brackets and c.alt or c.fg,
+                    fg = c.alt,
                     fmt = Config.code_style.functions,
                 }, -- constructor calls and definitions, `= { }` in lua
                 ["@operator"] = syntax["Operator"], -- operators, like `+`
@@ -125,7 +125,7 @@ function M.get()
                 -- punctuation
                 ["@punctuation.delimiter"] = { fg = c.fg }, -- delimiters, like `; . , `
                 ["@punctuation.bracket"] = {
-                    fg = Config.colored_brackets and c.alt or c.fg,
+                    fg = c.alt,
                 }, -- brackets and parentheses
                 ["@punctuation.special"] = syntax["SpecialChar"], -- punctuation that does not fall into above categories, like `{}` in string interpolation
 

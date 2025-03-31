@@ -9,6 +9,10 @@ function M.get()
     local darkgutter = util.darken(c.bg, 0.85, "#000000")
     local hl = {}
 
+    if Config.use_alt_bg then
+        c.bg, c.line = c.alt_bg, c.bg
+    end
+
     hl.ColorColumn = { bg = c.line }
     hl.Conceal = { fg = c.func, bg = Config.transparent and "none" or c.bg }
     hl.CurSearch = { fg = c.type, bg = c.visual }
@@ -20,7 +24,7 @@ function M.get()
     hl.CursorColumn = { bg = c.line }
     hl.CursorLine = { bg = c.line }
     hl.CursorLineNr = {
-        fg = Config.alt_culnr_hl and c.alt or c.fg,
+        fg = c.fg,
         bg = (
             (Config.cursorline_gutter and c.line or nil)
             or (Config.dark_gutter and darkgutter or "none")

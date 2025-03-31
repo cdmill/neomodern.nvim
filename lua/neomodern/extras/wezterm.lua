@@ -12,6 +12,7 @@ function M.generate(colors, url, theme)
 [colors]
 foreground = "${fg}"
 background = "${bg}"
+# alternate, darker background = "${alt_bg}"
 cursor_bg = "${fg}"
 cursor_border = "${fg}"
 cursor_fg = "${bg}"

@@ -8,7 +8,7 @@ function M.generate(colors)
 # Add the following object to your Windows Terminal configuration
 # https://learn.microsoft.com/en-us/windows/terminal/customize-settings/color-schemes#creating-your-own-color-scheme
 {
-    "background": "${bg}",
+    "background": "${bg}", // alternate, darker background=${alt_bg}
     "black": "${black}",
     "blue": "${blue}",
     "brightBlack": "${grey}",

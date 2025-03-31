@@ -13,6 +13,7 @@
 
 ---@class neomodern.Theme
 ---@field alt string highlight
+---@field alt_bg string dim alternate background
 ---@field bg string background
 ---@field builtin string default/builtin library
 ---@field comment string comments

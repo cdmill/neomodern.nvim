@@ -1,6 +1,7 @@
 ---@type neomodern.Theme
 local M = {
     alt = "#d6a56f",
+    alt_bg = "#111312",
     bg = "#181b1b",
     builtin = "#c76f82",
     comment = "#7a8478",
@@ -23,7 +24,7 @@ local M = {
 }
 
 M.colormap = {
-    black = "#111312",
+    black = M.alt_bg,
     grey = M.comment,
     red = M.diag_red,
     orange = M.type,

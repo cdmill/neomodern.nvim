@@ -23,6 +23,7 @@ color=${fg} ${visual}
 [colors]
 foreground=${fg}
 background=${bg}
+# alternate, darker background=${alt_bg}
 selection-foreground=${fg}
 selection-background=${visual}
 urls=${blue}

@@ -1,5 +1,3 @@
--- CREDIT: https://github.com/folke/tokyonight.nvim/blob/main/lua/tokyonight/extra/kitty.lua
-
 local util = require("neomodern.util")
 
 local M = {}
@@ -16,6 +14,7 @@ function M.generate(colors, url, theme)
 # author: Casey Miller
 
 background ${bg}
+# alternate, darker background ${alt_bg}
 foreground ${fg}
 selection_background ${visual}
 selection_foreground ${fg}

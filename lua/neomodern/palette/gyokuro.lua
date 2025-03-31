@@ -1,14 +1,15 @@
 ---@type neomodern.Theme
 local M = {
     alt = "#a69e6f",
-    bg = "#1B1C1D",
+    alt_bg = "#161617",
+    bg = "#1b1c1d",
     builtin = "#d6a9b3",
     comment = "#767777",
     constant = "#868db5",
     fg = "#bbbac1",
     func = "#8bab85",
     keyword = "#72966c",
-    line = "#161617",
+    line = "#222324",
     number = "#d6a9b3",
     operator = "#b08c7d",
     property = "#748fa6",
@@ -23,7 +24,7 @@ local M = {
 }
 
 M.colormap = {
-    black = "#121110",
+    black = M.alt_bg,
     grey = M.comment,
     red = M.builtin,
     orange = M.keyword,

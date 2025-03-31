@@ -13,6 +13,7 @@ function M.generate(colors, url, theme)
 # Default colors
 [colors.primary]
 background = '${bg}'
+# alternate, darker background = '${alt_bg}'
 foreground = '${fg}'
 
 #[colors.cursor]
