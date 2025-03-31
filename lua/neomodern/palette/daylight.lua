@@ -3,7 +3,6 @@ local M = {
     alt = "#5d86f5",
     alt_bg = "#000000",
     bg = "#ffffff",
-    builtin = "#e858b6",
     comment = "#9b9ba3",
     constant = "#f79b07",
     fg = "#111111",
@@ -32,7 +31,7 @@ M.colormap = {
     yellow = M.constant,
     blue = M.func,
     purple = M.keyword,
-    magenta = M.builtin,
+    magenta = M.keyword,
     cyan = M.property,
     white = M.fg,
 }
