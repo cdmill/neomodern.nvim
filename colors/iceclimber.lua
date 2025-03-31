@@ -1,1 +1,1 @@
-require("neomodern").colorscheme("iceclimber")
+require("neomodern").load("iceclimber")

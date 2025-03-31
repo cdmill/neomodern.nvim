@@ -20,11 +20,12 @@ local M = {
     __opts = {},
 }
 
+---@return neomodern.Config
 function M.options()
     return M.__opts
 end
 
----Toggle between light/dark mode.
+---Toggle between light/dark mode. Does nothing if `theme="daylight"`.
 function M.toggle_mode()
     if M.__opts.theme ~= "daylight" then
         vim.api.nvim_command("colorscheme daylight")
@@ -35,7 +36,7 @@ end
 
 ---Apply the colorscheme (same as `:colorscheme neomodern`).
 ---@param theme string?
-function M.colorscheme(theme)
+function M.load(theme)
     M.__opts.theme = theme or M.__opts.theme
     vim.cmd("hi clear")
     if vim.fn.exists("syntax_on") then
@@ -50,8 +51,7 @@ function M.colorscheme(theme)
     require("neomodern.terminal").setup()
 end
 
----Sets neomodern.nvim options, without applying colorscheme. Any specified user opts automatically override default
----config values. To apply colorscheme, call `neomodern.load()`.
+---Sets config options. Call `load` after to set colorscheme.
 ---@param opts neomodern.Config
 function M.setup(opts)
     ---@type neomodern.Config
@@ -65,10 +65,6 @@ function M.setup(opts)
             { noremap = true, silent = true }
         )
     end
-end
-
-function M.load()
-    vim.api.nvim_command("colorscheme " .. M.__opts.theme)
 end
 
 return M

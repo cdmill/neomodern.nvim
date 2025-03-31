@@ -1,1 +1,1 @@
-require("neomodern").colorscheme("daylight")
+require("neomodern").load("daylight")

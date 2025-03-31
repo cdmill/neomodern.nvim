@@ -15,7 +15,7 @@ function M.colors(with_palette)
     local colors = palette.colormap
 
     local c = {}
-    c.dim = util.darken(palette.bg, 0.9, "#000000")
+    c.dim = util.blend(palette.bg, 0.9, "#000000")
     c.black = colors.black
     c.grey = colors.grey
     c.red = colors.red
@@ -36,6 +36,7 @@ function M.colors(with_palette)
     return c
 end
 
+---Sets the vim terminal colors.
 function M.setup()
     ---@type neomodern.Config
     local Config = require("neomodern").options()

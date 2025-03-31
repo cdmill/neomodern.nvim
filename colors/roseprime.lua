@@ -1,1 +1,1 @@
-require("neomodern").colorscheme("roseprime")
+require("neomodern").load("roseprime")

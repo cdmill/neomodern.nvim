@@ -1,1 +1,1 @@
-require("neomodern").colorscheme("darkforest")
+require("neomodern").load("darkforest")

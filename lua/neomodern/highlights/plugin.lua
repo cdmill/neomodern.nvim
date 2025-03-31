@@ -81,11 +81,11 @@ function M.get()
         NeogitUnmergedchanges = { fg = c.keyword, fmt = "bolditalic" },
         NeogitDiffAdd = { link = "DiffAdd" },
         NeogitDiffAddHighlight = { link = "DiffAdd" },
-        NeogitDiffAddCursor = { bg = util.darken(c.diag_green, 0.2, c.bg) },
+        NeogitDiffAddCursor = { bg = util.blend(c.diag_green, 0.2, c.bg) },
         NeogitDiffDelete = { link = "DiffDelete" },
         NeogitDiffDeleteHighlight = { link = "DiffDelete" },
         NeogitDiffDeleteCursor = {
-            bg = util.darken(c.diag_red, 0.2, c.bg),
+            bg = util.blend(c.diag_red, 0.2, c.bg),
         },
         NeogitDiffContext = { bg = c.line },
         NeogitDiffContextHighlight = { bg = c.line },
@@ -163,7 +163,7 @@ function M.get()
         ObsidianExtLinkIcon = { link = "@markup.strikethrough" },
         ObsidianTag = { link = "@markup.list.unchecked" },
         ObsidianHighlightText = {
-            bg = util.darken(c.constant, 0.1, c.bg),
+            bg = util.blend(c.constant, 0.1, c.bg),
             fg = c.constant,
         },
     }
@@ -182,12 +182,12 @@ function M.get()
             TelescopePromptNormal = { bg = c.visual, fmt = "bold" },
             TelescopePromptBorder = { fg = c.visual, bg = c.visual },
             TelescopePreviewNormal = {
-                fg = util.darken(c.line, 0.6, c.bg),
-                bg = util.darken(c.line, 0.6, c.bg),
+                fg = util.blend(c.line, 0.6, c.bg),
+                bg = util.blend(c.line, 0.6, c.bg),
             },
             TelescopePreviewBorder = {
-                fg = util.darken(c.line, 0.6, c.bg),
-                bg = util.darken(c.line, 0.6, c.bg),
+                fg = util.blend(c.line, 0.6, c.bg),
+                bg = util.blend(c.line, 0.6, c.bg),
             },
             TelescopeResultsNormal = { fg = c.comment, bg = c.line },
             TelescopeResultsBorder = { fg = c.line, bg = c.line },

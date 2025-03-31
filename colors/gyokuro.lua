@@ -1,1 +1,1 @@
-require("neomodern").colorscheme("gyokuro")
+require("neomodern").load("gyokuro")
