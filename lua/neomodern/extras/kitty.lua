@@ -2,15 +2,18 @@ local util = require("neomodern.util")
 
 local M = {}
 
-function M.generate(colors, url, theme)
-    colors.url = url
-    colors.theme = theme
+function M.generate(colors, info)
+    colors.extra = info.extra
+    colors.url = info.url
+    colors.upstream = info.upsteam
+    colors.theme = info.theme
     local kitty = util.template(
         [=[
 # vim:ft=kitty
 
-# name: ${theme}
-# upstream: ${url}
+# name: ${theme} colors for ${extra}
+# url: ${url}
+# upstream: ${upstream}
 # author: Casey Miller
 
 background ${bg}

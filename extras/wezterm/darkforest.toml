@@ -1,6 +1,7 @@
 [colors]
 foreground = "#bbbac1"
 background = "#181b1b"
+# alternate, darker background = "#111312"
 cursor_bg = "#bbbac1"
 cursor_border = "#bbbac1"
 cursor_fg = "#181b1b"
@@ -41,5 +42,6 @@ bg_color = "#181b1b"
 
 [metadata]
 aliases = []
+name = "DARKFOREST"
+upstream = "https://github.com/cdmill/neomodern.nvim/raw/main/extras/wezterm/darkforest.toml"
 author = "Casey Miller"
-name = "darkforest"

@@ -1,7 +1,11 @@
-# DARKFOREST Alacritty Colors
+# name: DARKFOREST
+# upstream: https://github.com/cdmill/neomodern.nvim/raw/main/extras/alacritty/darkforest.toml
+# author: Casey Miller
+
 # Default colors
 [colors.primary]
 background = '#181b1b'
+# alternate, darker background = '#111312'
 foreground = '#bbbac1'
 
 #[colors.cursor]

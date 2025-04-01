@@ -1,12 +1,12 @@
--- CREDIT: https://github.com/folke/tokyonight.nvim/blob/main/lua/tokyonight/extra/wezterm.lua
-
 local util = require("neomodern.util")
 
 local M = {}
 
-function M.generate(colors, url, theme)
-    colors.url = url
-    colors.theme = theme
+function M.generate(colors, info)
+    colors.extra = info.extra
+    colors.url = info.url
+    colors.upstream = info.upsteam
+    colors.theme = info.theme
     local wezterm = util.template(
         [=[
 [colors]
@@ -54,7 +54,8 @@ bg_color = "${bg}"
 [metadata]
 aliases = []
 name = "${theme}"
-upstream = "${url}"
+url = "${url}"
+upstream = "${upstream}"
 author = "Casey Miller"
 ]=],
         colors

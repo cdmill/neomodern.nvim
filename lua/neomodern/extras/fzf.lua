@@ -1,9 +1,7 @@
--- CREDIT: https://github.com/folke/tokyonight.nvim/blob/main/lua/tokyonight/extra/fzf.lua
-
 local M = {}
 local util = require("neomodern.util")
 
-function M.generate(colors, _, _)
+function M.generate(colors, _)
     return util.template(
         [=[
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS

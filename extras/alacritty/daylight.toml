@@ -1,7 +1,11 @@
-# DAYLIGHT Alacritty Colors
+# name: DAYLIGHT
+# upstream: https://github.com/cdmill/neomodern.nvim/raw/main/extras/alacritty/daylight.toml
+# author: Casey Miller
+
 # Default colors
 [colors.primary]
 background = '#ffffff'
+# alternate, darker background = '#000000'
 foreground = '#111111'
 
 #[colors.cursor]
@@ -26,7 +30,7 @@ red = '#e6050a'
 green = '#2ca32d'
 yellow = '#f79b07'
 blue = '#2e62f2'
-magenta = '#e858b6'
+magenta = '#4b46b8'
 cyan = '#0293a3'
 white = '#111111'
 

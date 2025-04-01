@@ -39,12 +39,20 @@ function M.setup()
         package.loaded["neomodern.extras." .. extra] = nil
         local template = require("neomodern.extras." .. extra)
         for _, theme in pairs(themes) do
-            neomodern.colorscheme(theme)
+            neomodern.load(theme)
             local palette = require("neomodern.terminal").colors(true)
             local fname = extra .. "/" .. theme .. "." .. info.ext
             local url = "https://github.com/cdmill/neomodern.nvim/raw/main/extras/"
                 .. fname
-            write(template.generate(palette, url, string.upper(theme)), fname)
+            write(
+                template.generate(palette, {
+                    extra = info.label,
+                    url = info.url,
+                    upstream = url,
+                    theme = string.upper(theme),
+                }),
+                fname
+            )
         end
     end
 end

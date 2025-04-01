@@ -2,7 +2,7 @@ local util = require("neomodern.util")
 
 local M = {}
 
-function M.generate(colors)
+function M.generate(colors, _)
     local windows_terminal = util.template(
         [=[
 # Add the following object to your Windows Terminal configuration
