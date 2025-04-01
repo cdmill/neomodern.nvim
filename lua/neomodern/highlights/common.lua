@@ -9,8 +9,8 @@ function M.get()
     local darkgutter = util.blend(c.bg, 0.85, "#000000")
     local hl = {}
 
-    if Config.use_alt_bg then
-        c.bg, c.line = c.alt_bg, c.bg
+    if Config.alt_bg then
+        c.bg = c.alt_bg
     end
 
     hl.ColorColumn = { bg = c.line }

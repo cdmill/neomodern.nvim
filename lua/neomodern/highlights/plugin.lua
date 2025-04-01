@@ -175,42 +175,18 @@ function M.get()
         SnacksDashboardSpecial = { fg = c.type },
     }
 
-    local telescope_ui = {
-        borderless = {
-            TelescopeTitle = { fg = c.fg },
-            TelescopeNormal = { bg = c.line },
-            TelescopePromptNormal = { bg = c.visual, fmt = "bold" },
-            TelescopePromptBorder = { fg = c.visual, bg = c.visual },
-            TelescopePreviewNormal = {
-                fg = util.blend(c.line, 0.6, c.bg),
-                bg = util.blend(c.line, 0.6, c.bg),
-            },
-            TelescopePreviewBorder = {
-                fg = util.blend(c.line, 0.6, c.bg),
-                bg = util.blend(c.line, 0.6, c.bg),
-            },
-            TelescopeResultsNormal = { fg = c.comment, bg = c.line },
-            TelescopeResultsBorder = { fg = c.line, bg = c.line },
-            TelescopePromptPrefix = { fg = c.func },
-            TelescopeSelectionBorder = { fg = c.line, bg = c.line },
-            TelescopeSelectionCaret = { fg = c.type },
-            TelescopeSelection = { fg = c.fg },
-            TelescopeMatching = { fg = c.type, fmt = "bold" },
+    hl.telescope = {
+        TelescopeTitle = { fg = c.comment },
+        TelescopeBorder = { fg = c.comment },
+        TelescopeMatching = { fg = c.type, fmt = "bold" },
+        TelescopePromptPrefix = { fg = c.type },
+        TelescopeSelection = {
+            fg = c.diag_blue,
+            bg = Config.transparent and nil or c.line,
         },
-        bordered = {
-            TelescopeTitle = { fg = c.comment },
-            TelescopeBorder = { fg = c.comment },
-            TelescopeMatching = { fg = c.type, fmt = "bold" },
-            TelescopePromptPrefix = { fg = c.type },
-            TelescopeSelection = {
-                fg = c.diag_blue,
-                bg = Config.transparent and nil or c.line,
-            },
-            TelescopeSelectionCaret = { fg = c.diag_blue },
-            TelescopeResultsNormal = { fg = c.fg },
-        },
+        TelescopeSelectionCaret = { fg = c.diag_blue },
+        TelescopeResultsNormal = { fg = c.fg },
     }
-    hl.telescope = telescope_ui[Config.plugin.telescope]
 
     hl.dashboard = {
         DashboardShortCut = { fg = c.func },
@@ -239,6 +215,7 @@ function M.get()
         IblWhitespace = { fg = c.comment, fmt = "nocombine" },
         IblScope = { fg = c.comment, fmt = "nocombine" },
     }
+
     if not Config.plugin.cmp.plain then
         local lsp_kind_icons_color = {
             Default = c.keyword,

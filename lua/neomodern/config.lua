@@ -45,7 +45,6 @@ M.default = {
             plain = false,
             reverse = false,
         },
-        telescope = "bordered",
     },
 }
 
