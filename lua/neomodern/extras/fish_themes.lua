@@ -1,4 +1,4 @@
-local util = require("neomodern.util")
+local Util = require("neomodern.util")
 
 local M = {}
 
@@ -14,7 +14,7 @@ function M.generate(colors, info)
         end
     end
 
-    local fish = util.template(
+    local fish = Util.template(
         [=[
 # name: ${theme} colors for ${extra}
 # url: ${url}

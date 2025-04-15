@@ -1,4 +1,4 @@
-local util = require("neomodern.util")
+local Util = require("neomodern.util")
 
 local M = {}
 
@@ -7,7 +7,7 @@ function M.generate(colors, info)
     colors.url = info.url
     colors.upstream = info.upsteam
     colors.theme = info.theme
-    local yazi = util.template(
+    local yazi = Util.template(
         [=[
 # name: ${theme} colors for ${extra}
 # url: ${url}
@@ -27,7 +27,7 @@ marker_copied   = { fg = "${string}" }
 marker_cut      = { fg = "${error}" }
 marker_selected = { fg = "${alt}" }
 
-tab_active   = { fg = "${builtin}", bg = "${visual}" }
+tab_active   = { fg = "${alt}", bg = "${visual}" }
 tab_inactive = { fg = "${comment}", bg = "${visual}" }
 tab_width    = 1
 

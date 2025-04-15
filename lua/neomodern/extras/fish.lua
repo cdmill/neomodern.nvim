@@ -1,4 +1,4 @@
-local util = require("neomodern.util")
+local Util = require("neomodern.util")
 
 local M = {}
 
@@ -15,7 +15,7 @@ function M.generate(colors, info)
     end
 
     -- TODO: add more global colors
-    local fish = util.template(
+    local fish = Util.template(
         [=[
 # name: ${theme} colors for ${extra}
 # url: ${url}

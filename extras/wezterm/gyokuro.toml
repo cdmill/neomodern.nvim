@@ -1,0 +1,47 @@
+[colors]
+foreground = "#bbbac1"
+background = "#1b1c1d"
+# alternate, darker background = "#161617"
+cursor_bg = "#bbbac1"
+cursor_border = "#bbbac1"
+cursor_fg = "#1b1c1d"
+selection_bg = "#323334"
+selection_fg = "#bbbac1"
+split = "#767777"
+compose_cursor = "#72966c"
+scrollbar_thumb = "#767777"
+
+ansi = ["#161617", "#9e5560", "#a2ad7b", "#868db5", "#8bab85", "#748fa6", "#bbc7b1", "#bbbac1"]
+brights = ["#767777", "#9e5560", "#a2ad7b", "#868db5", "#8bab85", "#a69e6f", "#bbc7b1", "#bbbac1"]
+
+[colors.tab_bar]
+inactive_tab_edge = "#767777"
+background = "#1b1c1d"
+
+[colors.tab_bar.active_tab]
+fg_color = "#a69e6f"
+bg_color = "#323334"
+
+[colors.tab_bar.inactive_tab]
+fg_color = "#767777"
+bg_color = "#222324"
+
+[colors.tab_bar.inactive_tab_hover]
+fg_color = "#767777"
+bg_color = "#222324"
+# intensity = "Bold"
+
+[colors.tab_bar.new_tab_hover]
+fg_color = "#a69e6f"
+bg_color = "#323334"
+intensity = "Bold"
+
+[colors.tab_bar.new_tab]
+fg_color = "#a69e6f"
+bg_color = "#1b1c1d"
+
+[metadata]
+aliases = []
+name = "GYOKURO"
+upstream = "https://github.com/cdmill/neomodern.nvim/raw/main/extras/wezterm/gyokuro.toml"
+author = "Casey Miller"

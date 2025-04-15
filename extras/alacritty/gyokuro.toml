@@ -1,0 +1,44 @@
+# name: GYOKURO
+# upstream: https://github.com/cdmill/neomodern.nvim/raw/main/extras/alacritty/gyokuro.toml
+# author: Casey Miller
+
+# Default colors
+[colors.primary]
+background = '#1b1c1d'
+# alternate, darker background = '#161617'
+foreground = '#bbbac1'
+
+#[colors.cursor]
+#cursor = '#bbbac1'
+#text = '#1b1c1d'
+
+# Normal colors
+[colors.normal]
+black = '#161617'
+red = '#9e5560'
+green = '#a2ad7b'
+yellow = '#868db5'
+blue = '#8bab85'
+magenta = '#748fa6'
+cyan = '#bbc7b1'
+white = '#bbbac1'
+
+# Bright colors
+[colors.bright]
+black = '#767777'
+red = '#9e5560'
+green = '#a2ad7b'
+yellow = '#868db5'
+blue = '#8bab85'
+magenta = '#a69e6f'
+cyan = '#bbc7b1'
+white = '#bbbac1'
+
+# Indexed Colors
+[[colors.indexed_colors]]
+index = 16
+color = '#72966c'
+
+[[colors.indexed_colors]]
+index = 17
+color = '#a69e6f'

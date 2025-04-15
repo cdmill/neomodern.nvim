@@ -1,8 +1,8 @@
 local M = {}
-local util = require("neomodern.util")
+local Util = require("neomodern.util")
 
 function M.generate(colors, _)
-    return util.template(
+    return Util.template(
         [=[
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS
 --color=fg:${fg},bg:${bg},hl:${type},gutter:${bg}

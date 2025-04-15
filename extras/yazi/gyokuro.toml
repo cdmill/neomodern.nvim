@@ -1,0 +1,97 @@
+# name: GYOKURO
+# upstream: https://github.com/cdmill/neomodern.nvim/raw/main/extras/yazi/gyokuro.toml
+# author: Casey Miller
+
+[manager]
+cwd = { fg = "#8bab85" }
+
+hovered         = { fg = "#748fa6", bg = "#222324" }
+preview_hovered = { fg = "#748fa6", bg = "#222324" }
+
+find_keyword  = { fg = "#a69e6f", italic = true }
+find_position = { fg = "#a69e6f", bg = "reset", italic = true }
+
+marker_copied   = { fg = "#a2ad7b" }
+marker_cut      = { fg = "${error}" }
+marker_selected = { fg = "#a69e6f" }
+
+tab_active   = { fg = "${builtin}", bg = "#323334" }
+tab_inactive = { fg = "#767777", bg = "#323334" }
+tab_width    = 1
+
+count_cut      = { fg = "#a69e6f", bg = "#222324" }
+count_copied   = { fg = "#a69e6f", bg = "#222324" }
+count_selected = { fg = "#a69e6f", bg = "#222324" }
+
+border_symbol = "│"
+border_style  = { fg = "#767777" }
+
+[mode]
+normal_main   = { fg = "#1b1c1d", bg = "#8bab85", bold = true }
+normal_alt    = { fg = "#1b1c1d", bg = "#8bab85", bold = true }
+select_main   = { fg = "#1b1c1d", bg = "#748fa6", bold = true }
+select_alt    = { fg = "#1b1c1d", bg = "#748fa6", bold = true }
+unset_main    = { fg = "#1b1c1d", bg = "#bbc7b1", bold = true }
+unset_alt     = { fg = "#1b1c1d", bg = "#bbc7b1", bold = true }
+
+[status]
+separator_open  = ""
+separator_close = ""
+separator_style = { fg = "#323334", bg = "#323334" }
+
+progress_label  = { fg = "#a69e6f", bold = true }
+progress_normal = { fg = "#a69e6f", bg = "#323334" }
+progress_error  = { fg = "#1b1c1d", bg = "${error}" }
+
+permissions_t = { fg = "#bbbac1" }
+permissions_r = { fg = "#868db5" }
+permissions_w = { fg = "#9e5560" }
+permissions_x = { fg = "#8bab85" }
+permissions_s = { fg = "#b08c7d" }
+
+[input]
+border   = { fg = "#767777" }
+title    = {}
+value    = {}
+selected = { reversed = true }
+
+[select]
+border   = { fg = "#767777" }
+active   = { fg = "#72966c" }
+inactive = {}
+
+[tasks]
+border  = { fg = "#767777" }
+title   = {}
+hovered = { underline = true }
+
+[which]
+mask            = { bg = "#18191A" }
+cand            = { fg = "#748fa6" }
+rest            = { fg = "#bbc7b1" }
+desc            = { fg = "#a2ad7b" }
+separator       = "  "
+separator_style = { fg = "#b08c7d"}
+
+[help]
+on      = { fg = "#bbc7b1" }
+run    = { fg = "#a2ad7b" }
+desc    = { fg = "#767777" }
+hovered = { fg = "#748fa6", bg = "#222324", bold = true }
+footer  = { fg = "#767777", bg = "#222324" }
+
+[filetype]
+rules = [
+# Media
+{ mime = "image/*", fg = "#a69e6f"},
+{ mime = "{audio,video}/*", fg = "#a2ad7b"},
+
+# Archives
+{ mime = "application/{,g}zip", fg = "#9e5560"},
+{ mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#9e5560"},
+
+# Fallback
+{ name = "*", fg = "#bbbac1"},
+{ name = "*/", fg = "#8bab85"}
+]
+  

@@ -1,12 +1,12 @@
 local M = {}
-local util = require("neomodern.util")
+local Util = require("neomodern.util")
 
 function M.generate(colors, info)
     colors.extra = info.extra
     colors.url = info.url
     colors.upstream = info.upsteam
     colors.theme = info.theme
-    local alacritty = util.template(
+    local alacritty = Util.template(
         [=[
 # name: ${theme} colors for ${extra}
 # url: ${url}
