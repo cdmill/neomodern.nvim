@@ -1,12 +1,12 @@
 local M = {}
-local util = require("neomodern.util")
+local Util = require("neomodern.util")
 
 function M.get()
     ---@type neomodern.Config
     local Config = require("neomodern").options()
     ---@type neomodern.Theme
-    local c = require("neomodern.palette")[Config.theme]
-    local darkgutter = util.blend(c.bg, 0.85, "#000000")
+    local c = require("neomodern.palette").get(Config.theme, Config.variant)
+    local darkgutter = Util.blend(c.bg, 0.85, "#000000")
     local hl = {}
 
     if Config.alt_bg then
@@ -38,9 +38,9 @@ function M.get()
     hl.Debug = { fg = c.operator }
     hl.debugPC = { fg = c.diag_red }
     hl.debugBreakpoint = { fg = c.diag_red }
-    hl.DiffAdd = { bg = util.blend(c.diag_green, 0.3, c.bg) }
-    hl.DiffChange = { bg = util.blend(c.diag_blue, 0.2, c.bg) }
-    hl.DiffDelete = { bg = util.blend(c.diag_red, 0.4, c.bg) }
+    hl.DiffAdd = { bg = Util.blend(c.diag_green, 0.3, c.bg) }
+    hl.DiffChange = { bg = Util.blend(c.diag_blue, 0.2, c.bg) }
+    hl.DiffDelete = { bg = Util.blend(c.diag_red, 0.4, c.bg) }
     hl.DiffText = { fg = c.fg }
     hl.Directory = { fg = c.func }
     hl.ErrorMsg = { fg = c.diag_red, fmt = "bold" }
@@ -104,7 +104,7 @@ function M.get()
     hl.VisualNOS = { fg = "none", bg = c.comment, fmt = "underline" }
     hl.WarningMsg = { fg = c.diag_yellow, fmt = "bold" }
     hl.Whitespace = { fg = c.comment }
-    hl.WildMenu = { fg = c.diag_blue, bg = util.blend(c.diag_blue, 0.1, c.bg) }
+    hl.WildMenu = { fg = c.diag_blue, bg = Util.blend(c.diag_blue, 0.1, c.bg) }
     hl.WinSeparator = { fg = c.comment }
     return hl
 end

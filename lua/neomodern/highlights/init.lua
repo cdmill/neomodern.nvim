@@ -47,7 +47,7 @@ function M.setup()
     ---@type neomodern.Config
     local Config = require("neomodern").options()
     ---@type neomodern.Theme
-    local c = require("neomodern.palette")[Config.theme]
+    local c = require("neomodern.palette").get(Config.theme, Config.variant)
 
     local COMMON = require("neomodern.highlights.common").get()
     local SYNTAX = require("neomodern.highlights.syntax").get()

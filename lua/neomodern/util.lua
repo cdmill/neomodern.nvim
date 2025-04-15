@@ -2,6 +2,7 @@ local M = {}
 
 M.bg = "#000000"
 M.fg = "#ffffff"
+M.day_brightness = 1e-8
 
 ---@param color string hex color code
 ---@return table
@@ -38,6 +39,28 @@ function M.blend(fg, amount, bg)
         blendChannel(2),
         blendChannel(3)
     )
+end
+
+---@param color string|neomodern.Theme
+function M.invert(color)
+    if type(color) == "table" then
+        for key, value in pairs(color) do
+            color[key] = M.invert(value)
+        end
+    elseif type(color) == "string" then
+        local hsluv = require("neomodern.hsluv")
+        if color ~= "none" then
+            local hsl = hsluv.hex_to_hsluv(color)
+            hsl[3] = 100 - hsl[3]
+            if hsl[3] < 50 then
+                hsl[3] = hsl[3] + (100 - hsl[3]) * M.day_brightness
+            elseif hsl[3] > 50 then
+                hsl[3] = hsl[3] - (100 - hsl[3]) * M.day_brightness
+            end
+            return hsluv.hsluv_to_hex(hsl)
+        end
+    end
+    return color
 end
 
 -- SOURCE: https://github.com/folke/tokyonight.nvim/blob/main/lua/tokyonight/util.lua

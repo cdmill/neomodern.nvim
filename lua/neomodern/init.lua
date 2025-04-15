@@ -1,22 +1,6 @@
 local Config = require("neomodern.config")
 local M = {
-    ---@class neomodern.Config
-    ---@field alt_bg? boolean If true, uses a darker alternate bg color
-    ---@field theme? string Preferred theme
-    ---@field colors? table Has string fields to override default colors
-    ---@field colored_docstrings? boolean If true, highlights docstrings like strings instead like of comments
-    ---@field code_style? table Has string values to determine code style. Field values can be the same as gui highlight values, e.g. 'bold', 'italic', 'none'
-    ---@field cursorline_gutter? boolean If true, highlights {sign, fold}column the same as cursorline
-    ---@field dark_gutter? boolean If true, highlights the gutter darker than the bg
-    ---@field diagnostics? table { darker:bool, undercurl:bool, background:bool }
-    ---@field favor_treesitter_hl? boolean if true favor treesitter highlights over semantic highlights
-    ---@field highlights? table Has string fields to override default highlights
-    ---@field plain_float? boolean If true, does not set background of floating windows. Recommend for when using floating windows with borders
-    ---@field plugin? table Has table or string fields to determine appearnce of plugins. Current plugin options are 'lualine', 'cmp', and 'telescope'
-    ---@field show_eob? boolean If true, highlights end-of-buffer tildes like comments
-    ---@field term_colors? boolean If true, enables terminal colors
-    ---@field toggle_mode_key? nil|string Keymap (normal mode) to toggle light/dark mode
-    ---@field transparent? boolean If true, does not set background colors
+    ---@type neomodern.Config
     __opts = {},
 }
 
@@ -26,11 +10,15 @@ function M.options()
 end
 
 ---Toggle between light/dark mode. Does nothing if `theme="daylight"`.
-function M.toggle_mode()
-    if M.__opts.theme ~= "daylight" then
-        vim.api.nvim_command("colorscheme daylight")
+function M.toggle_variant()
+    if vim.o.background == "light" then
+        vim.o.background = "dark"
+        M.__opts.variant = "dark"
+        vim.api.nvim_command("colorscheme " .. M.__opts.theme)
     else
-        vim.api.nvim_command("colorscheme " .. M.__theme)
+        vim.o.background = "light"
+        M.__opts.variant = "light"
+        vim.api.nvim_command("colorscheme neomodern-day")
     end
 end
 
@@ -45,7 +33,7 @@ function M.load(theme)
     vim.o.termguicolors = true
     vim.g.colors_name = M.__opts.theme
     if vim.o.background == "light" then
-        M.__opts.theme = "daylight"
+        M.__opts.variant = "light"
     end
     require("neomodern.highlights").setup()
     require("neomodern.terminal").setup()
@@ -57,50 +45,14 @@ function M.setup(opts)
     ---@type neomodern.Config
     M.__opts = vim.tbl_deep_extend("force", Config.default, opts or {})
     M.__theme = M.__opts.theme
-    if M.__opts.toggle_mode_key then
+    if M.__opts.toggle_variant_key then
         vim.keymap.set(
             "n",
-            M.__opts.toggle_mode_key,
-            '<cmd>lua require("neomodern").toggle_mode()<cr>',
+            M.__opts.toggle_variant_key,
+            '<cmd>lua require("neomodern").toggle_variant()<cr>',
             { noremap = true, silent = true }
         )
     end
 end
-
----@class neomodern.Theme.Terminal
----@field black string
----@field grey string
----@field red string
----@field orange string
----@field green string
----@field yellow string
----@field blue string
----@field purple string
----@field magenta string
----@field cyan string
----@field white string
-
----@class neomodern.Theme
----@field alt string highlight
----@field alt_bg string dim alternate background
----@field bg string background
----@field builtin string default/builtin library
----@field comment string comments
----@field constant string constants
----@field fg string foreground
----@field func string functions
----@field keyword string keywords
----@field line string line highlights: e.g. cursor line
----@field number string number/boolean
----@field operator string operators
----@field property string class properties
----@field string string strings
----@field type string types
----@field visual string visual selection
----@field diag_red string diagnostics red color (e.g. error)
----@field diag_blue string diagnostics blue color (e.g. hint)
----@field diag_yellow string diagnostics yellow color (e.g. warning)
----@field diag_green string diagnostics green color (e.g. diffadd)
----@field colormap neomodern.Theme.Terminal mapping to terminal colors
 
 return M

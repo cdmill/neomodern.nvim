@@ -1,5 +1,5 @@
 local M = {}
-local util = require("neomodern.util")
+local Util = require("neomodern.util")
 
 --- Returns the terminal colors associated with a theme, and optionally the entire
 --- palette.
@@ -8,14 +8,13 @@ local util = require("neomodern.util")
 function M.colors(with_palette)
     ---@type neomodern.Config
     local Config = require("neomodern").options()
-    local theme = Config.theme
     ---@type neomodern.Theme
-    local palette = require("neomodern.palette")[theme]
+    local palette = require("neomodern.palette").get(Config.theme, Config.variant)
     ---@type neomodern.Theme.Terminal
     local colors = palette.colormap
 
     local c = {}
-    c.dim = util.blend(palette.bg, 0.9, "#000000")
+    c.dim = Util.blend(palette.bg, 0.9, "#000000")
     c.black = colors.black
     c.grey = colors.grey
     c.red = colors.red
@@ -43,8 +42,10 @@ function M.setup()
     if not Config.term_colors then
         return
     end
+    ---@type neomodern.Theme
+    local palette = require("neomodern.palette").get(Config.theme, Config.variant)
     ---@type neomodern.Theme.Terminal
-    local colors = require("neomodern.palette")[Config.theme].colormap
+    local colors = palette.colormap
     vim.g.terminal_color_0 = colors.black
     vim.g.terminal_color_1 = colors.red
     vim.g.terminal_color_2 = colors.green

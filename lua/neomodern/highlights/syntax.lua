@@ -3,9 +3,9 @@ local M = {}
 function M.get()
     ---@type neomodern.Config
     local Config = require("neomodern").options()
-    local util = require("neomodern.util")
+    local Util = require("neomodern.Util")
     ---@type neomodern.Theme
-    local c = require("neomodern.palette")[Config.theme]
+    local c = require("neomodern.palette").get(Config.theme, Config.variant)
     local hl = {}
 
     local syntax = {
@@ -41,7 +41,7 @@ function M.get()
         -- StorageClass = { fg = c.constant, fmt = config.code_style.keywords }, -- 'static', 'volatile' etc
         -- Structure = { fg = c.constant }, -- 'struct', 'union', 'enum' etc
         -- Typedef = { fg = c.constant }, -- 'typedef'
-        Todo = { fg = util.blend(c.comment, 0.6, c.fg), fmt = "bolditalic" }, -- (preferred) 'TODO' keywords in comments
+        Todo = { fg = Util.blend(c.comment, 0.6, c.fg), fmt = "bolditalic" }, -- (preferred) 'TODO' keywords in comments
     }
 
     local treesitter = vim.version()["minor"] > 0.8
@@ -132,15 +132,15 @@ function M.get()
                 -- comment
                 -- ["@comment"]
                 ["@comment.error"] = {
-                    fg = util.blend(c.comment, 0.4, c.diag_red),
+                    fg = Util.blend(c.comment, 0.4, c.diag_red),
                     fmt = "bolditalic",
                 },
                 ["@comment.warning"] = {
-                    fg = util.blend(c.comment, 0.4, c.diag_yellow),
+                    fg = Util.blend(c.comment, 0.4, c.diag_yellow),
                     fmt = "bolditalic",
                 },
                 ["@comment.note"] = {
-                    fg = util.blend(c.comment, 0.4, c.diag_blue),
+                    fg = Util.blend(c.comment, 0.4, c.diag_blue),
                     fmt = "bolditalic",
                 },
 
@@ -181,13 +181,13 @@ function M.get()
     hl.lsp = vim.version()["minor"] > 0.9
             and {
                 ["@lsp.typemod.variable.global"] = {
-                    fg = util.blend(c.constant, 0.8, c.bg),
+                    fg = Util.blend(c.constant, 0.8, c.bg),
                 },
                 ["@lsp.typemod.keyword.documentation"] = {
-                    fg = util.blend(c.type, 0.8, c.bg),
+                    fg = Util.blend(c.type, 0.8, c.bg),
                 },
                 ["@lsp.type.namespace"] = {
-                    fg = util.blend(c.constant, 0.8, c.bg),
+                    fg = Util.blend(c.constant, 0.8, c.bg),
                 },
                 ["@lsp.type.macro"] = syntax["Macro"],
                 ["@lsp.type.parameter"] = treesitter["@variable.parameter"],
@@ -204,22 +204,22 @@ function M.get()
         DiagnosticWarn = { fg = c.diag_yellow },
 
         DiagnosticVirtualTextError = {
-            bg = Config.diagnostics.background and util.blend(c.diag_red, 0.1, c.bg)
+            bg = Config.diagnostics.background and Util.blend(c.diag_red, 0.1, c.bg)
                 or nil,
             fg = c.diag_red,
         },
         DiagnosticVirtualTextWarn = {
-            bg = Config.diagnostics.background and util.blend(c.diag_yellow, 0.1, c.bg)
+            bg = Config.diagnostics.background and Util.blend(c.diag_yellow, 0.1, c.bg)
                 or nil,
             fg = c.diag_yellow,
         },
         DiagnosticVirtualTextInfo = {
-            bg = Config.diagnostics.background and util.blend(c.diag_blue, 0.1, c.bg)
+            bg = Config.diagnostics.background and Util.blend(c.diag_blue, 0.1, c.bg)
                 or nil,
             fg = c.diag_blue,
         },
         DiagnosticVirtualTextHint = {
-            bg = Config.diagnostics.background and util.blend(c.diag_blue, 0.1, c.bg)
+            bg = Config.diagnostics.background and Util.blend(c.diag_blue, 0.1, c.bg)
                 or nil,
             fg = c.diag_blue,
         },
@@ -247,7 +247,7 @@ function M.get()
 
         LspCodeLens = {
             fg = c.keyword,
-            bg = util.blend(c.keyword, 0.1, c.bg),
+            bg = Util.blend(c.keyword, 0.1, c.bg),
             fmt = Config.code_style.comments,
         },
         LspCodeLensSeparator = { fg = c.comment },

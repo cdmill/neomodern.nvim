@@ -3,9 +3,9 @@ local M = {}
 function M.get()
     ---@type neomodern.Config
     local Config = require("neomodern").options()
-    local util = require("neomodern.util")
+    local Util = require("neomodern.util")
     ---@type neomodern.Theme
-    local c = require("neomodern.palette")[Config.theme]
+    local c = require("neomodern.palette").get(Config.theme, Config.variant)
     local hl = {}
 
     hl.special = {
@@ -81,11 +81,11 @@ function M.get()
         NeogitUnmergedchanges = { fg = c.keyword, fmt = "bolditalic" },
         NeogitDiffAdd = { link = "DiffAdd" },
         NeogitDiffAddHighlight = { link = "DiffAdd" },
-        NeogitDiffAddCursor = { bg = util.blend(c.diag_green, 0.2, c.bg) },
+        NeogitDiffAddCursor = { bg = Util.blend(c.diag_green, 0.2, c.bg) },
         NeogitDiffDelete = { link = "DiffDelete" },
         NeogitDiffDeleteHighlight = { link = "DiffDelete" },
         NeogitDiffDeleteCursor = {
-            bg = util.blend(c.diag_red, 0.2, c.bg),
+            bg = Util.blend(c.diag_red, 0.2, c.bg),
         },
         NeogitDiffContext = { bg = c.line },
         NeogitDiffContextHighlight = { bg = c.line },
@@ -163,7 +163,7 @@ function M.get()
         ObsidianExtLinkIcon = { link = "@markup.strikethrough" },
         ObsidianTag = { link = "@markup.list.unchecked" },
         ObsidianHighlightText = {
-            bg = util.blend(c.constant, 0.1, c.bg),
+            bg = Util.blend(c.constant, 0.1, c.bg),
             fg = c.constant,
         },
     }

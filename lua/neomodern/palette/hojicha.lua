@@ -19,9 +19,9 @@ local M = {
     diag_blue = "#808796",
     diag_yellow = "#969375",
     diag_green = "#8bab85",
-    colormap = {},
 }
 
+---@type neomodern.Theme.Terminal
 M.colormap = {
     black = M.alt_bg,
     grey = M.comment,

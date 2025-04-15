@@ -24,7 +24,7 @@ function M.get()
         a = {
             bg = Config.plugin.lualine.plain and c.none or c.norm,
             fg = Config.plugin.lualine.plain and c.norm or c.dark,
-            gui = Config.plugin.lualine.bold and "bold" or "none",
+            gui = Config.plugin.lualine.bold and "bold" or c.none,
         },
         b = { bg = Config.plugin.lualine.plain and c.none or c.bg_b, fg = c.vcs },
         c = { bg = Config.plugin.lualine.plain and c.none or c.bg_c, fg = c.fg_dim },
@@ -34,7 +34,7 @@ function M.get()
         a = {
             bg = Config.plugin.lualine.plain and c.none or c.ins,
             fg = Config.plugin.lualine.plain and c.ins or c.dark,
-            gui = Config.plugin.lualine.bold and "bold" or "none",
+            gui = Config.plugin.lualine.bold and "bold" or c.none,
         },
     }
 
@@ -42,7 +42,7 @@ function M.get()
         a = {
             bg = Config.plugin.lualine.plain and c.none or c.vis,
             fg = Config.plugin.lualine.plain and c.vis or c.dark,
-            gui = Config.plugin.lualine.bold and "bold" or "none",
+            gui = Config.plugin.lualine.bold and "bold" or c.none,
         },
     }
 
@@ -50,7 +50,7 @@ function M.get()
         a = {
             bg = Config.plugin.lualine.plain and c.none or c.rep,
             fg = Config.plugin.lualine.plain and c.rep or c.dark,
-            gui = Config.plugin.lualine.bold and "bold" or "none",
+            gui = Config.plugin.lualine.bold and "bold" or c.none,
         },
     }
 
@@ -58,7 +58,7 @@ function M.get()
         a = {
             bg = Config.plugin.lualine.plain and c.none or c.comm,
             fg = Config.plugin.lualine.plain and c.comm or c.dark,
-            gui = Config.plugin.lualine.bold and "bold" or "none",
+            gui = Config.plugin.lualine.bold and "bold" or c.none,
         },
     }
 

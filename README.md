@@ -1,10 +1,13 @@
 # NEOMODERN.nvim
 
-A collection of themes (5 dark, 1 light) written in [Lua](https://www.lua.org) for [Neovim](https://github.com/neovim/neovim) $\geq$ 0.9.
+A collection of themes written in [Lua](https://www.lua.org) for [Neovim](https://github.com/neovim/neovim) $\geq$ 0.9.
 Support for [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter) syntax highlighting and LSP semantic highlighting.
 Forked from [OneDark.nvim](https://github.com/navarasu/onedark.nvim).
 
 Themes have been designed to be unintrusive, simple, and pleasing to the eyes.
+
+All themes come with a light and dark variant. To use the light variant, set `variant
+= "light"` in your config or set `vim.o.background = "light"`.
 
 ## Gallery
 
@@ -41,17 +44,6 @@ A dark, brown pastel theme
 
 </details>
 
-### DARKFOREST
-
-A darker, greener take on the classic [Everforest](https://github.com/sainnhe/everforest) theme
-
-<details open>
-<summary>Click to toggle previews</summary>
-
-![image](https://github.com/cdmill/neomodern.nvim/blob/assets/darkforest.png)
-
-</details>
-
 ### ROSEPRIME
 
 Inspired by [ThePrimeagen's](https://github.com/ThePrimeagen) use of the [Rosé-Pine](https://github.com/rose-pine/neovim) theme with [tmux](https://github.com/tmux/tmux/wiki) and no color fixing.
@@ -60,17 +52,6 @@ Inspired by [ThePrimeagen's](https://github.com/ThePrimeagen) use of the [Rosé-
 <summary>Click to toggle previews</summary>
 
 ![image](https://github.com/cdmill/neomodern.nvim/blob/assets/roseprime.png)
-
-</details>
-
-### DAYLIGHT
-
-A light variant of ICECLIMBER
-
-<details open>
-<summary>Click to toggle previews</summary>
-
-![image](https://github.com/cdmill/neomodern.nvim/blob/assets/daylight.png)
 
 </details>
 
@@ -93,15 +74,10 @@ Install via your favorite package manager:
 },
 ```
 
-> [!NOTE]
-> `require("neomodern").load()` will call `set colorscheme` with your chosen theme.
-> If you prefer, you can use `vim.cmd("colorscheme <theme>")` instead. For
-> example, to use darkforest: `vim.cmd("colorscheme darkforest")`.
-
 ## Configuration
 
-There are 6 themes included (5 dark, 1 light).
-The light theme is used when `{ style = "daylight" }` is passed to `setup(options)` or
+There are 4 themes included, each with a light and dark variant.
+The light theme is used when `{ variant = "light" }` is passed to `setup(options)` or
 when `vim.o.background = "light"`.
 
 Default options are given below:
@@ -109,12 +85,14 @@ Default options are given below:
 ```lua
 require("neomodern").setup({
   -- MAIN OPTIONS --
-  -- Choose between 'iceclimber', 'gyokuro', 'hojicha', 'darkforest', 'roseprime', 'daylight'
+  -- Can be one of: 'iceclimber' | 'gyokuro' | 'hojicha' | 'roseprime'
   theme = "iceclimber",
+  -- Can be one of: 'light' | 'dark', or set via vim.o.background
+  variant = "dark",
   -- Use an alternate, darker bg
   alt_bg = false,
   -- If true, docstrings will be highlighted like strings, otherwise they will be
-  -- highlighted like comments. Note, behavior is depending on the language server.
+  -- highlighted like comments. Note, behavior is dependent on the language server.
   colored_docstrings = true,
   -- If true, highlights the {sign,fold} column the same as cursorline
   cursorline_gutter = true,
@@ -129,9 +107,9 @@ require("neomodern").setup({
   show_eob = true,
   -- If true, enable the vim terminal colors
   term_colors = true,
-  -- Keymap (in normal mode) to toggle between light and dark mode.
+  -- Keymap (in normal mode) to toggle between light and dark variants.
   -- Does nothing if `theme="daylight"`.
-  toggle_mode_key = nil,
+  toggle_variant_key = nil,
   -- Don't set background
   transparent = false,
 
@@ -166,14 +144,12 @@ require("neomodern").setup({
       -- section/component separators.
       plain = false,
     },
-    cmp = {
+    cmp = { -- works for nvim.cmp and blink.nvim
       -- Don't highlight lsp-kind items. Only the current selection will be highlighted.
       plain = false,
       -- Reverse lsp-kind items' highlights in blink/cmp menu.
       reverse = false,
     },
-    -- Options are 'borderless' or 'bordered'.
-    telescope = "bordered",
   },
 
   -- CUSTOM HIGHLIGHTS --
@@ -183,25 +159,11 @@ require("neomodern").setup({
   highlights = {},
 })
 -- Convenience function that simply calls `:colorscheme <theme>` with the theme
--- specified in your config. If not specified, `iceclimber` is used.
+-- specified in your config.
 require("neomodern").load()
 ```
 
 ### Images for Select Config Opts
-
-<details close>
-<summary>Bordered Telescope</summary>
-
-![image](https://github.com/cdmill/neomodern.nvim/blob/assets/bordered-tscope.png)
-
-</details>
-
-<details close>
-<summary>Borderless Telescope</summary>
-
-![image](https://github.com/cdmill/neomodern.nvim/blob/assets/borderless-tscope.png)
-
-</details>
 
 <details close>
 <summary>Normal Lualine</summary>
@@ -256,6 +218,8 @@ require("neomodern").setup {
   },
 }
 ```
+
+See `neomodern.palette` for color names.
 
 ## Supported Plugins
 
