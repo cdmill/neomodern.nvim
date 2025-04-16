@@ -4,9 +4,10 @@ local M = {
     __opts = {},
 }
 
+---Returns a read-only copy of the config.
 ---@return neomodern.Config
 function M.options()
-    return M.__opts
+    return vim.deepcopy(M.__opts)
 end
 
 ---Toggle between light/dark mode. Does nothing if `theme="daylight"`.

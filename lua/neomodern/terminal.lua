@@ -1,8 +1,8 @@
 local M = {}
 local Util = require("neomodern.util")
 
---- Returns the terminal colors associated with a theme, and optionally the entire
---- palette.
+---Returns the terminal colors associated with a theme, and optionally the entire
+---palette.
 ---@param with_palette boolean include the theme's palette colors
 ---@return table
 function M.colors(with_palette)

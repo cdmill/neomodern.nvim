@@ -2,8 +2,9 @@ local M = {}
 
 M.bg = "#000000"
 M.fg = "#ffffff"
-M.day_brightness = 1e-8
+M.day_brightness = 1e-4
 
+---Translates color from HTML to RGB
 ---@param color string hex color code
 ---@return table
 local function hexToRgb(color)
@@ -20,16 +21,18 @@ local function hexToRgb(color)
     return { tonumber(r, 16), tonumber(g, 16), tonumber(b, 16) }
 end
 
----@param fg string foreground color in hex
----@param bg string background color in hex
----@param amount number blend coefficient between 0=bg and 1=fg
-function M.blend(fg, amount, bg)
-    local FG = hexToRgb(fg)
-    local BG = hexToRgb(bg)
-    local alpha = math.abs(amount)
+---Util for blending colors. Alpha coefficeint should be between [0-1]
+---where 0=b and 1=a.
+---@param a string foreground color in hex
+---@param b string background color in hex
+---@param coeff number blend coefficient
+function M.blend(a, coeff, b)
+    local A = hexToRgb(a)
+    local B = hexToRgb(b)
+    local alpha = math.abs(coeff)
 
     local blendChannel = function(i)
-        local ret = ((1 - alpha) * BG[i] + alpha * FG[i])
+        local ret = ((1 - alpha) * B[i] + alpha * A[i])
         return math.floor(math.min(math.max(0, ret), 255) + 0.5)
     end
 
@@ -41,29 +44,39 @@ function M.blend(fg, amount, bg)
     )
 end
 
----@param color string|neomodern.Theme
-function M.invert(color)
-    if type(color) == "table" then
-        for key, value in pairs(color) do
-            color[key] = M.invert(value)
-        end
-    elseif type(color) == "string" then
-        local hsluv = require("neomodern.hsluv")
-        if color ~= "none" then
-            local hsl = hsluv.hex_to_hsluv(color)
+---@param colors neomodern.Theme
+function M.generate_light_variant(colors)
+    local hsluv = require("neomodern.hsluv")
+    local function invert(cname, cval)
+        if type(cval) == "table" then
+            for k, v in pairs(cval) do
+                cval[k] = invert(k, v)
+            end
+            return cval
+        elseif type(cval) == "string" and cval ~= "none" then
+            local hsl = hsluv.hex_to_hsluv(cval)
+
+            if not cname:find("bg$") then
+                -- increase saturation
+                hsl[2] = 95
+            end
+
             hsl[3] = 100 - hsl[3]
             if hsl[3] < 50 then
+                -- increase brightness
                 hsl[3] = hsl[3] + (100 - hsl[3]) * M.day_brightness
-            elseif hsl[3] > 50 then
-                hsl[3] = hsl[3] - (100 - hsl[3]) * M.day_brightness
             end
             return hsluv.hsluv_to_hex(hsl)
         end
     end
-    return color
+
+    for k, v in pairs(colors) do
+        colors[k] = invert(k, v)
+    end
+    return colors
 end
 
--- SOURCE: https://github.com/folke/tokyonight.nvim/blob/main/lua/tokyonight/util.lua
+---SOURCE: https://github.com/folke/tokyonight.nvim/blob/main/lua/tokyonight/util.lua
 ---@param str string template string
 ---@param table table key value pairs to replace in the string
 function M.template(str, table)
