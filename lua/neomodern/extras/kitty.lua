@@ -1,21 +1,23 @@
--- CREDIT: https://github.com/folke/tokyonight.nvim/blob/main/lua/tokyonight/extra/kitty.lua
-
-local util = require("neomodern.util")
+local Util = require("neomodern.util")
 
 local M = {}
 
-function M.generate(colors)
-    local kitty = util.template(
-        [[
+function M.generate(colors, info)
+    colors.extra = info.extra
+    colors.url = info.url
+    colors.upstream = info.upsteam
+    colors.theme = info.theme
+    local kitty = Util.template(
+        [=[
 # vim:ft=kitty
 
-## name: ${_style_name}
-## license: MIT
-## author: Casey Miller
-## upstream: ${_upstream_url}
-
+# name: ${theme} colors for ${extra}
+# url: ${url}
+# upstream: ${upstream}
+# author: Casey Miller
 
 background ${bg}
+# alternate, darker background ${alt_bg}
 foreground ${fg}
 selection_background ${visual}
 selection_foreground ${fg}
@@ -57,7 +59,7 @@ color15 ${fg}
 # extended colors
 color16 ${orange}
 color17 ${alt}
-]],
+]=],
         colors
     )
     return kitty

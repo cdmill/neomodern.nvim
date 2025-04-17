@@ -1,0 +1,1 @@
+require("neomodern").load("gyokuro")

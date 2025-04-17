@@ -1,16 +1,14 @@
--- CREDIT: https://github.com/folke/tokyonight.nvim/blob/main/lua/tokyonight/extra/windows_terminal.lua
-
-local util = require("neomodern.util")
+local Util = require("neomodern.util")
 
 local M = {}
 
-function M.generate(colors)
-    local windows_terminal = util.template(
-        [[
+function M.generate(colors, _)
+    local windows_terminal = Util.template(
+        [=[
 # Add the following object to your Windows Terminal configuration
 # https://learn.microsoft.com/en-us/windows/terminal/customize-settings/color-schemes#creating-your-own-color-scheme
 {
-    "background": "${bg}",
+    "background": "${bg}", // alternate, darker background=${alt_bg}
     "black": "${black}",
     "blue": "${blue}",
     "brightBlack": "${grey}",
@@ -32,7 +30,7 @@ function M.generate(colors)
     "white": "${fg}",
     "yellow": "${yellow}"
 }
-]],
+]=],
         colors
     )
 

@@ -1,15 +1,18 @@
--- CREDIT: https://github.com/folke/tokyonight.nvim/blob/main/lua/tokyonight/extra/wezterm.lua
-
-local util = require("neomodern.util")
+local Util = require("neomodern.util")
 
 local M = {}
 
-function M.generate(colors)
-    local wezterm = util.template(
-        [[
+function M.generate(colors, info)
+    colors.extra = info.extra
+    colors.url = info.url
+    colors.upstream = info.upsteam
+    colors.theme = info.theme
+    local wezterm = Util.template(
+        [=[
 [colors]
 foreground = "${fg}"
 background = "${bg}"
+# alternate, darker background = "${alt_bg}"
 cursor_bg = "${fg}"
 cursor_border = "${fg}"
 cursor_fg = "${bg}"
@@ -50,8 +53,11 @@ bg_color = "${bg}"
 
 [metadata]
 aliases = []
+name = "${theme}"
+url = "${url}"
+upstream = "${upstream}"
 author = "Casey Miller"
-name = "${_name}"]],
+]=],
         colors
     )
     return wezterm

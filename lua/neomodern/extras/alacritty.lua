@@ -1,16 +1,22 @@
--- CREDIT: https://github.com/folke/tokyonight.nvim/blob/main/lua/tokyonight/extra/alacritty.lua
-
 local M = {}
-local util = require("neomodern.util")
+local Util = require("neomodern.util")
 
----@param colors ColorScheme
-function M.generate(colors)
-    local alacritty = util.template(
+function M.generate(colors, info)
+    colors.extra = info.extra
+    colors.url = info.url
+    colors.upstream = info.upsteam
+    colors.theme = info.theme
+    local alacritty = Util.template(
         [=[
-# ${_style_name} Alacritty Colors
+# name: ${theme} colors for ${extra}
+# url: ${url}
+# upstream: ${upstream}
+# author: Casey Miller
+
 # Default colors
 [colors.primary]
 background = '${bg}'
+# alternate, darker background = '${alt_bg}'
 foreground = '${fg}'
 
 #[colors.cursor]

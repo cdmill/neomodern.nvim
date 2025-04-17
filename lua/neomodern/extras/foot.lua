@@ -1,10 +1,12 @@
--- CREDIT: https://github.com/folke/tokyonight.nvim/blob/main/lua/tokyonight/extra/foot.lua
-
-local util = require("neomodern.util")
+local Util = require("neomodern.util")
 
 local M = {}
 
-function M.generate(colors)
+function M.generate(colors, info)
+    colors.extra = info.extra
+    colors.url = info.url
+    colors.upstream = info.upsteam
+    colors.theme = info.theme
     local foot_colors = {}
     for k, v in pairs(colors) do
         if type(v) == "string" then
@@ -12,14 +14,20 @@ function M.generate(colors)
         end
     end
 
-    local foot = util.template(
-        [[
+    local foot = Util.template(
+        [=[
+# name: ${theme} colors for ${extra}
+# url: ${url}
+# upstream: ${upstream}
+# author: Casey Miller
+
 [cursor]
 color=${fg} ${visual}
 
 [colors]
 foreground=${fg}
 background=${bg}
+# alternate, darker background=${alt_bg}
 selection-foreground=${fg}
 selection-background=${visual}
 urls=${blue}
@@ -44,7 +52,7 @@ bright7=${fg}
 
 16=${orange}
 17=${alt}
-]],
+]=],
         foot_colors
     )
 

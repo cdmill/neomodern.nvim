@@ -1,0 +1,47 @@
+[colors]
+foreground = "#adacac"
+background = "#161616"
+# alternate, darker background = "#111111"
+cursor_bg = "#adacac"
+cursor_border = "#adacac"
+cursor_fg = "#161616"
+selection_bg = "#333333"
+selection_fg = "#adacac"
+split = "#696969"
+compose_cursor = "#a18b7f"
+scrollbar_thumb = "#696969"
+
+ansi = ["#111111", "#9c797d", "#8a968f", "#b5ae84", "#808796", "#8a879c", "#b0b58a", "#adacac"]
+brights = ["#696969", "#9c797d", "#8a968f", "#b5ae84", "#808796", "#a7ab93", "#b0b58a", "#adacac"]
+
+[colors.tab_bar]
+inactive_tab_edge = "#696969"
+background = "#161616"
+
+[colors.tab_bar.active_tab]
+fg_color = "#a7ab93"
+bg_color = "#333333"
+
+[colors.tab_bar.inactive_tab]
+fg_color = "#696969"
+bg_color = "#1b1c1d"
+
+[colors.tab_bar.inactive_tab_hover]
+fg_color = "#696969"
+bg_color = "#1b1c1d"
+# intensity = "Bold"
+
+[colors.tab_bar.new_tab_hover]
+fg_color = "#a7ab93"
+bg_color = "#333333"
+intensity = "Bold"
+
+[colors.tab_bar.new_tab]
+fg_color = "#a7ab93"
+bg_color = "#161616"
+
+[metadata]
+aliases = []
+name = "HOJICHA"
+upstream = "https://github.com/cdmill/neomodern.nvim/raw/main/extras/wezterm/hojicha.toml"
+author = "Casey Miller"
