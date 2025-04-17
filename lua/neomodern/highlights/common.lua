@@ -6,11 +6,14 @@ function M.get()
     local Config = require("neomodern").options()
     ---@type neomodern.Theme
     local c = require("neomodern.palette").get(Config.theme, Config.variant)
-    local darkgutter = Util.blend(c.bg, 0.85, "#000000")
     local hl = {}
 
+    local darkgutter
     if Config.alt_bg then
         c.bg = c.alt_bg
+        darkgutter = Util.blend(c.bg, 0.85, "#000000")
+    else
+        darkgutter = c.alt_bg
     end
 
     hl.ColorColumn = { bg = c.line }
