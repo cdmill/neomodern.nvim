@@ -3,7 +3,7 @@ local M = {}
 M.bg = "#000000"
 M.fg = "#ffffff"
 
----Translates color from HTML to RGB
+---Translates color from HTML to RGB.
 ---@param color string hex color code
 ---@return table
 local function hexToRgb(color)
@@ -25,6 +25,7 @@ end
 ---@param a string foreground color in hex
 ---@param b string background color in hex
 ---@param coeff number blend coefficient
+---@return string
 function M.blend(a, coeff, b)
     local A = hexToRgb(a)
     local B = hexToRgb(b)
@@ -43,7 +44,9 @@ function M.blend(a, coeff, b)
     )
 end
 
+---Generates a light mode variant for a provided theme by inverting colors.
 ---@param colors neomodern.Theme
+---@return neomodern.Theme
 function M.generate_light_variant(colors)
     local hsluv = require("neomodern.hsluv")
     local saturation_coeff = 25e-2
@@ -76,12 +79,19 @@ function M.generate_light_variant(colors)
     for k, v in pairs(colors) do
         colors[k] = invert(k, v)
     end
+    -- alt_bg is always darker than bg, therefore inverting means we need to swap
+    -- afterwards
+    colors["bg"], colors["alt_bg"] = colors["alt_bg"], colors["bg"]
     return colors
 end
 
+---Generates a template from a string containing variables of the form $VAR, and a table
+---of corresponding replacement variables.
+---
 ---SOURCE: https://github.com/folke/tokyonight.nvim/blob/main/lua/tokyonight/util.lua
 ---@param str string template string
 ---@param table table key value pairs to replace in the string
+---@return string
 function M.template(str, table)
     return (
         str:gsub("($%b{})", function(w)

@@ -8,44 +8,22 @@ local Util = require("neomodern.util")
 function M.colors(with_palette)
     ---@type neomodern.Config
     local Config = require("neomodern").options()
-    ---@type neomodern.Theme
     local palette = require("neomodern.palette").get(Config.theme, Config.variant)
-    ---@type neomodern.Theme.Terminal
-    local colors = palette.colormap
-
-    local c = {}
-    c.dim = Util.blend(palette.bg, 0.9, "#000000")
-    c.black = colors.black
-    c.grey = colors.grey
-    c.red = colors.red
-    c.orange = colors.orange
-    c.green = colors.green
-    c.yellow = colors.yellow
-    c.blue = colors.blue
-    c.purple = colors.purple
-    c.magenta = colors.magenta
-    c.cyan = colors.cyan
-    c.white = colors.white
-
+    palette.dim = Util.blend(palette.bg, 0.9, "#000000")
     if with_palette then
-        for k, v in pairs(palette) do
-            c[k] = v
-        end
+        return vim.tbl_deep_extend("force", palette.colormap, palette)
     end
-    return c
+    return palette.colormap
 end
 
----Sets the vim terminal colors.
+---Sets the vim terminal colors if `term_colors` is set in `neomodern.Config`.
 function M.setup()
     ---@type neomodern.Config
     local Config = require("neomodern").options()
     if not Config.term_colors then
         return
     end
-    ---@type neomodern.Theme
-    local palette = require("neomodern.palette").get(Config.theme, Config.variant)
-    ---@type neomodern.Theme.Terminal
-    local colors = palette.colormap
+    local colors = M.colors(false)
     vim.g.terminal_color_0 = colors.black
     vim.g.terminal_color_1 = colors.red
     vim.g.terminal_color_2 = colors.green

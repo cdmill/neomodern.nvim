@@ -47,13 +47,14 @@ for key, theme in pairs(M.themes) do
     M[key] = require("neomodern.palette." .. theme)
 end
 
+---Returns a read-only copy of the light or dark variant of a theme.
 ---@param theme string
 ---@param variant string
 M.get = function(theme, variant)
     if variant == "light" then
         return require("neomodern.palette.day").get()
     else
-        return M[theme]
+        return vim.deepcopy(M[theme])
     end
 end
 

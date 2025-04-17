@@ -10,15 +10,12 @@ function M.options()
     return vim.deepcopy(M.__opts)
 end
 
----Toggle between light/dark mode. Does nothing if `theme="daylight"`.
+---Toggle between light/dark variants.
 function M.toggle_variant()
     if vim.o.background == "light" then
         vim.o.background = "dark"
-        M.__opts.variant = "dark"
         vim.api.nvim_command("colorscheme " .. M.__opts.theme)
     else
-        vim.o.background = "light"
-        M.__opts.variant = "light"
         vim.api.nvim_command("colorscheme neomodern-day")
     end
 end
@@ -35,12 +32,14 @@ function M.load(theme)
     vim.g.colors_name = M.__opts.theme
     if vim.o.background == "light" then
         M.__opts.variant = "light"
+    else
+        M.__opts.variant = "dark"
     end
     require("neomodern.highlights").setup()
     require("neomodern.terminal").setup()
 end
 
----Sets config options. Call `load` after to set colorscheme.
+---Set the config options.
 ---@param opts neomodern.Config
 function M.setup(opts)
     ---@type neomodern.Config

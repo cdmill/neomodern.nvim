@@ -18,6 +18,7 @@ local function vim_highlights(highlights)
     end
 end
 
+---Util for applying custom user colors.
 ---@param prefix string
 ---@param color string
 ---@param palette neomodern.Theme
