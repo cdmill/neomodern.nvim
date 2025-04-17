@@ -3,7 +3,7 @@ local M = {}
 function M.get()
     ---@type neomodern.Config
     local Config = require("neomodern").options()
-    local Util = require("neomodern.Util")
+    local Util = require("neomodern.util")
     ---@type neomodern.Theme
     local c = require("neomodern.palette").get(Config.theme, Config.variant)
     local hl = {}
