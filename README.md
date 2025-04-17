@@ -17,34 +17,55 @@ All themes come with a light and dark variant. To use the light variant, set `va
 
 ### ICECLIMBER
 
-A dark theme with colors inspired from Nintendo's Ice Climbers characters
+A theme with colors inspired from Nintendo's Ice Climbers characters
 
 <details open>
-<summary>Click to toggle previews</summary>
+<summary>Dark Variant</summary>
 
-![image](https://github.com/cdmill/neomodern.nvim/blob/assets/iceclimber.png)
+![image](https://github.com/cdmill/neomodern.nvim/blob/assets/iceclimber-dark.png)
+
+</details>
+
+<details closed>
+<summary>Light Variant</summary>
+
+![image](https://github.com/cdmill/neomodern.nvim/blob/assets/iceclimber-light.png)
 
 </details>
 
 ### GYOKURO
 
-A dark, fresh green tea inspired theme
+A fresh green tea inspired theme
 
 <details open>
-<summary>Click to toggle previews</summary>
+<summary>Dark Variant</summary>
 
-![image](https://github.com/cdmill/neomodern.nvim/blob/assets/coffeecat.png)
+![image](https://github.com/cdmill/neomodern.nvim/blob/assets/gyokuro-dark.png)
+
+</details>
+
+<details closed>
+<summary>Light Variant</summary>
+
+![image](https://github.com/cdmill/neomodern.nvim/blob/assets/gyokuro-light.png)
 
 </details>
 
 ### HOJICHA
 
-A dark, roasted green tea inspired theme
+A roasted green tea inspired theme
 
 <details open>
-<summary>Click to toggle previews</summary>
+<summary>Dark Variant</summary>
 
-![image](https://github.com/cdmill/neomodern.nvim/blob/assets/coffeecat.png)
+![image](https://github.com/cdmill/neomodern.nvim/blob/assets/hojicha-dark.png)
+
+</details>
+
+<details closed>
+<summary>Light Variant</summary>
+
+![image](https://github.com/cdmill/neomodern.nvim/blob/assets/hojicha-light.png)
 
 </details>
 
@@ -53,9 +74,16 @@ A dark, roasted green tea inspired theme
 Inspired by [ThePrimeagen's](https://github.com/ThePrimeagen) use of the [Rosé-Pine](https://github.com/rose-pine/neovim) theme with [tmux](https://github.com/tmux/tmux/wiki) and no color fixing.
 
 <details open>
-<summary>Click to toggle previews</summary>
+<summary>Dark Variant</summary>
 
-![image](https://github.com/cdmill/neomodern.nvim/blob/assets/roseprime.png)
+![image](https://github.com/cdmill/neomodern.nvim/blob/assets/roseprime-dark.png)
+
+</details>
+
+<details closed>
+<summary>Light Variant</summary>
+
+![image](https://github.com/cdmill/neomodern.nvim/blob/assets/roseprime-light.png)
 
 </details>
 
@@ -170,43 +198,6 @@ require("neomodern").setup({
 require("neomodern").load()
 ```
 
-### Images for Select Config Opts
-
-<details close>
-<summary>Normal Lualine</summary>
-
-![image](https://github.com/cdmill/neomodern.nvim/blob/assets/roseprime.png)
-
-</details>
-
-<details close>
-<summary>Plain Lualine</summary>
-
-![image](https://github.com/cdmill/neomodern.nvim/blob/assets/plain_lualine.png)
-
-</details>
-
-Example setup for plain cmp (preview below):
-
-```lua
--- Use these opts in setup and also with rounded borders enabled in your lsp config
-require("neomodern").setup({
-  plain_float = true,
-  plugin = {
-    cmp = {
-      plain = true,
-    },
-  },
-})
-```
-
-<details close>
-<summary>Click to toggle preview for plain cmp</summary>
-
-![image](https://github.com/cdmill/neomodern.nvim/blob/assets/plain_cmp.png)
-
-</details>
-
 ## Customization
 
 Example using custom colors and highlights:
@@ -254,9 +245,9 @@ Available [here](https://github.com/cdmill/neomodern.nvim/tree/main/extras)
 
 ## Legacy Support
 
-With the release of `v1`, Neomodern dropped support for the legacy themes COFFEECAT and
-DARKFOREST. If you would still like to use these themes, you can use the following
-commit:
+With the release of `v1`, Neomodern dropped support for the legacy themes COFFEECAT,
+DARKFOREST, and DAYLIGHT. If you would still like to use these themes, you can use the
+following commit:
 
 ```lua
 {
