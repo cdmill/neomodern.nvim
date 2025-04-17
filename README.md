@@ -1,13 +1,17 @@
 # NEOMODERN.nvim
 
-A collection of themes written in [Lua](https://www.lua.org) for [Neovim](https://github.com/neovim/neovim) $\geq$ 0.9.
+A collection of themes written in [Lua](https://www.lua.org) for [Neovim](https://github.com/neovim/neovim) >= 0.9.
 Support for [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter) syntax highlighting and LSP semantic highlighting.
-Forked from [OneDark.nvim](https://github.com/navarasu/onedark.nvim).
 
 Themes have been designed to be unintrusive, simple, and pleasing to the eyes.
 
 All themes come with a light and dark variant. To use the light variant, set `variant
 = "light"` in your config or set `vim.o.background = "light"`.
+
+> [!NOTE]
+> Neomodern is now stable, meaning there will be minimal breaking changes in the future.
+> With the release of `v1`, support was dropped for COFFEECAT and DARKFOREST.
+> See [Legacy Support](#legacy-support) for details.
 
 ## Gallery
 
@@ -24,7 +28,7 @@ A dark theme with colors inspired from Nintendo's Ice Climbers characters
 
 ### GYOKURO
 
-A dark, brown pastel theme
+A dark, fresh green tea inspired theme
 
 <details open>
 <summary>Click to toggle previews</summary>
@@ -35,7 +39,7 @@ A dark, brown pastel theme
 
 ### HOJICHA
 
-A dark, brown pastel theme
+A dark, roasted green tea inspired theme
 
 <details open>
 <summary>Click to toggle previews</summary>
@@ -84,7 +88,8 @@ Default options are given below:
 
 ```lua
 require("neomodern").setup({
-  -- MAIN OPTIONS --
+  -----MAIN OPTIONS-----
+  --
   -- Can be one of: 'iceclimber' | 'gyokuro' | 'hojicha' | 'roseprime'
   theme = "iceclimber",
   -- Can be one of: 'light' | 'dark', or set via vim.o.background
@@ -103,7 +108,7 @@ require("neomodern").setup({
   -- Don't set background of floating windows. Recommended for when using floating
   -- windows with borders.
   plain_float = false,
-  -- Show the end-of-buffer tildes
+  -- Show the end-of-buffer character
   show_eob = true,
   -- If true, enable the vim terminal colors
   term_colors = true,
@@ -113,13 +118,13 @@ require("neomodern").setup({
   -- Don't set background
   transparent = false,
 
+  -----DIAGNOSTICS and CODE STYLE-----
+  --
   diagnostics = {
     darker = true, -- Darker colors for diagnostic
     undercurl = true, -- Use undercurl for diagnostics
     background = true, -- Use background color for virtual text
   },
-
-  -- CODE FORMATTING --
   -- The following table accepts values the same as the `gui` option for normal
   -- highlights. For example, `bold`, `italic`, `underline`, `none`.
   code_style = {
@@ -134,7 +139,8 @@ require("neomodern").setup({
     variables = "none",
   },
 
-  -- PLUGINS --
+  -----PLUGINS-----
+  --
   -- The following options allow for more control over some plugin appearances.
   plugin = {
     lualine = {
@@ -153,6 +159,7 @@ require("neomodern").setup({
   },
 
   -- CUSTOM HIGHLIGHTS --
+  --
   -- Override default colors
   colors = {},
   -- Override highlight groups
@@ -244,6 +251,22 @@ Available [here](https://github.com/cdmill/neomodern.nvim/tree/main/extras)
 - [wezterm](https://github.com/wez/wezterm)
 - [Windows Terminal](https://github.com/microsoft/terminal)
 - [Iterm2](https://iterm2.com)
+
+## Legacy Support
+
+With the release of `v1`, Neomodern dropped support for the legacy themes COFFEECAT and
+DARKFOREST. If you would still like to use these themes, you can use the following
+commit:
+
+```lua
+{
+    "cdmill/neomodern.nvim",
+    commit = "8eecbe1",
+    opts = {
+        -- your settings here
+    }
+}
+```
 
 ## Contributing
 
