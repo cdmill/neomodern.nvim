@@ -141,7 +141,6 @@ require("neomodern").setup({
   -- If true, enable the vim terminal colors
   term_colors = true,
   -- Keymap (in normal mode) to toggle between light and dark variants.
-  -- Does nothing if `theme="daylight"`.
   toggle_variant_key = nil,
   -- Don't set background
   transparent = false,
