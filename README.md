@@ -1,12 +1,10 @@
-# *NEOMODERN*.nvim
+# <p align="center"> *NEOMODERN*.nvim </p>
 
-A collection of themes written in [Lua](https://www.lua.org) for [Neovim](https://github.com/neovim/neovim) >= 0.9.
-Support for [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter) syntax highlighting and LSP semantic highlighting.
+<p align="center">
+Modern, unintrusive, simple
 
-Themes have been designed to be unintrusive, simple, and pleasing to the eyes.
-
-All themes come with a light and dark variant. To use the light variant, set `variant
-= "light"` in your config or set `vim.o.background = "light"`.
+<img src="https://img.shields.io/badge/Neovim-%3E%3D%209.0-darkgreen?logo=Neovim" />
+</p>
 
 > [!NOTE]
 > Neomodern is now stable, meaning there will be minimal breaking changes in the future.
