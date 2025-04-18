@@ -13,7 +13,7 @@ All themes come with a light and dark variant. To use the light variant, set `va
 > With the release of `v1`, support was dropped for COFFEECAT, DARKFOREST, and DAYLIGHT.
 > See [Legacy Support](#legacy-support) for details.
 
-## Gallery
+## 📷 Gallery
 
 ### ICECLIMBER
 
@@ -87,7 +87,7 @@ Inspired by [ThePrimeagen's](https://github.com/ThePrimeagen) use of the [Rosé-
 
 </details>
 
-## Installation
+## 🛠 Installation
 
 Install via your favorite package manager:
 
@@ -106,7 +106,7 @@ Install via your favorite package manager:
 },
 ```
 
-## Configuration
+## ⚙️ Configuration
 
 There are 4 themes included, each with a light and dark variant.
 The light theme is used when `{ variant = "light" }` is passed to `setup(options)` or
@@ -198,7 +198,7 @@ require("neomodern").setup({
 require("neomodern").load()
 ```
 
-## Customization
+## 🎨 Customization
 
 Example using custom colors and highlights:
 
@@ -219,7 +219,7 @@ require("neomodern").setup {
 
 See `neomodern.palette` for color names.
 
-## Supported Plugins
+## 🔌 Supported Plugins
 
 - [Dashboard](https://github.com/nvimdev/dashboard-nvim)
 - [cmp](https://github.com/hrsh7th/nvim-cmp)
@@ -230,7 +230,7 @@ See `neomodern.palette` for color names.
 - [Nvim-tree](https://github.com/nvim-tree/nvim-tree.lua)
 - plus more
 
-## Extras
+## 🆓 Extras
 
 Available [here](https://github.com/cdmill/neomodern.nvim/tree/main/extras)
 
@@ -243,7 +243,7 @@ Available [here](https://github.com/cdmill/neomodern.nvim/tree/main/extras)
 - [Windows Terminal](https://github.com/microsoft/terminal)
 - [Iterm2](https://iterm2.com)
 
-## Legacy Support
+## 📌 Legacy Support
 
 With the release of `v1`, Neomodern dropped support for the legacy themes COFFEECAT,
 DARKFOREST, and DAYLIGHT. If you would still like to use these themes, you can use the
@@ -259,14 +259,14 @@ following commit:
 }
 ```
 
-## Contributing
+## 🪄 Contributing
 
 Pull requests are welcome.
 
 If you are wanting support for a plugin, either open an issue or submit a pull request
 with your highlight additions in [this file](https://github.com/cdmill/neomodern.nvim/blob/main/lua/neomodern/highlights/plugin.lua).
 
-## Inspiration
+## 💫 Inspiration
 
 - [OneDark.nvim](https://github.com/navarasu/onedark.nvim)
 - [Bamboo.nvim](https://github.com/ribru17/bamboo.nvim)
@@ -276,6 +276,6 @@ with your highlight additions in [this file](https://github.com/cdmill/neomodern
 - [TokyoNight](https://github.com/folke/tokyonight.nvim)
 - [No Clown Fiesta](https://github.com/aktersnurra/no-clown-fiesta.nvim)
 
-## License
+## 📜 License
 
 [MIT](https://choosealicense.com/licenses/mit/)
