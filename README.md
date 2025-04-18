@@ -5,7 +5,7 @@ Modern, simple, unintrusive
 </p>
 
 <p align="center">
-<img src="https://img.shields.io/badge/Neovim-%3E%3D%209.0-darkgreen?logo=Neovim" />
+<img src="https://img.shields.io/badge/Neovim-%3E%3D%209.0-darkgreen?logo=Neovim&labelColor=%231b1c1d&color=%2372966c" />
 </p>
 
 > [!NOTE]
