@@ -1,13 +1,14 @@
 # <p align="center"> *NEOMODERN*.nvim </p>
 
 <p align="center">
-Modern, unintrusive, simple
-
-<img src="https://img.shields.io/badge/Neovim-%3E%3D%209.0-darkgreen?logo=Neovim" />
+Modern, simple, unintrusive
 </p>
 
+<p align="center">
+<img src="https://img.shields.io/badge/Neovim-%3E%3D%209.0-darkgreen?logo=Neovim" />
+<\p>
+
 > [!NOTE]
-> Neomodern is now stable, meaning there will be minimal breaking changes in the future.
 > With the release of `v1`, support was dropped for COFFEECAT, DARKFOREST, and DAYLIGHT.
 > See [Legacy Support](#legacy-support) for details.
 
