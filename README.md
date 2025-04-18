@@ -10,7 +10,7 @@ All themes come with a light and dark variant. To use the light variant, set `va
 
 > [!NOTE]
 > Neomodern is now stable, meaning there will be minimal breaking changes in the future.
-> With the release of `v1`, support was dropped for COFFEECAT and DARKFOREST.
+> With the release of `v1`, support was dropped for COFFEECAT, DARKFOREST, and DAYLIGHT.
 > See [Legacy Support](#legacy-support) for details.
 
 ## Gallery
