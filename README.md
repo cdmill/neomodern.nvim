@@ -6,7 +6,7 @@ Modern, simple, unintrusive
 
 <p align="center">
 <img src="https://img.shields.io/badge/Neovim-%3E%3D%209.0-darkgreen?logo=Neovim" />
-<\p>
+</p>
 
 > [!NOTE]
 > With the release of `v1`, support was dropped for COFFEECAT, DARKFOREST, and DAYLIGHT.
