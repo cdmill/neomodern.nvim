@@ -1,4 +1,4 @@
-# NEOMODERN.nvim
+# *NEOMODERN*.nvim
 
 A collection of themes written in [Lua](https://www.lua.org) for [Neovim](https://github.com/neovim/neovim) >= 0.9.
 Support for [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter) syntax highlighting and LSP semantic highlighting.
@@ -15,7 +15,7 @@ All themes come with a light and dark variant. To use the light variant, set `va
 
 ## 📷 Gallery
 
-### ❄️ ICECLIMBER
+### ❄️ *ICECLIMBER*
 
 A theme with colors inspired from Nintendo's Ice Climbers characters
 
@@ -33,7 +33,7 @@ A theme with colors inspired from Nintendo's Ice Climbers characters
 
 </details>
 
-### 🌱 GYOKURO
+### 🌱 *GYOKURO*
 
 A fresh green tea inspired theme
 
@@ -51,7 +51,7 @@ A fresh green tea inspired theme
 
 </details>
 
-### 🍂 HOJICHA
+### 🍂 *HOJICHA*
 
 A roasted green tea inspired theme
 
@@ -69,7 +69,7 @@ A roasted green tea inspired theme
 
 </details>
 
-### 🌷 ROSEPRIME
+### 🌷 *ROSEPRIME*
 
 Inspired by [ThePrimeagen's](https://github.com/ThePrimeagen) use of the [Rosé-Pine](https://github.com/rose-pine/neovim) theme with [tmux](https://github.com/tmux/tmux/wiki) and no color fixing.
 
