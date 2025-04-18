@@ -12,7 +12,7 @@ function M.generate(colors, info)
 [colors]
 foreground = "${fg}"
 background = "${bg}"
-# alternate, darker background = "${alt_bg}"
+# background = "${alt_bg}" # alternate, darker bg
 cursor_bg = "${fg}"
 cursor_border = "${fg}"
 cursor_fg = "${bg}"
