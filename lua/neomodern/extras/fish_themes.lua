@@ -22,7 +22,7 @@ function M.generate(colors, info)
 # author: Casey Miller
 
 # preferred bg: ${bg}
-# alt background: ${bg}
+# alt background: ${alt_bg}
 
 # Syntax Highlighting Colors
 set -g fish_color_normal ${fg}

@@ -25,7 +25,7 @@ function M.generate(colors, info)
 # use in ~/.config/fish/conf.d/
 
 # preferred bg: ${bg}
-# alt background: ${bg}
+# alt background: ${alt_bg}
 
 ### Full palette. 
 ### Colors defined in neomdern/palette/${theme}.lua

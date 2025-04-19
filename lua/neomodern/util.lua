@@ -1,8 +1,5 @@
 local M = {}
 
-M.bg = "#000000"
-M.fg = "#ffffff"
-
 ---Translates color from HTML to RGB.
 ---@param color string hex color code
 ---@return table

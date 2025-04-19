@@ -1,21 +1,34 @@
-# NEOMODERN.nvim
+# <p align="center"> *NEOMODERN*.nvim </p>
 
-A collection of themes written in [Lua](https://www.lua.org) for [Neovim](https://github.com/neovim/neovim) >= 0.9.
-Support for [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter) syntax highlighting and LSP semantic highlighting.
+<p align="center">
+modern — simple — unintrusive
+</p>
 
-Themes have been designed to be unintrusive, simple, and pleasing to the eyes.
-
-All themes come with a light and dark variant. To use the light variant, set `variant
-= "light"` in your config or set `vim.o.background = "light"`.
+<p align="center">
+<img src="https://img.shields.io/github/v/tag/cdmill/neomodern.nvim?style=flat&label=RELEASE&labelColor=%23212123&color=%238a88db" />
+<img src="https://img.shields.io/badge/BUILT_WITH_LUA-blue?style=flat&color=%23629da3" />
+<img src="https://img.shields.io/badge/NEOVIM-0.9-blue?style=flat&logo=Neovim&labelColor=%23212123&color=%238a88db" />
+</p>
 
 > [!NOTE]
-> Neomodern is now stable, meaning there will be minimal breaking changes in the future.
-> With the release of `v1`, support was dropped for COFFEECAT and DARKFOREST.
+> With the release of `v1`, support was dropped for COFFEECAT, DARKFOREST, and DAYLIGHT.
 > See [Legacy Support](#legacy-support) for details.
+
+## Table of Contents
+
+- 📷 [Gallery](#gallery)
+- 🛠 [Installation](#installation)
+- ⚙️ [Configuration](#configuration)
+- 🎨 [Customization](#customization)
+- 🔌 [Supported Plugins](#supported-plugins)
+- 🆓 [Extras](#extras)
+- 📌 [Legacy Support](#legacy-support)
+- 🪄 [Contributing](#contributing)
+- 💫 [Inspiration](inspiration)
 
 ## Gallery
 
-### ICECLIMBER
+### ❄️ *ICECLIMBER*
 
 A theme with colors inspired from Nintendo's Ice Climbers characters
 
@@ -33,7 +46,7 @@ A theme with colors inspired from Nintendo's Ice Climbers characters
 
 </details>
 
-### GYOKURO
+### 🌱 *GYOKURO*
 
 A fresh green tea inspired theme
 
@@ -51,7 +64,7 @@ A fresh green tea inspired theme
 
 </details>
 
-### HOJICHA
+### 🍂 *HOJICHA*
 
 A roasted green tea inspired theme
 
@@ -69,7 +82,7 @@ A roasted green tea inspired theme
 
 </details>
 
-### ROSEPRIME
+### 🌷 *ROSEPRIME*
 
 Inspired by [ThePrimeagen's](https://github.com/ThePrimeagen) use of the [Rosé-Pine](https://github.com/rose-pine/neovim) theme
 
@@ -275,6 +288,3 @@ with your highlight additions in [this file](https://github.com/cdmill/neomodern
 - [TokyoNight](https://github.com/folke/tokyonight.nvim)
 - [No Clown Fiesta](https://github.com/aktersnurra/no-clown-fiesta.nvim)
 
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)

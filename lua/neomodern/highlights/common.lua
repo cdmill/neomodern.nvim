@@ -55,13 +55,16 @@ function M.get()
         fg = c.comment,
         bg = (
             (Config.transparent and "none" or nil)
-            or (Config.dark_gutter and darkgutter or "none")
+            or (Config.dark_gutter and darkgutter or nil)
         ) or c.bg,
     }
     hl.IncSearch = { fg = c.type, bg = c.visual }
     hl.LineNr = {
         fg = c.comment,
-        bg = Config.dark_gutter and darkgutter or c.bg,
+        bg = (
+            (Config.transparent and "none" or nil)
+            or (Config.dark_gutter and darkgutter or nil)
+        ) or c.bg,
     }
     hl.MatchParen = { fg = c.fg, bg = c.visual, fmt = "bold" }
     hl.ModeMsg = { fg = c.fg, fmt = "bold" }
@@ -84,7 +87,7 @@ function M.get()
         fg = c.fg,
         bg = (
             (Config.transparent and "none" or nil)
-            or (Config.dark_gutter and darkgutter or nil)
+            or (Config.dark_gutter and darkgutter)
         ) or c.bg,
     }
     hl.SpecialKey = { fg = c.comment }
