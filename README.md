@@ -1,11 +1,13 @@
 # <p align="center"> *NEOMODERN*.nvim </p>
 
 <p align="center">
-Modern, simple, unintrusive
+modern — simple — unintrusive
 </p>
 
 <p align="center">
-<img src="https://img.shields.io/badge/Neovim-%3E%3D%209.0-darkgreen?logo=Neovim&labelColor=%231b1c1d&color=%2372966c" />
+<img src="https://img.shields.io/github/v/tag/cdmill/neomodern.nvim?style=flat&label=RELEASE&labelColor=%23212123&color=%238a88db" />
+<img src="https://img.shields.io/badge/BUILT_WITH_LUA-blue?style=flat&color=%23629da3" />
+<img src="https://img.shields.io/badge/NEOVIM-0.9-blue?style=flat&logo=Neovim&labelColor=%23212123&color=%238a88db" />
 </p>
 
 > [!NOTE]
