@@ -7,10 +7,10 @@ function M.generate(colors, info)
     colors.url = info.url
     colors.upstream = info.upsteam
     colors.theme = info.theme
-    local fish_colors = {}
+    local c = {}
     for k, v in pairs(colors) do
         if type(v) == "string" then
-            fish_colors[k] = v:gsub("^#", "")
+            c[k] = v:gsub("^#", "")
         end
     end
 
@@ -55,7 +55,7 @@ set -g fish_pager_color_selected_prefix ${alt}
 set -g fish_pager_color_selected_completion ${alt}
 set -g fish_pager_color_selected_background --background=${line}
 ]=],
-        fish_colors
+        c
     )
 
     return fish

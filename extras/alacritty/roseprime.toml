@@ -1,5 +1,6 @@
-# name: ROSEPRIME
-# upstream: https://github.com/cdmill/neomodern.nvim/raw/main/extras/alacritty/roseprime.toml
+# name: ROSEPRIME colors for Alacritty
+# url: https://github.com/alacritty/alacritty
+# upstream: ${upstream}
 # author: Casey Miller
 
 # Default colors
@@ -19,7 +20,7 @@ red = '#ba5f60'
 green = '#9bbdb8'
 yellow = '#d2af98'
 blue = '#95b1fc'
-magenta = '#9b9af5'
+magenta = '#a8a6f5'
 cyan = '#6397cf'
 white = '#adadcc'
 
@@ -41,4 +42,4 @@ color = '#c4959c'
 
 [[colors.indexed_colors]]
 index = 17
-color = '#9b9af5'
+color = '#a8a6f5'
