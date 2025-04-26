@@ -1,7 +1,7 @@
 [colors]
 foreground = "#bbbac1"
 background = "#171719"
-# alternate, darker background = "#111113"
+# background = "#111113" # alternate, darker bg
 cursor_bg = "#bbbac1"
 cursor_border = "#bbbac1"
 cursor_fg = "#171719"
@@ -43,5 +43,6 @@ bg_color = "#171719"
 [metadata]
 aliases = []
 name = "ICECLIMBER"
-upstream = "https://github.com/cdmill/neomodern.nvim/raw/main/extras/wezterm/iceclimber.toml"
+url = "https://wezfurlong.org/wezterm/config/files.html"
+upstream = "${upstream}"
 author = "Casey Miller"

@@ -1,5 +1,6 @@
-# name: HOJICHA
-# upstream: https://github.com/cdmill/neomodern.nvim/raw/main/extras/yazi/hojicha.toml
+# name: HOJICHA colors for Yazi
+# url: https://github.com/sxyazi/yazi
+# upstream: ${upstream}
 # author: Casey Miller
 
 [manager]
@@ -15,7 +16,7 @@ marker_copied   = { fg = "#8a968f" }
 marker_cut      = { fg = "${error}" }
 marker_selected = { fg = "#a7ab93" }
 
-tab_active   = { fg = "${builtin}", bg = "#333333" }
+tab_active   = { fg = "#a7ab93", bg = "#333333" }
 tab_inactive = { fg = "#696969", bg = "#333333" }
 tab_width    = 1
 

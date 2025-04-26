@@ -7,10 +7,10 @@ function M.generate(colors, info)
     colors.url = info.url
     colors.upstream = info.upsteam
     colors.theme = info.theme
-    local foot_colors = {}
+    local c = {}
     for k, v in pairs(colors) do
         if type(v) == "string" then
-            foot_colors[k] = v:gsub("^#", "")
+            c[k] = v:gsub("^#", "")
         end
     end
 
@@ -53,7 +53,7 @@ bright7=${fg}
 16=${orange}
 17=${alt}
 ]=],
-        foot_colors
+        c
     )
 
     return foot

@@ -1,7 +1,7 @@
 [colors]
 foreground = "#adadcc"
 background = "#121315"
-# alternate, darker background = "#111111"
+# background = "#111111" # alternate, darker bg
 cursor_bg = "#adadcc"
 cursor_border = "#adadcc"
 cursor_fg = "#121315"
@@ -11,7 +11,7 @@ split = "#666a82"
 compose_cursor = "#c4959c"
 scrollbar_thumb = "#666a82"
 
-ansi = ["#111111", "#ba5f60", "#9bbdb8", "#d2af98", "#95b1fc", "#9b9af5", "#6397cf", "#adadcc"]
+ansi = ["#111111", "#ba5f60", "#9bbdb8", "#d2af98", "#95b1fc", "#a8a6f5", "#6397cf", "#adadcc"]
 brights = ["#666a82", "#ba5f60", "#9bbdb8", "#d2af98", "#95b1fc", "#ad82a2", "#6397cf", "#adadcc"]
 
 [colors.tab_bar]
@@ -19,7 +19,7 @@ inactive_tab_edge = "#666a82"
 background = "#121315"
 
 [colors.tab_bar.active_tab]
-fg_color = "#9b9af5"
+fg_color = "#a8a6f5"
 bg_color = "#262830"
 
 [colors.tab_bar.inactive_tab]
@@ -32,16 +32,17 @@ bg_color = "#16171b"
 # intensity = "Bold"
 
 [colors.tab_bar.new_tab_hover]
-fg_color = "#9b9af5"
+fg_color = "#a8a6f5"
 bg_color = "#262830"
 intensity = "Bold"
 
 [colors.tab_bar.new_tab]
-fg_color = "#9b9af5"
+fg_color = "#a8a6f5"
 bg_color = "#121315"
 
 [metadata]
 aliases = []
 name = "ROSEPRIME"
-upstream = "https://github.com/cdmill/neomodern.nvim/raw/main/extras/wezterm/roseprime.toml"
+url = "https://wezfurlong.org/wezterm/config/files.html"
+upstream = "${upstream}"
 author = "Casey Miller"

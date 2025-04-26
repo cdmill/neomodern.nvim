@@ -1,7 +1,7 @@
 [colors]
 foreground = "#bbbac1"
 background = "#1b1c1d"
-# alternate, darker background = "#161617"
+# background = "#161617" # alternate, darker bg
 cursor_bg = "#bbbac1"
 cursor_border = "#bbbac1"
 cursor_fg = "#1b1c1d"
@@ -43,5 +43,6 @@ bg_color = "#1b1c1d"
 [metadata]
 aliases = []
 name = "GYOKURO"
-upstream = "https://github.com/cdmill/neomodern.nvim/raw/main/extras/wezterm/gyokuro.toml"
+url = "https://wezfurlong.org/wezterm/config/files.html"
+upstream = "${upstream}"
 author = "Casey Miller"

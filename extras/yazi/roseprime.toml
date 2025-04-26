@@ -1,5 +1,6 @@
-# name: ROSEPRIME
-# upstream: https://github.com/cdmill/neomodern.nvim/raw/main/extras/yazi/roseprime.toml
+# name: ROSEPRIME colors for Yazi
+# url: https://github.com/sxyazi/yazi
+# upstream: ${upstream}
 # author: Casey Miller
 
 [manager]
@@ -8,20 +9,20 @@ cwd = { fg = "#c4959c" }
 hovered         = { fg = "#ad82a2", bg = "#16171b" }
 preview_hovered = { fg = "#ad82a2", bg = "#16171b" }
 
-find_keyword  = { fg = "#9b9af5", italic = true }
-find_position = { fg = "#9b9af5", bg = "reset", italic = true }
+find_keyword  = { fg = "#a8a6f5", italic = true }
+find_position = { fg = "#a8a6f5", bg = "reset", italic = true }
 
 marker_copied   = { fg = "#d2af98" }
 marker_cut      = { fg = "${error}" }
-marker_selected = { fg = "#9b9af5" }
+marker_selected = { fg = "#a8a6f5" }
 
-tab_active   = { fg = "${builtin}", bg = "#262830" }
+tab_active   = { fg = "#a8a6f5", bg = "#262830" }
 tab_inactive = { fg = "#666a82", bg = "#262830" }
 tab_width    = 1
 
-count_cut      = { fg = "#9b9af5", bg = "#16171b" }
-count_copied   = { fg = "#9b9af5", bg = "#16171b" }
-count_selected = { fg = "#9b9af5", bg = "#16171b" }
+count_cut      = { fg = "#a8a6f5", bg = "#16171b" }
+count_copied   = { fg = "#a8a6f5", bg = "#16171b" }
+count_selected = { fg = "#a8a6f5", bg = "#16171b" }
 
 border_symbol = "│"
 border_style  = { fg = "#666a82" }
@@ -29,8 +30,8 @@ border_style  = { fg = "#666a82" }
 [mode]
 normal_main   = { fg = "#121315", bg = "#95b1fc", bold = true }
 normal_alt    = { fg = "#121315", bg = "#95b1fc", bold = true }
-select_main   = { fg = "#121315", bg = "#9b9af5", bold = true }
-select_alt    = { fg = "#121315", bg = "#9b9af5", bold = true }
+select_main   = { fg = "#121315", bg = "#a8a6f5", bold = true }
+select_alt    = { fg = "#121315", bg = "#a8a6f5", bold = true }
 unset_main    = { fg = "#121315", bg = "#6397cf", bold = true }
 unset_alt     = { fg = "#121315", bg = "#6397cf", bold = true }
 
@@ -39,8 +40,8 @@ separator_open  = ""
 separator_close = ""
 separator_style = { fg = "#262830", bg = "#262830" }
 
-progress_label  = { fg = "#9b9af5", bold = true }
-progress_normal = { fg = "#9b9af5", bg = "#262830" }
+progress_label  = { fg = "#a8a6f5", bold = true }
+progress_normal = { fg = "#a8a6f5", bg = "#262830" }
 progress_error  = { fg = "#121315", bg = "${error}" }
 
 permissions_t = { fg = "#adadcc" }

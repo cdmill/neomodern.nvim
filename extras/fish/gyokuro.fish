@@ -1,13 +1,15 @@
-# name: GYOKURO
-# upstream: https://github.com/cdmill/neomodern.nvim/raw/main/extras/fish/gyokuro.fish
+# name: GYOKURO colors for Fish
+# url: https://fishshell.com/docs/current/index.html
+# upstream: ${upstream}
 # author: Casey Miller
 
 # use in ~/.config/fish/conf.d/
 
 # preferred bg: 1b1c1d
-# alt background: 1b1c1d
+# alt background: 161617
 
-### full palette. colors defined in neomdern/palette/GYOKURO.lua
+### Full palette. 
+### Colors defined in neomdern/palette/GYOKURO.lua
 set -g alt a69e6f 
 set -g constant 868db5 
 set -g comment 767777 
@@ -36,15 +38,17 @@ set -g fish_color_selection --background=222324
 set -g fish_color_operator b08c7d
 set -g fish_color_escape 72966c
 set -g fish_color_autosuggestion 767777
-set -g fish_color_cwd 8bab85
-set -g fish_color_hostname bbc7b1
+set -g fish_color_cwd a2ad7b
+set -g fish_color_hostname d6a9b3
 set -g fish_color_status 9e5560
 set -g fish_color_cancel d6a9b3
 set -g fish_color_search_match --background=222324
 
-# Completion Pager Colors}
+# Completion Pager Colors
 set -g fish_pager_color_progress a69e6f
-set -g fish_pager_color_prefix 767777
-set -g fish_pager_color_completion bbc7b1
+set -g fish_pager_color_prefix bbc7b1
+set -g fish_pager_color_completion bbbac1
 set -g fish_pager_color_description 767777
+set -g fish_pager_color_selected_prefix a69e6f
+set -g fish_pager_color_selected_completion a69e6f
 set -g fish_pager_color_selected_background --background=222324

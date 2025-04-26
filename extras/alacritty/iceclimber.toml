@@ -1,5 +1,6 @@
-# name: ICECLIMBER
-# upstream: https://github.com/cdmill/neomodern.nvim/raw/main/extras/alacritty/iceclimber.toml
+# name: ICECLIMBER colors for Alacritty
+# url: https://github.com/alacritty/alacritty
+# upstream: ${upstream}
 # author: Casey Miller
 
 # Default colors

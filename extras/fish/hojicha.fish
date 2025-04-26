@@ -1,13 +1,15 @@
-# name: HOJICHA
-# upstream: https://github.com/cdmill/neomodern.nvim/raw/main/extras/fish/hojicha.fish
+# name: HOJICHA colors for Fish
+# url: https://fishshell.com/docs/current/index.html
+# upstream: ${upstream}
 # author: Casey Miller
 
 # use in ~/.config/fish/conf.d/
 
 # preferred bg: 161616
-# alt background: 161616
+# alt background: 111111
 
-### full palette. colors defined in neomdern/palette/HOJICHA.lua
+### Full palette. 
+### Colors defined in neomdern/palette/HOJICHA.lua
 set -g alt a7ab93 
 set -g constant b0b58a 
 set -g comment 696969 
@@ -36,15 +38,17 @@ set -g fish_color_selection --background=1b1c1d
 set -g fish_color_operator 856b6c
 set -g fish_color_escape a18b7f
 set -g fish_color_autosuggestion 696969
-set -g fish_color_cwd 808796
-set -g fish_color_hostname 8a879c
+set -g fish_color_cwd 8a968f
+set -g fish_color_hostname b5ae84
 set -g fish_color_status 9e5560
 set -g fish_color_cancel b5ae84
 set -g fish_color_search_match --background=1b1c1d
 
-# Completion Pager Colors}
+# Completion Pager Colors
 set -g fish_pager_color_progress a7ab93
-set -g fish_pager_color_prefix 696969
-set -g fish_pager_color_completion 8a879c
+set -g fish_pager_color_prefix 8a879c
+set -g fish_pager_color_completion adacac
 set -g fish_pager_color_description 696969
+set -g fish_pager_color_selected_prefix a7ab93
+set -g fish_pager_color_selected_completion a7ab93
 set -g fish_pager_color_selected_background --background=1b1c1d

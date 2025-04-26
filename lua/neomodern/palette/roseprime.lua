@@ -1,6 +1,6 @@
 ---@type neomodern.Theme
 local M = {
-    alt = "#9b9af5",
+    alt = "#a8a6f5",
     alt_bg = "#111111",
     bg = "#121315",
     comment = "#666a82",
