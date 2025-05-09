@@ -6,16 +6,16 @@ local M = {}
 --- @type table<string, Extra>
 M.extras = {
     -- stylua: ignore start
-    alacritty = {ext = "toml", url = "https://github.com/alacritty/alacritty", label = "Alacritty"},
-    fish = {ext = "fish", url = "https://fishshell.com/docs/current/index.html", label = "Fish"},
-    fish_themes = {ext = "theme", url = "https://fishshell.com/docs/current/interactive.html#syntax-highlighting", label = "Fish Themes"},
-    foot = {ext = "ini", url = "https://codeberg.org/dnkl/foot", label = "Foot"},
-    fzf = { ext = "zsh", url = "https://github.com/junegunn/fzf", label = "Fzf"},
+    alacritty = {ext = ".toml", url = "https://github.com/alacritty/alacritty", label = "Alacritty"},
+    fish = {ext = ".fish", url = "https://fishshell.com/docs/current/index.html", label = "Fish"},
+    fish_themes = {ext = ".theme", url = "https://fishshell.com/docs/current/interactive.html#syntax-highlighting", label = "Fish Themes"},
+    foot = {ext = ".ini", url = "https://codeberg.org/dnkl/foot", label = "Foot"},
+    fzf = { ext = ".zsh", url = "https://github.com/junegunn/fzf", label = "Fzf"},
     ghostty = { ext = "", url = "https://github.com/ghostty-org/ghostty", label = "Ghostty"},
-    kitty = {ext = "conf", url = "https://sw.kovidgoyal.net/kitty/conf.html", label = "Kitty"},
-    wezterm = {ext = "toml", url = "https://wezfurlong.org/wezterm/config/files.html", label = "WezTerm"},
-    windows_terminal = {ext = "json", url = "https://aka.ms/terminal-documentation", label = "Windows Terminal"},
-    yazi = { ext = "toml", url = "https://github.com/sxyazi/yazi", label = "Yazi"},
+    kitty = {ext = ".conf", url = "https://sw.kovidgoyal.net/kitty/conf.html", label = "Kitty"},
+    wezterm = {ext = ".toml", url = "https://wezfurlong.org/wezterm/config/files.html", label = "WezTerm"},
+    windows_terminal = {ext = ".json", url = "https://aka.ms/terminal-documentation", label = "Windows Terminal"},
+    yazi = { ext = ".toml", url = "https://github.com/sxyazi/yazi", label = "Yazi"},
     -- stylua: ignore end
 }
 
@@ -42,7 +42,7 @@ function M.setup()
         for _, theme in pairs(themes) do
             neomodern.load(theme)
             local palette = require("neomodern.terminal").colors(true)
-            local fname = extra .. "/" .. theme .. "." .. info.ext
+            local fname = extra .. "/" .. theme .. info.ext
             local url = "https://github.com/cdmill/neomodern.nvim/raw/main/extras/"
                 .. fname
             write(
