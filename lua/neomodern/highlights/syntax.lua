@@ -125,7 +125,7 @@ function M.get()
                 -- punctuation
                 ["@punctuation.delimiter"] = { fg = c.fg }, -- delimiters, like `; . , `
                 ["@punctuation.bracket"] = {
-                    fg = c.alt,
+                    fg = c.operator,
                 }, -- brackets and parentheses
                 ["@punctuation.special"] = syntax["SpecialChar"], -- punctuation that does not fall into above categories, like `{}` in string interpolation
 
