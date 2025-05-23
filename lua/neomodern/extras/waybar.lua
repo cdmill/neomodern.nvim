@@ -8,11 +8,6 @@ function M.generate(colors, info)
     colors.upstream = info.upstream
     colors.theme = info.theme
     local c = {}
-    for k, v in pairs(colors) do
-        if type(v) == "string" then
-            c[k] = v:gsub("^#", "")
-        end
-    end
 
     local waybar = Util.template(
         [=[
