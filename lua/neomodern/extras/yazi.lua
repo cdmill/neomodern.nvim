@@ -5,7 +5,7 @@ local M = {}
 function M.generate(colors, info)
     colors.extra = info.extra
     colors.url = info.url
-    colors.upstream = info.upsteam
+    colors.upstream = info.upstream
     colors.theme = info.theme
     local yazi = Util.template(
         [=[
@@ -17,94 +17,107 @@ function M.generate(colors, info)
 [manager]
 cwd = { fg = "${func}" }
 
-hovered         = { fg = "${property}", bg = "${line}" }
-preview_hovered = { fg = "${property}", bg = "${line}" }
+hovered         = { fg = "${type}", bg = "${line}" }
+preview_hovered = { fg = "${type}", bg = "${line}" }
 
-find_keyword  = { fg = "${alt}", italic = true }
-find_position = { fg = "${alt}", bg = "reset", italic = true }
+find_keyword  = { fg = "${property}", italic = true }
+find_position = { fg = "${property}", bg = "reset", italic = true }
 
-marker_copied   = { fg = "${string}" }
-marker_cut      = { fg = "${error}" }
-marker_selected = { fg = "${alt}" }
+marker_copied   = { fg = "${number}", bg = "${number}" }
+marker_cut      = { fg = "${diag_red}", bg = "${diag_red}", crossed = true }
+marker_marked   = { bg = "${alt}", blink = true }
+marker_selected = { bg = "${alt}", blink = true }
 
-tab_active   = { fg = "${alt}", bg = "${visual}" }
-tab_inactive = { fg = "${comment}", bg = "${visual}" }
+tab_active   = { fg = "${constant}", bg = "${line}", bold = true, reversed = true }
+tab_inactive = { fg = "${comment}", bg = "${line}" }
 tab_width    = 1
 
-count_cut      = { fg = "${alt}", bg = "${line}" }
-count_copied   = { fg = "${alt}", bg = "${line}" }
-count_selected = { fg = "${alt}", bg = "${line}" }
+count_cut      = { fg = "${diag_red}" }
+count_copied   = { fg = "${number}" }
+count_selected = { fg = "${alt}", italic = true, blink = true }
 
 border_symbol = "│"
 border_style  = { fg = "${comment}" }
 
 [mode]
-normal_main   = { fg = "${bg}", bg = "${blue}", bold = true }
-normal_alt    = { fg = "${bg}", bg = "${blue}", bold = true }
-select_main   = { fg = "${bg}", bg = "${purple}", bold = true }
-select_alt    = { fg = "${bg}", bg = "${purple}", bold = true }
-unset_main    = { fg = "${bg}", bg = "${cyan}", bold = true }
-unset_alt     = { fg = "${bg}", bg = "${cyan}", bold = true }
+normal_main   = { fg = "${bg}", bg = "${keyword}" }
+normal_alt    = { fg = "${bg}", bg = "${keyword}" }
+select_main   = { fg = "${bg}", bg = "${alt}" }
+select_alt    = { fg = "${bg}", bg = "${alt}" }
+unset_main    = { fg = "${bg}", bg = "${property}" }
+unset_alt     = { fg = "${bg}", bg = "${property}" }
 
 [status]
-separator_open  = ""
-separator_close = ""
-separator_style = { fg = "${visual}", bg = "${visual}" }
+overall = {  fg = "${comment}", bg = "${bg}", bold = true }
+sep_left = { open = "", close = "" }
+sep_right = { open = "", close = "" }
 
-progress_label  = { fg = "${alt}", bold = true }
-progress_normal = { fg = "${alt}", bg = "${visual}" }
-progress_error  = { fg = "${bg}", bg = "${error}" }
+progress_label  = { fg = "${constant}", bg = "${visual}" }
+progress_normal = { fg = "${constant}", bg = "${visual}" }
+progress_error  = { fg = "${diag_red}", bg = "${visual}" }
 
-permissions_t = { fg = "${fg}" }
-permissions_r = { fg = "${yellow}" }
-permissions_w = { fg = "${red}" }
-permissions_x = { fg = "${blue}" }
-permissions_s = { fg = "${operator}" }
+permissions_t = { fg = "${type}" }
+permissions_r = { fg = "${property}" }
+permissions_w = { fg = "${keyword}" }
+permissions_x = { fg = "${func}" }
+permissions_s = { fg = "${constant}" }
 
 [input]
 border   = { fg = "${comment}" }
-title    = {}
+title    = { fg = "${constant}" }
 value    = {}
-selected = { reversed = true }
+selected = { fg = "${fg}", bg = "${visual}" }
 
-[select]
+[confirm]
 border   = { fg = "${comment}" }
-active   = { fg = "${keyword}" }
-inactive = {}
+title = { fg = "${constant}" }
+btn_yes = { fg = "${diag_red}", bg = "${line}" }
+btn_no = { fg = "${diag_green}", bg = "${line}" }
 
 [tasks]
 border  = { fg = "${comment}" }
-title   = {}
+title    = { fg = "${constant}" }
 hovered = { underline = true }
 
 [which]
 mask            = { bg = "${dim}" }
-cand            = { fg = "${property}" }
+cand            = { fg = "${number}" }
 rest            = { fg = "${type}" }
-desc            = { fg = "${string}" }
+desc            = { fg = "${property}" }
 separator       = "  "
 separator_style = { fg = "${operator}"}
 
+[spot]
+border = { fg = "${comment}" }
+title = { fg = "${constant}" }
+tbl_col = { fg = "${property}" }
+tbl_cell = { fg = "${type}", bg = "${line}" }
+
 [help]
-on      = { fg = "${type}" }
-run    = { fg = "${string}" }
+on      = { fg = "${number}" }
+run    = { fg = "${property}" }
 desc    = { fg = "${comment}" }
-hovered = { fg = "${property}", bg = "${line}", bold = true }
-footer  = { fg = "${comment}", bg = "${line}" }
+hovered = { bg = "${line}", bold = true }
+footer  = { fg = "${keyword}", bg = "${line}" }
+
+[notify]
+title_info = { fg = "${constant}" }
+title_warn = { fg = "${diag_warn}" }
+title_error = { fg = "${diag_red}" }
 
 [filetype]
 rules = [
-# Media
-{ mime = "image/*", fg = "${magenta}"},
-{ mime = "{audio,video}/*", fg = "${string}"},
+    # Media
+    { mime = "image/*", fg = "${constant}"},
+    { mime = "{audio,video}/*", fg = "${constant}"},
 
-# Archives
-{ mime = "application/{,g}zip", fg = "${red}"},
-{ mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "${red}"},
+    # Archives
+    { mime = "application/{,g}zip", fg = "${operator}"},
+    { mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "${operator}"},
 
-# Fallback
-{ name = "*", fg = "${fg}"},
-{ name = "*/", fg = "${func}"}
+    # Fallback
+    { name = "*", fg = "${fg}"},
+    { name = "*/", fg = "${string}"}
 ]
   ]=],
         colors

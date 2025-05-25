@@ -1,6 +1,6 @@
 # name: GYOKURO colors for Fish Themes
 # url: https://fishshell.com/docs/current/interactive.html#syntax-highlighting
-# upstream: ${upstream}
+# upstream: https://github.com/cdmill/neomodern.nvim/raw/main/extras/fish_themes/gyokuro.theme
 # author: Casey Miller
 
 # preferred bg: 1b1c1d

@@ -5,7 +5,7 @@ local M = {}
 function M.generate(colors, info)
     colors.extra = info.extra
     colors.url = info.url
-    colors.upstream = info.upsteam
+    colors.upstream = info.upstream
     colors.theme = info.theme
     local wezterm = Util.template(
         [=[
@@ -14,19 +14,19 @@ foreground = "${fg}"
 background = "${bg}"
 # background = "${alt_bg}" # alternate, darker bg
 cursor_bg = "${fg}"
-cursor_border = "${fg}"
+cursor_border = "${comment}"
 cursor_fg = "${bg}"
 selection_bg = "${visual}"
-selection_fg = "${fg}"
-split = "${grey}"
-compose_cursor = "${orange}"
-scrollbar_thumb = "${grey}"
+selection_fg = "${type}"
+split = "${comment}"
+compose_cursor = "${alt}"
+scrollbar_thumb = "${line}"
 
-ansi = ["${black}", "${red}", "${green}", "${yellow}", "${blue}", "${purple}", "${cyan}", "${fg}"]
-brights = ["${grey}", "${red}", "${green}", "${yellow}", "${blue}", "${magenta}", "${cyan}", "${fg}"]
+ansi = ["${c00}", "${c01}", "${c02}", "${c03}", "${c04}", "${c05}", "${c06}", "${c07}"]
+brights = ["${c08}", "${c09}", "${c0A}", "${c0B}", "${c0C}", "${c0D}", "${c0E}", "${c0F}"]
 
 [colors.tab_bar]
-inactive_tab_edge = "${grey}"
+inactive_tab_edge = "${c07}"
 background = "${bg}"
 
 [colors.tab_bar.active_tab]

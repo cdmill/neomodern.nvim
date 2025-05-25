@@ -24,22 +24,22 @@ function M.setup()
         return
     end
     local colors = M.colors(false)
-    vim.g.terminal_color_0 = colors.black
-    vim.g.terminal_color_1 = colors.red
-    vim.g.terminal_color_2 = colors.green
-    vim.g.terminal_color_3 = colors.yellow
-    vim.g.terminal_color_4 = colors.blue
-    vim.g.terminal_color_5 = colors.purple
-    vim.g.terminal_color_6 = colors.cyan
-    vim.g.terminal_color_7 = colors.white
-    vim.g.terminal_color_8 = colors.grey
-    vim.g.terminal_color_9 = colors.orange
-    vim.g.terminal_color_10 = colors.green
-    vim.g.terminal_color_11 = colors.yellow
-    vim.g.terminal_color_12 = colors.blue
-    vim.g.terminal_color_13 = colors.magenta
-    vim.g.terminal_color_14 = colors.cyan
-    vim.g.terminal_color_15 = colors.white
+    vim.g.terminal_color_0 = colors.c00
+    vim.g.terminal_color_1 = colors.c01
+    vim.g.terminal_color_2 = colors.c02
+    vim.g.terminal_color_3 = colors.c03
+    vim.g.terminal_color_4 = colors.c04
+    vim.g.terminal_color_5 = colors.c05
+    vim.g.terminal_color_6 = colors.c06
+    vim.g.terminal_color_7 = colors.c07
+    vim.g.terminal_color_8 = colors.c08
+    vim.g.terminal_color_9 = colors.c09
+    vim.g.terminal_color_10 = colors.c0A
+    vim.g.terminal_color_11 = colors.c0B
+    vim.g.terminal_color_12 = colors.c0C
+    vim.g.terminal_color_13 = colors.c0D
+    vim.g.terminal_color_14 = colors.c0E
+    vim.g.terminal_color_15 = colors.c0F
 end
 
 return M

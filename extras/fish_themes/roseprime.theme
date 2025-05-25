@@ -1,6 +1,6 @@
 # name: ROSEPRIME colors for Fish Themes
 # url: https://fishshell.com/docs/current/interactive.html#syntax-highlighting
-# upstream: ${upstream}
+# upstream: https://github.com/cdmill/neomodern.nvim/raw/main/extras/fish_themes/roseprime.theme
 # author: Casey Miller
 
 # preferred bg: 121315

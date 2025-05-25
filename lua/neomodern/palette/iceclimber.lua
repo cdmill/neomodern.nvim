@@ -21,19 +21,4 @@ local M = {
     diag_green = "#658c6d",
 }
 
----@type neomodern.Theme.Terminal
-M.colormap = {
-    black = M.alt_bg,
-    grey = M.comment,
-    red = M.diag_red,
-    orange = M.number,
-    green = M.property,
-    yellow = M.func,
-    blue = M.constant,
-    purple = M.keyword,
-    magenta = M.type,
-    cyan = M.string,
-    white = M.fg,
-}
-
 return M

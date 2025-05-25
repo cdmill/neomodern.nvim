@@ -1,6 +1,6 @@
 # name: GYOKURO colors for Fish
 # url: https://fishshell.com/docs/current/index.html
-# upstream: ${upstream}
+# upstream: https://github.com/cdmill/neomodern.nvim/raw/main/extras/fish/gyokuro.fish
 # author: Casey Miller
 
 # use in ~/.config/fish/conf.d/

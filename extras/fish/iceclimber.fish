@@ -1,6 +1,6 @@
 # name: ICECLIMBER colors for Fish
 # url: https://fishshell.com/docs/current/index.html
-# upstream: ${upstream}
+# upstream: https://github.com/cdmill/neomodern.nvim/raw/main/extras/fish/iceclimber.fish
 # author: Casey Miller
 
 # use in ~/.config/fish/conf.d/

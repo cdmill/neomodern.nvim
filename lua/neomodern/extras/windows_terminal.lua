@@ -9,26 +9,28 @@ function M.generate(colors, _)
 # https://learn.microsoft.com/en-us/windows/terminal/customize-settings/color-schemes#creating-your-own-color-scheme
 {
     "background": "${bg}", // alternate, darker background=${alt_bg}
-    "black": "${black}",
-    "blue": "${blue}",
-    "brightBlack": "${grey}",
-    "brightBlue": "${blue}",
-    "brightCyan": "${cyan}",
-    "brightGreen": "${green}",
-    "brightPurple": "${magenta}",
-    "brightRed": "${red}",
-    "brightWhite": "${fg}",
-    "brightYellow": "${yellow}",
-    "cursorColor": "${fg}",
-    "cyan": "${cyan}",
-    "foreground": "${fg}",
-    "green": "${green}",
-    "name": "${_style_name}",
-    "purple": "${purple}",
-    "red": "${red}",
+    "black": "${c00}",
+    "red": "${c01}",
+    "green": "${c02}",
+    "yellow": "${c03}"
+    "blue": "${c04}",
+    "purple": "${c05}",
+    "cyan": "${c06}",
+    "white": "${c07}",
+    "brightBlack": "${c08}",
+    "brightRed": "${c09}",
+    "brightGreen": "${c0A}",
+    "brightYellow": "${c0B}",
+    "brightBlue": "${c0C}",
+    "brightPurple": "${c0D}",
+    "brightCyan": "${c0E}",
+    "brightWhite": "${c0F}",
+
+    "foreground": "${c07}",
     "selectionBackground": "${visual}",
-    "white": "${fg}",
-    "yellow": "${yellow}"
+    "cursorColor": "${fg}",
+
+    "name": "${theme}",
 }
 ]=],
         colors

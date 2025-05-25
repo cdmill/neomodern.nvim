@@ -5,7 +5,7 @@ local M = {}
 function M.generate(colors, info)
     colors.extra = info.extra
     colors.url = info.url
-    colors.upstream = info.upsteam
+    colors.upstream = info.upstream
     colors.theme = info.theme
     local c = {}
     for k, v in pairs(colors) do
@@ -30,27 +30,27 @@ background=${bg}
 # alternate, darker background=${alt_bg}
 selection-foreground=${fg}
 selection-background=${visual}
-urls=${blue}
+urls=${c04}
 
-regular0=${black}
-regular1=${red}
-regular2=${green}
-regular3=${yellow}
-regular4=${blue}
-regular5=${purple}
-regular6=${cyan}
-regular7=${fg}
+regular0=${c00}
+regular1=${c01}
+regular2=${c02}
+regular3=${c03}
+regular4=${c04}
+regular5=${c05}
+regular6=${c06}
+regular7=${c07}
 
-bright0=${grey}
-bright1=${red}
-bright2=${green}
-bright3=${yellow}
-bright4=${blue}
-bright5=${magenta}
-bright6=${cyan}
-bright7=${fg}
+bright0=${c08}
+bright1=${c09}
+bright2=${c0A}
+bright3=${c0B}
+bright4=${c0C}
+bright5=${c0D}
+bright6=${c0E}
+bright7=${c0F}
 
-16=${orange}
+16=${alt_bg}
 17=${alt}
 ]=],
         c

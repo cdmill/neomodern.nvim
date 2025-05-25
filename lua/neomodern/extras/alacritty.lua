@@ -4,7 +4,7 @@ local Util = require("neomodern.util")
 function M.generate(colors, info)
     colors.extra = info.extra
     colors.url = info.url
-    colors.upstream = info.upsteam
+    colors.upstream = info.upstream
     colors.theme = info.theme
     local alacritty = Util.template(
         [=[
@@ -25,30 +25,30 @@ foreground = '${fg}'
 
 # Normal colors
 [colors.normal]
-black = '${black}'
-red = '${red}'
-green = '${green}'
-yellow = '${yellow}'
-blue = '${blue}'
-magenta = '${purple}'
-cyan = '${cyan}'
-white = '${white}'
+black = '${c00}'
+red = '${c01}'
+green = '${c02}'
+yellow = '${c03}'
+blue = '${c04}'
+magenta = '${c05}'
+cyan = '${c06}'
+white = '${c07}'
 
 # Bright colors
 [colors.bright]
-black = '${grey}'
-red = '${red}'
-green = '${green}'
-yellow = '${yellow}'
-blue = '${blue}'
-magenta = '${magenta}'
-cyan = '${cyan}'
-white = '${white}'
+black = '${c08}'
+red = '${c09}'
+green = '${c0A}'
+yellow = '${c0B}'
+blue = '${c0C}'
+magenta = '${c0D}'
+cyan = '${c0E}'
+white = '${c0F}'
 
 # Indexed Colors
 [[colors.indexed_colors]]
 index = 16
-color = '${orange}'
+color = '${alt_bg}'
 
 [[colors.indexed_colors]]
 index = 17
