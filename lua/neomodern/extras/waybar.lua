@@ -7,8 +7,6 @@ function M.generate(colors, info)
     colors.url = info.url
     colors.upstream = info.upstream
     colors.theme = info.theme
-    local c = {}
-
     local waybar = Util.template(
         [=[
 /* name: ${theme} colors for ${extra} */
@@ -46,7 +44,7 @@ function M.generate(colors, info)
 @define-color diag_yellow ${diag_yellow};
 @define-color diag_green ${diag_green};
 ]=],
-        c
+        colors
     )
 
     return waybar
