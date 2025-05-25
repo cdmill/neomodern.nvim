@@ -102,7 +102,7 @@ footer  = { fg = "${keyword}", bg = "${line}" }
 
 [notify]
 title_info = { fg = "${constant}" }
-title_warn = { fg = "${diag_warn}" }
+title_warn = { fg = "${diag_yellow}" }
 title_error = { fg = "${diag_red}" }
 
 [filetype]

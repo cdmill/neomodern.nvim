@@ -91,7 +91,7 @@ footer  = { fg = "#6397cf", bg = "#16171b" }
 
 [notify]
 title_info = { fg = "#95b1fc" }
-title_warn = { fg = "${diag_warn}" }
+title_warn = { fg = "#ad9368" }
 title_error = { fg = "#ba5f60" }
 
 [filetype]
