@@ -3,19 +3,19 @@ foreground = "#bbbac1"
 background = "#1b1c1d"
 # background = "#161617" # alternate, darker bg
 cursor_bg = "#bbbac1"
-cursor_border = "#bbbac1"
+cursor_border = "#767777"
 cursor_fg = "#1b1c1d"
 selection_bg = "#323334"
-selection_fg = "#bbbac1"
+selection_fg = "#bbc7b1"
 split = "#767777"
-compose_cursor = "#72966c"
-scrollbar_thumb = "#767777"
+compose_cursor = "#a69e6f"
+scrollbar_thumb = "${grey}"
 
-ansi = ["#161617", "#9e5560", "#a2ad7b", "#868db5", "#8bab85", "#748fa6", "#bbc7b1", "#bbbac1"]
-brights = ["#767777", "#9e5560", "#a2ad7b", "#868db5", "#8bab85", "#a69e6f", "#bbc7b1", "#bbbac1"]
+ansi = ["#767777", "#4F654C", "#6C7355", "#5B6078", "#5E725B", "#8B7177", "#50616F", "#7B7B7F"]
+brights = ["#b08c7d", "#72966c", "#a2ad7b", "#868db5", "#8bab85", "#d6a9b3", "#748fa6", "#bbbac1"]
 
 [colors.tab_bar]
-inactive_tab_edge = "#767777"
+inactive_tab_edge = "#7B7B7F"
 background = "#1b1c1d"
 
 [colors.tab_bar.active_tab]
@@ -44,5 +44,5 @@ bg_color = "#1b1c1d"
 aliases = []
 name = "GYOKURO"
 url = "https://wezfurlong.org/wezterm/config/files.html"
-upstream = "${upstream}"
+upstream = "https://github.com/cdmill/neomodern.nvim/raw/main/extras/wezterm/gyokuro.toml"
 author = "Casey Miller"

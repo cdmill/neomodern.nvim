@@ -2,24 +2,26 @@
 # https://learn.microsoft.com/en-us/windows/terminal/customize-settings/color-schemes#creating-your-own-color-scheme
 {
     "background": "#121315", // alternate, darker background=#111111
-    "black": "#111111",
-    "blue": "#95b1fc",
-    "brightBlack": "#666a82",
-    "brightBlue": "#95b1fc",
-    "brightCyan": "#6397cf",
-    "brightGreen": "#9bbdb8",
-    "brightPurple": "#ad82a2",
-    "brightRed": "#ba5f60",
+    "black": "#666a82",
+    "red": "#436285",
+    "green": "#857164",
+    "yellow": "#6172A0"
+    "blue": "#7D6166",
+    "purple": "#83685C",
+    "cyan": "#6F566A",
+    "white": "#6F6F83",
+    "brightBlack": "#838196",
+    "brightRed": "#6397cf",
+    "brightGreen": "#d2af98",
+    "brightYellow": "#95b1fc",
+    "brightBlue": "#c4959c",
+    "brightPurple": "#cfa18c",
+    "brightCyan": "#ad82a2",
     "brightWhite": "#adadcc",
-    "brightYellow": "#d2af98",
-    "cursorColor": "#adadcc",
-    "cyan": "#6397cf",
-    "foreground": "#adadcc",
-    "green": "#9bbdb8",
-    "name": "${_style_name}",
-    "purple": "#a8a6f5",
-    "red": "#ba5f60",
+
+    "foreground": "#6F6F83",
     "selectionBackground": "#262830",
-    "white": "#adadcc",
-    "yellow": "#d2af98"
+    "cursorColor": "#adadcc",
+
+    "name": "${theme}",
 }
