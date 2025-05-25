@@ -45,7 +45,7 @@ function M.get()
     hl.DiffChange = { bg = Util.blend(c.diag_blue, 0.2, c.bg) }
     hl.DiffDelete = { bg = Util.blend(c.diag_red, 0.4, c.bg) }
     hl.DiffText = { fg = c.fg }
-    hl.Directory = { fg = c.func }
+    hl.Directory = { fg = c.string }
     hl.ErrorMsg = { fg = c.diag_red, fmt = "bold" }
     hl.EndOfBuffer = { fg = Config.show_eob and c.comment or c.bg }
     hl.FloatBorder = { fg = c.comment, bg = Config.plain_float and "none" or c.bg }
