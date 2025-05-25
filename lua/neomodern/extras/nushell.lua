@@ -111,7 +111,6 @@ $env.config.explore = {
         info: $theme.diag_blue,
     },
     selected_cell: { bg: $theme.line fg: $theme.type },
-    $env.LS_COLORS = $"di=($string):ln=($alt):fi=($fg):ex=($fg):*.tar=($operator):*.tgz=($operator):*.arc=($operator):*.arj=($operator):*.taz=($operator):*.lha=($operator):*.lz4=($operator):*.lzh=($operator):*.lzma=($operator):*.tlz=($operator):*.txz=($operator):*.tzo=($operator):*.t7z=($operator):*.zip=($operator):*.z=($operator):*.dz=($operator):*.gz=($operator):*.lrz=($operator):*.lz=($operator):*.lzo=($operator):*.xz=($operator):*.zst=($operator):*.tzst=($operator):*.bz2=($operator):*.bz=($operator):*.tbz=($operator):*.tbz2=($operator):*.tz=($operator):*.deb=($operator):*.rpm=($operator):*.jar=($operator):*.war=($operator):*.ear=($operator):*.sar=($operator):*.rar=($operator):*.alz=($operator):*.ace=($operator):*.zoo=($operator):*.cpio=($operator):*.7z=($operator):*.rz=($operator):*.cab=($operator):*.wim=($operator):*.swm=($operator):*.dwm=($operator):*.esd=($operator):*.jpg=($constant):*.jpeg=($constant):*.mjpg=($constant):*.mjpeg=($constant):*.gif=($constant):*.bmp=($constant):*.pbm=($constant):*.pgm=($constant):*.ppm=($constant):*.tga=($constant):*.xbm=($constant):*.xpm=($constant):*.tif=($constant):*.tiff=($constant):*.png=($constant):*.svg=($constant):*.svgz=($constant):*.mng=($constant):*.pcx=($constant):*.webp=($constant):*.ico=($constant):*.pdf=($constant):*.ps=($constant):*.eps=($constant)"
 }
 
 }

@@ -21,27 +21,27 @@ function M.generate(colors, info)
 # upstream: ${upstream}
 # author: Casey Miller
 
-palette = 0=${black}
-palette = 1=${red}
-palette = 2=${green}
-palette = 3=${yellow}
-palette = 4=${blue}
-palette = 5=${purple}
-palette = 6=${cyan}
-palette = 7=${fg}
-palette = 8=${grey}
-palette = 9=${red}
-palette = 10=${green}
-palette = 11=${yellow}
-palette = 12=${blue}
-palette = 13=${magenta}
-palette = 14=${cyan}
-palette = 15=${fg}
+palette = 0=${c00}
+palette = 1=${c01}
+palette = 2=${c02}
+palette = 3=${c03}
+palette = 4=${c04}
+palette = 5=${c05}
+palette = 6=${c06}
+palette = 7=${c07}
+palette = 8=${c08}
+palette = 9=${c09}
+palette = 10=${c0A}
+palette = 11=${c0B}
+palette = 12=${c0C}
+palette = 13=${c0D}
+palette = 14=${c0E}
+palette = 15=${c0F}
 background = ${bg}
 foreground = {$fg}
 cursor-color = {$fg}
 selection-background = ${visual}
-selection-foreground = ${alt}
+selection-foreground = ${type}
 ]=],
         c
     )

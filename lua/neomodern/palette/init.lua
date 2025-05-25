@@ -1,3 +1,4 @@
+local Util = require("neomodern.util")
 local M = {}
 
 ---@class neomodern.Theme
@@ -23,17 +24,22 @@ local M = {}
 ---@field colormap nil|neomodern.Theme.Terminal mapping to terminal colors
 
 ---@class neomodern.Theme.Terminal
----@field black string
----@field grey string
----@field red string
----@field orange string
----@field green string
----@field yellow string
----@field blue string
----@field purple string
----@field magenta string
----@field cyan string
----@field white string
+---@field c00 string
+---@field c01 string
+---@field c02 string
+---@field c03 string
+---@field c04 string
+---@field c05 string
+---@field c06 string
+---@field c07 string
+---@field c08 string
+---@field c09 string
+---@field c0A string
+---@field c0B string
+---@field c0C string
+---@field c0D string
+---@field c0E string
+---@field c0F string
 
 ---@enum Themes
 M.themes = {
@@ -45,6 +51,27 @@ M.themes = {
 
 for key, theme in pairs(M.themes) do
     M[key] = require("neomodern.palette." .. theme)
+    local T = M[key]
+
+    ---@type neomodern.Theme.Terminal
+    T.colormap = {
+        c00 = T.comment, -- black
+        c01 = Util.blend(T.keyword, 0.6, T.bg), -- red
+        c02 = Util.blend(T.string, 0.6, T.bg), -- green
+        c03 = Util.blend(T.constant, 0.6, T.bg), -- yellow
+        c04 = Util.blend(T.func, 0.6, T.bg), -- blue
+        c05 = Util.blend(T.number, 0.6, T.bg), -- magenta
+        c06 = Util.blend(T.property, 0.6, T.bg), -- cyan
+        c07 = Util.blend(T.fg, 0.6, T.bg), -- white
+        c08 = T.operator, -- bright black
+        c09 = T.keyword, -- bright red
+        c0A = T.string, -- bright green
+        c0B = T.constant, -- bright yellow
+        c0C = T.func, -- bright blue
+        c0D = T.number, -- bright magenta
+        c0E = T.property, -- bright cyan
+        c0F = T.fg, -- bright white
+    }
 end
 
 ---Returns a read-only copy of the light or dark variant of a theme.

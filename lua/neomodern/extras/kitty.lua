@@ -37,27 +37,27 @@ active_border_color ${alt}
 inactive_border_color ${comment}
 
 # normal
-color0 ${black}
-color1 ${red}
-color2 ${green}
-color3 ${yellow}
-color4 ${blue}
-color5 ${purple}
-color6 ${cyan}
-color7 ${fg}
+color0 ${c00}
+color1 ${c01}
+color2 ${c02}
+color3 ${c03}
+color4 ${c04}
+color5 ${c05}
+color6 ${c06}
+color7 ${c07}
 
 # bright
-color8 ${grey}
-color9 ${red}
-color10 ${green}
-color11 ${yellow}
-color12 ${blue}
-color13 ${magenta}
-color14 ${cyan}
-color15 ${fg}
+color8 ${c08}
+color9 ${c09}
+color10 ${c0A}
+color11 ${c0B}
+color12 ${c0C}
+color13 ${c0D}
+color14 ${c0E}
+color15 ${c0F}
 
 # extended colors
-color16 ${orange}
+color16 ${alt_bg}
 color17 ${alt}
 ]=],
         colors
