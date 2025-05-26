@@ -42,7 +42,7 @@ bg_color = "#121315"
 
 [metadata]
 aliases = []
-name = "ROSEPRIME"
+name = "roseprime"
 url = "https://wezfurlong.org/wezterm/config/files.html"
 upstream = "https://github.com/cdmill/neomodern.nvim/raw/main/extras/wezterm/roseprime.toml"
 author = "Casey Miller"

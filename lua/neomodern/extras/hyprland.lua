@@ -7,6 +7,7 @@ function M.generate(colors, info)
     colors.url = info.url
     colors.upstream = info.upstream
     colors.theme = info.theme
+    colors.theme_lower = string.lower(info.theme)
     local c = {}
     for k, v in pairs(colors) do
         if type(v) == "string" then
@@ -23,7 +24,7 @@ function M.generate(colors, info)
 
 # 1. copy into ~/.config/hypr/
 # 2. include at the top of your hyprland.conf:
-#       source=~/.config/hypr/${theme}.conf
+#       source=~/.config/hypr/${theme_lower}.conf
 # 3. use colors in your hyprland.conf, e.g.:
 #       non-alpha:  $COLOR (e.g. $func) 
 #       alpha:      rgba($COLORAlpha<transparency> 

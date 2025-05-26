@@ -2,7 +2,8 @@ local Util = require("neomodern.util")
 
 local M = {}
 
-function M.generate(colors, _)
+function M.generate(colors, info)
+    colors.theme_lower = string.lower(info.theme)
     local windows_terminal = Util.template(
         [=[
 # Add the following object to your Windows Terminal configuration
@@ -30,7 +31,7 @@ function M.generate(colors, _)
     "selectionBackground": "${visual}",
     "cursorColor": "${fg}",
 
-    "name": "${theme}",
+    "name": "${theme_lower}",
 }
 ]=],
         colors

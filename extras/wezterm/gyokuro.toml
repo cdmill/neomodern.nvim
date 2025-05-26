@@ -42,7 +42,7 @@ bg_color = "#1b1c1d"
 
 [metadata]
 aliases = []
-name = "GYOKURO"
+name = "gyokuro"
 url = "https://wezfurlong.org/wezterm/config/files.html"
 upstream = "https://github.com/cdmill/neomodern.nvim/raw/main/extras/wezterm/gyokuro.toml"
 author = "Casey Miller"

@@ -7,6 +7,8 @@ function M.generate(colors, info)
     colors.url = info.url
     colors.upstream = info.upstream
     colors.theme = info.theme
+    colors.theme = info.theme
+    colors.theme_lower = string.lower(info.theme)
     local wezterm = Util.template(
         [=[
 [colors]
@@ -53,7 +55,7 @@ bg_color = "${bg}"
 
 [metadata]
 aliases = []
-name = "${theme}"
+name = "${theme_lower}"
 url = "${url}"
 upstream = "${upstream}"
 author = "Casey Miller"

@@ -42,7 +42,7 @@ bg_color = "#161616"
 
 [metadata]
 aliases = []
-name = "HOJICHA"
+name = "hojicha"
 url = "https://wezfurlong.org/wezterm/config/files.html"
 upstream = "https://github.com/cdmill/neomodern.nvim/raw/main/extras/wezterm/hojicha.toml"
 author = "Casey Miller"
