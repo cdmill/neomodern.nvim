@@ -108,4 +108,4 @@ rules = [
     { name = "*", fg = "#bbbac1"},
     { name = "*/", fg = "#6b6b99"}
 ]
-
+  

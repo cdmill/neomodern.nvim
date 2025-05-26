@@ -3,20 +3,20 @@
 {
     "background": "#121315", // alternate, darker background=#111111
     "black": "#666a82",
-    "red": "#436285",
-    "green": "#857164",
-    "yellow": "#6172A0"
-    "blue": "#7D6166",
-    "purple": "#83685C",
-    "cyan": "#6F566A",
+    "red": "#ba5f60",
+    "green": "#647977",
+    "yellow": "#c4959c"
+    "blue": "#6172A0",
+    "purple": "#6C6B9B",
+    "cyan": "#436285",
     "white": "#6F6F83",
-    "brightBlack": "#838196",
-    "brightRed": "#6397cf",
-    "brightGreen": "#d2af98",
-    "brightYellow": "#95b1fc",
-    "brightBlue": "#c4959c",
-    "brightPurple": "#cfa18c",
-    "brightCyan": "#ad82a2",
+    "brightBlack": "#666a82",
+    "brightRed": "#ad82a2",
+    "brightGreen": "#9bbdb8",
+    "brightYellow": "#d2af98",
+    "brightBlue": "#95b1fc",
+    "brightPurple": "#a8a6f5",
+    "brightCyan": "#6397cf",
     "brightWhite": "#adadcc",
 
     "foreground": "#6F6F83",

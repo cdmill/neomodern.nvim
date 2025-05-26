@@ -3,20 +3,20 @@
 {
     "background": "#161616", // alternate, darker background=#111111
     "black": "#696969",
-    "red": "#695C55",
+    "red": "#9e5560",
     "green": "#5C635F",
-    "yellow": "#72755C"
+    "yellow": "#b0b58a"
     "blue": "#565A63",
-    "purple": "#757158",
-    "cyan": "#665154",
+    "purple": "#5C5A66",
+    "cyan": "#695C55",
     "white": "#717070",
-    "brightBlack": "#856b6c",
-    "brightRed": "#a18b7f",
+    "brightBlack": "#696969",
+    "brightRed": "#9c797d",
     "brightGreen": "#8a968f",
-    "brightYellow": "#b0b58a",
+    "brightYellow": "#b5ae84",
     "brightBlue": "#808796",
-    "brightPurple": "#b5ae84",
-    "brightCyan": "#9c797d",
+    "brightPurple": "#8a879c",
+    "brightCyan": "#a18b7f",
     "brightWhite": "#adacac",
 
     "foreground": "#717070",
