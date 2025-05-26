@@ -9,7 +9,7 @@ selection_bg = "#323334"
 selection_fg = "#bbc7b1"
 split = "#767777"
 compose_cursor = "#a69e6f"
-scrollbar_thumb = "${grey}"
+scrollbar_thumb = "#222324"
 
 ansi = ["#767777", "#4F654C", "#6C7355", "#5B6078", "#5E725B", "#8B7177", "#50616F", "#7B7B7F"]
 brights = ["#b08c7d", "#72966c", "#a2ad7b", "#868db5", "#8bab85", "#d6a9b3", "#748fa6", "#bbbac1"]

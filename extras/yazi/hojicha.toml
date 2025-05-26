@@ -91,7 +91,7 @@ footer  = { fg = "#a18b7f", bg = "#1b1c1d" }
 
 [notify]
 title_info = { fg = "#b0b58a" }
-title_warn = { fg = "${diag_warn}" }
+title_warn = { fg = "#969375" }
 title_error = { fg = "#9e5560" }
 
 [filetype]
@@ -108,4 +108,4 @@ rules = [
     { name = "*", fg = "#adacac"},
     { name = "*/", fg = "#8a968f"}
 ]
-  
+
